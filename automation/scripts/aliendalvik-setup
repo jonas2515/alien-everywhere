@@ -1,0 +1,30 @@
+#!/bin/sh
+
+set -e
+
+mkdir /tmp/from
+mkdir /tmp/to
+mkdir /tmp/work
+mount /opt/alien/system.img /tmp/from
+mount -t overlay -o lowerdir=/tmp/from,upperdir=/tmp/to,workdir=/tmp/work overlay /opt/alien/rootfs
+
+sed -i 's/setprop sys.use_memfd false/#setprop sys.use_memfd false/g' /opt/alien/rootfs/system/etc/init/hw/init.rc
+
+chmod 777 /dev/binder
+chmod 777 /dev/hwbinder
+chmod 777 /dev/vndbinder
+chmod 777 /dev/dri/card0
+
+mkdir /tmp/from2
+mkdir /tmp/to2
+mkdir /tmp/work2
+mkdir /tmp/waydroid-vendor
+mount /var/lib/waydroid/images/vendor.img /tmp/from2
+mount -t overlay -o lowerdir=/tmp/from2,upperdir=/tmp/to2,workdir=/tmp/work2 overlay /tmp/waydroid-vendor
+rm /tmp/waydroid-vendor/lib64/hw/android.hardware.gatekeeper@1.0-impl.so
+rm /tmp/waydroid-vendor/lib/hw/android.hardware.gatekeeper@1.0-impl.so
+
+mkdir /tmp/waydroid-system
+mount /var/lib/waydroid/images/system.img /tmp/waydroid-system
+cp /tmp/waydroid-system/system/product/app/webview/webview.apk /opt/alien/rootfs/system/app/webview/webview.apk
+cp -r /tmp/waydroid-system/system/product/overlay /opt/alien/rootfs/product/

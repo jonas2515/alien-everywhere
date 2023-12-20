@@ -1,0 +1,65 @@
+- remove the android settings app from blocklisted apps so it shows up in your apps for testing
+    remove "com.android.settings" entry from /etc/apkd/app-blacklist
+
+- edit central aliendalvik configuration in /etc/appsupport.conf.d/00-defaults.conf
+    comment out "RequiredDevNodes=ashmem"
+    comment out "DevNodes=ion"
+
+- edit central aliendalvik configuration in /etc/appsupport.conf.d/10-hybris.conf
+    comment out the 3 "Proxies=" entries (we don't have any libhybris android HALs running underneath that we can proxy into the container)
+    comment out all the entries in "[Features]" block
+
+- edit central aliendalvik configuration in /etc/appsupport.conf.d/80-aas-config.conf
+    set "DataRoot=/opt/alien/"
+    set "StoragePath=/opt/alien/data/media/0"
+    set "WaylandSocketPath=/run/user/100000/wayland-0"
+    set "BinderDev=binder"
+    set "HwBinderDev=hwbinder"
+    set "VndBinderDev=vndbinder"
+    set "PackageBlacklistFiles=/etc/apkd/app-blacklist"
+    set "NotifBlacklistFiles=/etc/apkd/notif-blacklist"
+
+- edit LXC configuration in /tmp/appsupport/aliendalvik/10-bsp_config
+    replace "/dev/puddlejumper" with "/dev/binder"
+    replace "/dev/hwpuddlejumper" with "/dev/hwbinder"
+    replace "/dev/vndpuddlejumper" with "/dev/vndbinder"
+    comment out the /dev/ashmem, /dev/ion, /dev/uhid and /dev/kgsl-3d0 mounts
+    replace "/home/.android/data" with "__DATA_DIR__"
+    replace "/run/display" mount with "/run/user/__UID__/wayland-0 run/display/wayland-0 none bind,nodev,nosuid,create=file 0 0"
+    replace "/vendor" with "/tmp/waydroid-vendor"
+    comment out /odm/lib, /odm/lib64, /system/etc/apns-conf.xml, /dev/alien_video32, /dev/alien_video33 and /dev/video mounts
+    comment out /home/defaultuser, /home/defaultuser/android_storage and /run/media/defaultuser mounts
+
+- edit LXC configuration in /tmp/appsupport/aliendalvik/20-privilege_config
+    # add a line to start properly on apparmor devices
+    lxc.apparmor.profile = unconfined
+    
+    # replace "lxc.idmap = u 100000 100000 1" line with
+    lxc.idmap = u 100000 __UID__ 1
+
+    # replace "lxc.idmap = g 100000 100000 1" line with
+    lxc.idmap = g 100000 __UID__ 1
+
+- edit LXC configuration in /tmp/appsupport/aliendalvik/30-net_config
+    comment out tmpfs mount to "sys/fs/selinux"
+    
+- edit android props in /tmp/appsupport/aliendalvik/generated_props
+    comment out these props: ro.vendor.extension_library, ro.hardware.vulkan, ro.board.platform
+    update these props "ro.alien.no_camera=1", "ro.alien.no_soundtrigger=1", "ro.com.android.mobiledata=false"
+    when you're on a pinephone pro, set "ro.opengles.version=196609"
+    add these props at the end:
+      ro.alien.qti.c2.service=0
+      ro.alien.qti.allocator.service=0
+      debug.stagefright.ccodec=0
+      ro.hardware.gralloc=gbm
+      ro.hardware.egl=mesa
+      sys.use_memfd=true
+      ro.alien.logcatdump=1
+
+    update DPI and display size values for your device
+      ro.sf.lcd_density=DPI
+      ro.alien.host.display_width=WIDTH
+      ro.alien.host.display_height=HEIGHT
+      ro.alien.host.dpi_x=DPI
+      ro.alien.host.dpi_y=DPI
+

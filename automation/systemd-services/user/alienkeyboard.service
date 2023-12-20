@@ -1,0 +1,9 @@
+[Unit]
+Description=Aliendalvik keyboard bridge
+After=dbus.socket graphical-session.target alienkeyboard-maliit-shim.service
+Requires=dbus.socket graphical-session.target alienkeyboard-maliit-shim.service
+
+[Service]
+Restart=always
+RestartSec=5
+ExecStart=/usr/bin/alienkeyboardservice

@@ -1,0 +1,582 @@
+general stuff
+  - we can't use ashmem (sailfish has it) because that was dropped from mainline kernels
+    - android supports memfd these days, but that has to be enabled via prop sys.use_memfd
+      - this is overwritten by android init system though
+      - need to comment the override out it system/etc/init/hw/init.rc (can use overlayfs for that)
+
+  - for graphics, we mostly need these props just like waydroid
+    ro.hardware.gralloc=gbm
+    ro.hardware.egl=mesa
+
+apkd:
+  - providing some kind of host integration
+    - probably for startup and management of the container
+  - daemon running as root listening to com.jolla.apkd.control on dbus
+  - user daemon apkd-bridge
+  - install dbus configs not into /etc/ but into /usr/share/dbus-1/system.d/
+  - appears to want to talk to systemd about aliendalvik.service
+    - that service needs to be installed
+
+apkd-bridge:
+ - deps:
+   - libnemonotifications compiled from jolla
+   - libqt5contacts.so
+   - sailfish-policy package (for library) from phone
+   - (maybe not necessary) group privileged needs to exist, otherwise error
+   - package packagekit-qt5 for libraries
+ - forwards notifications and app launch requests to host
+ - runs as user on host
+ - only registers it's launcher thing on the binder if it sees that aliendalvik.service is running
+    - can check with binder-list -d /dev/binder for alien.notification and alien.launcher
+  - still doesn't seem to launch apps successfully though
+    - ahaa, it seems like it only works when all HALs sucessfully load or something?
+
+alienaudioservice
+ - needs libalienaudioservice
+ - needs symlink from /usr/lib64 to /usr/lib :(
+ - appears to need /etc/gbinder.conf and /etc/gbinder.d/alien.conf
+ - alienaudioservice  -d /dev/binder -n /dev/vndbinder -w /dev/hwbinder --verbose
+    - ugh, the thing doesn't read configuration in /etc/appsupport.d/, so need to set binder devices via argument
+ - now wants to connect to default_alien and AlienAudioService: fails there
+    - ooof this one is tricky
+    - it appears to be something on /dev/vndbinder
+    - oh wow, it appears to work when starting android shortly before
+      - probably it needs a service manager to be running to register the services
+
+  - ERROR: service: Cannot connect to alien.audio.control/android.media.IAlienAudioControlService
+    - seems to not be a problem/blocking at this stage, this service starts up fairly late in android
+    - nothing to worry about as long as early startup isn't through
+
+  - what is the problem is that this enumeration of audio devices doesn't happen
+    - that's what it looks like on stdout with --verbose
+      [AlienAudioService] service: Shared buffer fd 31 (0x7dd32d1000) size 7680
+      [AlienAudioService] service: Output standby (0/125)
+      [AlienAudioService] service: Set parameters 125: "routing=2"
+      [AlienAudioService] service: Open output (0) io_handle(133) devices(2) flags(0x00000008) sample_rate(48000) channel_mask(3) format(1) -> 0
+
+    - ugh.. the problem is the UID mapping in lxc container config.. the whole thing has to run as the UID mapped there
+
+  - alright this thing works pretty well now
+  - seems that with pipewire-pulse, sound output stops after a while
+    - lets just use pulseaudio on the host for the time being
+
+apkd-bridge-user:
+  - not needed to finish bootup
+  - fairly independent from other things it seems.
+    - what it does is bridge the HALs in #Proxies=android.hardware.graphics.allocator@4.0 et al into the container
+    - when Proxies are set in config, Service 'package_native' will wait and block boot for these
+  - install libQt5Sensors.so.5 from pacman (don't copy from dev, must match installed QT version)
+  - for gps stuff it needs (somewhat optional, also starts without it) /usr/lib64/apkd-bridge-user/libgeo-qtpositioning.so (jolla pkg apkd-plugin-geo-qtpositioning)
+    - that pulls in libQt5Positioning.so (arch pkg qt5-location) 
+
+
+  - aha, actually this thing somehow provides HALs on hwbinder for gnss, sensors, wifi.supplicant, wifi
+  - it does a ton more stuff when looking at strings on the binary...
+  - it also does the mpris indicator
+  - yup, it also adds service on the normal binder: alien.NativeCall, alien.mediabrowsercontrol.bridge, alien.mce, wifinl80211
+
+  - arghhhh, I've spent 6 hours or something looking into why it doesn't install services on the hwbinder
+    - and it ended up being another damn UID thing: ro.alien.privileged_host_uid needs to be set to the one that's mapped to 1 apparently
+
+system/vendor:
+  - general strategy: use aliendalvik vendor blob and put waydroid vendor blob on top (alien doesn't ship mesa drivers that work with mainline)
+  - symlinks of /etc/media_* must be removed and also replaced with waydroid ones
+    - otherwise signal won't start?
+
+  - graphics.allocator HAL? seems it's fine to comment that out
+    - apparently it's also possible to make it work by installing the waydroid vendor/bin stuff
+
+  - we can't *quite* reuse the normal aliendalvik vendor blob
+    - in alien vendor lib(64)/hw points to /host_vendor/lib(64)/hw
+    - we need lib(64) pointing to /host_vendor/lib(64)
+      - why? because /host_vendor is waydroid vendor, and we need to access egl drivers in there (and also various libs these drivers need)
+
+    - also in etc/vintf/manifest.xml, android.hardware.power and android.hardware.graphics.allocator need to be commented out
+      - there's no power HAL nor graphics allocator HAL available
+        - both are forwarded from hybris on sailfish
+        - graphics allocator we could provide via waydroid vendor, but doesn't seem to get us any benefits
+
+video codecs:
+  - with libhybris we could forward the HW decoder directly it seems
+
+  - looks like we fail to decode h264/h265, but not in MKV container (test-videos.co.uk/bigbuckbunny is very helpful)
+    - hmm with the mediaextractor minijail thing we did for Signal this seems to work, just super slow
+  - so debug.stagefright.ccodec=0 makes stagefright try to use sw codecs
+  - ccodec appears to the abstraction for hw codecs, going through libcodec2_client into libcodec2_vndk.so or libcodec2_hidl_client.so
+  - it tries to use libcodec2_vndk.so by default, that tries to access /dev/ion and crashes
+  - looks like ro.alien.hwservicemanager and ro.alien.host_has_hwservicemanager12 play a role here, they are used in all these libs
+      [tester@suagaze system-img]$ grep -r ro.alien.hwservicemanager
+      grep: system/lib64/libhidlbase.so: binary file matches
+      grep: system/lib64/libcodec2_client.so: binary file matches
+      grep: system/lib/libhidlbase.so: binary file matches
+      grep: system/lib/libcodec2_client.so: binary file matches
+      grep: system/apex/com.android.media.swcodec/lib64/libhidlbase.so: binary file matches
+      grep: system/apex/com.android.media/lib64/extractors/libmpeg2extractor.so: binary file matches
+      grep: system/apex/com.android.neuralnetworks/lib64/libneuralnetworks.so: binary file matches
+      grep: system/apex/com.android.neuralnetworks/lib/libneuralnetworks.so: binary file matches
+    - when unsetting ro.alien.hwservicemanager, android.hardware.media.omx fails to start and we hang when starting video
+      - appears to crash in libminijail due to: blocked syscall: recvfrom
+      - there should be policy for that in /vendor/etc/seccomp_policy/mediaswcodec.policy, but that file doesn't exist
+      - now it's complaining about /host_vendor/etc/seccomp_policy/mediacodec.policy, give him that too
+    - looks a lot like ro.alien.hwservicemanager=0 and debug.stagefright.ccodec=0 do the same thing
+
+  - hmm couldn't figure that out, I feel like this debug message plays a role
+      Unsupported profile 4 for video/mp4v-es
+
+  - oh there's also a few properties that can be set by appsupport-generate-config tool:
+    - ro.media.xml_variant.codecs, ro.media.xml_variant.codecs_performance, ro.media.xml_variant.profiles
+    - also CodecXmlSuffix in config
+
+  - playing videos in telegram doesn't work
+
+  - in Signal, getting called gives us a mediaextractor crash
+    - problem seems to be minijail blocking syscalls
+    - works by adding /opt/alien/vendor/etc/seccomp_policy/mediaextractor.policy with this content
+      - https://github.com/waydroid/android_external_stagefright-plugins/blob/da49cdba7b938ec9d973b9a74c9aac210b55bc8e/codec2/seccomp_policy/android.hardware.media.c2%401.1-ffmpeg-arm64.policy
+      - but remove all the fancy comparisons and make it always 1, otherwise filter won't compile
+
+  - outgoing call on whatsapp to iphone, voip connection takes super long
+08-09 10:41:27.164   140   272 I WindowManager: Input event dispatching timed out sending to com.whatsapp/com.whatsapp.voipcalling.VoipActivityV2.  Reason: ad09381 com.whatsapp/com.whatsapp.voipcalling.VoipActivityV2 (server) is not responding. Waited 5005ms for FocusEvent(hasFocus=true)
+ 
+
+input/OSK:
+ - normal zwp_text_input through wayland appears to actually work
+    - but it's buggy and crashes on preedit_string(null)
+      - this is explicitly legal according to protocol
+      - hack might be to not send preedit_string with NIL string??
+    - it's actually *very* messy
+      - set_surrounding_text() only returns the text that's before the cursor, nothing behind it
+        - it also doesn't handle selected text at all
+      - preedit_string() doesn't appear to be handled at all
+      - commit_string() is only handled when cursor is at 0 (maybe this is connected to an empty set_surrounded_text() coming in before)
+        - or when doing commit_string() twice, but that might be the set_surrounded_text() reason
+        - either way, any commit_string() causes it to disable() and re-enable() the input panel
+          - this causes it to never disable() it anymore later.
+        - oh wow even better the damn thing seems to append "\n" to any string
+      - actually emulating normal wl_keyboard events might be our best bet
+        - then the auto-hide should keep working, and we're left with the auto-hide bug only for the emoji panel
+
+  - sailfish uses maliit and a custom keyboard on top of it
+    - maliit itself just spawns a fullscreens wayland surface to show the OSK
+    - yay, it's using qt_extended_surface protocol extension to implement always-on-top (https://github.com/qt/qtwayland/blob/dev/src/extensions/surface-extension.xml)
+      - actually that protocol doesn't seem too bad
+      - small dump of init of the OSK surface
+        [3342860.994]  -> wl_compositor@4.create_surface(new id wl_surface@20)
+        [3342861.309]  -> wl_registry@2.bind(11, "wl_shell", 1, new id [unknown]@21)
+        [3342861.565]  -> wl_shell@21.get_shell_surface(new id wl_shell_surface@22, wl_surface@20)
+        [3342861.684]  -> qt_surface_extension@9.get_extended_surface(new id qt_extended_surface@23, wl_surface@20)
+        [3342861.806]  -> wl_shell_surface@22.set_title("")
+        [3342861.866]  -> wl_shell_surface@22.set_class("maliit-server")
+        [3342861.907]  -> wl_shell_surface@22.set_toplevel()
+        [3342861.947]  -> wl_surface@20.set_buffer_scale(1)
+        [3342861.997]  -> qt_extended_surface@23.set_content_orientation_mask(0)
+        [3342862.040]  -> qt_extended_surface@23.set_window_flags(2)
+        [3342862.128]  -> wl_shell_surface@22.set_fullscreen(0, 0, nil)
+        [3342862.208]  -> wl_surface@20.set_buffer_transform(0)
+        [3342862.248]  -> wl_surface@20.commit()
+        [3342863.572]  -> wl_compositor@4.create_region(new id wl_region@24)
+        [3342863.686]  -> wl_region@24.add(0, 2520, 1080, 0)
+        [3342863.796]  -> wl_surface@20.set_opaque_region(wl_region@24)
+        [3342863.839]  -> wl_region@24.destroy()
+        [3342863.989]  -> qt_extended_surface@23.update_generic_property("CATEGORY", array)
+        [3342864.076]  -> qt_extended_surface@23.update_generic_property("MOUSE_REGION", array)
+        [3342910.604]  -> wl_compositor@4.create_surface(new id wl_surface@25)
+
+      - maybe zwp_input_panel_surface_v1 is what we want for that actually
+
+  - it seems that on sailfish, all IM/text input communication with OSK goes through peer-to-peer dbus socket, zero wayland involved
+    - /run/user/uid/maliit-server/dbus-socket
+    - could sniff that with advanced and very fancy eBPF stuff: https://bulimov.me/post/2021/12/02/unix-socket-snoop/, https://github.com/mechpen/sockdump
+    - qt apps talk directly on that private dbus (in qt it proabably works via IM plugin, set using global QT_IM_MODULE=Maliit)
+    - maliit also appears to support zwp_input_method_context_v1
+      - if we implement that in mutter, we could make communication Gtk<->maliit go through that
+        - that'd be what we want for OSK's in the future either way
+    - alienkeyboardservice talks directly to that socket just as qt
+      - oh hey we can snoop that using QDBUS_DEBUG=1 alienkeyboardservice
+        - uhh okay this is not too bad
+        - maybe we could shim a few things and keep using wl_text_input_v3 
+
+  - shifting up input fields on android works via maliit
+    - <method name="updateInputMethodArea">
+    - could try to shim that?
+    - or we just run a full blown maliit as our keyboard
+      - possibly supporting zwp_input_method_context_v1 is "all" we need for that in mutter
+        - apparently there's also input_method_v2 from purism (https://lists.freedesktop.org/archives/wayland-devel/2018-August/039255.html)
+        - seems not really worth it to implement v1 when it will get replaced anyway
+
+  - clipboard sharing works on sailfish from container to host, not other way round
+    - seems that sends proper wl_data_source.offer() via surfaceflinger, neat....
+
+  - alienkeyboardservice:
+    - yayy, this thing has a -d argument for the binder dev, but it doesn't actually use it
+    - can just use hex editor and change the binder dev in the binary, it's a NUL-terminated string, easy
+    - talks to the inputmethod jolla inside android
+    - talks to maliit-server over dbus p2p socket
+    - still not sure how to enable debugging there, strings suggests it has a verbose mode, no idea how it works
+    - we might want to shim maliit for the text-input shifting behavior inside android
+
+  - oh well, shimming maliit was nicely possible with some fancy python things
+    - buuut the damn thing crashes when wl_text_input is enabled at same time as alienkeyboard thingy
+    - only solution for us is to kill wl_text_input (their implementation is super duper buggy anyway)
+      - add a WAYLAND_DISABLE_PROTOCOL env var to wayland
+      - and make our shim a small wayland client for zwp_text_input
+      - pip3 install --user --break-system-packages pywayland
+      - python3 -m pywayland.scanner --with-protocols -o protocols
+
+    - oof, this is getting more and more tricky
+      - had to go the whole route and disable wl_text_input_v3 for alien
+      - now it does work, but the damn python dbus+wayland thing I wrote is pretty weird
+
+    - so getting a working keyboard now needs
+      - python fake-server.py
+      - python test.py
+      - alienkeyboardservice
+
+compositor things:
+  - wayland socket is located at /run/display and is world-read+writeable on sailfish
+    - this is to allow surfaceflinger in the android container (with different user) to access it
+    - seems a bit dangerous that it's also accessible to random android processes?
+      - looks like we can create a separate user+group for SurfaceFlinger (it runs with UID 501000)
+      - then chown wayland socket for that group and make it 775
+
+  - okay fun, lipstick also implements a surface role for wayland: alien_manager / alien_surface
+    - looks like that is actually just a way of working around that lipstick doesn't do xdg-toplevel/xdg-wm
+    - seems like because of that we get to see the bugs now
+    - tried implementing the protocol in mutter, but doing two surface roles at the same time is a bad idea (and surfaceflinger really wants to)
+
+  - surfaceflinger crashes in wl_log() when enabling wayland debugging via debug.sf.wayland
+
+  - so surfaceflinger crashes on closing the last open window, then opening a new one, then touching it
+    - we send xdg_wm_base pings on input to windows to make sure they're alive
+    - it seems that when it sees a ping in some cases, it crashes when handling the event
+    - disabling pinging in mutter seems to do the trick
+
+  - also surfaceflinger sometimes accesses xdg_surfaces that have implicitly been freed after it requested wl_surface.destroy()
+    - causes client error from libwayland, tearing down the connection
+    - these can be worked around by making those client errors non-fatal in wayland
+    - another workaround seems to be waiting a bit longer with freeing the wl_resource on surface destroy in mutter
+    - REPRODUCER: open netflix, error appears and click "learn more", app crashes and surfaceflinger fucks up
+    - REPRODUCER: or open other apps and click the back button to leave them
+      Jul 12 15:36:19 oneplus6 gnome-shell[448812]: [4197137.171]  -> xdg_surface#42.configure(93)
+      Jul 12 15:36:19 oneplus6 gnome-shell[448812]: [4197137.201]  -> wl_keyboard#12.leave(301, wl_surface#41)
+      Jul 12 15:36:19 oneplus6 gnome-shell[448812]: [4197137.214]  -> zwp_text_input_v3#3.leave(wl_surface#41)
+      Jul 12 15:36:19 oneplus6 gnome-shell[448812]: [4197141.457] wl_surface#41.destroy()
+      Jul 12 15:36:19 oneplus6 gnome-shell[448812]: [4197167.465]  -> wl_display#1.delete_id(33)
+      Jul 12 15:36:19 oneplus6 gnome-shell[448812]: [4197167.501]  -> wl_display#1.delete_id(42)
+      Jul 12 15:36:19 oneplus6 gnome-shell[448812]: [4197167.538]  -> wl_display#1.delete_id(41)
+      Jul 12 15:36:19 oneplus6 gnome-shell[448812]: [4197167.549] wl_display#1.sync(new id wl_callback#46)
+      Jul 12 15:36:19 oneplus6 gnome-shell[448812]: [4197167.557]  -> wl_callback#46.done(301)
+      Jul 12 15:36:19 oneplus6 gnome-shell[448812]: [4197167.563]  -> wl_display#1.delete_id(46)
+      Jul 12 15:36:19 oneplus6 gnome-shell[448812]: [4197167.780]  -> wl_display#1.error(wl_display#1, 0, "invalid object 42")
+      Jul 12 15:36:19 oneplus6 gnome-shell[448812]: WL: error in client communication (pid 456513)
+   - another occurence
+      Jul 12 14:52:47 oneplus6 gnome-shell[425720]: [1585117.972]  -> wl_display@1.error(wl_display@1, 1, "invalid arguments for wl_surface@55.attach")
+      Jul 12 14:52:47 oneplus6 gnome-shell[425720]: WL: unknown object (2117946272), message attach(?oii)
+      Jul 12 14:52:47 oneplus6 gnome-shell[425720]: WL: error in client communication (pid 439093)
+
+  - when starting apps, they often only start drawing on touch input
+    - could have something to do with us only focusing the app on input?
+    - maybe it's the configure() event we send them when focusing
+
+  - scaling is borked, on hidpi alien windows are blurry
+    - lipstick supports wl_output, but does wl_output.scale(1), apparently scaling is done via env variable or smth
+    - can fix that by reading the wm_class and then special-casing alien windows in mutter
+
+  - it seems they're leaking their wl_region's, lovely...
+    - sailfish sets opaque regions too, good thing their phones have so much ram :D
+
+  - we also get our fair share of bugs :)
+    - looks like we sometimes send zwp_text_input.leave event after wl_surface.destroy()
+      - REPRODUCER: sometimes this works: open netflix, error appears and click "learn more", now app crashes
+          Jul 12 14:46:10 oneplus6 gnome-shell[425720]: [1187342.350] wl_surface@34.destroy()
+          Jul 12 14:46:10 oneplus6 gnome-shell[425720]: [1187342.532]  -> zwp_text_input_v3@3.leave(wl_surface@34)
+          Jul 12 14:46:10 oneplus6 gnome-shell[425720]: WL: error marshalling arguments for leave (signature uo): null value passed for arg 1
+
+  - on the pinephone pro, we crash after a while in the gallium driver
+    - fixed by setting different openglES version: ro.opengles.version=196609
+
+network access/fake wifi:
+  - there's two props that exclude each other: ro.alien.sailfish_networking ro.alien.default_networking
+    - sailfish uses the former by default, controlled by /etc/appsupport.conf.d/property-pre-hooks/50-networking.sh
+  - ah damn, it's also provided somehow by apkd-bridge-user
+
+  - waydroid uses lxc networking spawning an eth0 inside the container
+    - sets up manually a waydroid0 interface on host with firwall and masquerading (https://github.com/waydroid/waydroid/blob/822598850d0c16a968fb8ea4b5768d4ba323f0e5/data/scripts/waydroid-net.sh)
+    - see for lxc config https://github.com/waydroid/waydroid/blob/822598850d0c16a968fb8ea4b5768d4ba323f0e5/data/configs/config_1
+    - probably due to being eth0, this requires fake wifi stuff
+  - waydroid has a fake wifi thing controlled by persist.waydroid.fake_wifi (https://github.com/waydroid/android_vendor_waydroid/commit/629b76f254d07d373092f7c18efcbefbc0f9ad94)
+    - seems to be per app (https://github.com/waydroid/docs/blob/9b5be41b9233aecf201471596fc6e84f7423ab85/usage/waydroid-prop-options.md?plain=1#L22)
+    - not used by default?
+
+  - alright, alien also uses lxc to install a bridge into the container
+    - but at the same time it implements a wifi HAL to pretend to be connected to wifi
+    - it asks connman for connected wifi and then returns that SSID, interesting
+  - need to copy lxc-net from device, seems that arch lxc no longer ships that script
+  - need to shim connman dbus
+    - what we're looking for from the contianer is starting the scanner, then notifying the net
+      com.jolla.apkd.wifi: apkd: android.net.wifi.nl80211.IWifiScannerImpl 10
+
+      com.jolla.apkd.wifi: apkd - supplicant - notifyWifiNetwork  0xaaaae832fac0 "iPhone von Jonas"
+
+    - connman installed on system is still needed (probably only for the dbus interface definition)
+
+  - alright took me like another hour to get the shim working for android to pick up the network
+    - but then android said "no internet", I thought I'm missing something else in the shim
+    - after two more hours of randomly shimming other apis and trying whatever finally figured it out
+      - android can't resolve dns, and its not because of the shim
+      - it'S because it uses the dns cache of the host and sets its dns 127.0.0.1
+      - connman provided a resolver on localhost:53, and the systemd-resolved NM uses apparently doesn't answer those queries
+      - can test with "dig heise.de @127.0.0.1"
+      - resolved listens on 127.0.0.53 by default
+      - setting DNSStubListenerExtra=127.0.0.1 makes it work, arghhhhh.
+
+cellular network
+  - android is always looking for iRadio HAL, need to check if that one's exposed by apkd-bridge on jolla
+  - things work just fine with the wifi shim for now
+  - looks like exposing cellular info via connman shim doesn't work :/
+  - actually iRadio HAL is not exposed by any apkd-* tools, instead it's exposed by ofono it seems
+    - that's unfortunate, it's probably bound to ofono making use of hybris radio HALs somehow
+    - yup, there's /usr/lib64/ofono/plugins/alienbinderplugin.so
+
+gps
+  - good news, appears to go via geoclue
+  - kinda works OOTB, but location is not as accurate as on host it seems
+  - apkd-bridge-user has debug output for it
+  - there's a nice gtk app for debugging: Satellite on flathub (it talks to ModemManager directly)
+  - turns out modemManager doesn't do gps without a sim card
+    https://gitlab.freedesktop.org/mobile-broadband/ModemManager/-/issues/183
+
+  - okay, so there's the geoclue2 API backend for qtpositioning, that's good
+    - sadly it doesn't have a satellites API anymore like Geoclue dbus api had
+    - alright, let's build qtLocation 5.0 ourselves 
+      - looks like it really wants to use the old Geoclue1 api, the plugin has a higher prio
+      - can run geoclue with debug using sudo G_MESSAGES_DEBUG=Geoclue /usr/lib/geoclue
+      - aha, here's our problem: the thing only requests shit accuracy from geoclue
+      - seems it relies on a thing that both the android and geoclue1 plugin do: set default accuracy to ALL in plugin constructor
+        - if we do that too, things work!!
+
+sensors
+  - qtsensors has a fairly minimal iio-sensor-proxy backend
+    - no support for proximity
+      - fairly easy, can wire that up quickly
+    - no accellerometer (iio-sensor-proxy doesn't expose)
+      - https://gitlab.freedesktop.org/hadess/iio-sensor-proxy/-/merge_requests/193
+  - first need to allow querying iio-sensor-proxy as user by changing polkit
+    /usr/share/polkit-1/actions/net.hadess.SensorProxy.policy
+  - for compass access also need to change dbus policy
+    /usr/share/dbus-1/system.d/net.hadess.SensorProxy.conf
+  - compass doesn't have a backend that works on most phones yet, see
+    https://gitlab.freedesktop.org/hadess/iio-sensor-proxy/-/merge_requests/316
+  - rotation/gyro sensor is not really wanted in iio-sensor-proxy without a use-case
+    https://gitlab.freedesktop.org/hadess/iio-sensor-proxy/-/issues/221
+  - seems that messengers use proximity sensor for audio route during voice messages actually
+    - looool telegram combines it with accelerometer readings it seems, how insane
+  - seems like also android makes use of orientation sensor and rotates apps, we probably don't want that
+
+
+app rotation
+  - android does it itself based on orientation sensor readings
+    - looks weird and interferes with mutter, rotating, also doesn't adhere to "allow autorotation" gsetting
+    - can disable with "settings put system accelerometer_rotation 0;" in container
+
+vibration
+  - can debug feedbackd with G_MESSAGES_DEBUG=all /usr/lib/feedbackd
+  - doesn't work by default
+  - seems to be provided by alienaudioservice actually
+    - more specifically by the sailfish plugin, interesting
+  - let's try loading the plugin
+    - fails without these libs: libprofile, libresource, libresource-glib, libngf0
+    - now it hangs up looking for org.maemo.resource.manager on dbus it seems
+      - is exposed by ohmd (open hardware manager)
+      - more specifically by this plugin it seems https://github.com/sailfishos/ohm-plugins-misc/blob/master/plugins/resource/
+      - trace of system dbus on initialization here: dbus-trace-alienaudio-sailfish-plugin.txt
+      - let's shim it, ah neat preexisting stuff to shim the policy manager
+        https://github.com/sailfishos/libresource/blob/master/tests/dbus/dummy-policy-manager.py
+
+
+audio routing:
+  - goes through alienaudioservice sailfish plugin
+    https://github.com/sailfishos/ohm-plugins-misc/blob/master/plugins/route/org.nemomobile.Route.Manager.xml
+    https://github.com/sailfishos/ohm-plugins-misc/blob/master/plugins/route/ohm-ext/route.h
+
+  - routing to earpiece during voice messages that goes a bit differently
+    - sailfish doesn't re-route here
+    - app reads sensors and sets media role:
+      [AlienAudioService] sailfish: Stream 29 set 'media.role'='phone'
+      [AlienAudioService] sailfish: Stream 29 set 'module-stream-restore.id'='sink-input-by-media-role:voip'
+
+    - maybe this is how it works on android and we're supposed to route to earpiece now?
+
+lockscreen calls:
+  - seems sailfish doesn't do fullscreen intents for incoming calls
+    - we can possibly hack that and put app into lockscreen overlay by looking at notification
+      - resident == true && category == call
+      - activate default action and show surface as lockscreen overlay
+      - tricky: telegram behaves differently depending on screen was off or on
+        - when off, it shows swipy thing to not accidentlly click, when on, it shows clicky thing
+
+  - what about ongoing calls on lockscreen
+    - there's again a notification, maybe can use that still
+
+ringtone silencing
+  - on sailfish, ngfd just enforces the silent profile by killing haptics
+    https://github.com/sailfishos/ngfd/blob/master/src/ngf/haptic.c#L187
+  - seems like same goes for ringtone, the stream is created, but appears to be killed by pulse based on media.role=ringing
+  - what do we do?
+    - in the future, call ringtone and vibration will be played by notification server anyway
+    - we know when an alien call is ringing, so can probably kill vibration and mute the alien stream in our audio shim to allow notification server taking over
+    - kills custom ringtones on android, oh well
+    - won't work for alarm clocks, there we don't know about ringing state
+
+    - or we just let things through normally and enforce silent profile in the shim for both haptics and audio on incoming call
+      - maybe that's the best way for now
+
+contacts sync:
+  - another tricky one, they replace system contacts UI and database with host one
+    - breaks things for us of course
+    - we might have to shim com.jolla.contacts.ui dbus
+    - we can see createContact() being called from android
+    - handled by apkd-bridge 
+  - according to changelogs, bridge "Sync all contacts to alien on service connect"
+  - to ensure it works, on startup of container, look for this
+      com.jolla.apkd.binder: Connected to Alien Service alien.contacts
+      com.jolla.apkd.contacts: Checking if Alien contacts service is ready for synchronisation
+      com.jolla.apkd.contacts: Alien contacts service is available, performing initial sync
+            Successfully notified Alien contacts service of current contacts.
+
+  - also contact modification should be detected
+    "Notifying Alien contacts service of contact addition:"
+
+  - okayy, so this talks to libQtContacts and a custom sqlite backend on sailfish
+    - wowwww, we're lucky, there's a libfolks backend from ~2010 for QtCOntacts available
+      - https://wiki.gnome.org/Projects/Folks/QtFolks
+      - https://blog.barisione.org/2010/11/17/folks-and-qtcontacts/
+      - https://launchpad.net/~m-gehre/+archive/ubuntu/ppa/+packages
+      - damn was finding those sources hard
+    - okay with a few adjustments it builds and the demo confirms it works, yaaaaay!
+    - now still have to make sure it gets loaded and used by apkd-bridge
+      - ah wow that was super tricky, because strings didn't find any references to the plugin name (org.nemomobile.contacts.sqlite) in any binaries
+      - turns out apkd-bridge still demands that plugin, it probably puts the string together in an un-greppable way, damn....
+      - okay so we're gonna have to force our own plugin then via custom build of libQt5Contacts
+    - ugh, it's still not working, but at least now apkd-bridge spews a log on contact changes in folks, let's try removing data dir
+    - damn, another few hours later, managed to get some debug output from contacts sync on sailfish now
+      - apkd-bridge can only read contacts db when run with invoker, but then we don't get debug output
+      - so instead run it as root to read new contacts db, and create contacts with jolla-contacts run as root
+    - okay now we know that successful initial sync looks like this
+        [D] unknown:0 - Alien contacts service is available, performing initial sync
+        [D] unknown:0 - Notifying Alien contacts service of all current contacts: 1
+        [D] unknown:0 - Successfully notified Alien contacts service of contact change.
+        [W] unknown:0 - Successfully notified Alien contacts service of current contacts.
+    - turns out there's also a race involved
+      - apkd-bridge gets the contacts via ManagerEngine::contacts() before we got our invidiuals-changed from folks
+      - this means it doesn't sync any contacts initially, but doesn't explain why it also won't pick up changes to contacts
+    - oh woooow
+      - adding and modifying contact changes seems to go via dbus (all with variant (au))
+        - org.nemomobile.contacts.sqlite.contactsAdded
+        - org.nemomobile.contacts.sqlite.contactsChanged
+      - deleting can go via both QtCOntacts API signal or dbus signal
+        - org.nemomobile.contacts.sqlite.contactsRemoved
+    - it seems that sailfish creates two contacts for everyone, possibly one system one and one android one
+    - the IDs on their dbus output are QContactId.toString()
+    - the IDs passed on their dbus signals are the QContactId without prefix 73716c2d3 (QByteArrayLiteral("sql-"))
+    - so these dbus signals are emitted from the sqlite backend actually, no idea why that would be done in addition to the normal cpp-signals
+    - after another two days, got it to pick up dbus emissions too by setting the QCollectionId (QByteArrayLiteral("col-")) and QContactType on individual contacts now, yaayyy
+
+desktop files for apps
+  - mostly appears to work
+  - jolla style of icons is a bit annoying
+  - handled by apkd-bridge
+
+file sharing between host and container
+  - looks like some xdg-folders are synced into container as sdcard
+    - home directory is synced into android as sdcard via config MountHome
+    - it's just mounted by lxc, neat
+
+other things
+  - after startup bluetooth crashes all the time
+    - seems to be an "upstream" bug, jolla solves this using alien-post-startup.sh by disabling bluetooth daemon (see comment in there)
+
+  - video decoding for some videos doesn't work (see video codecs section)
+
+  - the media control service can crash sometimes (playing around with switching between apps during playing spotify music)
+    - see media-control-service-while-starting-spotify crash file
+
+  - system webview is crashing
+    - it appears to try using ashmem and then fails because
+      07-13 16:57:45.257  8198  8198 E chromium: [ERROR:platform_shared_memory_region_android.cc(189)] Ashmem region has a wrong protection mask: it is not read-only but it should be
+    - it's a memfd instead of ashmem specific issue, there's a patch that fixes it in waydroid
+      https://chromium.googlesource.com/chromium/src/+/HEAD/third_party/ashmem/patches/0004-Fixup-ashmem_get_prot_region-for-memfd.patch
+    - can work around by replacing webview with the one from waydroid
+
+  - camera will only work when running on top libhybris and forwarding the HAL
+
+what's needed to be done:
+  - lots of dbus shimming (sorted by importance)
+    - launching of system apps from within android (just a single dbus call invoking the thing)
+      - browser
+      - contacts
+      - more...
+
+  - send configure() wayland events so that clients start drawing immediately
+
+incomplete list of deps and files:
+apdk-bridge deps
+ - libnemonotifications-qt5.so.1 (get from phone)
+ - libpackagekitqt5.so.1 (arch pkg packagekit-qt5)
+ - libQt5Contacts.so.5 (no arch pkg, build it ourselves)
+
+alienaudioservice
+ - libalienaudioservice (get from phone)
+ - libglibutil.so.1 (arch pkg libglibutil)
+ - libgbinder.so.1 (arch pkg libgbinder)
+
+apkd-bridge-user
+ - libmlite5.so.0 (arch pkg mlite)
+ - libkeepalive.so.1 and libkeepalive-glib.so.1 (get from phone)
+ - libambermpris (get from phone)
+ - libapkd (get from phone)
+ - libqt5sensors (arch pkg qt5-sensors)
+ - libiphb.so.0 (get from phone)
+ - libdbusaccess.so.1 (get from phone)
+ - libconnman-qt5.so.1 (get from phone)
+ - apkd-plugin-geo-qtpositioning
+   - installs /usr/lib64/apkd-bridge-user/libgeo-qtpositioning.so
+   - libQt5Positioning.so (arch pkg qt5-location)
+
+config files
+  /etc/aas-seccomp-profile
+  /etc/apkd/app-blacklist (here we removed settings app)
+  /etc/apkd/notif-blacklist
+  /etc/gbinder.conf
+  /etc/gbinder.d/alien.conf
+  /etc/appsupport.conf.d/*
+  /usr/lib/systemd/system/aliendalvik.service
+
+aliendalvik system img + vendor img + build.prop:
+  /opt/alien/vendor/*
+  /opt/alien/system.img
+  /opt/alien/build.prop
+
+
+useful stuff:
+ all tools are using Qt debugging tools, debug using QT_LOGGING_RULES="*.debug=true"
+ shell inside container: lxc-attach --name=aliendalvik --lxcpath=/tmp/appsupport -- /system/bin/sh
+ trace files that get opened: strace -f -t -e trace=file binary
+ debugging wayland because debug.sf.wayland causes crash: put WAYLAND_DEBUG into /etc/environment of host to use mutter debugging
+ starting app inside android: am start com.android.settings
+ installing app inside android: pm install -t -f /data/local/tmp/app.apk (needs right permissions)
+
+
+starting things automatically
+  - it's kinda bound to be a mess :(
+  - alien it depends on stuff running in the user session, and can only start when the user session is up
+  - alien itself needs to be run by root though
+  - and that's not enough, most things in the user session need to be started at a specific pointer after container is up
+  - so what do we do?
+    - really nice would be starting and stopping the whole thing from a user service
+    - could talk to a root helper via dbus which then does configuration and starts/stops the container
+    - would have to fiddle with user services as root again though
+
+  - for data isolation between users
+    - let's have the data dirs inside user dirs so they can be encrypted
+    - maybe make it an img file that can be owned fully by the user and is mounted into lxc

@@ -1,0 +1,361 @@
+● Xperia10III
+    State: degraded
+     Jobs: 0 queued
+   Failed: 3 units
+    Since: Wed 2023-07-05 13:32:43 CEST; 2 days ago
+   CGroup: /
+           ├─user.slice
+           │ └─user-100000.slice
+           │   ├─session-c4.scope
+           │   │ ├─22470 sshd: defaultuser [priv]
+           │   │ ├─22472 sshd: defaultuser@pts/1
+           │   │ ├─22473 -bash
+           │   │ └─22672 systemctl status
+           │   ├─user@100000.service
+           │   │ ├─ambienced.service
+           │   │ │ └─5575 /usr/bin/invoker -o -s --type=qt5 /usr/bin/ambienced
+           │   │ ├─alienaudio.service
+           │   │ │ └─21162 /usr/bin/alienaudioservice -p pulseaudio -p sailfish
+           │   │ ├─jolla-messages.service
+           │   │ │ └─6756 /usr/bin/invoker --type=generic -- /usr/bin/sailjail -- /usr/bin/jolla-messages -prestart
+           │   │ ├─booster\x2dbrowser.slice
+           │   │ │ ├─booster-browser@sailfish-browser.service
+           │   │ │ │ └─6457 /usr/bin/invoker --type=silica-session -- /usr/bin/sailjail --profile=sailfish-browser -- /usr/libexec/mapplauncherd/booster-browser --application=sailfish-browser
+           │   │ │ └─booster-browser@jolla-email.service
+           │   │ │   └─6460 /usr/bin/invoker --type=silica-session -- /usr/bin/sailjail --profile=jolla-email -- /usr/libexec/mapplauncherd/booster-browser --application=jolla-email
+           │   │ ├─lipstick-security-ui.service
+           │   │ │ └─6507 /usr/bin/invoker -s --type=silica-session /usr/libexec/lipstick-security-ui-launcher
+           │   │ ├─ohm-session-agent.service
+           │   │ │ └─5520 /usr/bin/ohm-session-agent
+           │   │ ├─simkit-agent.service
+           │   │ │ └─7067 /usr/bin/simkit
+           │   │ ├─connectionagent.service
+           │   │ │ └─5579 /usr/bin/invoker -o --type=qt5 /usr/bin/connectionagent
+           │   │ ├─background.slice
+           │   │ │ └─tracker-miner-fs-3.service
+           │   │ │   └─7079 /usr/libexec/tracker-miner-fs-3
+           │   │ ├─apkd-bridge-user.service
+           │   │ │ └─21223 /usr/bin/invoker -o -s --global-syms --type=qt5 /usr/bin/apkd-bridge-user
+           │   │ ├─dconf.service
+           │   │ │ └─6069 /usr/libexec/dconf-service
+           │   │ ├─pulseaudio.service
+           │   │ │ ├─5794 /usr/bin/pulseaudio --daemonize=no -n --file=/etc/pulse/arm_droid_default.pa
+           │   │ │ └─5924 /usr/libexec/audiosystem-passthrough/audiosystem-passthrough --module
+           │   │ ├─mission-control-5.service
+           │   │ │ └─6456 /usr/bin/invoker --type=generic --keep-oom-score /usr/libexec/mission-control-5
+           │   │ ├─booster\x2dsilica\x2dmedia.slice
+           │   │ │ ├─booster-silica-media@jolla-camera-lockscreen.service
+           │   │ │ │ └─6463 /usr/bin/invoker --type=silica-session -- /usr/bin/sailjail --profile=jolla-camera-lockscreen -- /usr/libexec/mapplauncherd/booster-silica-media --application=jolla-camera-lockscreen
+           │   │ │ └─booster-silica-media@jolla-camera.service
+           │   │ │   └─6451 /usr/bin/invoker --type=silica-session -- /usr/bin/sailjail --profile=jolla-camera -- /usr/libexec/mapplauncherd/booster-silica-media --application=jolla-camera
+           │   │ ├─xt9-server.service
+           │   │ │ └─5576 /usr/libexec/xt9/xt9-server
+           │   │ ├─alienkeyboard.service
+           │   │ │ └─21183 /usr/bin/alienkeyboardservice
+           │   │ ├─mpris-proxy.service
+           │   │ │ └─6454 /usr/bin/mpris-proxy
+           │   │ ├─profiled.service
+           │   │ │ └─5567 /usr/bin/profiled
+           │   │ ├─msyncd.service
+           │   │ │ └─5571 /usr/bin/invoker -G -o -s --type=qt5 /usr/bin/msyncd
+           │   │ ├─booster-qt5.service
+           │   │ │ ├─ 5518 /usr/libexec/mapplauncherd/booster-qt5 --systemd --boot-mode
+           │   │ │ ├─ 5547 /usr/bin/voicecall-manager
+           │   │ │ ├─ 5588 /usr/bin/msyncd
+           │   │ │ ├─ 5591 /usr/bin/ambienced
+           │   │ │ ├─ 5593 /usr/bin/connectionagent
+           │   │ │ ├─ 5595 /usr/bin/jolla-signon-ui
+           │   │ │ ├─ 6462 /usr/bin/maliit-server
+           │   │ │ ├─ 6465 /usr/bin/commhistoryd
+           │   │ │ ├─ 6468 /usr/bin/contactsd
+           │   │ │ ├─20348 booster [qt5]
+           │   │ │ ├─21201 /usr/bin/apkd-bridge-user
+           │   │ │ └─28380 /usr/bin/apkd-bridge
+           │   │ ├─booster-generic.service
+           │   │ │ ├─ 5524 /usr/libexec/mapplauncherd/booster-generic --systemd
+           │   │ │ ├─ 5802 /usr/bin/firejail --quiet --template=OrganizationName:com.jolla --template=ApplicationName:voicecall --private-bin=voicecall-ui --whitelist=/usr/share/voicecall-ui-jolla --whitelist=/usr/share/applications/voicecall-ui.desktop --whitelist=${HOME}/.local/share/voicecall-ui --whitelist=${HOME}/.config/voicecall-ui --whitelist=${HOME}/.cache/voicecall-ui --mkdir=${HOME}/.cache/com.jolla/voicecall --whitelist=${HOME}/.cache/com.jolla/voicecall --mkdir=${HOME}/.local/share/com.jolla/voicecall --whitelist=${HOME}/.local/share/com.jolla/voicecall --mkdir=${HOME}/.config/com.jolla/voicecall --whitelist=${HOME}/.config/com.jolla/voicecall --dbus-user.own=com.jolla.voicecall --dbus-user.own=com.jolla.voicecall.ui --profile=/etc/sailjail/permissions/voicecall-ui.profile --profile=/etc/sailjail/permissions/Phone.permission --profile=/etc/sailjail/permissions/CallRecordings.permission --profile=/etc/sailjail/permissions/CommunicationHistory.permission --profile=/etc/sailjail/permissions/MediaIndexing.permission --profile=/etc/sailjail/permissions/UserDirs.permission --profile=/etc/sailjail/permissions/Contacts.permission --profile=/etc/sailjail/permissions/Bluetooth.permission --profile=/etc/sailjail/permissions/Base.permission -- /usr/bin/voicecall-ui -prestart
+           │   │ │ ├─ 6464 /usr/libexec/mission-control-5
+           │   │ │ ├─ 6497 /usr/bin/xdg-dbus-proxy --fd=4 --args=5
+           │   │ │ ├─ 6506 /usr/bin/firejail --quiet --template=OrganizationName:com.jolla --template=ApplicationName:voicecall --private-bin=voicecall-ui --whitelist=/usr/share/voicecall-ui-jolla --whitelist=/usr/share/applications/voicecall-ui.desktop --whitelist=${HOME}/.local/share/voicecall-ui --whitelist=${HOME}/.config/voicecall-ui --whitelist=${HOME}/.cache/voicecall-ui --mkdir=${HOME}/.cache/com.jolla/voicecall --whitelist=${HOME}/.cache/com.jolla/voicecall --mkdir=${HOME}/.local/share/com.jolla/voicecall --whitelist=${HOME}/.local/share/com.jolla/voicecall --mkdir=${HOME}/.config/com.jolla/voicecall --whitelist=${HOME}/.config/com.jolla/voicecall --dbus-user.own=com.jolla.voicecall --dbus-user.own=com.jolla.voicecall.ui --profile=/etc/sailjail/permissions/voicecall-ui.profile --profile=/etc/sailjail/permissions/Phone.permission --profile=/etc/sailjail/permissions/CallRecordings.permission --profile=/etc/sailjail/permissions/CommunicationHistory.permission --profile=/etc/sailjail/permissions/MediaIndexing.permission --profile=/etc/sailjail/permissions/UserDirs.permission --profile=/etc/sailjail/permissions/Contacts.permission --profile=/etc/sailjail/permissions/Bluetooth.permission --profile=/etc/sailjail/permissions/Base.permission -- /usr/bin/voicecall-ui -prestart
+           │   │ │ ├─ 6750 /usr/bin/firejail --quiet --template=OrganizationName:org.sailfishos --template=ApplicationName:Messages --private-bin=jolla-messages --whitelist=/usr/share/jolla-messages --whitelist=/usr/share/applications/jolla-messages.desktop --whitelist=${HOME}/.local/share/jolla-messages --whitelist=${HOME}/.config/jolla-messages --whitelist=${HOME}/.cache/jolla-messages --mkdir=${HOME}/.cache/org.sailfishos/Messages --whitelist=${HOME}/.cache/org.sailfishos/Messages --mkdir=${HOME}/.local/share/org.sailfishos/Messages --whitelist=${HOME}/.local/share/org.sailfishos/Messages --mkdir=${HOME}/.config/org.sailfishos/Messages --whitelist=${HOME}/.config/org.sailfishos/Messages --dbus-user.own=org.sailfishos.Messages --profile=/etc/sailjail/permissions/jolla-messages.profile --profile=/etc/sailjail/permissions/Contacts.permission --profile=/etc/sailjail/permissions/Messages.permission --profile=/etc/sailjail/permissions/CommunicationHistory.permission --profile=/etc/sailjail/permissions/Ambience.permission --profile=/etc/sailjail/permissions/RemovableMedia.permission --profile=/etc/sailjail/permissions/Pictures.permission --profile=/etc/sailjail/permissions/Base.permission -- /usr/bin/jolla-messages -prestart
+           │   │ │ ├─ 6781 /usr/bin/voicecall-ui -prestart
+           │   │ │ ├─ 6821 /usr/libexec/telepathy-ring
+           │   │ │ ├─ 6845 /usr/bin/xdg-dbus-proxy --fd=4 --args=5
+           │   │ │ ├─ 6855 /usr/bin/firejail --quiet --template=OrganizationName:org.sailfishos --template=ApplicationName:Messages --private-bin=jolla-messages --whitelist=/usr/share/jolla-messages --whitelist=/usr/share/applications/jolla-messages.desktop --whitelist=${HOME}/.local/share/jolla-messages --whitelist=${HOME}/.config/jolla-messages --whitelist=${HOME}/.cache/jolla-messages --mkdir=${HOME}/.cache/org.sailfishos/Messages --whitelist=${HOME}/.cache/org.sailfishos/Messages --mkdir=${HOME}/.local/share/org.sailfishos/Messages --whitelist=${HOME}/.local/share/org.sailfishos/Messages --mkdir=${HOME}/.config/org.sailfishos/Messages --whitelist=${HOME}/.config/org.sailfishos/Messages --dbus-user.own=org.sailfishos.Messages --profile=/etc/sailjail/permissions/jolla-messages.profile --profile=/etc/sailjail/permissions/Contacts.permission --profile=/etc/sailjail/permissions/Messages.permission --profile=/etc/sailjail/permissions/CommunicationHistory.permission --profile=/etc/sailjail/permissions/Ambience.permission --profile=/etc/sailjail/permissions/RemovableMedia.permission --profile=/etc/sailjail/permissions/Pictures.permission --profile=/etc/sailjail/permissions/Base.permission -- /usr/bin/jolla-messages -prestart
+           │   │ │ ├─ 6998 /usr/bin/jolla-messages -prestart
+           │   │ │ ├─15307 /usr/bin/firejail --quiet --template=OrganizationName:org.sailfishos --template=ApplicationName:AudioRecorder --private-bin=sailfish-audiorecorder --whitelist=/usr/share/sailfish-audiorecorder --whitelist=/usr/share/applications/sailfish-audiorecorder.desktop --whitelist=${HOME}/.local/share/sailfish-audiorecorder --whitelist=${HOME}/.config/sailfish-audiorecorder --whitelist=${HOME}/.cache/sailfish-audiorecorder --mkdir=${HOME}/.cache/org.sailfishos/AudioRecorder --whitelist=${HOME}/.cache/org.sailfishos/AudioRecorder --mkdir=${HOME}/.local/share/org.sailfishos/AudioRecorder --whitelist=${HOME}/.local/share/org.sailfishos/AudioRecorder --mkdir=${HOME}/.config/org.sailfishos/AudioRecorder --whitelist=${HOME}/.config/org.sailfishos/AudioRecorder --dbus-user.own=org.sailfishos.AudioRecorder --profile=/etc/sailjail/permissions/Audio.permission --profile=/etc/sailjail/permissions/Documents.permission --profile=/etc/sailjail/permissions/Microphone.permission --profile=/etc/sailjail/permissions/MediaIndexing.permission --profile=/etc/sailjail/permissions/Base.permission -- /usr/bin/sailfish-audiorecorder
+           │   │ │ ├─20561 booster [generic]
+           │   │ │ ├─23111 /usr/bin/xdg-dbus-proxy --fd=4 --args=5
+           │   │ │ ├─23113 /usr/bin/firejail --quiet --template=OrganizationName:org.sailfishos --template=ApplicationName:AudioRecorder --private-bin=sailfish-audiorecorder --whitelist=/usr/share/sailfish-audiorecorder --whitelist=/usr/share/applications/sailfish-audiorecorder.desktop --whitelist=${HOME}/.local/share/sailfish-audiorecorder --whitelist=${HOME}/.config/sailfish-audiorecorder --whitelist=${HOME}/.cache/sailfish-audiorecorder --mkdir=${HOME}/.cache/org.sailfishos/AudioRecorder --whitelist=${HOME}/.cache/org.sailfishos/AudioRecorder --mkdir=${HOME}/.local/share/org.sailfishos/AudioRecorder --whitelist=${HOME}/.local/share/org.sailfishos/AudioRecorder --mkdir=${HOME}/.config/org.sailfishos/AudioRecorder --whitelist=${HOME}/.config/org.sailfishos/AudioRecorder --dbus-user.own=org.sailfishos.AudioRecorder --profile=/etc/sailjail/permissions/Audio.permission --profile=/etc/sailjail/permissions/Documents.permission --profile=/etc/sailjail/permissions/Microphone.permission --profile=/etc/sailjail/permissions/MediaIndexing.permission --profile=/etc/sailjail/permissions/Base.permission -- /usr/bin/sailfish-audiorecorder
+           │   │ │ └─23140 /usr/bin/sailfish-audiorecorder
+           │   │ ├─sailfish-homescreen-services.service
+           │   │ │ └─5517 /usr/libexec/sailfish-homescreen-services
+           │   │ ├─jolla-signon-ui.service
+           │   │ │ └─6448 /usr/bin/invoker -o -s --type=qt5 /usr/bin/jolla-signon-ui
+           │   │ ├─commhistoryd.service
+           │   │ │ └─6450 /usr/bin/invoker -o --type=qt5 /usr/bin/commhistoryd
+           │   │ ├─voicecall-ui-prestart.service
+           │   │ │ └─6458 /usr/bin/invoker -o -s --type=generic -- /usr/bin/sailjail -p voicecall-ui -- /usr/bin/voicecall-ui -prestart
+           │   │ ├─voicecall-manager.service
+           │   │ │ └─5569 /usr/bin/invoker -o --type=qt5 /usr/bin/voicecall-manager
+           │   │ ├─init.scope
+           │   │ │ ├─5424 /usr/lib/systemd/systemd --user --unit=default.target
+           │   │ │ └─5427 (sd-pam)
+           │   │ ├─maliit-server.service
+           │   │ │ └─6447 /usr/bin/invoker --type=qt5 /usr/bin/maliit-server
+           │   │ ├─timed-qt5.service
+           │   │ │ └─5526 /usr/bin/timed-qt5 --systemd
+           │   │ ├─contactsd.service
+           │   │ │ └─7076 /usr/bin/invoker -o -s --global-syms --type=qt5 /usr/bin/contactsd
+           │   │ ├─lipstick.service
+           │   │ │ ├─ 5736 /usr/bin/lipstick -plugin evdevtouch -plugin evdevmouse -plugin evdevkeyboard:keymap=/usr/share/qt5/keymaps/droid.qmap --systemd
+           │   │ │ └─23102 invoker --type=generic --id=sailfish-audiorecorder --single-instance /usr/bin/sailjail -p sailfish-audiorecorder.desktop /usr/bin/sailfish-audiorecorder
+           │   │ ├─ngfd.service
+           │   │ │ └─5570 /usr/bin/ngfd
+           │   │ ├─telepathy-ring.service
+           │   │ │ └─6773 /usr/bin/invoker --type=generic --keep-oom-score /usr/libexec/telepathy-ring
+           │   │ ├─apkd-bridge.service
+           │   │ │ └─21200 /usr/bin/invoker -o -s --global-syms --type=qt5 /usr/bin/apkd-bridge
+           │   │ ├─obex.service
+           │   │ │ └─6076 /usr/libexec/bluetooth/obexd -n --capability !/usr/bin/obex-capability --noplugin=syncevolution,ftp,mas,irmc --exclude=bluetooth:pcsuite --root=/home/defaultuser
+           │   │ ├─dbus.service
+           │   │ │ ├─ 5522 /usr/bin/dbus-daemon --session --address=systemd: --nofork --systemd-activation
+           │   │ │ └─21612 /usr/libexec/geoclue-master
+           │   │ └─booster-browser.service
+           │   │   ├─7066 /usr/libexec/mapplauncherd/booster-browser --systemd
+           │   │   └─7075 booster [browser]
+           │   └─session-1.scope
+           │     ├─ 5367 /usr/libexec/mapplauncherd/booster-silica-session --boot-mode
+           │     ├─ 5502 (sd-pam)
+           │     ├─ 5515 /usr/bin/firejail --quiet --template=OrganizationName:com.jolla --template=ApplicationName:camera --private-bin=jolla-camera --whitelist=/usr/share/jolla-camera --whitelist=/usr/share/applications/jolla-camera.desktop --whitelist=${HOME}/.local/share/jolla-camera --whitelist=${HOME}/.config/jolla-camera --whitelist=${HOME}/.cache/jolla-camera --mkdir=${HOME}/.cache/com.jolla/camera --whitelist=${HOME}/.cache/com.jolla/camera --mkdir=${HOME}/.local/share/com.jolla/camera --whitelist=${HOME}/.local/share/com.jolla/camera --mkdir=${HOME}/.config/com.jolla/camera --whitelist=${HOME}/.config/com.jolla/camera --dbus-user.own=com.jolla.camera --profile=/etc/sailjail/permissions/booster-silica-media.profile --profile=/etc/sailjail/permissions/jolla-camera.profile --profile=/etc/sailjail/permissions/Camera.permission --profile=/etc/sailjail/permissions/Audio.permission --profile=/etc/sailjail/permissions/Microphone.permission --profile=/etc/sailjail/permissions/Pictures.permission --profile=/etc/sailjail/permissions/Videos.permission --profile=/etc/sailjail/permissions/MediaIndexing.permission --profile=/etc/sailjail/permissions/Location.permission --profile=/etc/sailjail/permissions/Ambience.permission --profile=/etc/sailjail/permissions/RemovableMedia.permission --profile=/etc/sailjail/permissions/Base.permission -- /usr/libexec/mapplauncherd/booster-silica-media --application=jolla-camera
+           │     ├─ 6466 /usr/bin/firejail --quiet --template=OrganizationName:org.sailfishos --template=ApplicationName:browser --private-bin=sailfish-browser --whitelist=/usr/share/sailfish-browser --whitelist=/usr/share/applications/sailfish-browser.desktop --whitelist=${HOME}/.local/share/sailfish-browser --whitelist=${HOME}/.config/sailfish-browser --whitelist=${HOME}/.cache/sailfish-browser --mkdir=${HOME}/.cache/org.sailfishos/browser --whitelist=${HOME}/.cache/org.sailfishos/browser --mkdir=${HOME}/.local/share/org.sailfishos/browser --whitelist=${HOME}/.local/share/org.sailfishos/browser --mkdir=${HOME}/.config/org.sailfishos/browser --whitelist=${HOME}/.config/org.sailfishos/browser --dbus-user.own=org.sailfishos.browser --dbus-user.own=org.sailfishos.browser.ui --profile=/etc/sailjail/permissions/booster-browser.profile --profile=/etc/sailjail/permissions/sailfish-browser.profile --profile=/etc/sailjail/permissions/WebView.permission --profile=/etc/sailjail/permissions/Audio.permission --profile=/etc/sailjail/permissions/Camera.permission --profile=/etc/sailjail/permissions/Location.permission --profile=/etc/sailjail/permissions/Internet.permission --profile=/etc/sailjail/permissions/UserDirs.permission --profile=/etc/sailjail/permissions/RemovableMedia.permission --profile=/etc/sailjail/permissions/MediaIndexing.permission --profile=/etc/sailjail/permissions/Base.permission -- /usr/libexec/mapplauncherd/booster-browser --application=sailfish-browser
+           │     ├─ 6467 /usr/bin/firejail --quiet --template=OrganizationName:com.jolla --template=ApplicationName:email --private-bin=jolla-email --whitelist=/usr/share/jolla-email --whitelist=/usr/share/applications/jolla-email.desktop --whitelist=${HOME}/.local/share/jolla-email --whitelist=${HOME}/.config/jolla-email --whitelist=${HOME}/.cache/jolla-email --mkdir=${HOME}/.cache/com.jolla/email --whitelist=${HOME}/.cache/com.jolla/email --mkdir=${HOME}/.local/share/com.jolla/email --whitelist=${HOME}/.local/share/com.jolla/email --mkdir=${HOME}/.config/com.jolla/email --whitelist=${HOME}/.config/com.jolla/email --dbus-user.own=com.jolla.email --dbus-user.own=com.jolla.email.ui --profile=/etc/sailjail/permissions/booster-browser.profile --profile=/etc/sailjail/permissions/jolla-email.profile --profile=/etc/sailjail/permissions/Accounts.permission --profile=/etc/sailjail/permissions/Contacts.permission --profile=/etc/sailjail/permissions/Phone.permission --profile=/etc/sailjail/permissions/Email.permission --profile=/etc/sailjail/permissions/WebView.permission --profile=/etc/sailjail/permissions/Internet.permission --profile=/etc/sailjail/permissions/AppLaunch.permission --profile=/etc/sailjail/permissions/Calendar.permission --profile=/etc/sailjail/permissions/UserDirs.permission --profile=/etc/sailjail/permissions/RemovableMedia.permission --profile=/etc/sailjail/permissions/MediaIndexing.permission --profile=/etc/sailjail/permissions/CommunicationHistory.permission --profile=/etc/sailjail/permissions/Base.permission -- /usr/libexec/mapplauncherd/booster-browser --application=jolla-email
+           │     ├─ 6469 /usr/bin/firejail --quiet --template=OrganizationName:com.jolla --template=ApplicationName:camera --private-bin=jolla-camera-lockscreen --whitelist=/usr/share/jolla-camera --whitelist=/usr/share/applications/jolla-camera-lockscreen.desktop --whitelist=${HOME}/.local/share/jolla-camera-lockscreen --whitelist=${HOME}/.config/jolla-camera-lockscreen --whitelist=${HOME}/.cache/jolla-camera-lockscreen --mkdir=${HOME}/.cache/com.jolla/camera --whitelist=${HOME}/.cache/com.jolla/camera --mkdir=${HOME}/.local/share/com.jolla/camera --whitelist=${HOME}/.local/share/com.jolla/camera --mkdir=${HOME}/.config/com.jolla/camera --whitelist=${HOME}/.config/com.jolla/camera --dbus-user.own=com.jolla.camera --profile=/etc/sailjail/permissions/booster-silica-media.profile --profile=/etc/sailjail/permissions/jolla-camera-lockscreen.profile --profile=/etc/sailjail/permissions/Camera.permission --profile=/etc/sailjail/permissions/Audio.permission --profile=/etc/sailjail/permissions/Microphone.permission --profile=/etc/sailjail/permissions/Pictures.permission --profile=/etc/sailjail/permissions/Videos.permission --profile=/etc/sailjail/permissions/MediaIndexing.permission --profile=/etc/sailjail/permissions/Location.permission --profile=/etc/sailjail/permissions/RemovableMedia.permission --profile=/etc/sailjail/permissions/Base.permission -- /usr/libexec/mapplauncherd/booster-silica-media --application=jolla-camera-lockscreen
+           │     ├─ 6479 /usr/libexec/lipstick-security-ui
+           │     ├─ 6490 /usr/libexec/mapplauncherd/booster-silica-qt5 --daemon
+           │     ├─ 6496 /usr/bin/xdg-dbus-proxy --fd=4 --args=9
+           │     ├─ 6498 /usr/libexec/mapplauncherd/booster-silica-media --daemon
+           │     ├─ 6499 /usr/bin/xdg-dbus-proxy --fd=4 --args=9
+           │     ├─ 6502 booster [silica-media]
+           │     ├─ 6503 /usr/bin/xdg-dbus-proxy --fd=4 --args=9
+           │     ├─ 6509 /usr/bin/firejail --quiet --template=OrganizationName:org.sailfishos --template=ApplicationName:browser --private-bin=sailfish-browser --whitelist=/usr/share/sailfish-browser --whitelist=/usr/share/applications/sailfish-browser.desktop --whitelist=${HOME}/.local/share/sailfish-browser --whitelist=${HOME}/.config/sailfish-browser --whitelist=${HOME}/.cache/sailfish-browser --mkdir=${HOME}/.cache/org.sailfishos/browser --whitelist=${HOME}/.cache/org.sailfishos/browser --mkdir=${HOME}/.local/share/org.sailfishos/browser --whitelist=${HOME}/.local/share/org.sailfishos/browser --mkdir=${HOME}/.config/org.sailfishos/browser --whitelist=${HOME}/.config/org.sailfishos/browser --dbus-user.own=org.sailfishos.browser --dbus-user.own=org.sailfishos.browser.ui --profile=/etc/sailjail/permissions/booster-browser.profile --profile=/etc/sailjail/permissions/sailfish-browser.profile --profile=/etc/sailjail/permissions/WebView.permission --profile=/etc/sailjail/permissions/Audio.permission --profile=/etc/sailjail/permissions/Camera.permission --profile=/etc/sailjail/permissions/Location.permission --profile=/etc/sailjail/permissions/Internet.permission --profile=/etc/sailjail/permissions/UserDirs.permission --profile=/etc/sailjail/permissions/RemovableMedia.permission --profile=/etc/sailjail/permissions/MediaIndexing.permission --profile=/etc/sailjail/permissions/Base.permission -- /usr/libexec/mapplauncherd/booster-browser --application=sailfish-browser
+           │     ├─ 6514 /usr/bin/firejail --quiet --template=OrganizationName:com.jolla --template=ApplicationName:camera --private-bin=jolla-camera --whitelist=/usr/share/jolla-camera --whitelist=/usr/share/applications/jolla-camera.desktop --whitelist=${HOME}/.local/share/jolla-camera --whitelist=${HOME}/.config/jolla-camera --whitelist=${HOME}/.cache/jolla-camera --mkdir=${HOME}/.cache/com.jolla/camera --whitelist=${HOME}/.cache/com.jolla/camera --mkdir=${HOME}/.local/share/com.jolla/camera --whitelist=${HOME}/.local/share/com.jolla/camera --mkdir=${HOME}/.config/com.jolla/camera --whitelist=${HOME}/.config/com.jolla/camera --dbus-user.own=com.jolla.camera --profile=/etc/sailjail/permissions/booster-silica-media.profile --profile=/etc/sailjail/permissions/jolla-camera.profile --profile=/etc/sailjail/permissions/Camera.permission --profile=/etc/sailjail/permissions/Audio.permission --profile=/etc/sailjail/permissions/Microphone.permission --profile=/etc/sailjail/permissions/Pictures.permission --profile=/etc/sailjail/permissions/Videos.permission --profile=/etc/sailjail/permissions/MediaIndexing.permission --profile=/etc/sailjail/permissions/Location.permission --profile=/etc/sailjail/permissions/Ambience.permission --profile=/etc/sailjail/permissions/RemovableMedia.permission --profile=/etc/sailjail/permissions/Base.permission -- /usr/libexec/mapplauncherd/booster-silica-media --application=jolla-camera
+           │     ├─ 6515 /usr/bin/firejail --quiet --template=OrganizationName:com.jolla --template=ApplicationName:camera --private-bin=jolla-camera-lockscreen --whitelist=/usr/share/jolla-camera --whitelist=/usr/share/applications/jolla-camera-lockscreen.desktop --whitelist=${HOME}/.local/share/jolla-camera-lockscreen --whitelist=${HOME}/.config/jolla-camera-lockscreen --whitelist=${HOME}/.cache/jolla-camera-lockscreen --mkdir=${HOME}/.cache/com.jolla/camera --whitelist=${HOME}/.cache/com.jolla/camera --mkdir=${HOME}/.local/share/com.jolla/camera --whitelist=${HOME}/.local/share/com.jolla/camera --mkdir=${HOME}/.config/com.jolla/camera --whitelist=${HOME}/.config/com.jolla/camera --dbus-user.own=com.jolla.camera --profile=/etc/sailjail/permissions/booster-silica-media.profile --profile=/etc/sailjail/permissions/jolla-camera-lockscreen.profile --profile=/etc/sailjail/permissions/Camera.permission --profile=/etc/sailjail/permissions/Audio.permission --profile=/etc/sailjail/permissions/Microphone.permission --profile=/etc/sailjail/permissions/Pictures.permission --profile=/etc/sailjail/permissions/Videos.permission --profile=/etc/sailjail/permissions/MediaIndexing.permission --profile=/etc/sailjail/permissions/Location.permission --profile=/etc/sailjail/permissions/RemovableMedia.permission --profile=/etc/sailjail/permissions/Base.permission -- /usr/libexec/mapplauncherd/booster-silica-media --application=jolla-camera-lockscreen
+           │     ├─ 6517 /usr/bin/xdg-dbus-proxy --fd=4 --args=9
+           │     ├─ 6522 /usr/bin/firejail --quiet --template=OrganizationName:com.jolla --template=ApplicationName:email --private-bin=jolla-email --whitelist=/usr/share/jolla-email --whitelist=/usr/share/applications/jolla-email.desktop --whitelist=${HOME}/.local/share/jolla-email --whitelist=${HOME}/.config/jolla-email --whitelist=${HOME}/.cache/jolla-email --mkdir=${HOME}/.cache/com.jolla/email --whitelist=${HOME}/.cache/com.jolla/email --mkdir=${HOME}/.local/share/com.jolla/email --whitelist=${HOME}/.local/share/com.jolla/email --mkdir=${HOME}/.config/com.jolla/email --whitelist=${HOME}/.config/com.jolla/email --dbus-user.own=com.jolla.email --dbus-user.own=com.jolla.email.ui --profile=/etc/sailjail/permissions/booster-browser.profile --profile=/etc/sailjail/permissions/jolla-email.profile --profile=/etc/sailjail/permissions/Accounts.permission --profile=/etc/sailjail/permissions/Contacts.permission --profile=/etc/sailjail/permissions/Phone.permission --profile=/etc/sailjail/permissions/Email.permission --profile=/etc/sailjail/permissions/WebView.permission --profile=/etc/sailjail/permissions/Internet.permission --profile=/etc/sailjail/permissions/AppLaunch.permission --profile=/etc/sailjail/permissions/Calendar.permission --profile=/etc/sailjail/permissions/UserDirs.permission --profile=/etc/sailjail/permissions/RemovableMedia.permission --profile=/etc/sailjail/permissions/MediaIndexing.permission --profile=/etc/sailjail/permissions/CommunicationHistory.permission --profile=/etc/sailjail/permissions/Base.permission -- /usr/libexec/mapplauncherd/booster-browser --application=jolla-email
+           │     ├─ 6526 booster [silica-session]
+           │     ├─ 6770 /usr/libexec/mapplauncherd/booster-silica-media --application=jolla-camera-lockscreen
+           │     ├─ 6778 /usr/libexec/mapplauncherd/booster-silica-media --application=jolla-camera
+           │     ├─ 6785 /usr/libexec/mapplauncherd/booster-browser --application=sailfish-browser
+           │     ├─ 6788 /usr/libexec/mapplauncherd/booster-browser --application=jolla-email
+           │     ├─ 6833 booster [browser]
+           │     ├─ 6834 booster [browser]
+           │     ├─20232 booster [silica-qt5]
+           │     ├─22946 /usr/bin/jolla-settings -prestart
+           │     ├─29805 booster [silica-media]
+           │     └─31972 booster [silica-media]
+           ├─init.scope
+           │ └─1 /usr/lib/systemd/systemd --unit=default.target
+           └─system.slice
+             ├─ofono.service
+             │ └─3308 /usr/sbin/ofonod -n --nobacktrace --noplugin=,he910,dun_gw_bluez5,hfp_bluez5,cdma_provision,isimodem,n900,u8500,qmimodem,gobi,cdmamodem,isiusb,nwmodem,ztemodem,iceramodem,huaweimodem,calypsomodem,swmodem,mbmmodem,hsomodem,ifxmodem,stemodem,dunmodem,hfpmodem,speedupmodem,phonesim,telitmodem,udev,udevng,bluez4,dun_gw_bluez4,hfp_ag_bluez4,hfp_bluez4,dun_gw_bluez5,hfp_bluez5
+             ├─dummy_netd.service
+             │ └─3243 /usr/sbin/dummy_netd
+             ├─systemd-udevd.service
+             │ └─687 /usr/lib/systemd/systemd-udevd
+             ├─connman-vpn.service
+             │ └─5126 /usr/sbin/connman-vpnd -n
+             ├─mce.service
+             │ └─2045 /usr/sbin/mce --systemd
+             ├─ohmd.service
+             │ └─3128 /usr/sbin/ohmd --no-daemon --mlock=none
+             ├─droid-hal-init.service
+             │ ├─ 3136 /sbin/droid-hal-init second_stage
+             │ ├─ 3139 /sbin/droid-hal-init subcontext u:r:vendor_init:s0 12
+             │ ├─ 3212 /system/bin/logd
+             │ ├─ 3213 /system/bin/servicemanager
+             │ ├─ 3214 /system/bin/hwservicemanager
+             │ ├─ 3215 /vendor/bin/vndservicemanager /dev/vndbinder
+             │ ├─ 3216 /odm/bin/qseecomd
+             │ ├─ 3218 /odm/bin/hw/android.hardware.keymaster@4.0-service-qti
+             │ ├─ 3337 /system/bin/hw/android.system.suspend@1.0-service
+             │ ├─ 3339 /vendor/bin/hw/android.hardware.boot@1.1-service
+             │ ├─ 3343 /vendor/bin/hw/android.hardware.configstore@1.1-service
+             │ ├─ 3345 /vendor/bin/hw/vendor.qti.hardware.display.allocator-service
+             │ ├─ 3585 /system/bin/tombstoned
+             │ ├─ 3589 /vendor/bin/hw/android.hardware.camera.provider@2.4-service_64
+             │ ├─ 3590 /system/bin/hw/android.hidl.allocator@1.0-service
+             │ ├─ 3591 /vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti
+             │ ├─ 3592 /vendor/bin/hw/android.hardware.cas@1.2-service
+             │ ├─ 3593 /vendor/bin/hw/android.hardware.gatekeeper@1.0-service
+             │ ├─ 3594 /vendor/bin/hw/android.hardware.gnss@2.1-service-qti
+             │ ├─ 3595 /vendor/bin/hw/android.hardware.health@2.0-service.sony
+             │ ├─ 3596 /vendor/bin/hw/android.hardware.light@2.0-service.sony
+             │ ├─ 3597 /vendor/bin/hw/android.hardware.memtrack@1.0-service
+             │ ├─ 3598 /vendor/bin/hw/android.hardware.nfc@1.2-service
+             │ ├─ 3599 /vendor/bin/hw/android.hardware.power@1.3-service.sony
+             │ ├─ 3600 /system/bin/sh -c sleep 3; /vendor/bin/hw/android.hardware.sensors@2.1-service.multihal
+             │ ├─ 3601 /vendor/bin/hw/android.hardware.thermal@1.0-service
+             │ ├─ 3602 /vendor/bin/hw/android.hardware.wifi@1.0-service
+             │ ├─ 3603 /odm/bin/hw/vendor.somc.hardware.miscta@1.0-service
+             │ ├─ 3604 /system/bin/credstore /data/misc/credstore
+             │ ├─ 3606 /system/bin/gpuservice
+             │ ├─ 3608 /odm/bin/mlog_qmi_service
+             │ ├─ 3609 /odm/bin/pd-mapper
+             │ ├─ 3611 /odm/bin/pm-service
+             │ ├─ 3612 /odm/bin/qrtr-ns -f
+             │ ├─ 3613 /odm/bin/sct_service
+             │ ├─ 3614 /odm/bin/ta_qmi_service
+             │ ├─ 3615 /odm/bin/tad_static /dev/block/bootdevice/by-name/TA 0,16
+             │ ├─ 3616 /odm/bin/tftp_server
+             │ ├─ 3662 /system/bin/gatekeeperd /data/misc/gatekeeper
+             │ ├─ 3665 /odm/bin/cnss-daemon -n -l
+             │ ├─ 3668 /odm/bin/dpmd
+             │ ├─ 3673 /odm/bin/hvdcp_opti
+             │ ├─ 3674 /usr/libexec/droid-hybris/system/bin/minimediaservice
+             │ ├─ 3675 /usr/libexec/droid-hybris/system/bin/minisfservice
+             │ ├─ 3677 /system/bin/drmserver
+             │ ├─ 3678 /system/bin/idmap2d
+             │ ├─ 3679 /system/bin/incidentd
+             │ ├─ 3683 /system/bin/keystore /data/misc/keystore
+             │ ├─ 3684 media.extractor aextractor
+             │ ├─ 3686 media.metrics diametrics
+             │ ├─ 3688 /odm/bin/adpl
+             │ ├─ 3689 /odm/bin/dpmd
+             │ ├─ 3721 media.codec hw/android.hardware.media.omx@1.0-service
+             │ ├─ 3740 /odm/bin/adsprpcd audiopd
+             │ ├─ 3761 /odm/bin/cnd
+             │ ├─ 3769 /odm/bin/qti
+             │ ├─ 3772 /odm/bin/dpmQmiMgr
+             │ ├─ 3773 /odm/bin/ims_rtp_daemon
+             │ ├─ 3774 /odm/bin/imsqmidaemon
+             │ ├─ 3775 /odm/bin/imsrcsd
+             │ ├─ 3777 /vendor/bin/ipacm
+             │ ├─ 3787 media.swcodec oid.media.swcodec/bin/mediaswcodec
+             │ ├─ 3789 /apex/com.android.os.statsd/bin/statsd
+             │ ├─ 3813 /system/bin/traced_probes
+             │ ├─ 3817 /system/bin/traced
+             │ ├─ 3828 /odm/bin/netmgrd
+             │ ├─ 3835 /odm/bin/hw/qcrild
+             │ ├─ 3844 /odm/bin/hw/qcrild -c 2
+             │ ├─ 3848 /odm/bin/rmt_storage
+             │ ├─ 3851 /odm/bin/imsdatadaemon
+             │ ├─ 3852 /odm/bin/adsprpcd
+             │ ├─ 3867 /odm/bin/adsprpcd sensorspd
+             │ ├─ 3996 /odm/bin/cdsprpcd
+             │ ├─ 4371 /vendor/bin/hw/android.hardware.sensors@2.1-service.multihal
+             │ ├─ 5693 /vendor/bin/hw/vendor.qti.hardware.display.composer-service
+             │ ├─ 7272 /odm/bin/msm_irqbalance -f /vendor/etc/msm_irqbalance.conf
+             │ ├─ 7273 /odm/bin/pm-proxy
+             │ └─31661 /vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service.sony
+             ├─aliendalvik.service
+             │ ├─18374 com.shazam.android
+             │ ├─18389 org.thoughtcrime.securesms
+             │ ├─21009 /bin/sh /usr/libexec/appsupport/start-aliendalvik.sh
+             │ ├─21052 lxc-start --rcfile=/tmp/appsupport/aliendalvik/config --lxcpath=/tmp/appsupport -n aliendalvik -F
+             │ ├─21059 /system/bin/init second_stage
+             │ ├─21123 /system/bin/logd
+             │ ├─21124 /system/bin/servicemanager
+             │ ├─21125 /system/bin/hwservicemanager
+             │ ├─21126 /system/bin/vndservicemanager /dev/vndbinder
+             │ ├─21127 /system/bin/vold --blkid_context=u:r:blkid:s0 --blkid_untrusted_context=u:r:blkid_untrusted:s0 --fsck_context=u:r:fsck:s0 --fsck_untrusted_context=u:r:fsck_untrusted:s0
+             │ ├─21224 /system/bin/hw/android.system.suspend@1.0-service
+             │ ├─21237 /system/bin/tombstoned
+             │ ├─21241 /apex/com.android.os.statsd/bin/statsd
+             │ ├─21242 /system/bin/netd
+             │ ├─21243 zygote64
+             │ ├─21244 zygote
+             │ ├─21245 /system/bin/hw/android.hardware.audio.service
+             │ ├─21246 /system/bin/hw/android.hardware.configstore@1.1-service
+             │ ├─21247 /system/bin/hw/android.hardware.drm@1.0-service
+             │ ├─21248 /system/bin/hw/android.hardware.graphics.composer@2.1-service
+             │ ├─21249 /system/bin/hw/android.hardware.thermal@1.0-service
+             │ ├─21250 /system/bin/hw/android.hidl.allocator@1.0-service
+             │ ├─21251 /system/bin/healthd
+             │ ├─21252 /system/bin/audioserver
+             │ ├─21253 /system/bin/credstore /data/misc/credstore
+             │ ├─21254 /system/bin/gpuservice
+             │ ├─21255 /system/bin/lmkd
+             │ ├─21260 /system/bin/traced_probes
+             │ ├─21261 /system/bin/traced
+             │ ├─21262 media.codec hw/android.hardware.media.omx@1.0-service
+             │ ├─21263 /system/bin/cameraserver
+             │ ├─21264 /system/bin/drmserver
+             │ ├─21265 /system/bin/idmap2d
+             │ ├─21266 /system/bin/incidentd
+             │ ├─21267 /system/bin/installd
+             │ ├─21268 /system/bin/iorapd
+             │ ├─21269 /system/bin/keystore /data/misc/keystore
+             │ ├─21270 media.extractor aextractor
+             │ ├─21271 media.metrics diametrics
+             │ ├─21272 /system/bin/mediaserver
+             │ ├─21273 /system/bin/storaged
+             │ ├─21274 media.swcodec oid.media.swcodec/bin/mediaswcodec
+             │ ├─21275 /system/bin/gatekeeperd /data/misc/gatekeeper
+             │ ├─21488 system_server
+             │ ├─21716 /system/bin/iorap.prefetcherd --input-fd 7 --output-fd 8
+             │ ├─21779 com.android.systemui
+             │ ├─21848 com.android.se
+             │ ├─21870 com.android.phone
+             │ ├─21884 android.ext.services
+             │ ├─21937 webview_zygote
+             │ ├─22024 com.android.providers.media.module
+             │ ├─22031 com.jolla.inputmethod.remote
+             │ ├─22089 android.process.acore
+             │ ├─22125 android.process.media
+             │ ├─22201 com.android.packageinstaller
+             │ ├─22232 com.android.permissioncontroller
+             │ ├─22350 com.android.providers.calendar
+             │ ├─22424 com.android.externalstorage
+             │ ├─22466 com.android.statementservice
+             │ ├─22602 org.fdroid.fdroid
+             │ ├─22664 app.organicmaps
+             │ ├─22767 cm.aptoide.pt
+             │ ├─22817 com.android.webview:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:0
+             │ ├─23189 org.telegram.messenger
+             │ ├─29151 com.spotify.music
+             │ └─29350 /system/bin/mdnsd
+             ├─polkit.service
+             │ └─6565 /usr/libexec/polkit-1/polkitd --no-debug
+             ├─bluetooth.service
+             │ └─4615 /usr/libexec/bluetooth/bluetoothd -n
+             ├─sailfish-devicelock-encsfa-fpd.service
+             │ └─3280 /usr/lib64/qt5/plugins/devicelock/encsfa-fpd --daemon
+             ├─wpa_supplicant.service
+             │ └─5293 /usr/sbin/wpa_supplicant -u -c /etc/wpa_supplicant/wpa_supplicant.conf -O/var/run/wpa_supplicant -u -P /var/run/wpa_supplicant.pid
+             ├─systemd-journald.service
+             │ └─667 /usr/lib/systemd/systemd-journald
+             ├─dsme.service
+             │ ├─2239 /usr/sbin/dsme -- -p /usr/lib64/dsme/startup.so --systemd
+             │ └─2254 /usr/sbin/dsme-server -p /usr/lib64/dsme/startup.so --systemd
+             ├─sailfish-fpd.service
+             │ ├─22668 /usr/bin/sailfish-fpd --systemd
+             │ └─22669 /usr/libexec/sailfish-fpd/fpslave --log-to=syslog --log-level=4
+             ├─connman.service
+             │ └─5118 /usr/sbin/connmand -n -W nl80211 --nobacktrace --noplugin=wifi
+             ├─audiosystem-passthrough-dummy-af.service
+             │ └─2036 /usr/libexec/audiosystem-passthrough/audiosystem-passthrough --address dummy
+             ├─quota_nld.service
+             │ └─3244 /usr/sbin/quota_nld --foreground --no-console --print-below
+             ├─dbus-org.pacrunner.service
+             │ └─6151 /usr/sbin/pacrunner -n
+             ├─sailjaild.service
+             │ └─5117 /usr/bin/sailjaild --systemd
+             ├─bluebinder.service
+             │ └─3791 /usr/sbin/bluebinder
+             ├─nfcd.service
+             │ └─3289 /usr/sbin/nfcd -o syslog
+             ├─sensorfwd.service
+             │ └─3309 /usr/sbin/sensorfwd -c=/etc/sensorfw/primaryuse.conf --systemd --log-level=warning --no-magnetometer-bg-calibration
+             ├─usb-moded.service
+             │ └─3127 /usr/sbin/usb_moded --systemd --force-syslog
+             ├─systemd-ask-password-wall.service
+             │ └─5149 /usr/bin/systemd-tty-ask-password-agent --wall
+             ├─udisks2.service
+             │ └─12029 /usr/libexec/udisks2/udisksd
+             ├─dbus.service
+             │ └─2084 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation
+             ├─systemd-logind.service
+             │ └─3242 /usr/lib/systemd/systemd-logind
+             └─apkd.service
+               └─5139 /usr/sbin/apkd

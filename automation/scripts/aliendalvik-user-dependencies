@@ -1,0 +1,57 @@
+#!/bin/sh
+
+set -e
+
+USER_SERVICES="alienaudio.service alienkeyboard.service apkd-bridge.service apkd-bridge-user.service"
+
+active_wayland_user=
+
+for session in $(loginctl list-sessions --no-legend | awk '{ print $1 }'); do
+    if [ "$(loginctl show-session --value -p Type ${session})" != "wayland" ]; then
+        continue
+    fi
+
+    if [ "$(loginctl show-session --value -p Class ${session})" != "user" ]; then
+        continue
+    fi
+
+    if [ "$(loginctl show-session --value -p Remote ${session})" != "no" ]; then
+        continue
+    fi
+
+    if [ "$(loginctl show-session --value -p State ${session})" != "active" ]; then
+        continue
+    fi
+
+    active_wayland_user="$(loginctl show-session --value -p Name ${session})"
+    break
+done
+
+if [ "${active_wayland_user}" == "" ]; then
+    echo "No active wayland session found"
+    exit 1
+fi
+
+if [ "$1" == "start" ]; then
+    # User services behave buggy if they're kept running while container is down
+    # or started without hwservicemanager running in the container.
+    # So start the services right after hwservicemanager is started in the container.
+    #
+    # systemd should ensure that we're always started and stopped in sync with
+    # aliendalvik.service (because of BindsTo= dependency)
+    while [ "$(lxc-attach --name=aliendalvik --lxcpath=/tmp/appsupport -- /system/bin/getprop hwservicemanager.ready)" != "true" ]; do
+        echo "User services startup waiting for hwservicemanager in container"
+        sleep 1
+    done
+
+    for SERVICE in $USER_SERVICES; do
+        echo "Starting $SERVICE"
+        systemctl --user -M ${active_wayland_user}@ start ${SERVICE}
+    done
+elif [ "$1" == "stop" ]; then
+    for SERVICE in $USER_SERVICES; do
+        echo "Stopping $SERVICE"
+        systemctl --user -M ${active_wayland_user}@ stop ${SERVICE}
+    done
+fi
+

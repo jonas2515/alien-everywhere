@@ -1,0 +1,10 @@
+[Unit]
+Description=Aliendalvik audio bridge
+After=dbus.socket graphical-session.target
+Requires=dbus.socket graphical-session.target
+
+[Service]
+Restart=always
+RestartSec=5
+ExecStart=/usr/bin/alienaudioservice  -d /dev/binder -n /dev/vndbinder -w /dev/hwbinder -p pulseaudio
+#ExecStartPost=false

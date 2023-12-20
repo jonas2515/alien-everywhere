@@ -1,0 +1,5 @@
+[D-BUS Service]
+Name=net.connman
+Exec=/bin/false
+User=root
+SystemdService=apkd-bridge-user-connman-shim.service

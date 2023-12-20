@@ -1,0 +1,40 @@
+- enable systemd-resolved to actually answer queries on port 53 so that android can ask dns queries
+    # add this line to /etc/systemd/resolved.conf
+    DNSStubListenerExtra=127.0.0.1
+    # then restart systemd-resolved
+    sudo systemctl restart systemd-resolved
+
+- setup users/groups needed for aliendalvik
+    # create user+group that gets permissions for wayland-socket
+    useradd -u 501000 -U appsupport-wayland
+    groupmod -g 501000 appsupport-wayland
+
+    # create appsupport-root user with UID and GID 500000
+    useradd -u 500000 -U appsupport-root
+    groupmod -g 500000 appsupport-root
+
+    # own data directory
+    mkdir -p /opt/alien/data/
+    chown -R appsupport-root:appsupport-root /opt/alien/data/
+
+    # set subuids (no clue how correct this actually is, but works)
+    # might have to create those files
+    touch /etc/subuid
+    touch /etc/subgid
+    usermod --add-subuids 100000-100000 --add-subgids 100000-100000 root
+    usermod --add-subuids 100000-100000 --add-subgids 100000-100000 appsupport-root
+    usermod --add-subuids 500000-599999 --add-subgids 500000-599999 root
+    usermod --add-subuids 500000-599999 --add-subgids 500000-599999 appsupport-root
+    usermod --add-subuids 600001-700000 --add-subgids 600001-700000 root
+    usermod --add-subuids 600001-700000 --add-subgids 600001-700000 appsupport-root
+
+- symlink from /usr/lib to /usr/lib64 (alienaudioservice hardcodes some paths to lib64 :/)
+    ln -s /usr/lib /usr/lib64
+  
+- make sure pulseaudio is used instead of pipewire (pipewire for some reason stops working after a few minutes)
+    systemctl --user mask pipewire
+    systemctl --user disable --now pipewire.socket
+    systemctl --user enable --now pulseaudio
+
+- modify alienkeyboardservice binary to use the correct binder device
+    use a hex editor to replace the NULL-terminated string /dev/puddlejumper with /dev/binder

@@ -1,0 +1,11 @@
+[Unit]
+Description=Aliendalvik control bridge
+After=dbus.socket graphical-session.target
+Requires=dbus.socket graphical-session.target
+
+[Service]
+Type=dbus
+BusName=com.jolla.apkd
+Restart=always
+Environment="QTCONTACTS_MANAGER_OVERRIDE=folks"
+ExecStart=/usr/bin/apkd-bridge

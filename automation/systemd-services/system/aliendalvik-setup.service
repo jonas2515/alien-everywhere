@@ -1,0 +1,11 @@
+[Unit]
+Description=Aliendalvik setup
+After=multi-user.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/bin/aliendalvik-setup
+
+[Install]
+WantedBy=graphical.target

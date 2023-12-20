@@ -1,0 +1,11 @@
+[Unit]
+Description=Aliendalvik main bridge
+After=dbus.socket graphical-session.target
+Requires=dbus.socket graphical-session.target
+
+[Service]
+Restart=always
+ExecStart=/usr/bin/apkd-bridge-user
+
+# looks like it doesn't clean up after itself
+ExecStopPost=/usr/bin/rm -f /tmp/apkd/

@@ -1,0 +1,8 @@
+[Unit]
+Description=Aliendalvik config generator
+Requires=systemd-user-sessions.service aliendalvik-setup.service
+After=systemd-user-sessions.service aliendalvik-setup.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/aliendalvik-config

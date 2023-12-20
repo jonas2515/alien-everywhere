@@ -1,0 +1,62 @@
+#!/bin/sh
+
+set -e
+
+active_wayland_user=
+active_wayland_uid=
+
+while true; do
+    for session in $(loginctl list-sessions --no-legend | awk '{ print $1 }'); do
+        if [ "$(loginctl show-session --value -p Type ${session})" != "wayland" ]; then
+            continue
+        fi
+
+        if [ "$(loginctl show-session --value -p Class ${session})" != "user" ]; then
+            continue
+        fi
+
+        if [ "$(loginctl show-session --value -p Remote ${session})" != "no" ]; then
+            continue
+        fi
+
+        if [ "$(loginctl show-session --value -p State ${session})" != "active" ]; then
+            continue
+        fi
+
+        active_wayland_user="$(loginctl show-session --value -p Name ${session})"
+        active_wayland_uid="$(loginctl show-session --value -p User ${session})"
+        break
+    done
+
+    if [ "${active_wayland_user}" == "" ]; then
+        echo "No active wayland session found, waiting for one"
+        sleep 5
+        continue
+    fi
+
+    if [ ! -S "/run/user/${active_wayland_uid}/wayland-0" ]; then
+        echo "No wayland socket for user ${active_wayland_user} found, waiting a bit longer"
+        sleep 2
+        continue
+    fi
+
+    break
+done
+
+chown ${active_wayland_user}:appsupport-wayland /run/user/${active_wayland_uid}/wayland-0
+chmod 775 /run/user/${active_wayland_uid}/wayland-0
+
+rm -f /tmp/appsupport/aliendalvik/*
+mkdir -p /tmp/appsupport/aliendalvik/
+cp -r /opt/alien/config/* /tmp/appsupport/aliendalvik/
+
+sed -i "s/__UID__/${active_wayland_uid}/g" /tmp/appsupport/aliendalvik/10-bsp_config
+sed -i "s/__UID__/${active_wayland_uid}/g" /tmp/appsupport/aliendalvik/20-privilege_config
+
+mkdir -p /home/${active_wayland_user}/.local/share/appsupport/data/
+chown ${active_wayland_user}:${active_wayland_user} /home/${active_wayland_user}/.local/share/appsupport/
+
+data_dir="/home/${active_wayland_user}/.local/share/appsupport/data/"
+chown appsupport-root:appsupport-root ${data_dir}
+
+sed -i "s|__DATA_DIR__|${data_dir}|g" /tmp/appsupport/aliendalvik/10-bsp_config

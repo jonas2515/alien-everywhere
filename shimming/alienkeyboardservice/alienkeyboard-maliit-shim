@@ -1,0 +1,443 @@
+#!/usr/bin/python3
+
+import os
+import asyncio
+from pywayland.client import Display
+from pywayland.protocol.wayland import (
+    WlSeat,
+    WlShell,
+    WlShm,
+)
+from protocols.text_input_unstable_v3 import ZwpTextInputManagerV3
+
+import dbussy as dbus
+from dbussy import \
+    DBUS, \
+    Introspection
+import ravel
+
+socket_path = os.environ["XDG_RUNTIME_DIR"] + "/maliit-server"
+if not os.path.exists(socket_path):
+    os.makedirs(socket_path)
+
+my_socket_name = "unix:path=" + socket_path + "/dbus-socket"
+my_interface_name = "com.meego.inputmethod.uiserver1"
+client_interface_name = "com.meego.inputmethod.inputcontext1"
+
+idle_timeout = 15 # seconds, short value for testing
+
+ClientInterface = ravel.def_proxy_interface \
+  (
+    ravel.INTERFACE.CLIENT,
+    name = "ClientInterface",
+    introspected =
+        Introspection.Interface
+          (
+            name = client_interface_name,
+            methods =
+                [
+                    Introspection.Interface.Method
+                      (
+                        name = "setLanguage",
+                        args =
+                            [
+                                Introspection.Interface.Method.Arg
+                                  (
+                                    name = "lang",
+                                    type = dbus.BasicType(dbus.TYPE.STRING),
+                                    direction = Introspection.DIRECTION.IN
+                                  ),
+                            ],
+                      ),
+
+                    Introspection.Interface.Method
+                      (
+                        name = "setRedirectKeys",
+                        args =
+                            [
+                                Introspection.Interface.Method.Arg
+                                  (
+                                    name = "redi",
+                                    type = dbus.BasicType(dbus.TYPE.BOOLEAN),
+                                    direction = Introspection.DIRECTION.IN
+                                  ),
+                            ],
+                      ),
+
+                    Introspection.Interface.Method
+                      (
+                        name = "updateInputMethodArea",
+                        args =
+                            [
+                                Introspection.Interface.Method.Arg
+                                  (
+                                    name = "x",
+                                    type = dbus.BasicType(dbus.TYPE.INT32),
+                                    direction = Introspection.DIRECTION.IN
+                                  ),
+                                Introspection.Interface.Method.Arg
+                                  (
+                                    name = "y",
+                                    type = dbus.BasicType(dbus.TYPE.INT32),
+                                    direction = Introspection.DIRECTION.IN
+                                  ),
+                                Introspection.Interface.Method.Arg
+                                  (
+                                    name = "width",
+                                    type = dbus.BasicType(dbus.TYPE.INT32),
+                                    direction = Introspection.DIRECTION.IN
+                                  ),
+                                Introspection.Interface.Method.Arg
+                                  (
+                                    name = "height",
+                                    type = dbus.BasicType(dbus.TYPE.INT32),
+                                    direction = Introspection.DIRECTION.IN
+                                  ),
+                            ],
+                      ),
+
+                    Introspection.Interface.Method
+                      (
+                        name = "commitString",
+                        args =
+                            [
+                                Introspection.Interface.Method.Arg
+                                  (
+                                    name = "string",
+                                    type = dbus.BasicType(dbus.TYPE.STRING),
+                                    direction = Introspection.DIRECTION.IN
+                                  ),
+                                Introspection.Interface.Method.Arg
+                                  (
+                                    name = "replacementStart",
+                                    type = dbus.BasicType(dbus.TYPE.INT32),
+                                    direction = Introspection.DIRECTION.IN
+                                  ),
+                                Introspection.Interface.Method.Arg
+                                  (
+                                    name = "replacementLength",
+                                    type = dbus.BasicType(dbus.TYPE.INT32),
+                                    direction = Introspection.DIRECTION.IN
+                                  ),
+                                Introspection.Interface.Method.Arg
+                                  (
+                                    name = "cursorPos",
+                                    type = dbus.BasicType(dbus.TYPE.INT32),
+                                    direction = Introspection.DIRECTION.IN
+                                  ),
+                            ],
+                      ),
+                ],
+          ),
+    is_async = True
+  )
+
+useless_objects_bus_name = "org.maliit.server"
+useless_objects_iface_name = "org.maliit.Server.Address"
+
+@ravel.interface(ravel.INTERFACE.SERVER, name = useless_objects_iface_name)
+class UselessObjectServer :
+
+    __slots__ = ("bus",)
+
+    def __init__(self, bus) :
+        self.bus = bus
+    #end __init__
+
+    @ravel.propgetter \
+      (
+        name = "address",
+        type = dbus.BasicType(dbus.TYPE.STRING),
+        change_notification = dbus.Introspection.PROP_CHANGE_NOTIFICATION.NEW_VALUE,
+      )
+    def get_address(self) :
+        return "unix:path=" + socket_path + "/dbus-socket"
+    #end get_address
+
+    object_created = ravel.def_signal_stub \
+      (
+        name = "object_created",
+        in_signature = [],
+      )
+
+    object_deleted = ravel.def_signal_stub \
+      (
+        name = "object_deleted",
+        in_signature = [],
+      )
+
+#end UselessObjectServer
+
+background_tasks = set()
+def run_in_background(invocation):
+    task = asyncio.create_task(invocation)
+    background_tasks.add(task)
+    task.add_done_callback(background_tasks.discard)
+
+@ravel.interface(ravel.INTERFACE.SERVER, name = my_interface_name)
+class DirectConnectServer :
+    __slots__ = ("bus", "_last_request", "intf", "wayland")
+
+    def __init__(self, bus, wayland) :
+        self.bus = bus
+        self.wayland = wayland
+
+        self.intf = ClientInterface \
+          (
+            connection = self.bus.connection,
+            dest = "com.meego.inputmethod.inputcontext1", # no D-Bus daemon to care
+          )["/com/meego/inputmethod/inputcontext"]
+    #end __init__
+
+#    @ravel.method \
+#      (
+#        name = "reset",
+#        in_signature = "",
+#        out_signature = "",
+#        arg_keys = [],
+#      )
+#    def reset(self) :
+#        print("got reset() message")
+#    #end reset
+
+    @ravel.method \
+      (
+        name = "updateWidgetInformation",
+        in_signature = "a{sv}b",
+        out_signature = "",
+        arg_keys = ["vardict", "boolean"],
+      )
+    def updateWidgetInformation(self, vardict, boolean) :
+#        print("got updateWidgetInformation() message")
+#        print(vardict)
+        surrounding_text = vardict["surroundingText"][1]
+        cursor_position = vardict["cursorPosition"][1]
+
+        self.wayland["text_input"].set_surrounding_text(surrounding_text, cursor_position, cursor_position)
+        self.wayland["text_input"].commit()
+        self.wayland["display"].flush()
+    #end updateWidgetInformation
+
+#    @ravel.method \
+#      (
+#        name = "activateContext",
+#        in_signature = "",
+#        out_signature = "",
+#        arg_keys = [],
+#      )
+#    def activateContext(self) :
+#        print("got activateContext() message")
+#    #end activateContext
+
+    @ravel.method \
+      (
+        name = "appOrientationChanged",
+        in_signature = "i",
+        out_signature = "",
+        arg_keys = ["orientation"],
+      )
+    def appOrientationChanged(self, orientation) :
+        print("got appOrientationChanged() message")
+    #end appOrientationChanged
+
+    @ravel.method \
+      (
+        name = "showInputMethod",
+        in_signature = "",
+        out_signature = "",
+        arg_keys = [],
+      )
+    def showInputMethod(self) :
+#        print("got showInputMethod() message, setting input size")
+
+        self.wayland["text_input"].set_surrounding_text("magictext", 0, 0)
+        self.wayland["display"].flush()
+
+        self.wayland["text_input"].set_content_type(0, 0)
+        self.wayland["text_input"].enable()
+        self.wayland["text_input"].commit()
+        self.wayland["display"].flush()
+
+        run_in_background(self.intf.updateInputMethodArea(0, 1360, 1080, 670))
+    #end showInputMethod
+
+    @ravel.method \
+      (
+        name = "hideInputMethod",
+        in_signature = "",
+        out_signature = "",
+        arg_keys = [],
+      )
+    def hideInputMethod(self) :
+ #       print("got hideInputMethod() message, setting input size")
+
+        self.wayland["text_input"].disable()
+        self.wayland["text_input"].commit()
+        self.wayland["display"].flush()
+
+        run_in_background(self.intf.updateInputMethodArea(0, 0, 0, 0))
+    #end hideInputMethod
+
+#    @ravel.method \
+#      (
+#        name = "setGlobalCorrectionEnabled",
+#        in_signature = "b",
+#        out_signature = "",
+#        arg_keys = ["enabled"],
+#      )
+#    def setGlobalCorrectionEnabled(self, enabled) :
+#        print("got setGlobalCorrectionEnabled() message")
+#    #end setGlobalCorrectionEnabled
+
+#    @ravel.method \
+#      (
+#        name = "setDetectableAutoRepeat",
+#        in_signature = "b",
+#        out_signature = "",
+#        arg_keys = ["detectable"],
+#      )
+#    def setDetectableAutoRepeat(self, detectable) :
+#        print("got setDetectableAutoRepeat() message")
+#    #end setDetectableAutoRepeat
+
+#end DirectConnectServer
+
+def handle_enter(text_input, surface):
+#    print("got enter event for surface ")
+    return 0
+
+def handle_leave(text_input, surface):
+#    print("got leave event for surface ")
+    return 0
+
+def handle_preedit_string(text_input, string, cursor_begin, cursor_end):
+#    print("got preedit str ")
+    return 0
+
+def handle_commit_string(text_input, string):
+#    print("commit str: " + string + " sending to dbus")
+    wayland = text_input.user_data
+
+    run_in_background(wayland["dbus_server"].intf.commitString(string, 0, 0, 0))
+
+    return 0
+
+def handle_delete_surrounding_text(text_input, before_len, after_len):
+#    print("got delete surrounding text")
+    return 0
+
+def handle_done(text_input, serial):
+#    print("got a done event serial " + str(serial))
+    return 0
+
+def handle_seat_capabilities(wl_seat, capabilities):
+    wayland = wl_seat.user_data
+
+    if "text_input_manager" not in wayland:
+        raise Exception("text_input_manager protocol is not supported by compositor")
+
+    wayland["text_input"] = wayland["text_input_manager"].get_text_input(wl_seat)
+    wayland["text_input"].user_data = wayland
+    wayland["text_input"].dispatcher["enter"] = handle_enter
+    wayland["text_input"].dispatcher["leave"] = handle_leave
+#    wayland["text_input"].dispatcher["preedit_string"] = handle_preedit_string
+    wayland["text_input"].dispatcher["commit_string"] = handle_commit_string
+    wayland["text_input"].dispatcher["delete_surrounding_text"] = handle_delete_surrounding_text
+    wayland["text_input"].dispatcher["done"] = handle_done
+
+    wayland["display"].flush()
+
+    return 1
+                    
+def handle_registry_global(wl_registry, id_num, iface_name, version):
+    wayland = wl_registry.user_data
+    if iface_name == "wl_seat":
+        wayland["seat"] = wl_registry.bind(id_num, WlSeat, version)
+        wayland["seat"].user_data = wayland
+        wayland["seat"].dispatcher["capabilities"] = handle_seat_capabilities
+    elif iface_name == "zwp_text_input_manager_v3":
+        wayland["text_input_manager"] = wl_registry.bind(id_num, ZwpTextInputManagerV3, version)
+
+    wayland["display"].flush()
+
+    return 1
+            
+async def setup_dbus(wayland):
+    listen = ravel.Server(address = my_socket_name)
+    clients = {}
+
+    @ravel.signal \
+      (
+        in_signature = "",
+        bus_keyword = "conn"
+      )
+    def connection_terminated(conn) :
+        # handler for signal sent by libdbus when client disconnects.
+        print("connection from PID %s terminated\n" % conn.connection.unix_process_id)
+        del clients[id(conn)]
+    #end connection_terminated
+
+    while True :
+        conn = await listen.await_new_connection(timeout = idle_timeout / 3)
+        if conn != None :
+            print("new connection on DBus")
+
+            server = DirectConnectServer(conn, wayland)
+            wayland["dbus_server"] = server
+
+            conn.register \
+              (
+                path = "/com/meego/inputmethod/uiserver1",
+                fallback = True,
+                interface = server
+              )
+            conn.listen_signal \
+              (
+                path = "/",
+                fallback = True,
+                interface = DBUS.INTERFACE_LOCAL,
+                name = "Disconnected",
+                func = connection_terminated
+              )
+            clients[id(conn)] = conn
+
+            await server.intf.setLanguage('')
+        #end if
+    #end while
+
+async def run_dbus_loop(wayland):
+    server = await setup_dbus(wayland)
+   
+display = Display()    
+display.connect()    
+                                   
+loop = asyncio.new_event_loop()                                                                                                                    
+loop.add_reader(display.get_fd(), lambda: display.dispatch(block=True))                                                                            
+          
+wayland = {}
+
+wayland["display"] = display
+wayland["registry"] = wayland["display"].get_registry()
+wayland["registry"].user_data = wayland
+wayland["registry"].dispatcher["global"] = handle_registry_global
+
+wayland["display"].flush()
+
+bus = ravel.session_bus()
+bus.attach_asyncio(loop)
+
+bus.request_name \
+  (
+    bus_name = useless_objects_bus_name,
+    flags = DBUS.NAME_FLAG_DO_NOT_QUEUE
+  )
+bus.register \
+  (
+    path = "/org/maliit/server",
+    fallback = True,
+    interface = UselessObjectServer(bus)
+  )
+
+loop.create_task(run_dbus_loop(wayland))
+
+loop.run_forever()

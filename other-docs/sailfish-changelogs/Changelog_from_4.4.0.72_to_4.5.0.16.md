@@ -1,0 +1,7084 @@
+============================================
+SAILFISH OS
+Changelog from 4.4.0.72 to 4.5.0.16
+2023-01-30
+============================================
+
+# PACKAGES OBSOLETED
+
+### aliendalvik-system - 10.0.0.62.1.4-1.9.1.jolla 
+- obsoleted by appsupport-system-unprivileged - 11.0.0.60.28-1.11.1.jolla
+
+# PACKAGES REMOVED
+
+### aliendalvik-system
+- aliendalvik-system - 10.0.0.62.1.4-1.9.1.jolla
+### bluez
+- bluez-alsa - 4.101+git78-1.6.2.jolla, bluez - 4.101+git78-1.6.2.jolla, bluez-cups - 4.101+git78-1.6.2.jolla, bluez-tracing - 4.101+git78-1.6.2.jolla, bluez-libs - 4.101+git78-1.6.2.jolla, bluez-configs-mer - 4.101+git78-1.6.2.jolla, bluez-libs-devel - 4.101+git78-1.6.2.jolla, bluez-test - 4.101+git78-1.6.2.jolla, bluez-doc - 4.101+git78-1.6.2.jolla
+### bluez-hcidump
+- bluez-hcidump - 2.5-1.6.2.jolla
+### broadcom-bluetooth
+- broadcom-bluetooth - 1.0.4-1.2.2.jolla
+### kf5bluezqt-bluez4
+- kf5bluezqt-bluez4-declarative - 5.24.0+git18-1.5.2.jolla, kf5bluezqt-bluez4 - 5.24.0+git18-1.5.2.jolla, kf5bluezqt-bluez4-devel - 5.24.0+git18-1.5.2.jolla
+### libbluez-qt5
+- libbluez-qt5-devel - 0.1.27-1.6.2.jolla, libbluez-qt5-tests - 0.1.27-1.6.2.jolla, libbluez-qt5 - 0.1.27-1.6.2.jolla
+### libcgroup
+- libcgroup - 0.41+git2-1.5.2.jolla, libcgroup-devel - 0.41+git2-1.5.2.jolla
+### libenca
+- libenca - 1.14-1.6.2.jolla, libenca-libenca0 - 1.14-1.6.2.jolla, libenca-devel - 1.14-1.6.2.jolla
+### libquvi
+- libquvi - 0.4.1-1.6.2.jolla, libquvi-devel - 0.4.1-1.6.2.jolla
+### libquvi-scripts
+- libquvi-scripts - 0.4.15-1.6.2.jolla, libquvi-scripts-devel - 0.4.15-1.6.2.jolla
+### libvo-aacenc
+- libvo-aacenc - 0.1.3+git1-1.6.2.jolla, libvo-aacenc-devel - 0.1.3+git1-1.6.2.jolla
+### nemo-qml-plugin-accounts-qt5
+- nemo-qml-plugin-accounts-qt5 - 0.0.7-1.6.2.jolla, nemo-qml-plugin-accounts-qt5-tests - 0.0.7-1.6.2.jolla
+### nemo-qml-plugin-thumbnailer-qt5-libav
+- nemo-qml-plugin-thumbnailer-qt5-libav - 0.0.10-1.2.2.jolla
+### obexd
+- obexd-server - 0.48+git17-1.6.13.jolla, obexd-devel - 0.48+git17-1.6.13.jolla, obexd-server - 0.48+git17-1.6.5.jolla, obexd - 0.48+git17-1.6.15.jolla, obexd - 0.48+git17-1.6.5.jolla, obexd-server - 0.48+git17-1.6.15.jolla, obexd-devel - 0.48+git17-1.6.5.jolla, obexd - 0.48+git17-1.6.13.jolla, obexd-devel - 0.48+git17-1.6.15.jolla
+### pulseaudio-modules-bluez4
+- pulseaudio-modules-bluez4 - 1.1-1.5.2.jolla
+### qt5-qtconnectivity
+- qt5-qtconnectivity-qtsdpscanner - 5.6.2+git3-1.6.1.jolla, qt5-qtconnectivity-qtbluetooth-devel - 5.6.2+git3-1.6.1.jolla, qt5-qtconnectivity-qtbluetooth - 5.6.2+git3-1.6.1.jolla, qt5-qtconnectivity-qtnfc - 5.6.2+git3-1.6.1.jolla, qt5-qtconnectivity-qtnfc-devel - 5.6.2+git3-1.6.1.jolla
+### repomd-pattern-builder
+- repomd-pattern-builder-tests - 0.3.4-1.6.2.jolla, repomd-pattern-builder - 0.3.4-1.6.2.jolla
+### sailfish-content-configuration-jolla
+- sailfish-content-configuration-jolla - 0.1.1-1.2.2.jolla
+### sailfish-content-graphics-jolla
+- sailfish-content-graphics-jolla-z2.0 - 0.0.8-1.2.2.jolla, sailfish-content-graphics-jolla-z1.5-large - 0.0.8-1.2.2.jolla, sailfish-content-graphics-jolla-z1.25 - 0.0.8-1.2.2.jolla, sailfish-content-graphics-jolla - 0.0.8-1.2.2.jolla, sailfish-content-graphics-jolla-z1.75 - 0.0.8-1.2.2.jolla, sailfish-content-graphics-jolla-z1.5 - 0.0.8-1.2.2.jolla, sailfish-content-graphics-jolla-z1.0 - 0.0.8-1.2.2.jolla
+### sfmf
+- sfmf-deploy - 0.0.9-1.4.5.jolla, sfmf-tests - 0.0.9-1.4.15.jolla, sfmf-deploy - 0.0.9-1.4.15.jolla, sfmf-tests - 0.0.9-1.4.5.jolla, sfmf-tests - 0.0.9-1.4.18.jolla, sfmf-pack - 0.0.9-1.4.18.jolla, sfmf - 0.0.9-1.4.18.jolla, sfmf-pack - 0.0.9-1.4.5.jolla, sfmf-dump - 0.0.9-1.4.15.jolla, sfmf-deploy - 0.0.9-1.4.18.jolla, sfmf - 0.0.9-1.4.5.jolla, sfmf-pack - 0.0.9-1.4.15.jolla, sfmf - 0.0.9-1.4.15.jolla, sfmf-dump - 0.0.9-1.4.18.jolla, sfmf-dump - 0.0.9-1.4.5.jolla
+
+# PACKAGES MODIFIED
+
+### OpenAL
+- Updated : 1.21.1+git1-1.5.3.jolla -- 1.22.2+git1-1.5.2.jolla
+- [git] Move submodule repos to github. 
+- [libopenal] Update to 1.22.2. 
+### PackageKit
+- Updated : 1.1.13+git14-1.5.2.jolla -- 1.2.5+git2-1.5.3.jolla
+- [PackageKit] Update to 1.2.5. 
+### PackageKit-Qt5
+- Updated : 0.9.6+git-1.5.2.jolla -- 1.0.2+git1-1.5.3.jolla
+- [PackageKitQt] Update to 1.0.2. 
+### SDL2
+- Updated : 2.0.18+git1-1.8.2.jolla -- 2.24.0+git1-1.8.3.jolla
+- [sdl] Update to version 2.24.0. 
+### SDL2_image
+- Updated : 2.0.5+git1-1.6.2.jolla -- 2.6.2+git1-1.7.2.jolla
+- [libsdl-image] Update to version 2.6.2. 
+- [libsdl-image] Include license as %license. 
+### SDL2_mixer
+- Updated : 2.0.4+git2-1.6.2.jolla -- 2.6.2+git1-1.7.2.jolla
+- [libsdl-mixer] Update to version 2.6.2. 
+- [libsdl-mixer] Adjust license file also on -mp3.spec. 
+- [libsdl-mixer] Have license file as %license. 
+### SDL2_net
+- Updated : 2.0.1+git2-1.6.2.jolla -- 2.2.0+git1-1.7.2.jolla
+- [libsdl-net] Update to version 2.2.0. 
+- [libsdl-net] Have license file as %license. 
+### SDL2_sound
+- Updated : 1.0.1-1.6.3.jolla -- 2.0.1+git1-1.6.2.jolla
+- [libsdl-sound] Update to version 2.0.1. 
+### SDL2_ttf
+- Updated : 2.0.15+git2-1.6.2.jolla -- 2.20.1+git1-1.7.2.jolla
+- [libsdl-ttf] Update to version 2.20.1. 
+- [libsdl-ttf] Have license file as %license. 
+### acl
+- Updated : 2.2.53-1.7.12.jolla -- 2.3.1+git2-1.6.18.jolla
+- [packaging] Fix submodule URL. 
+- [acl] Update to 2.3.1. 
+### alien-system-tests
+- Updated : 1.0.11-1.4.2.jolla -- 1.0.15-1.4.2.jolla
+- [system-tests] Update wired routing tests. 
+- [alien-system-tests] Add wired routing test. 
+- [aas] add host tests which test memory usage. 
+- [aas] kill com.android.gallery3d after test execution. 
+- [aas] Add system tests for audio change listener. 
+### alienaudioservice
+- Updated : 0.18.0-1.4.3.jolla -- 1.11.0-1.7.1.jolla
+- [service] Use correct hook for closing output. 
+- [service] Add different exit values for different errors.
+- [service] Add option to log to file. 
+- [tests] Run apkd-install as privileged user. 
+- [service] Handle AAUDIO_HOOK_AUDIO_CONTROL_IS_SPEAKER_ON hook. 
+- [service] Handle AAUDIO_HOOK_AUDIO_CONTROL_SET_SPEAKER_ON hook. 
+- [service] Handle onSpeakerphoneStateChanged from listener. 
+- [service] Handle onPlayEffect from listener. 
+- [service] Implement vibrator hw service. 
+- [tests] Fix audio playback tests. 
+- [service] Follow ringtone io handle properly. 
+- [service] Invoke set parameters hook with proplist.
+- [audio] Add wrappers for audio function calls.
+- [service] Handle AlienAudioControlService.getActiveFocusContentType. 
+- [service] Handle AlienAudioControlService.getActiveTopContentType. 
+- [service] Handle AlienAudioControlService.onContentTypeChanged. 
+- [service] Handle AlienAudioControlService.setDefaultContentType. 
+- [service] Handle AlienAudioControlService.updateContentDescriptors. 
+- [service] Hook AlienAudioControlService connected state.
+- [service] Load static plugin dependencies.
+- [service] Use wrappers for hook calls.
+- [service] Set parameters contains io_handle. 
+- [service] Add handling for connected accessory. 
+- [service] template service file. 
+- [service] Add mechanism for providing properties to plugins. 
+- [alienaudioservice] Add generic variant of systemd service file. 
+- [debug] Remove debug plugin. 
+- [alienaudioservice] Remove all library related. 
+- [debug] Make debug plugin build against current library. 
+- [packaging] Build requires libalienaudioservice 1.0.0. 
+- [packaging] Package debug plugin.
+- [packaging] Remove libalienaudioservice from packaging. 
+- [service] Plugin argument can be passed multiple times now.
+- [service] Print lib version along with service version.
+- [service] Use changed audio functions. 
+- [audio] Block during read for expected amount of time. 
+- [audio] Close input stream in standby. 
+- [audio] Don't close input streams when audio mode changes. 
+- [audio] Start reading only after initial data is available. 
+- [audio] Don't segfault if PulseAudio disconnects while recording. 
+- [service] Update ringtone mode based on stream states. 
+- [audio] Limit record fragment size. 
+- [audio] Add dummy implementation if libpulse doesn't exist. 
+- [service] Add audio control mode changed listener code. 
+- [service] Communicate mode to control service. 
+### alienaudioservice-plugin-sailfish
+- Updated : 0.6.0-1.3.2.jolla -- 1.4.0-1.6.1.jolla
+- [sailfish] Reconnect record streams for voip calls. 
+- [sailfish] Reconnect streams immediately. 
+- [sailfish] Only log real errors with system_server pid detection. 
+- [sailfish] Always use voip stream type when in communication. 
+- [sailfish] Always update route during startup. 
+- [sailfish] Disable audio streams for the duration of native call. 
+- [sailfish] Improve wired accessory routing. 
+- [sailfish] Play UI feedback sounds through ngfd. 
+- [sailfish] Implement vibrator handling with NGFD. 
+- [sailfish] Enable silencing ringtone. 
+- [sailfish] Grant or release resources only on first and last stream. 
+- [sailfish] Set properties hook provides parsed proplist. 
+- [sailfish] Stream types are enumerated values now. 
+- [sailfish] Use hook wrappers for calls. 
+- [sailfish] Evaluate routing changes for voip stream only. 
+- [sailfish] Add handling for connected accessory. 
+- [sailfish] Type of stream is passed in call data. 
+- [sailfish] Use aaudio_proplist. 
+- [sailfish] Update to work with current libalienaudioservice. 
+### aliendalvik
+- Updated : 1.2.0-1.3.2.jolla -- 1.5.0-1.4.2.jolla
+- [aliendalvik] Change aliendalvik-system to appsupport-system. 
+- [aliendalvik] Require apkd-plugin-geo-qtpositioning. 
+- [aliendalvik] Require new alienaudioservice and pulseaudio plugin. 
+### aliendalvik-configs
+- Updated : 10.0.59.1-1.5.2.jolla -- 11.0.26-1.17.1.jolla
+- Binaries added : aliendalvik-configs-tests - 11.0.26-1.17.1.jolla, appsupport-configs-user - 11.0.26-1.17.1.jolla, aliendalvik-configs-devel - 11.0.26-1.17.1.jolla
+- [appsupport] Add more syscalls to seccomp blocked list. 
+- [appsupport] set POSIX ACL on emulated storage in migration script. 
+- [appsupport] More compatibility with newer lxc. 
+- [appsupport] fix compatibility with newer lxc. 
+- [appsupport] set lxc tmpfs devsize. 
+- [appsupport] disable perfetto by default from hybris configs. 
+- [appsupport] Add CrashLoggerEnabled config. 
+- [appsupport] Don't run prepare for running container. 
+- [appsupport-attach] Use full path for appsupport-config. 
+- [appsupport] Fix check for device nodes in container node script. 
+- [appsupport] Fix container node script when video devices don't exist. 
+- [appsupport] Fix hardware codecs for older devices. 
+- [hybris] Old stop supplementary services script is not used anywhere. 
+- [hybris] Remove obsolete script from packaging.
+- [appsupport] fix posttrans check directory. 
+- [appsupport] enable appsupport on posttrans script. 
+- [appsupport] separated vendor for multiple instance. 
+- [appsupport] Remove bashisms a bit more. 
+- [appsupport] Remove bashism from scripts, 
+- [scripts] Use systemctl start for supplementary services. 
+- [appsupport] Fix script path in migration script.
+- [configs] Fix a few forgotten config paths. 
+- [appsupport] Add wrappers for lxc commands. 
+- [config-generator] Install to libexec dir.
+- [defaults] Use correct path for property file.
+- [generic] Scripts are in libexec now.
+- [hybris] Scripts are in libexec now.
+- [packaging] Install everything to libexec.
+- [scripts] Move all scripts to libexec dir.
+- [scripts] use new appsupport-config and attach etc. 
+- [tests] Generator is in libexec now.
+- [appsupport] improve storage permissions migration script. 
+- [appsupport] fix ownership of emulated storage app folders. 
+- [appsupport] Add possibility to run device config in startup. 
+- [appsupport] Enable OnScreenKeyboard for native keyboard. 
+- [appsupport] Proxy allocator@4.0 on hybris devices. 
+- [generic] Fix starting and stopping more. 
+- [generic] Fix startup. 
+- [rpm] Do not start appsupport on post script. 
+- [appsupport] Prevent out of order rendering. 
+- [appsupport] fix wait-for-services-if-needed and lxc-info. 
+- [appsupport] Remove unneeded mount entries. 
+- [appsupport] add generate-extra-config file when necessary. 
+- [hybris] Start supplementary services once service manager is up. 
+- [hybris] Include appsupport control script in packaging.
+- [hybris] Stop supplementary services when appsupport stops. 
+- [appsupport] Define output file in prepare script only.
+- [appsupport] Simplify config aggregation a bit. 
+- [hybris] Don't run preinit scripts in service.
+- [hybris] Remove lxc config script from packaging.
+- [appsupport] Fix stopping AppSupport. 
+- [appsupport] disable nft on lxc-net config. 
+- [appsupport] drop post-startup content but keep file. 
+- [appsupport] move lxc configs to tmpfs. 
+- [appsupport] remove unneeded package dependency. 
+- [appsupport] rename user package. 
+- [appsupport] Support rootless containers. 
+- [appsupport] unmount system.img if it was already mounted. 
+- [hybris] Add users to appsupport-media_rw group. 
+- [appsupport] Drop /sys/kernel/debug mount, 
+- [appsuppor] Implement a workaround for the display size. 
+- [appsupport] wait for extra_config on start. 
+- [alien] Disable notification action replies for SailfishOS. 
+- [config] Allow granting privileges on certain configurations. 
+- [configs] Move more lxc props to config. 
+- [appsupport] Fix the generic driver mount-hooks. 
+- [appsupport] drop appinstaller call from post startup. 
+- [appsupport] make it possible to use the system bus in apkd. 
+- [generic] Generalize systemctl path. 
+- [appsupport] Start appsupport-subuids on installation. 
+- [appsupport] Add permitted groups and users for app management. 
+- [appsupport] Remove obsolete config files. 
+- [appsupport] Make /sys/kernel/debug mount optional. 
+- [appsupport] Pass Launchers/IconSize property into Android. 
+- [hybris] Don't use special bash variable UID. 
+- [appsupport] Don't change aas-staging permissions. 
+- [hybris] Make sure aas-staging exists and has proper permissions. 
+- [appsupport] Don't shift user data if directories don't exist. 
+- [appsupport] Fix video permissions. 
+- [appsupport] More robust shift uids operation. 
+- [appsupport] Only create subuids for device users. 
+- [appsupport] Make sure selinux mount entry doesn't fail if it doesn't exist. 
+- [appsupport] Create subuids/subgids required for the user. 
+- [appsupport] Fix codecs in unprivileged container. 
+- [appsupport] Fix another issue with the selinux mount. 
+- [appsupport] fix failing test cases. 
+- [appsupport] drop consent workaround. 
+- [appsupport] Make sure ANDROID_DATA_ROOT is created as the correct user. 
+- [appsupport] fix default.ro location. 
+- [appsupport] Fix DEPS variable in configs. 
+- [appsupport] Add missing property-pre-hook. 
+- [appsupport] Fix mount hooks after meson change. 
+- [appsupport] Move unit test target. 
+- [appsupport] Drop meson requirement. 
+- [appsupport] Add no_new_privs flag. 
+- [appsupport] add support for unprivileged containers. 
+- [appsupport] Limit user ids that get mapped. 
+- [appsupport] Migrate data if needed when starting container using a custom tool. 
+- [appsupport] Allow disabling dmabuf via an environment variable in the generic configs. 
+- [appsupport] Fix generic graphics configuration. 
+- [appsupport] Move size configs to correct section. 
+- [appsupport] make generic scripts shell agnostic. 
+- [alien-aliendalvik-configs] cleanup generic configs. 
+- [appsupport] increase the size of the /dev tmpfs to 2M. 
+- [appsupport] Add PrivilegedHostUser config to protect dangerous binder calls. 
+- [appsupport] Fix config tests. 
+- [alien] option to disable soundtrigger, properties for camera. 
+- [appsupport] Fix config tests. 
+- [alien] secure flag and mount points for drtm@1.3 compatibility. 
+- [appsupport] add dns server configuration. 
+- [config] Move headers to appsupport folder. 
+- [config] Return success on mount script. 
+- [config] Add Apkd defaults. 
+- [alien] fix foldername and instance variable. 
+- [appsupport] Fix startup due to extra mountpoints. 
+- [appsupport] move some files to configs to make it easier to configure the vendor folder. 
+- [configparser] Protected methods for subclasses. 
+- [alien] Add config parser library. 
+- [configparser] Add custom ini parser. 
+- [configs] Split lists to multiple lines. 
+- [appsupport] move alien.prop to system. 
+- [appsupport] detect graphics blobs dynamically. 
+- [appsupport] update copyright headers. 
+- [alien] Add x86 cross-file.txt. 
+- [alien] call appinstaller on post startup. 
+- [tests] Fix tests on QA. 
+- [tests] Fix unit tests on OBS. 
+- [alien-aliendalvik-configs] Add gbinder.conf.
+- [alien] New config generator. 
+- [alien] Use lxc-net.service to start/stop lxc-net. 
+- [alien] template aliendalvik service for multicontainer. 
+- [alien-aliendalvik-configs] Add generic target. 
+- [alien] split LXC network configuration to a separate file. 
+- [alien] sudo is not available in every system, 
+- [alien] pass DBUS_SESSION_BUS_ADDRESS to apkd-install-preload, 
+- [alien] Enable per process memory reclaim. 
+- [alien] check variant using variant_info on aliendalvik service. 
+- [alien] unmount rootfs/vendor when container is stopped. 
+- [alien] mount rootfs on preinit and separate config. 
+- [alien] make it possible to configure the vintf vendor manifest. 
+- [alien] fix shell script when PATH is not set, 
+- [alien] disable bluetooth packages, they are only included to make stores happy. 
+- [alien] use triple buffering in surfaceflinger. 
+- [alien] disable app transition animations by default. 
+- [alien] make it possible to configure user and group for pid file, 
+- [alien] make it possible to configure wayland socket path, 
+- [alien] set user_setup_complete in post startup. 
+- [alien] check variant before starting aliendalvik. 
+- [alien] disable dmabuf for x86 platform, 
+- [alien] mount vendor as read-only, move mountpoint creation to install time. 
+### alienkeyboardservice
+- Updated : 0.11-1.2.3.jolla -- 0.12-1.2.2.jolla
+- [alienkeyboardservice] Fix git submodule url. 
+### alsa-lib
+- Updated : 1.2.3.2+git1-1.6.2.jolla -- 1.2.8+git1-1.6.1.jolla
+- [alsa-lib] Update to version 1.2.8. 
+- [git] Move submodule repos to github. 
+### alsa-plugins
+- Updated : 1.2.2+git1-1.6.1.jolla -- 1.2.7.1+git1-1.6.1.jolla
+- [alsa-plugins] Update to version 1.2.7.1. 
+- [git] Move submodule repos to github. 
+### alsa-utils
+- Updated : 1.2.3+git4-1.7.2.jolla -- 1.2.8+git1-1.7.1.jolla
+- [alsa-utils] Update to version 1.2.8. 
+### amber-mpris
+- Updated : 1.1.1.3-1.5.3.jolla -- 1.1.10.1-1.6.1.jolla
+- [mpris] Update plugins.qmltypes. 
+- [mpris] Add logging categories
+- [mpris] Fix invalid initialization in MprisPlayerInterface
+- [mpris] Register object path before service
+- [mpris] Validate trackId as object path. 
+- [mpris] Improve metadata extra field support. 
+- [mpris] Add missing copyright headers. 
+- [mpris] Make it possible to configure build without QML. 
+- [mpris] Adjust C++ API. 
+- [mpris] Allow multiple players in a process. 
+- [mpris] Don't append instace identifier in C++ API. 
+- [mpris] Move positionRequested signal to MprisPlayer. 
+- [amber-mpris] Include metadata headers in devel packages. 
+- [amber-mpris] Remove the deprecated loop enums. 
+- [mpris] Properly clean up when playing client quits. 
+- [amber-mpris] Rename loop enums with more context. 
+### amber-web-authorization
+- Updated : 1.0.2-1.3.3.jolla -- 1.0.6-1.7.1.jolla
+- [authorization] Add plugins.qmltypes. 
+- [authorization] Clarify pkgconfig requirements more. 
+- [authorization] Clarify pkgconfig requirements. 
+- [authorization] Fix minor errors in the doc markup
+- [authorization] Update OAuth1.0a QML example code. 
+### amber-web-authorization-l10n
+- Updated : 1.7.2-1.6.2.jolla -- 1.10.1-1.7.1.jolla
+- Binaries added : amber-web-authorization-l10n-uk - 1.10.1-1.7.1.jolla
+- [l10n] Branched amber-web-authorization from version 1.10
+- [l10n] Commit from Jolla localisation:  1 of 1 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  1 of 1 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  1 of 1 strings translated (0 need review).
+### ambienced
+- Updated : 0.29.29-1.6.3.jolla -- 0.29.31-1.8.1.jolla
+- [ambienced] Avoid deleting ambience tone settings on inaccessible files. 
+- [ambienced] Refactor change signaling to saner system. 
+- [ambienced] Remove rest of tohd related functionality. 
+### apkd
+- Updated : 0.8.21-1.4.2.jolla -- 0.8.23-1.6.1.jolla
+- [alien] Remove mime handler. 
+- [alien] Exempt apk mime handler from sandboxing. 
+### apkd-l10n
+- Updated : 1.145.3-1.7.2.jolla -- 1.149.2-1.8.1.jolla
+- Binaries added : apkd-l10n-uk - 1.149.2-1.8.1.jolla
+- [l10n] Commit from Jolla localisation:  38 of 38 strings translated (0 need review).
+- [l10n] Branched apkd from version 1.149
+- [l10n] Commit from Jolla localisation:  38 of 38 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  38 of 38 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  38 of 38 strings translated (0 need review).
+### apkd8
+- Updated : 10.0.0.47.1-1.8.2.jolla -- 11.0.0.15-1.18.1.jolla
+- [apkd-bridge] Fix silent install operations. 
+- [apkd-bridge] Always send signals for install and uninstall ops. 
+- [appsupport] Emit MPRIS seeked when position changes, not when requested. 
+- [apkd] Correct App Support to AppSupport. 
+- [appsupport] Fix disabling app services. 
+- [appsupport] Fix build warnings. 
+- [appsupport] Migrate to current Nemo imports. 
+- [appsupport] Support SetPosition in mpris API. 
+- [appsupport] Report correct seeked position. 
+- [appsupport] Add track id to meta data. 
+- [appsupport] Map all Android playstates to MPRIS states. 
+- [appsupport] Fix memory leaks in Parcel. 
+- [appsupport] Switch AlienBinderTransaction to the stack. 
+- [apkd] Fix builds. 
+- [apkd] Make D-Bus policies configurable. 
+- [apkd-bridge-user] Allow setting orientation lock also without sensors. 
+- [appsupport] Add contentType field to MPRIS metadata. 
+- [apkd] Use unique paths for album art. 
+- [appsupport] Fix null string8 reading and writing from Parcels. 
+- [apkd-bridge] More details for install and uninstall status. 
+- [apkd-bridge-user] follow wificond service rename on Android 11. 
+- [appsupport] Split MediaBrowsing into a separate service. 
+- [appsupport] Fix sharing handling. 
+- [alien] Add config for notification action input. 
+- [alien] Switch cover art handling to use filedescriptors. 
+- [apkd] make it possible to use the system bus. 
+- [appsupport] Fix Intent parceling on Android 11. 
+- [alien] Fix install permission checking. 
+- [appsupport] Switch installation user and groups to config. 
+- [appsupport] Read aas-config environment file for apkd-bridge. 
+- [alien] Drop dependencies on QtGUI from daemons (QImage and QColor). 
+- [appsupport] Include actions in notification change detection. 
+- [apkd] fix allowed gids for app installation. 
+- [apkd] fix dbus signals to not use a destination. 
+- [apkd] Fix installation dbus response. 
+- [apkd] Run install tests as privileged. 
+- [apkd] Add some missing includes. 
+- [apkd-bridge] Fix build with glib older than 2.58. 
+- [build] Update appsupport-config-parser lib location. 
+- [install] Fix rpm apk installation. 
+- [apkd-bridge-user] Use servicename for service registratioins also for hw services. 
+- [apkd-bridge] proxy startActivity and window check via alien services. 
+- [apkd-bridge] Move appClosed signal to session bus.
+- [apkd-bridge] Send completed signals for clearing app user data. 
+- [alien] Remove "static" specifier from MPRIS identity.
+- [alien] Remove "static" specifier from MPRIS identity. 
+- [alien] Fix empty package sent from apkd to android container. 
+- [apkd-bridge] properly finish removeFile DBus call. 
+- [appsupport] Clean out unneeded dbus control interface.
+- [alien] Switch app data clearing to alienservice. 
+- [apkd-bridge-user] Remove vibrator service. 
+- [alien] Use package name for service instead of app name. 
+- [alien] Add setLocale DBus call to change Android language/country. 
+- [apkd] fix RSSI signal strength in poll. 
+- [apkd] ApkdPlugin for wrapping plugins. 
+- [apkd] ApkdPluginManager for easy loading of plugins. 
+- [apkd-bridge-user] Determine plugin path at compile time.
+- [apkd-bridge-user] Replace QtPositioning implementation with plugin use. 
+- [apkd-bridge-user] Use ApkdPluginManager to load plugins. 
+- [apkd] Set DNS servers from configuration.
+- [apkd] Fix local build for config parser. 
+- [apkd] Don't allow app support to disconnect from wifi by itself. 
+- [apkd] Use new config parser. 
+- [alien] Fix getAndroidAppDataUsage to query StorageStatsManager. 
+- [alien] Workaround for builds with 32bit qemu. 
+- [alien] Restore _exists feedback to chat and email. Drop 'reminder' category. 
+- [alien] Add tests for apkd-bridge calls. 
+- [alien] Launcher binary should return 0 on success. 
+- [alien] Move from QDbus to GDbus. 
+- [alien] Rename signals and slots to Qt style.
+- [apkd] Add missing license headers. 
+- [alien] Fix issues with multiple MPRIS player support. 
+- [alien] Make dbus call for getting installed apps blocking. 
+- [alien] Publish multiple MPRIS services. 
+- [apkd] Rewrite timezone monitoring to use inotify. 
+- [apkd] Improve binderfs-setup.sh. 
+- [apkd] Make apkd-install posix compatible. 
+- [alien] Generic binder proxy. 
+- [alien] Merge binder device into apkdconfig. 
+- [alien] More migration of ifdefs and constants to config. 
+- [alien] Remove ifdefs for the two launcher types. 
+- [alien] Remove partnerspace and priv-app support. 
+- [alien] Include main apkd for generic native builds. 
+- [apkd] read variables from environment if available and template files. 
+- [alien] Remove ACLInstallCheck and SSU dependency. 
+- [alien] Separate native_build. 
+- [apkd] Fix binderfs detection. 
+- [alien] Remove QtSystemInfo use. 
+- [alien] Special handling for text share maps. 
+- [apkd] report ethernet connection same way as wifi. 
+- [apkd] Add dbus interface for listing apps and signals for install/uninstall. 
+- [apkd] Implement timer for removing notifications. 
+- [alien] Cleanup unused DBus signals. 
+- [alien] Fix DBus activation. 
+- [alien] Remove unused lipstick dependency. 
+- [apkd] Check if binderfs is supported. 
+- [apkd] mount binderfs and add devs on start, check variant. 
+- [alien] Remove binderfs call from apkd-bridge. 
+- [alien] Move most apkd operations and dbus methods to apkd-bridge. 
+- [apkd] set unit start rate limit on service files. 
+- [alien] Move album cover to tmpfs, and make the filename unique. 
+- [alien] Switch to Amber-MPRIS API. 
+- [alien] Convert requested SeekTime to MilliSeconds from MicroSeconds
+- [alien] Implementation for setting "Identity" on MPRIS root interface. 
+- [alien] Parse AppName for the current MediaSession and set it as an Identity
+- [apkd] fix gbinder reference handing in callback clients. 
+- [apkd] fix wifi interface names. 
+- [apkd] Add Binder Class to connect with Alien Audio Control Service. 
+- [alien] Cleanup notification comparison and properly hide unchanged. 
+- [alien] Resident and non-removable notifications. 
+- [apkd] Send large icon notification image path. 
+- [alien] update apkd_desktop_path and info.yaml. 
+- [apkd] Drop sdk version 28 code. 
+- [apkd] Fix Attempt to read from protected data in Parcel error. 
+- [apkd] Use aidl vector for getScanResults. 
+- [alien] Handle notification action input. 
+### apkd8-l10n
+- Updated : 1.59-1.5.2.jolla -- 1.80.3-1.9.1.jolla
+- Binaries added : apkd8-l10n-uk - 1.80.3-1.9.1.jolla, apkd8-l10n-lv - 1.80.3-1.9.1.jolla
+- [l10n] Commit from Jolla localisation:  66 of 66 strings translated (0 need review).
+- [l10n] Branched apkd8 from version 1.80
+- [l10n] Commit from Jolla localisation:  66 of 66 strings translated (0 need review).
+- [tpl] translation templates update for 10.0.0.114
+- [l10n] Commit from Jolla localisation:  66 of 66 strings translated (0 need review).
+- [tpl] translation templates update for 10.0.0.110
+- [l10n] Commit from Jolla localisation:  66 of 66 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [tpl] translation templates update for 10.0.0.105
+- [tpl] translation templates update for 10.0.0.107
+- [l10n] Commit from Jolla localisation:  21 of 66 strings translated (0 need review).
+- [tpl] translation templates update for 10.0.0.100
+- [tpl] translation templates update for 10.0.0.104
+- [tpl] translation templates update for 10.0.0.75
+- [tpl] translation templates update for 10.0.0.76
+- [tpl] translation templates update for 10.0.0.77
+- [tpl] translation templates update for 10.0.0.80
+- [tpl] translation templates update for 10.0.0.87
+- [tpl] translation templates update for 10.0.0.90
+- [tpl] translation templates update for 10.0.0.91
+- [tpl] translation templates update for 10.0.0.94
+- [tpl] translation templates update for 10.0.0.95
+- [tpl] translation templates update for 10.0.0.97
+- [tpl] translation templates update for 10.0.0.98
+- [l10n] Commit from Jolla localisation:  65 of 65 strings translated (0 need review).
+- [tpl] translation templates update for 10.0.0.70
+- [tpl] translation templates update for 10.0.0.72
+- [l10n] Commit from Jolla localisation:  65 of 65 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [tpl] translation templates update for 10.0.0.64
+- [tpl] translation templates update for 10.0.0.66
+- [l10n] Commit from Jolla localisation:  65 of 65 strings translated (0 need review).
+- [tpl] translation templates update for 10.0.0.53
+- [tpl] translation templates update for 10.0.0.58
+- [tpl] translation templates update for 10.0.0.62
+- [l10n] Commit from Jolla localisation:  59 of 59 strings translated (0 need review).
+### archivemount
+- Updated : 0.8.7+git2-1.6.2.jolla -- 0.9.1+git2-1.6.2.jolla
+- [packaging] Fix submodule URL. 
+- [archivemount] Update to 0.9.1. 
+### atruncate
+- Updated : 1.0.4-1.4.2.jolla -- 1.0.5-1.4.1.jolla
+- [atruncate] Don't fail unconditionally. 
+### audioflingerglue
+- Updated : 0.0.13-1.2.2.jolla -- 0.0.14-1.2.1.jolla
+- [audioflinger] Add init file. 
+### autoconf
+- Updated : 2.69-1.6.2.jolla -- 2.71-1.6.2.jolla
+- Update to 2.71. 
+### automake
+- Updated : 1.16.1+git1-1.6.25.jolla -- 1.16.5+git3-1.6.5.jolla
+- [automake] Fix arm patch. 
+- [automake] Add back patch to treat all 32bit arms as eabi. 
+- [automake] Update to version 1.16.5. 
+- [git] Move submodule repos to github. 
+### binder-utils
+- Updated : 1.0.0-1.2.2.jolla -- 1.0.4-1.2.2.jolla
+- [utils] Add %license. 
+- [utils] Fixed help text
+- [utils] use LIBGLIBUTIL_PATH and LIBGBINDER_PATH for building if exist. 
+- [utils] Replace strip by env var STRIP, when available. 
+- [utils] add missing include on binder-add. 
+### binutils
+- Updated : 2.32+git3.1-1.8.6.jolla -- 2.32+git5-1.7.13.jolla
+- [packaging] Fix submodule URL. 
+- [binutils] Reduce page size to 4KiB on aarch64. 
+- [binutils] Run precheckin.sh after page size change. 
+### bison
+- Updated : 3.3.2+git1-1.6.2.jolla -- 3.8.2+git1-1.6.2.jolla
+- Binaries removed : bison-runtime
+- [bison] Update to 3.8.2. 
+- [git] Move submodule repos to github. 
+### bluebinder
+- Updated : 1.0.12-1.2.3.jolla -- 1.0.18-1.3.1.jolla
+- [bluebinder] Fix functionality with bluetooth.audio service. 
+- [bluebinder] Use local feature mask from env. 
+- [bluebinder] simply and fix turn_on_bt/turn_off_bt. 
+- [bluebinder] fix parenthesis and flag. 
+- [bluebinder] remove some unneeded variables, let rfkill handle turning bluetooth off after startup. 
+- [bluebinder] report systemd state only if initialization succeeded. 
+- [bluebinder] clear copyright notice.
+- [bluebinder] close/open bluetooth dynamically. 
+- [bluebinder] Fix bluez dependency. 
+### bluetooth-rfkill-event
+- Updated : 1.1.0-1.3.2.jolla -- 1.1.1-1.3.4.jolla
+- [packaging] Move to bluez5. 
+### bluetooth-rfkill-event-hciattach
+- Updated : 1.1.0-1.3.2.jolla -- 1.1.1-1.3.2.jolla
+- [packaging] Move to bluez5. 
+### bluez5
+- Updated : 5.58+git4-1.7.16.jolla -- 5.65+git1-1.8.2.jolla
+- Binaries removed : bluez5-doc
+- [sailfish] Update bluez to 5.65. 
+- [sailfish] Automatically restart mpris-proxy service if it crashes. 
+- [sailfish] Use cached appearance. 
+- [sailfish] Update bluez to 5.63. 
+- [sailfish] Don't rename bluez.pc to bluez5.spec. 
+### busybox
+- Updated : 1.33.1+git3-1.7.17.jolla -- 1.34.1+git2-1.7.4.jolla
+- [busybox] Enable support for Unicode characters after Latin-Extend B. 
+- [busybox] Update to 1.34.1. 
+### buteo-mtp-qt5
+- Updated : 0.9.3-1.8.2.jolla -- 0.9.7-1.9.1.jolla
+- [storageplugin] Do not use fallocate() when creating zero length files
+- [tests] Fix deviceinfoprovider_test failures. 
+- [tests] Fix fsstorageplugin_test failures. 
+- [tests] Fix mtpresponder_test failures. 
+- [tests] Fix storagefactory_test failures. 
+- [tests] Rename test set to "buteo-mtp-tests"
+- [tests] Turn on compilation warnings
+- [thumbnailer] Drop generated-from-xml thumbnailer proxy
+- [buteo-mtp] Remove leftover qtsparql build dependency. 
+- [buteo-mtp] Remove qt5-qtsysteminfo usage. 
+- [buteo-mtp] Rename DeviceInfo class to MtpDeviceInfo
+- [buteo-mtp] Remove stale dev-mtp.mount systemd unit. 
+### buteo-sync-plugin-caldav
+- Updated : 0.2.8-1.10.2.jolla -- 0.2.11-1.11.1.jolla
+- [buteo-sync-plugin-caldav] Don't count flagged events in delta calculation.
+- [buteo-sync-plugin-caldav] Separate the hrefUri() method into two.
+- [buteo-sync-plugin-caldav] Support different sync resolution strategies. 
+- [buteo-sync-plugin-caldav] Use more detailed message in case of ICS generation error.
+- [buteo-sync-plugin-caldav] Don't delete canceled events.
+- [buteo-sync-plugin-caldav] Don't delete cancelled events. 
+- [buteo-sync-plugin-caldav] Have license file as %license. 
+### buteo-sync-plugin-carddav
+- Updated : 0.1.7-1.9.2.jolla -- 0.1.8-1.10.1.jolla
+- [buteo-sync-plugin-carddav] Fix redirects with relative paths. 
+- [buteo-sync-plugin-carddav] Resolve relative redirects before validation
+### buteo-sync-plugin-webcal
+- Updated : 0.1.10-1.8.2.jolla -- 0.1.11-1.9.1.jolla
+- [buteo-sync-plugin-webcal] Don't reset read-only hint to perform modi?
+- [buteo-sync-plugin-webcal] Don't reset read-only hint to perform modifications. 
+### buteo-sync-plugins-email
+- Updated : 0.1.9-1.9.2.jolla -- 0.1.10-1.10.1.jolla
+- [buteo-sync-plugins-email] Have license file as %license. 
+### buteo-sync-plugins-qt5
+- Updated : 0.8.32-1.8.27.jolla -- 0.8.34-1.10.5.jolla
+- [buteo-syncplugins] Adapt to syncConfig api. 
+- [buteo-sync-plugins] Replace createDefaultNotebook() with creation an?
+- [buteo-sync-plugins] Replace createDefaultNotebook() with creation and set default. 
+### buteo-sync-plugins-sailfisheas
+- Updated : 0.1.3-1.6.2.jolla -- 0.1.4-1.7.1.jolla
+- [buteo-eas] Adapt to changed buteo config path. 
+### buteo-sync-plugins-social
+- Updated : 0.4.17-1.14.2.jolla -- 0.4.18-1.15.1.jolla
+- [buteo-sync-plugins-social] Don't reset read-only hint to perform mod?
+- [buteo-sync-plugins-social] Don't reset read-only hint to perform modifications. 
+### buteo-sync-plugins-social-l10n
+- Updated : 1.7.3-1.7.2.jolla -- 1.9.1-1.8.1.jolla
+- Binaries added : buteo-sync-plugins-social-l10n-uk - 1.9.1-1.8.1.jolla
+- [l10n] Branched buteo-sync-plugins-social from version 1.9
+- [l10n] Commit from Jolla localisation:  11 of 11 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  11 of 11 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+### buteo-syncfw-qt5
+- Updated : 0.10.13-1.17.24.jolla -- 0.11.1-1.20.6.jolla
+- [buteo-syncfw] Fix file existence test in one shot.
+- [buteo-syncfw] Fix oneshot migration script on sh shell. 
+- [buteo-syncfw] Move config from .cache to .local. 
+- [buteo-syncfw] Fix Bluez5 support signal connections. 
+- [buteo-syncfw] Make the log messages invocable from QML.
+- [buteo-syncfw] Make the log messages invocable from QML. 
+- [buteo-syncfw] Have license file as %license. 
+### buteo-syncml-qt5
+- Updated : 0.5.14-1.6.2.jolla -- 0.5.15-1.7.1.jolla
+- [buteo-syncml] Migrate to syncConfigDir api. 
+### bzip2
+- Updated : 1.0.8+git1-1.6.2.jolla -- 1.0.8+git2-1.6.4.jolla
+- [bzip2] Add %license to bzip2-libs too. 
+### cairo
+- Updated : 1.16.0+git1-1.6.2.jolla -- 1.17.4+git1-1.6.2.jolla
+- Binaries removed : cairo-doc
+- [cairo] Update to 1.17.4. 
+- [git] Move submodule repos to github. 
+### calligra
+- Updated : 3.2.1+git3-1.11.2.jolla -- 3.2.1+git4-1.12.1.jolla
+- [calligra] Add %license files. 
+### commhistory-daemon-l10n
+- Updated : 1.90.3-1.7.2.jolla -- 1.93.2-1.8.1.jolla
+- Binaries added : commhistory-daemon-l10n-uk - 1.93.2-1.8.1.jolla
+- [l10n] Commit from Jolla localisation:  43 of 43 strings translated (0 need review).
+- [l10n] Branched commhistory-daemon from version 1.93
+- [l10n] Commit from Jolla localisation:  43 of 43 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  43 of 43 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+### connman
+- Updated : 1.32+git187-1.17.2.jolla -- 1.32+git193-1.18.1.jolla
+- [doc] Update VPN overview with VPN agent use. 
+- [ofono] Increase delayed connect wait to 5 seconds. 
+- [provider] Synchronize provider state enum. 
+- [vpn] Add VPN agent use callback for plugins. 
+- [vpn] Do not support notify state reversal back to ASSOCIATION. 
+- [vpn-provider] Transition to CONNECT state with agentless VPNs. 
+- [provider] Reply with EALREADY if connecting a VPN in progress. 
+- [service] Handle provider EALREADY replies if connecting a VPN. 
+- [vpnc] Ensure that vpnc_connect_done() is called at shutdown. 
+- [vpnc] Log unhandled errors. 
+- [vpn] Connecting fixes, fix VPNC connect reply and improve logging. 
+- [vpnc] Use natt as the default NAT Traversal Mode. 
+- [agent] Cancel agent request on NoReply D-Bus error. 
+- [doc] Update VPN documentation for association state. 
+- [provider] Handle VPN configuration and association states. 
+- [service] Explicit VPN connect timeout, ignore in VPN agent wait. 
+- [vpn] Add association state before connect state. 
+- [vpn] Add association state to fix dialog timeout issue. 
+- [vpn] Add support for association state, add state getter. 
+- [vpn-agent] Do connect state transition after input dialog check. 
+- [vpn] Check if connecting when setting state or disconnecting
+- [vpn-provider] Use association state for VPN agent input wait. 
+- [connman] Apply upstream fix for HTTP response crash. 
+- [connman] Drop error use from IPv4 status URL conf check. 
+- [connman] Update all Python script to version 3. 
+- [connman] Address CVE-2022-32293. 
+- [connman] Use unref instead of freeing context directly. 
+- [wispr] Treat authentication_done as error in browser reply. 
+### connman-qt5
+- Updated : 1.2.39-1.6.2.jolla -- 1.3.0-1.10.1.jolla
+- [libconnman-qt] Build without module prefix by default. 
+- [libconnman-qt] Fixup warning on Qt >= 5.10
+- [libconnman-qt] Fix warning on qt >= 5.10. 
+- [libconnman-qt] Support VPN association state. 
+- [libconnman-qt] Fix NetworkTechnology objects removal
+- [libconnman-qt] Fix NetworkTechnology objects removal. 
+- [libconnman-qt] Avoid deprecated API. 
+- [libconnman-qt] Add no-module-prefix option for libconnman-qt. 
+- [libconnman-qt] Emit connectedEthernetChanged in updateServices(). 
+- [libconnman-qt] Update connected ethernet when connected changed. 
+- [libconnman-qt] Ignore WiFi networks with zeroed MACs. 
+- [libconnman-qt] Optimize qt signal connections. 
+- [libconnman-qt] Fix ethernet service visibility in UI. 
+- [libconnman-qt] Add missing ethernet properties to QML types. 
+### contactsd
+- Updated : 1.4.10-1.14.2.jolla -- 1.4.13-1.17.1.jolla
+- [contactsd] Remove obsolete com.nokia.asdbus usage. 
+- [contactsd] Don't reset read-only hint to update birthdays. Contribut?
+- [contactsd] Don't reset read-only hint to update birthdays. 
+- [contactsd] Restrict toggle notebook visibility on account change.
+- [contactsd] Restrict toggle notebook visibility on account change. 
+### contactsd-l10n
+- Updated : 1.54.3-1.6.2.jolla -- 1.57.1-1.7.1.jolla
+- Binaries added : contactsd-l10n-uk - 1.57.1-1.7.1.jolla
+- [l10n] Branched contactsd from version 1.57
+- [l10n] Commit from Jolla localisation:  2 of 2 strings translated (0 need review).
+- [tpl] translation templates update for 1.4.12
+- [l10n] Commit from Jolla localisation:  2 of 2 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  2 of 2 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+### crash-reporter
+- Updated : 1.15.13-1.7.14.jolla -- 1.15.15-1.8.1.jolla
+- [spec] Fix oneshot BuildRequires. 
+- [crash-reporter] Add dependencies for endurance-collect script.
+- [crashreporter] Avoid writing temporary files to fs when packing endurance snapshot. 
+### cross-aarch64-binutils
+- Updated : 2.32+git3.1-1.8.2.jolla -- 2.32+git5-1.7.7.jolla
+- [packaging] Fix submodule URL. 
+- [binutils] Reduce page size to 4KiB on aarch64. 
+- [binutils] Run precheckin.sh after page size change. 
+cross-aarch64-gcc
+Reverted : 8.3.0-1.7.7.jolla -- 8.3.0-1.7.5.jolla
+- Update cross spec files. 
+- Add patches from OpenSUSE to make builds reproducible. 
+- Remove release version from rpmver file. 
+### cross-armv7hl-binutils
+- Updated : 2.32+git3.1-1.8.2.jolla -- 2.32+git5-1.7.7.jolla
+- [packaging] Fix submodule URL. 
+- [binutils] Reduce page size to 4KiB on aarch64. 
+- [binutils] Run precheckin.sh after page size change. 
+cross-armv7hl-gcc
+Reverted : 8.3.0-1.7.7.jolla -- 8.3.0-1.7.5.jolla
+- Update cross spec files. 
+- Add patches from OpenSUSE to make builds reproducible. 
+- Remove release version from rpmver file. 
+### cross-i486-binutils
+- Updated : 2.32+git3.1-1.8.2.jolla -- 2.32+git5-1.7.5.jolla
+- [packaging] Fix submodule URL. 
+- [binutils] Reduce page size to 4KiB on aarch64. 
+- [binutils] Run precheckin.sh after page size change. 
+cross-i486-gcc
+Reverted : 8.3.0-1.7.4.jolla -- 8.3.0-1.7.1.jolla
+- Update cross spec files. 
+- Add patches from OpenSUSE to make builds reproducible. 
+- Remove release version from rpmver file. 
+### cryptsetup
+- Updated : 2.3.4+git1-1.5.2.jolla -- 2.4.3+git1-1.5.2.jolla
+- [cryptsetup] Update to 2.4.3. 
+- [git] Move submodule repos to github. 
+### csd
+- Updated : 0.16.29-1.4.30.jolla -- 0.16.39-1.9.1.jolla
+- [csd] Clarify tests that depend on headset status. 
+- [csd] Allow all orientations. 
+- [csd] Fix test cases to support both landscape and portrait. 
+- [csd] Do not use SUID bit. 
+- [csd] Tweak LCD backlight test timings. 
+- [csd] Provide guidance for LCD verification test. 
+- [csd] Start Discharging test with lit up display. 
+- [csd] Add bottom margin for GPS tests. 
+- [csd] Add flexibility to multifeature test selection. 
+- [csd] Allow disabling of enable-by-default tests. 
+- [csd] Make all tests maskable
+- [csd] Remove "MacAddresses" feature. 
+- [csd] Skip MAC address validation for unsupported features. 
+- [csd] Fix camera viewfinder resolution label and disable capture size label. 
+- [csd] Remove tohd related functionality. 
+### csd-l10n
+- Updated : 1.94.1-1.5.2.jolla -- 1.97.1-1.7.1.jolla
+- [l10n] Branched csd from version 1.97
+- [l10n] Commit from Jolla localisation:  467 of 476 strings translated (0 need review).
+- [tpl] translation templates update for 0.16.36
+- [tpl] translation templates update for 0.16.37
+- [tpl] translation templates update for 0.16.38
+- [tpl] translation templates update for 0.16.39
+- [l10n] Commit from Jolla localisation:  474 of 474 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [tpl] translation templates update for 0.16.31
+- [tpl] translation templates update for 0.16.32
+- [tpl] translation templates update for 0.16.33
+- [tpl] translation templates update for 0.16.34
+- [tpl] translation templates update for 0.16.35
+- [l10n] Commit from Jolla localisation:  468 of 468 strings translated (0 need review).
+- [tpl] translation templates update for 0.16.30
+### cups
+- Updated : 2.3.1+git3-1.8.2.jolla -- 2.4.2+git2-1.8.2.jolla
+- [packaging] Remove unused source file. 
+- [cups] Update to version 2.4.2. 
+### curl
+- Updated : 7.81.0+git1-1.8.2.jolla -- 7.85.0+git1-1.8.2.jolla
+- [curl] Update to 7.85.0. 
+### db4
+- Updated : 4.8.30-1.6.2.jolla -- 4.8.30-1.6.4.jolla
+- Include license as %license. 
+### dbus
+- Updated : 1.13.12+git6-1.6.16.jolla -- 1.14.4+git1-1.6.2.jolla
+- [dbus] Update to 1.14.4. 
+- [git] Move submodule repos to github. 
+### dbuslog-tools
+- Updated : 1.0.21-1.5.4.jolla -- 1.0.22-1.5.3.jolla
+- [libdbuslog] Enabled parallel build. 
+- [libdbuslog] Fixed clean target for dbuslog-client
+- [libdbuslog] Fixed fd handle returned by LogOpen. 
+### declarative-transferengine-qt5
+- Updated : 1.0.3-1.8.3.jolla -- 1.1.3-1.9.1.jolla
+- [sailfish-share] Stop loading busy indicator when model ready. 
+- [declarative-transrerengine] Adjust transfer list timestamp enum. 
+- [declarative-transferengine] Fix incorrect mimetype doc line. 
+- [share] Add QML API for 3rd party sharing. 
+### declarative-transferengine-qt5-l10n
+- Updated : 1.128.2-1.8.2.jolla -- 1.133.3-1.11.1.jolla
+- Binaries added : declarative-transferengine-qt5-l10n-uk - 1.133.3-1.11.1.jolla
+- [l10n] Commit from Jolla localisation:  35 of 35 strings translated (0 need review).
+- [l10n] Branched declarative-transferengine-qt5 from version 1.133
+- [l10n] Commit from Jolla localisation:  35 of 35 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  32 of 35 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  35 of 35 strings translated (0 need review).
+- [tpl] translation templates update for 1.1.0
+### dirmngr
+- Updated : 1.0.3+git1-1.6.2.jolla -- 1.0.3+git2-1.6.2.jolla
+- [dirmngr] Have license file as %license. 
+### doxygen
+- Updated : 1.7.6.1-1.6.2.jolla -- 1.9.5+git2-1.6.1.jolla
+- [doxygen] Add python to dependencies. 
+- [doxygen] Update to 1.9.5. 
+### droid-config-f5121
+- Updated : 1.3.27-1.5.2.jolla -- 1.3.28-1.6.1.jolla
+- Binaries removed : droid-config-f5121-bluez4
+- [configs] Remove BlueZ4 bluetoothd configs. 
+- [configs] Remove BlueZ4 packaging. 
+- [configs] Remove BlueZ4 PulseAudio related configuration. 
+- [lib] Install oneshot scripts under /usr/lib. 
+- [patterns] Add configuration to modify installed sailfish patterns. 
+### droid-config-f5122
+- Updated : 1.3.27-1.5.2.jolla -- 1.3.28-1.6.1.jolla
+- Binaries removed : droid-config-f5122-bluez4
+- [configs] Remove BlueZ4 bluetoothd configs. 
+- [configs] Remove BlueZ4 packaging. 
+- [configs] Remove BlueZ4 PulseAudio related configuration. 
+- [lib] Install oneshot scripts under /usr/lib. 
+- [patterns] Add configuration to modify installed sailfish patterns. 
+### droid-config-geminipda
+- Updated : 0.2.41-1.5.1.jolla -- 0.2.42-1.6.1.jolla
+- Binaries removed : droid-config-geminipda-bluez4
+- [configs] Remove BlueZ4 bluetoothd configs. 
+- [configs] Remove BlueZ4 packaging. 
+- [configs] Remove BlueZ4 PulseAudio related configuration. 
+- [lib] Install oneshot scripts under /usr/lib. 
+- [patterns] Add configuration to modify installed sailfish patterns. 
+### droid-config-h3113
+- Updated : 0.2.82-1.5.2.jolla -- 0.2.83-1.6.1.jolla
+- Binaries removed : droid-config-h3113-bluez4
+- [configs] Remove BlueZ4 bluetoothd configs. 
+- [configs] Remove BlueZ4 packaging. 
+- [configs] Remove BlueZ4 PulseAudio related configuration. 
+- [lib] Install oneshot scripts under /usr/lib. 
+- [patterns] Add configuration to modify installed sailfish patterns. 
+### droid-config-h3213
+- Updated : 0.2.82-1.5.2.jolla -- 0.2.83-1.6.1.jolla
+- Binaries removed : droid-config-h3213-bluez4
+- [configs] Remove BlueZ4 bluetoothd configs. 
+- [configs] Remove BlueZ4 packaging. 
+- [configs] Remove BlueZ4 PulseAudio related configuration. 
+- [lib] Install oneshot scripts under /usr/lib. 
+- [patterns] Add configuration to modify installed sailfish patterns. 
+### droid-config-h3413
+- Updated : 0.2.82-1.5.2.jolla -- 0.2.83-1.6.1.jolla
+- Binaries removed : droid-config-h3413-bluez4
+- [configs] Remove BlueZ4 bluetoothd configs. 
+- [configs] Remove BlueZ4 packaging. 
+- [configs] Remove BlueZ4 PulseAudio related configuration. 
+- [lib] Install oneshot scripts under /usr/lib. 
+- [patterns] Add configuration to modify installed sailfish patterns. 
+### droid-config-h4113
+- Updated : 0.2.82-1.5.2.jolla -- 0.2.83-1.6.1.jolla
+- Binaries removed : droid-config-h4113-bluez4
+- [configs] Remove BlueZ4 bluetoothd configs. 
+- [configs] Remove BlueZ4 packaging. 
+- [configs] Remove BlueZ4 PulseAudio related configuration. 
+- [lib] Install oneshot scripts under /usr/lib. 
+- [patterns] Add configuration to modify installed sailfish patterns. 
+### droid-config-h4213
+- Updated : 0.2.82-1.5.2.jolla -- 0.2.83-1.6.1.jolla
+- Binaries removed : droid-config-h4213-bluez4
+- [configs] Remove BlueZ4 bluetoothd configs. 
+- [configs] Remove BlueZ4 packaging. 
+- [configs] Remove BlueZ4 PulseAudio related configuration. 
+- [lib] Install oneshot scripts under /usr/lib. 
+- [patterns] Add configuration to modify installed sailfish patterns. 
+### droid-config-h4413
+- Updated : 0.2.82-1.5.2.jolla -- 0.2.83-1.6.1.jolla
+- Binaries removed : droid-config-h4413-bluez4
+- [configs] Remove BlueZ4 bluetoothd configs. 
+- [configs] Remove BlueZ4 packaging. 
+- [configs] Remove BlueZ4 PulseAudio related configuration. 
+- [lib] Install oneshot scripts under /usr/lib. 
+- [patterns] Add configuration to modify installed sailfish patterns. 
+### droid-config-i3113
+- Updated : 0.0.69-1.5.3.jolla -- 0.0.70-1.6.1.jolla
+- Binaries removed : droid-config-i3113-bluez4
+- [configs] Remove BlueZ4 bluetoothd configs. 
+- [configs] Remove BlueZ4 packaging. 
+- [configs] Remove BlueZ4 PulseAudio related configuration. 
+- [lib] Install oneshot scripts under /usr/lib. 
+- [patterns] Add configuration to modify installed sailfish patterns. 
+### droid-config-i3213
+- Updated : 0.0.69-1.5.3.jolla -- 0.0.70-1.6.1.jolla
+- Binaries removed : droid-config-i3213-bluez4
+- [configs] Remove BlueZ4 bluetoothd configs. 
+- [configs] Remove BlueZ4 packaging. 
+- [configs] Remove BlueZ4 PulseAudio related configuration. 
+- [lib] Install oneshot scripts under /usr/lib. 
+- [patterns] Add configuration to modify installed sailfish patterns. 
+### droid-config-i4113
+- Updated : 0.0.69-1.5.3.jolla -- 0.0.70-1.6.1.jolla
+- Binaries removed : droid-config-i4113-bluez4
+- [configs] Remove BlueZ4 bluetoothd configs. 
+- [configs] Remove BlueZ4 packaging. 
+- [configs] Remove BlueZ4 PulseAudio related configuration. 
+- [lib] Install oneshot scripts under /usr/lib. 
+- [patterns] Add configuration to modify installed sailfish patterns. 
+### droid-config-i4213
+- Updated : 0.0.69-1.5.3.jolla -- 0.0.70-1.6.1.jolla
+- Binaries removed : droid-config-i4213-bluez4
+- [configs] Remove BlueZ4 bluetoothd configs. 
+- [configs] Remove BlueZ4 packaging. 
+- [configs] Remove BlueZ4 PulseAudio related configuration. 
+- [lib] Install oneshot scripts under /usr/lib. 
+- [patterns] Add configuration to modify installed sailfish patterns. 
+### droid-config-l500d
+- Updated : 0.14.36-1.5.2.jolla -- 0.14.38-1.6.1.jolla
+- Binaries removed : droid-config-l500d-bluez4
+- [ssu] Drop Sailfish and add Jolla C as default. 
+- [configs] Remove BlueZ4 bluetoothd configs. 
+- [configs] Remove BlueZ4 packaging. 
+- [configs] Remove BlueZ4 PulseAudio related configuration. 
+- [lib] Install oneshot scripts under /usr/lib. 
+- [patterns] Add configuration to modify installed sailfish patterns. 
+### droid-config-tbj
+- Updated : 0.9.29-1.6.2.jolla -- 0.9.30-1.6.1.jolla
+- Binaries removed : droid-config-tbj-bluez4
+- [configs] Move to bluez5. 
+### droid-config-xqau51
+- Updated : 0.1.24.3-1.7.2.jolla -- 0.1.33-1.7.1.jolla
+- [rpm] Add conflicts to appsupport-system-privileged. 
+- [audio] Remove obsolete policy config. 
+- [patterns] Add VoLTE enablers to adaptation pattern. 
+- [rpm] Obsolete ofono-configs-binder, we provide our own configs. 
+- [configs] Add possibility to define specific VOIP sink. 
+- [sparse] Disable update_verifier for ports starting from Android 10. 
+- [configs] sparse: Add a service for memory reclaim. 
+- [configs] Fix single sim configs. 
+- [configs] Package ofono-binder-plugin. 
+- [configs] Remove BlueZ4 bluetoothd configs. 
+- [configs] Remove BlueZ4 packaging. 
+- [configs] Remove BlueZ4 PulseAudio related configuration. 
+- [lib] Install oneshot scripts under /usr/lib. 
+- [patterns] Add configuration to modify installed sailfish patterns. 
+### droid-config-xqau52
+- Updated : 0.1.24.3-1.7.2.jolla -- 0.1.33-1.7.1.jolla
+- [rpm] Add conflicts to appsupport-system-privileged. 
+- [audio] Remove obsolete policy config. 
+- [patterns] Add VoLTE enablers to adaptation pattern. 
+- [rpm] Obsolete ofono-configs-binder, we provide our own configs. 
+- [configs] Add possibility to define specific VOIP sink. 
+- [sparse] Disable update_verifier for ports starting from Android 10. 
+- [configs] sparse: Add a service for memory reclaim. 
+- [configs] Fix single sim configs. 
+- [configs] Package ofono-binder-plugin. 
+- [configs] Remove BlueZ4 bluetoothd configs. 
+- [configs] Remove BlueZ4 packaging. 
+- [configs] Remove BlueZ4 PulseAudio related configuration. 
+- [lib] Install oneshot scripts under /usr/lib. 
+- [patterns] Add configuration to modify installed sailfish patterns. 
+### droid-config-xqbt52
+- Updated : 1.8.2.10-1.13.2.jolla -- 1.9.10-1.5.1.jolla
+- [configs] Use vendor namespace for pulseaudio. 
+- [rpm] Add conflicts to appsupport-system-privileged. 
+- [dconf] Add key to show reboot dialog when inserting sim cards. 
+- [patterns] Add VoLTE enablers to adaptation pattern. 
+- [configs] Set default data profile id. 
+- [rpm] Obsolete ofono-configs-binder, we provide our own configs. 
+- [configs] Add workaround for camera service crash. 
+- [configs] Add memnotify configuration. 
+- [configs] Disable lid sensor (Hall sensor). 
+- [configs] Add possibility to define specific VOIP sink. 
+- [configs] Add PulseAudio configs. 
+- [configs] Add workaround for VOIP sink. 
+- [configs] Modify voice call volume levels. 
+- [sparse] Add a service for memory reclaim. 
+- [sparse] Move sysctl files to /usr/lib. 
+- [flash] Update Sony binary version requirement. 
+- [configs] Package ofono-binder-plugin. 
+- [configs] Remove BlueZ4 bluetoothd configs. 
+- [configs] Remove BlueZ4 packaging. 
+- [configs] Remove BlueZ4 PulseAudio related configuration. 
+### droid-flashing-tools
+- Updated : 0.0.4-1.2.2.jolla -- 29.0.5-1.3.1.jolla
+- [packaging] Cleanup spec and adjust version to upstream
+- [packaging] Ship license files, mention all contained licenses. 
+### droid-hal-discovery
+- Updated : 0.1.28-1.3.8.jolla -- 0.1.32-1.6.2.jolla
+- [kernel] configs: enable CONFIG_EXT4_FS_POSIX_ACL in hybris defconfigs. 
+- [dhd] Call bash instead of sh with ubu-chroot. 
+- [libhybris] Add vulkan support. 
+- [dhd] Immediately fail Android builds on OBS if a command fails. 
+- [kernel] Replace or remove invalid config symbols in hybris defconfig. 
+### droid-hal-kirin
+- Updated : 0.0.49-1.3.8.jolla -- 0.0.55-1.6.2.jolla
+- [kernel] configs: enable CONFIG_EXT4_FS_POSIX_ACL in hybris defconfigs. 
+- [hybris-patches] Rebase patches. 
+- [dhd] Call bash instead of sh with ubu-chroot. 
+- [frameworks] No longer patch servicemanager.rc to start minisf. 
+- [packaging] Fix submodule URLs. 
+- [libhybris] Add vulkan support. 
+- [dhd] dhd: Fix typo in default skip %{makefstab_skip_entries}. 
+- [dhd] Immediately fail Android builds on OBS if a command fails. 
+- [helpers] Build pulseaudio-modules-droid-jb2q for Android versions up to 10. 
+- [helpers] fix internal localbuilds. 
+- [helpers] fix local build of pulseaudio-modules-droid-hidl. 
+- [helpers] Refactor utils to use mb2 --package-timeline. 
+- [helpers] take droidmedia-devel from hw common repo. 
+- [helpers] take gmp-droid from hw common repo. 
+- [helpers] take gst-droid from hw common repo. 
+- [helpers] work around busybox-cpio replacement symlink clash. 
+- [helpers] work around /etc/bluetooth dir-symlink clash. 
+- [kernel] Replace or remove invalid config symbols in hybris defconfig. 
+- [localbuild] Make all build script changes persistent. 
+- [localbuild] Pass local repo to zypper ahead of `ssu ar` removal. 
+- [localbuild] Remove leftovers manually for now. 
+- [localbuild] Switch local repo to flat dir structure. 
+- [localbuild] Use mb2 --output-dir instead to deploy RPMs. 
+- [localbuild] Use sdk-assistant maintain instead of sb2. 
+### droid-hal-mermaid
+- Updated : 0.0.49-1.3.8.jolla -- 0.0.55-1.6.2.jolla
+- [kernel] configs: enable CONFIG_EXT4_FS_POSIX_ACL in hybris defconfigs. 
+- [hybris-patches] Rebase patches. 
+- [dhd] Call bash instead of sh with ubu-chroot. 
+- [frameworks] No longer patch servicemanager.rc to start minisf. 
+- [packaging] Fix submodule URLs. 
+- [libhybris] Add vulkan support. 
+- [dhd] dhd: Fix typo in default skip %{makefstab_skip_entries}. 
+- [dhd] Immediately fail Android builds on OBS if a command fails. 
+- [helpers] Build pulseaudio-modules-droid-jb2q for Android versions up to 10. 
+- [helpers] fix internal localbuilds. 
+- [helpers] fix local build of pulseaudio-modules-droid-hidl. 
+- [helpers] Refactor utils to use mb2 --package-timeline. 
+- [helpers] take droidmedia-devel from hw common repo. 
+- [helpers] take gmp-droid from hw common repo. 
+- [helpers] take gst-droid from hw common repo. 
+- [helpers] work around busybox-cpio replacement symlink clash. 
+- [helpers] work around /etc/bluetooth dir-symlink clash. 
+- [kernel] Replace or remove invalid config symbols in hybris defconfig. 
+- [localbuild] Make all build script changes persistent. 
+- [localbuild] Pass local repo to zypper ahead of `ssu ar` removal. 
+- [localbuild] Remove leftovers manually for now. 
+- [localbuild] Switch local repo to flat dir structure. 
+- [localbuild] Use mb2 --output-dir instead to deploy RPMs. 
+- [localbuild] Use sdk-assistant maintain instead of sb2. 
+### droid-hal-pdx201
+- Updated : 0.0.20-1.6.6.jolla -- 0.0.30-1.10.2.jolla
+- [kernel] Enable CONFIG_EXT4_FS_POSIX_ACL in config. 
+- [kernel] Update to Linux 4.14.264. 
+- [kernel] input: sec_ts: Remove spam from event buffer is empty. 
+- [kernel] Merge upstream updates
+- [frameworks] No longer patch servicemanager.rc to start minisf. 
+- [kernel] Add back USB config options needed for networking in recovery. 
+- [kernel] Backport fuse-userns patches. 
+- [dhd] Call bash instead of sh with ubu-chroot. 
+- [helpers] Remove revision number check from ssu-kickstarts. 
+- [libhybris] Add vulkan support. 
+- [dhd] Immediately fail Android builds on OBS if a command fails. 
+- [helpers] Build pulseaudio-modules-droid-jb2q for Android versions up to 10. 
+- [kernel] Replace or remove invalid config symbols in hybris defconfig. 
+### droid-hal-pdx213
+- Updated : 1.9.0-1.7.12.jolla -- 1.9.5-1.6.3.jolla
+- [kernel] Enable USB-Camera
+- [kernel] Import more CNSS changes from 9.14.r1 to improve suspend of Wifi and mobile data
+- [kernel] Silence diagnostic touchscreen press data unless debugging. 
+- [frameworks] No longer patch servicemanager.rc to start minisf. 
+- [kernel] Bluetooth: Fix Set Extended (Scan Response) Data. 
+- [kernel] Update to linux-stable 4.19.248. 
+- [kernel] Upstream fix for CVE-2020-16119.
+- [kernel] Upstream fix for CVE-2020-36311.
+- [kernel] Upstream fix for CVE-2021-20317.
+- [kernel] Upstream fix for CVE-2021-20317. 
+- [kernel] Upstream fix for CVE-2021-22543.
+- [kernel] Upstream fix for CVE-2021-23133.
+- [kernel] Upstream fix for CVE-2021-23134.
+- [kernel] Upstream fix for CVE-2021-3564.
+- [kernel] Upstream fix for CVE-2021-3573.
+- [kernel] Upstream fix for CVE-2021-3640.
+- [kernel] Upstream fix for CVE-2021-3653.
+- [kernel] Upstream fix for CVE-2021-3656.
+- [kernel] Upstream fix for CVE-2022-0435.
+- [kernel] Upstream fix for CVE-2022-23036.
+- [kernel] Upstream fix for CVE-2022-23037.
+- [kernel] Upstream fix for CVE-2022-23038.
+- [kernel] Upstream fix for CVE-2022-23039.
+- [kernel] Upstream fix for CVE-2022-23040.
+- [kernel] Upstream fix for CVE-2022-23041.
+- [kernel] Upstream fix for CVE-2022-23042.
+- [dhd] Call bash instead of sh with ubu-chroot. 
+- [kernel] Revert "Revert "proc: Convert proc_mount to use mount_ns."". 
+- [libhybris] Add vulkan support. 
+### droid-hal-pdx213-img-boot
+- Updated : 1.1.0-1.3.57.jolla -- 1.1.1-1.4.3.jolla
+- [initrd] Force USB to peripheral mode. 
+### droid-hal-pioneer
+- Updated : 0.1.28-1.3.8.jolla -- 0.1.32-1.6.2.jolla
+- [kernel] configs: enable CONFIG_EXT4_FS_POSIX_ACL in hybris defconfigs. 
+- [dhd] Call bash instead of sh with ubu-chroot. 
+- [libhybris] Add vulkan support. 
+- [dhd] Immediately fail Android builds on OBS if a command fails. 
+- [kernel] Replace or remove invalid config symbols in hybris defconfig. 
+### droid-hal-prjconf-geminipda
+- Updated : 0.0.3-1.2.1.jolla -- 0.0.4-1.3.1.jolla
+- [prjconf] Enable _with_droidmedia_audiopolicy_mtk_add. 
+### droid-hal-prjconf-l500d
+- Updated : 0.0.8-1.5.2.jolla -- 0.0.9-1.5.2.jolla
+- [prjconf] Remove preferring bluez4. 
+### droid-hal-tbj
+- Updated : 0.0.54-1.4.15.jolla -- 0.0.55-1.5.3.jolla
+- [dhd] Add system group back to adaptation groups to fix GPS. 
+### droid-hal-version-f5121
+- Updated : 0.2.3-1.3.31.jolla -- 1.0.0-1.4.6.jolla
+- [dhv] Make HOME_URL configurable. 
+- [dhv] Remove mention of qt5-feedback-haptics-*. 
+### droid-hal-version-f5122
+- Updated : 0.2.3-1.3.31.jolla -- 1.0.0-1.4.6.jolla
+- [dhv] Make HOME_URL configurable. 
+- [dhv] Remove mention of qt5-feedback-haptics-*. 
+### droid-hal-version-geminipda
+- Updated : 0.0.5-1.2.1.jolla -- 1.0.0-1.3.1.jolla
+- [dhv] Make HOME_URL configurable. 
+- [dhv] Remove mention of qt5-feedback-haptics-*. 
+### droid-hal-version-h3113
+- Updated : 0.0.9-1.3.32.jolla -- 1.0.0-1.4.7.jolla
+- [dhv] Make HOME_URL configurable. 
+- [dhv] Remove mention of qt5-feedback-haptics-*. 
+### droid-hal-version-h3213
+- Updated : 0.0.9-1.3.32.jolla -- 1.0.0-1.4.7.jolla
+- [dhv] Make HOME_URL configurable. 
+- [dhv] Remove mention of qt5-feedback-haptics-*. 
+### droid-hal-version-h3413
+- Updated : 0.0.9-1.3.32.jolla -- 1.0.0-1.4.7.jolla
+- [dhv] Make HOME_URL configurable. 
+- [dhv] Remove mention of qt5-feedback-haptics-*. 
+### droid-hal-version-h4113
+- Updated : 0.0.9-1.3.32.jolla -- 1.0.0-1.4.8.jolla
+- [dhv] Make HOME_URL configurable. 
+- [dhv] Remove mention of qt5-feedback-haptics-*. 
+### droid-hal-version-h4213
+- Updated : 0.0.9-1.3.32.jolla -- 1.0.0-1.4.7.jolla
+- [dhv] Make HOME_URL configurable. 
+- [dhv] Remove mention of qt5-feedback-haptics-*. 
+### droid-hal-version-h4413
+- Updated : 0.0.9-1.3.32.jolla -- 1.0.0-1.4.8.jolla
+- [dhv] Make HOME_URL configurable. 
+- [dhv] Remove mention of qt5-feedback-haptics-*. 
+### droid-hal-version-i3113
+- Updated : 0.0.6-1.3.32.jolla -- 1.0.0-1.4.7.jolla
+- [dhv] Make HOME_URL configurable. 
+- [dhv] Remove mention of qt5-feedback-haptics-*. 
+### droid-hal-version-i3213
+- Updated : 0.0.6-1.3.32.jolla -- 1.0.0-1.4.7.jolla
+- [dhv] Make HOME_URL configurable. 
+- [dhv] Remove mention of qt5-feedback-haptics-*. 
+### droid-hal-version-i4113
+- Updated : 0.0.6-1.3.32.jolla -- 1.0.0-1.4.7.jolla
+- [dhv] Make HOME_URL configurable. 
+- [dhv] Remove mention of qt5-feedback-haptics-*. 
+### droid-hal-version-i4213
+- Updated : 0.0.6-1.3.32.jolla -- 1.0.0-1.4.7.jolla
+- [dhv] Make HOME_URL configurable. 
+- [dhv] Remove mention of qt5-feedback-haptics-*. 
+### droid-hal-version-l500d
+- Updated : 0.0.3-1.3.156.jolla -- 1.0.0-1.4.9.jolla
+- [dhv] Make HOME_URL configurable. 
+- [dhv] Remove mention of qt5-feedback-haptics-*. 
+### droid-hal-version-tbj
+- Updated : 0.9.3-1.3.46.jolla -- 1.0.0-1.4.14.jolla
+- [dhv] Make HOME_URL configurable. 
+- [dhv] Remove mention of qt5-feedback-haptics-*. 
+- [droid-version] Move to bluez5. 
+### droid-hal-version-xqau51
+- Updated : 0.0.2-1.3.153.jolla -- 1.0.0-1.4.11.jolla
+- [dhv] Make HOME_URL configurable. 
+- [dhv] Remove mention of qt5-feedback-haptics-*. 
+### droid-hal-version-xqau52
+- Updated : 0.0.2-1.3.152.jolla -- 1.0.0-1.4.10.jolla
+- [dhv] Make HOME_URL configurable. 
+- [dhv] Remove mention of qt5-feedback-haptics-*. 
+### droid-hal-version-xqbt52
+- Updated : 1.0.0-1.2.176.jolla -- 1.0.1-1.3.12.jolla
+- [dhv] Make HOME_URL configurable. 
+- [dhv] Remove mention of qt5-feedback-haptics-*. 
+### droid-hal-voyager
+- Updated : 0.1.28-1.3.8.jolla -- 0.1.32-1.6.2.jolla
+- [kernel] configs: enable CONFIG_EXT4_FS_POSIX_ACL in hybris defconfigs. 
+- [dhd] Call bash instead of sh with ubu-chroot. 
+- [libhybris] Add vulkan support. 
+- [dhd] Immediately fail Android builds on OBS if a command fails. 
+- [kernel] Replace or remove invalid config symbols in hybris defconfig. 
+### droid-src-sony-lena
+- Updated : 1.9.1-1.7.3.jolla -- 1.9.4-1.4.1.jolla
+- [dhs] Regenerate spec files. 
+- [droid-src] Fix spec files. 
+- [droid-src] Fix patches for upstream 20220830 update.
+- [hybris] device: sony: common: Do not log battery status to kernel log. 
+- [manifest] Update upstream changes 20220830.
+- [sony-common] Fix device/sony/common hash.
+### droid-src-sony-seine
+- Updated : 1.12.2-1.5.2.jolla -- 1.12.3-1.5.1.jolla
+- [dhs] Immediately fail Android builds on OBS if a command fails. 
+### droid-system-pdx213
+- Updated : 1.9.6-1.10.2.jolla -- 1.9.7-1.3.2.jolla
+- [hybris] device: sony: common: Do not log battery status to kernel log. 
+### droid-system-pdx213-xqbt52
+- Updated : 1.9.6-1.10.2.jolla -- 1.9.7-1.3.2.jolla
+- [hybris] device: sony: common: Do not log battery status to kernel log. 
+### droidmedia
+- Updated : 0.20211101.0-1.5.2.jolla -- 0.20220929.0-1.6.2.jolla
+- [droidmedia] Add MIME type for AV1. 
+- [droidmedia] Support AudioSessionInfo in audiopolicy. 
+- [droidmedia] Disable FakeAudiopolicy for Android <5. 
+- [droidmedia] FakeAudiopolicy for Android 7.0. 
+- [droidmedia] Support MTK additions in audiopolicy. 
+- [droidmedia] Use libmedia for everything until Android 8
+- [droidmedia] FakeAudiopolicy for Android 5.1.0. 
+- [droidmedia] Move rc files for fake services to droidmedia
+- [droidmedia] Rewrite miniaudiopolicy to spawn a fake service. 
+- [droidmedia] Fix build for droid versions >= 8. 
+- [droidmedia] Cleanup public headers.
+- [droidmedia] Fix build for droid versions < 5. 
+- [droidmedia] Add ability to configure output format for the decoder. 
+- [droidmedia] Add ability to configure the output format for the decoder. 
+- [droidmedia] Fix deadlock in droid_media_codec_stop()
+- [droidmedia] Implement droid_media_codec_set_video_encoder_bitrate(). 
+- [droidmedia] Rename AsyncDecodingSource to AsyncCodecSource. 
+- [droidmedia] Reuse AsyncDecodingSource for encoding. 
+- [droidmedia] Use MediaCodecSource for the camera recorder. 
+- [droidmedia] Remove unused option to fix build with new meson. 
+- [droidmedia] Set the number of input buffers for old devices. 
+### droidmedia-devel
+- Updated : 0.20211101.0-1.3.20.jolla -- 0.20220929.0-1.4.3.jolla
+- [droidmedia] Add MIME type for AV1. 
+- [droidmedia] Support AudioSessionInfo in audiopolicy. 
+- [droidmedia] Disable FakeAudiopolicy for Android <5. 
+- [droidmedia] FakeAudiopolicy for Android 7.0. 
+- [droidmedia] Support MTK additions in audiopolicy. 
+- [droidmedia] Use libmedia for everything until Android 8
+- [droidmedia] FakeAudiopolicy for Android 5.1.0. 
+- [droidmedia] Move rc files for fake services to droidmedia
+- [droidmedia] Rewrite miniaudiopolicy to spawn a fake service. 
+- [droidmedia] Fix build for droid versions >= 8. 
+- [droidmedia] Cleanup public headers.
+- [droidmedia] Fix build for droid versions < 5. 
+- [droidmedia] Add ability to configure output format for the decoder. 
+- [droidmedia] Add ability to configure the output format for the decoder. 
+- [droidmedia] Fix deadlock in droid_media_codec_stop()
+- [droidmedia] Implement droid_media_codec_set_video_encoder_bitrate(). 
+- [droidmedia] Rename AsyncDecodingSource to AsyncCodecSource. 
+- [droidmedia] Reuse AsyncDecodingSource for encoding. 
+- [droidmedia] Use MediaCodecSource for the camera recorder. 
+- [droidmedia] Remove unused option to fix build with new meson. 
+- [droidmedia] Set the number of input buffers for old devices. 
+### e2fsprogs
+- Updated : 1.45.4+git2-1.5.2.jolla -- 1.46.5+git1-1.5.5.jolla
+- [e2fsprogs] Update to 1.46.5. 
+- [git] Move submodule repos to github. 
+### ed
+- Updated : 1.5-1.6.2.jolla -- 1.18-1.6.2.jolla
+- Update to 1.18. 
+### embedlite-components-qt5
+- Updated : 1.24.33-1.35.2.jolla -- 1.24.34-1.25.2.jolla
+- [embedlite-components] Make selection handling more robust. 
+### eventsview-extensions
+- Updated : 0.1.9-1.3.2.jolla -- 0.1.11-1.5.1.jolla
+- [eventsview-extensions] Avoid pointless build requirements. 
+- [eventsview] Avoid deprecated formatting enum 
+### eventsview-extensions-l10n
+- Updated : 1.36.2-1.7.2.jolla -- 1.38.1-1.8.1.jolla
+- Binaries added : eventsview-extensions-l10n-uk - 1.38.1-1.8.1.jolla
+- [l10n] Branched eventsview-extensions from version 1.38
+- [l10n] Commit from Jolla localisation:  21 of 21 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  21 of 21 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+### expat
+- Updated : 2.2.9+git1-1.6.2.jolla -- 2.4.3+git1-1.6.4.jolla
+- [expat] Update to 2.4.3. 
+- [git] Move submodule repos to github. 
+### extra-cmake-modules
+- Updated : 5.85.0+git1-1.6.2.jolla -- 5.99.0+git1-1.7.1.jolla
+- [extra-cmake-modules] Update to 5.99.0. 
+- [extra-cmake-modules] Update to upstream 5.99.
+- [extra-cmake-modules] Bump tag to 5.90.0 which works for comparisons. 
+- [extra-cmake-modules] Update to upstream 5.90.
+### feature-jolla
+- Updated : 0.1.5-1.3.40.jolla -- 0.1.7-1.4.13.jolla
+- [feature-jolla] Obsolete sailfish-content-configuration-jolla. 
+- [feature-jolla] Remove jolla graphic packges. 
+### ffmpeg
+- Updated : 4.4.1+git2-1.7.2.jolla -- 5.1.2+git1-1.8.2.jolla
+- [ffmpeg] Update to version 5.1.2. 
+- [ffmpeg] Update to version 5.1.1. 
+### file
+- Updated : 5.37+git4-1.6.2.jolla -- 5.41+git1-1.6.4.jolla
+- [file] Update to 5.41. 
+- [git] Move submodule repos to github. 
+### fingerterm
+- Updated : 1.4.3-1.8.2.jolla -- 1.4.6-1.9.1.jolla
+- [fingerterm] Fix fixed keyboard mode having content outside the display. 
+- [fingerterm] Implement 'Z' ANSI sequence. 
+- [fingerterm] Have license file as %license. 
+### fingerterm-l10n
+- Updated : 1.28.2-1.13.2.jolla -- 1.30.2-1.15.1.jolla
+- Binaries added : fingerterm-l10n-uk - 1.30.2-1.15.1.jolla
+- [l10n] Commit from Jolla localisation:  37 of 37 strings translated (0 need review).
+- [l10n] Branched fingerterm from version 1.30
+- [l10n] Commit from Jolla localisation:  37 of 37 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  37 of 37 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+### firejail
+- Updated : 0.9.66+git2-1.7.2.jolla -- 0.9.66+git3-1.7.2.jolla
+- [libtrace] Add xstat() tracing and optionally log only failing calls 
+- [libtrace] Add xstat() tracing and optionally log only failing calls. 
+### flac
+- Updated : 1.3.3-1.5.2.jolla -- 1.3.4-1.5.2.jolla
+- [flac] Update to 1.3.4. 
+- [git] Move submodule repos to github. 
+### flex
+- Updated : 2.6.4+git2-1.7.13.jolla -- 2.6.4+git3-1.6.19.jolla
+- [packaging] Add missing libstd++-devel needed for tests. 
+### fontconfig
+- Updated : 2.13.1+git3.1-1.6.2.jolla -- 2.13.96+git3-1.5.3.jolla
+- [packaging] Fix submodule URL. 
+- [fontconfig] Add missing python build dependency. 
+- [fontconfig] Update to 2.13.96. 
+- [fontconfig] Add license file as %license. 
+gcc
+Reverted : 8.3.0-1.7.22.jolla -- 8.3.0-1.7.2.jolla
+- Update cross spec files. 
+- Add patches from OpenSUSE to make builds reproducible. 
+- Remove release version from rpmver file. 
+### gdk-pixbuf
+- Updated : 2.38.1-1.6.2.jolla -- 2.42.6+git2-1.6.3.jolla
+- [gdk-pixbuf] Remove obsolete x11 configure option. 
+- [gdk-pixbuf] Update to 2.42.6. 
+- [git] Move submodule repos to github. 
+### gecko-camera
+- Updated : 0.1.4-1.4.10.jolla -- 0.1.6-1.4.1.jolla
+- [gecko-camera] Remove release from meson version parameter. 
+- [gecko-camera] Use media buffers for decoded video. 
+### gecko-camera-droid-plugin
+- Updated : 0.1.4-1.4.2.jolla -- 0.1.6-1.4.1.jolla
+- [gecko-camera] Remove release from meson version parameter. 
+- [gecko-camera] Use media buffers for decoded video. 
+### geoclue
+- Updated : 0.12.99.7-1.6.2.jolla -- 0.12.99.8+git2-1.6.3.jolla
+- [geoclue] Fix provider reference count on multiple connections. 
+- [geoclue] Include license file as %license. 
+### gettext
+- Updated : 0.20.1+git1-1.6.28.jolla -- 0.21.1+git2-1.7.2.jolla
+- [gettext] Generate timestamp in .pot files from SOURCE_DATE_EPOCH. 
+- [gettext] Update to 0.21.1. 
+- [gettext] Update to 0.21. 
+- [gettext] Update to upstream 0.20.2
+- [gettext] Update to upstream 0.21
+- [git] Move submodule repos to github. 
+### git
+- Updated : 2.26.2+git2-1.3.2.jolla -- 2.34.5+git2-1.4.1.jolla
+- [log] Let --invert-grep only invert --grep. 
+- [git] Update to version 2.34.5. 
+### glib2
+- Updated : 2.66.2+git2-1.5.2.jolla -- 2.72.3+git1-1.5.3.jolla
+- [glib2] Update to 2.72.3. 
+### gmime
+- Updated : 2.6.20+git1-1.6.2.jolla -- 3.2.8+git1-1.6.3.jolla
+- [gmime] Update to 3.2.8. 
+### gmp-droid
+- Updated : 0.5.1-1.4.2.jolla -- 0.7-1.3.2.jolla
+- [packaging] Fix submodule URL. 
+- [gmp-droid] Add ability to control video encoder bitrate. 
+- [gmp-droid] Clear callback structures before use. 
+### gnu-findutils
+- Updated : 4.6.0+git3-1.6.2.jolla -- 4.6.0+git4-1.6.1.jolla
+- [packaging] Avoid patches spanning submodules. 
+### gobject-introspection
+- Updated : 1.63.2+git1-1.6.2.jolla -- 1.72.1+git1-1.7.3.jolla
+- [gobject-introspection] Update to 1.72.1. 
+- [git] Move submodule repos to github. 
+- [gobject-introspection] Backport fix for building with newer meson. 
+### gpgme
+- Updated : 1.2.0+git7-1.7.2.jolla -- 1.2.0+git8-1.7.2.jolla
+- [gpgme] Backport from 1.5.4 fix for newer texinfo. 
+### grilo
+- Updated : 0.3.13+git1-1.5.2.jolla -- 0.3.14+git1-1.5.2.jolla
+- [git] Move submodule repos to github. 
+- [grilo] Update to 0.3.14. 
+### grilo-plugins
+- Updated : 0.3.13+git2-1.7.2.jolla -- 0.3.14+git1-1.7.3.jolla
+- [grilo-plugins] Update to 0.3.14. 
+### grilo-qt5
+- Updated : 0.3.2-1.8.2.jolla -- 0.3.3-1.8.1.jolla
+- [qtgrilo] Clarify licensing. 
+### gssdp
+- Updated : 1.3.0-1.6.2.jolla -- 1.3.0+git2-1.6.2.jolla
+- [gssdp] Build require vala instead of version specific libvala. 
+### gstreamer1.0
+- Updated : 1.18.5+git1-1.7.14.jolla -- 1.20.4+git1-1.9.2.jolla
+- Binaries added : gstreamer1.0-libgstcheck - 1.20.4+git1-1.9.2.jolla
+- [gstreamer] Update to version 1.20.4. 
+- [gstreamer] Update to version 1.20.3. 
+- [gstreamer] Split libgstcheck to its own package. 
+### gstreamer1.0-droid
+- Updated : 0.20211101.0-1.3.2.jolla -- 0.20221003.0-1.4.3.jolla
+- [codec] Add support for AV1 decoder. 
+- [gst-droid] Fix dark video preview. 
+- [gst-droid] Fix wrong parameter usage in framerate choosage function. 
+- [gst-droid] Add jpeg-quality parameter to gstdroidcamsrc
+- [gst-droid] Add jpeg-quality parameter to gstdroidcamsrc. 
+- [gst-droid] Include license file as %license. 
+### gstreamer1.0-libav
+- Updated : 1.18.5+git1-1.7.2.jolla -- 1.20.4+git1-1.8.1.jolla
+- [gst-libav] Update to version 1.20.4. 
+- [gst-libav] Update to version 1.20.3. 
+### gstreamer1.0-plugins-bad
+- Updated : 1.18.5+git1-1.7.2.jolla -- 1.20.4+git1-1.8.1.jolla
+- [gst-plugins-bad] Update to version 1.20.4. 
+- [gst-plugins-bad] Update to version 1.20.3. 
+### gstreamer1.0-plugins-base
+- Updated : 1.18.5+git2-1.7.4.jolla -- 1.20.4+git1-1.8.2.jolla
+- [gst-plugins-base] Update to version 1.20.4. 
+- [gst-plugins-base] Update to version 1.20.3. 
+### gstreamer1.0-plugins-good
+- Updated : 1.18.5+git2-1.7.2.jolla -- 1.20.4+git1-1.8.2.jolla
+- [gst-plugins-good] Update to version 1.20.4. 
+- [gst-plugins-good] Update to version 1.20.3. 
+### gupnp
+- Updated : 1.3.0-1.6.2.jolla -- 1.3.0+git2-1.7.1.jolla
+- [gupnp] Build require vala instead of version specific libvala. 
+### htop
+- Updated : 3.0.2+git2-1.3.2.jolla -- 3.2.0+git1-1.2.3.jolla
+- [htop] Update to 3.2.0
+- [htop] Update to 3.2.0. 
+### hunspell
+- Updated : 1.6.2+git2-1.7.2.jolla -- 1.7.1+git1-1.7.2.jolla
+- [hunspell] Update to version 1.7.1. 
+### hw-ramdisk
+- Updated : 1.1.4-1.2.2.jolla -- 1.1.5-1.2.3.jolla
+- [gen_init_cpio] Enable reproducible builds. 
+### initrd-helpers
+- Updated : 0.1.14-1.5.2.jolla -- 0.1.15-1.5.2.jolla
+- [find-mmc-bypartlabel] Test for cases where the disk is on mmcblk1. 
+### iproute
+- Updated : 3.7.0+git6.1-1.7.2.jolla -- 5.15+git2-1.6.3.jolla
+- [packaging] Fix submodule URL. 
+- [iproute] Update to 5.15. 
+### jolla-alarm-ui
+- Updated : 0.2.16-1.4.2.jolla -- 0.2.18-1.6.1.jolla
+- [alarm-ui] Show fallback title for unnamed calendar events. 
+- [alarm-ui] Don't play calendar alarm under do-not-disturb mode. 
+### jolla-alarm-ui-l10n
+- Updated : 1.98.3-1.8.2.jolla -- 1.112.2-1.9.1.jolla
+- Binaries added : jolla-alarm-ui-l10n-uk - 1.112.2-1.9.1.jolla
+- [l10n] Commit from Jolla localisation:  34 of 34 strings translated (0 need review).
+- [l10n] Branched jolla-alarm-ui from version 1.112
+- [l10n] Commit from Jolla localisation:  34 of 34 strings translated (0 need review).
+- [tpl] translation templates update for 0.2.18
+- [l10n] Commit from Jolla localisation:  33 of 33 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  33 of 33 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [tpl] translation templates update for 0.2.17
+### jolla-ambient-sound-theme
+- Updated : 0.0.17-1.2.2.jolla -- 0.1.0-1.2.2.jolla
+- [sound-theme] Remove toh_attach. 
+### jolla-calculator-l10n
+- Updated : 1.80.3-1.7.2.jolla -- 1.85.1-1.7.1.jolla
+- Binaries added : jolla-calculator-l10n-uk - 1.85.1-1.7.1.jolla
+- [l10n] Branched jolla-calculator from version 1.85
+- [l10n] Commit from Jolla localisation:  6 of 6 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  6 of 6 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  6 of 6 strings translated (0 need review).
+### jolla-calendar
+- Updated : 1.0.36-1.6.2.jolla -- 1.1.5-1.9.1.jolla
+- [calendar] Fix DST indicator on wrong month. 
+- [jolla-calendar] Use primaryMonth to compare month for DST indicator.
+- [calendar] Migrate to Nemo qml imports. 
+- [jolla-calendar] Add a week view.
+- [jolla-calendar] Add a week view. 
+- [jolla-calendar] Scale down tab header when width is too narrow
+- [calendar] Fix empty schedule placeholder position. 
+- [jolla-calendar] Fix the placeholder position on active menu in MonthView.qml
+- [calendar] Allow create unnamed events and show fallback title on ui. 
+- [jolla-calendar] Adjust design for tablet screens.
+- [jolla-calendar] Align header colour rectangle in day view.
+- [jolla-calendar] Cache current view.
+- [jolla-calendar] Change view with a tab bar. 
+- [jolla-calendar] Create a MonthHeader.qml item.
+- [jolla-calendar] Don't need to hide page indicator anymore.
+- [jolla-calendar] Implement a minimal tab header.
+- [jolla-calendar] Restrict date chooser in month view to year/month.
+- [jolla-calendar] Rework place holder in MonthPage to closely follow ViewPlaceholder.
+- [calendar] Fix day view times for events on different timezone. 
+- [jolla-calendar] Ensure to avoid division by zero in height calculations.
+- [jolla-calendar] Take the time zone into account in day view.
+- [jolla-calendar] Add a switch to drop invitation on importation.
+- [jolla-calendar] Strike out cancelled event in cover and day view.
+- [jolla-calendar] Strike out cancelled event in cover and day view. 
+- [jolla-calendar] Add right margin to the attendee list.
+- [jolla-calendar] Add right margin to the attendee list. 
+- [calendar] Adapt to adjusted exception api change. 
+- [jolla-calendar] Adjust to new createModification() in CalendarApi.
+- [calendar] Support choosing event conflict resolution strategy. 
+- [jolla-calendar] Add a combo to choose sync failure resolution.
+- [calendar] Show DST indication on month page. 
+- [jolla-calendar] Display the transition from and to DST in month view.
+- [jolla-calendar] Display the transition from and to DST in month view. 
+- [jolla-calendar] Implement transition tracking in the application.
+- [jolla-calendar] Add a label for cancelled events.
+- [jolla-calendar] Add a label for cancelled events. 
+### jolla-calendar-l10n
+- Updated : 1.249.3-1.9.2.jolla -- 1.270.2-1.10.1.jolla
+- Binaries added : jolla-calendar-l10n-uk - 1.270.2-1.10.1.jolla
+- [l10n] Commit from Jolla localisation:  154 of 154 strings translated (0 need review).
+- [l10n] Branched jolla-calendar from version 1.270
+- [l10n] Commit from Jolla localisation:  154 of 154 strings translated (0 need review).
+- [tpl] translation templates update for 1.1.3
+- [l10n] Commit from Jolla localisation:  153 of 153 strings translated (0 need review).
+- [tpl] translation templates update for 1.1.1
+- [tpl] translation templates update for 1.1.2
+- [l10n] Commit from Jolla localisation:  134 of 152 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  148 of 152 strings translated (0 need review).
+- [tpl] translation templates update for 1.0.42
+- [tpl] translation templates update for 1.1.0
+- [l10n] Commit from Jolla localisation:  150 of 150 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [tpl] translation templates update for 1.0.40
+- [l10n] Commit from Jolla localisation:  150 of 150 strings translated (0 need review).
+- [tpl] translation templates update for 1.0.39
+- [l10n] Commit from Jolla localisation:  142 of 142 strings translated (0 need review).
+- [tpl] translation templates update for 1.0.38
+- [l10n] Commit from Jolla localisation:  140 of 140 strings translated (0 need review).
+- [tpl] translation templates update for 1.0.37
+- [l10n] Commit from Jolla localisation:  139 of 139 strings translated (0 need review).
+### jolla-camera
+- Updated : 1.2.16.3-1.9.2.jolla -- 1.2.24-1.10.1.jolla
+- [camera] Remove obsolete signonui dependency. 
+- [rpm] Drop jolla-settings-accounts requirement. 
+- [camera] Use dconf to enable experimental camera modes. 
+- [jolla-camera] Restart camera upon error (xperia 10 III). 
+- [jolla-camera] Disable video torch on camera switch if not supported. 
+- [jolla-camera] Do not enable video torch on camera or mode switch. 
+- [camera] Reset zoom level when selecting different zoom camera. 
+- [camera] Update first time hint to match the vertical drag behavior. 
+- [jolla-camera] Disable exposure modes on 4.4 release. 
+- [camera] Migrate org.nemomobile.thumbnailer import to Nemo.Thumbnailer. 
+### jolla-camera-l10n
+- Updated : 1.218.3-1.9.2.jolla -- 1.230.3-1.11.1.jolla
+- Binaries added : jolla-camera-l10n-uk - 1.230.3-1.11.1.jolla
+- [l10n] Commit from Jolla localisation:  73 of 73 strings translated (0 need review).
+- [l10n] Branched jolla-camera from version 1.230
+- [l10n] Commit from Jolla localisation:  73 of 73 strings translated (0 need review).
+- [tpl] translation templates update for 1.2.22
+- [l10n] Commit from Jolla localisation:  72 of 73 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  72 of 73 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  73 of 73 strings translated (0 need review).
+- [tpl] translation templates update for 1.2.18
+- [tpl] translation templates update for 1.2.19
+- [l10n] Commit from Jolla localisation:  73 of 73 strings translated (0 need review).
+### jolla-clock-l10n
+- Updated : 1.162.3-1.7.2.jolla -- 1.165.2-1.8.1.jolla
+- Binaries added : jolla-clock-l10n-uk - 1.165.2-1.8.1.jolla
+- [l10n] Commit from Jolla localisation:  47 of 47 strings translated (0 need review).
+- [l10n] Branched jolla-clock from version 1.165
+- [l10n] Commit from Jolla localisation:  47 of 48 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  47 of 48 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+### jolla-common-configurations
+- Updated : 0.11.3.1-1.6.2.jolla -- 0.11.10-1.7.1.jolla
+- [ngfd] Add ngfd event for communication led. 
+- [systemd] Use nice value 1 for system and user session. 
+- [ngfd] Allow passing haptic effect params. 
+- [connman] Set ethernet as default autoconnect tech. 
+- [connman] Use timed localtime, set regdom to follow timezone. 
+- [jolla-common-configurations] Remove toh_attach ngfd event. 
+- [connman] Prefer ethernet over WiFi and cellular. 
+### jolla-contacts
+- Updated : 0.6.36-1.6.2.jolla -- 0.6.38-1.7.1.jolla
+- [contacts] Remove SignonUiService jolla_signon_ui_service property. 
+- [contacts] Add permission to access the Internet. 
+### jolla-contacts-l10n
+- Updated : 1.187.3-1.8.2.jolla -- 1.192.1-1.8.1.jolla
+- Binaries added : jolla-contacts-l10n-uk - 1.192.1-1.8.1.jolla
+- [l10n] Branched jolla-contacts from version 1.192
+- [l10n] Commit from Jolla localisation:  60 of 60 strings translated (0 need review).
+- [tpl] translation templates update for 0.6.37
+- [l10n] Commit from Jolla localisation:  60 of 60 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  60 of 60 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  60 of 60 strings translated (0 need review).
+### jolla-developer-mode
+- Updated : 0.6.21-1.2.21.jolla -- 0.6.23-1.3.7.jolla
+- [rnd-dist-upgrade] Use ssu-devinfo instead of ssu. 
+- [jolla-developer-mode] Add firewall rule for ethernet SSH. 
+### jolla-devicelock
+- Updated : 0.2.47-1.3.27.jolla -- 0.2.49-1.4.5.jolla
+- [devel] Require systemsettings pkgconfig. 
+- [devicelock] Remove qt5-qtsysteminfo usage. 
+- [Packaging] Cleanup spec file
+### jolla-devicelock-l10n
+- Updated : 1.48.3-1.6.2.jolla -- 1.52.1-1.6.1.jolla
+- Binaries added : jolla-devicelock-l10n-uk - 1.52.1-1.6.1.jolla
+- [l10n] Branched jolla-devicelock from version 1.52
+- [l10n] Commit from Jolla localisation:  7 of 7 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  7 of 7 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  7 of 7 strings translated (0 need review).
+### jolla-email
+- Updated : 1.1.29-1.8.2.jolla -- 1.1.37-1.11.1.jolla
+- [jolla-email] Don't duplicate Inbox page on deep links. 
+- [email] Migrate to Nemo imports. 
+- [jolla-email] Remove SignonUiService jolla_signon_ui_service property. 
+- [jolla-email] Allow text files to be shared to email. 
+- [jolla-email] Avoid message list signed email icon without gpg support. 
+- [jolla-email] Don't show the sign icon in list when the crypto packages are not installed.
+- [jolla-email] Remove the sign icon from the message list when there is no GnuPG support.
+- [jolla-email] Migrate to new formatter enum name. 
+- [email] Add padding to left of attachment icon. 
+- [email] Change formatter timestamp after Silica. 
+### jolla-email-l10n
+- Updated : 1.293.5-1.8.2.jolla -- 1.301.2-1.9.1.jolla
+- Binaries added : jolla-email-l10n-uk - 1.301.2-1.9.1.jolla
+- [l10n] Commit from Jolla localisation:  233 of 233 strings translated (0 need review).
+- [tpl] translation templates update for 1.1.37
+- [l10n] Branched jolla-email from version 1.301
+- [l10n] Commit from Jolla localisation:  233 of 233 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  233 of 233 strings translated (0 need review).
+- [tpl] translation templates update for 1.1.33
+- [l10n] Commit from Jolla localisation:  233 of 233 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [tpl] translation templates update for 1.1.29
+- [l10n] Commit from Jolla localisation:  233 of 233 strings translated (0 need review).
+### jolla-gallery
+- Updated : 1.1.0-1.6.6.jolla -- 1.1.5-1.9.1.jolla
+- [gallery] Allow to immediately edit images opened externally. 
+- [rpm] Drop jolla-settings-accounts requirement. 
+- [jolla-gallery] Fix test run execution on 64-bit. 
+- [gallery] Fix orientation test. 
+- [gallery] Remove context menu tests from tst_gridpage. 
+- [gallery] Migrate org.nemomobile.thumbnailer import to Nemo.Thumbnailer. 
+### jolla-gallery-ambience
+- Updated : 0.2.35-1.3.2.jolla -- 0.2.37-1.5.1.jolla
+- [gallery-ambience] Show warning text when ambience tone file isn't accessible. 
+- [gallery-ambience] Migrate org.nemomobile.thumbnailer import to Nemo.Thumbnailer. 
+### jolla-gallery-ambience-l10n
+- Updated : 1.134.2-1.7.2.jolla -- 1.139.3-1.12.1.jolla
+- Binaries added : jolla-gallery-ambience-l10n-uk - 1.139.3-1.12.1.jolla
+- [l10n] Commit from Jolla localisation:  39 of 39 strings translated (0 need review).
+- [l10n] Branched jolla-gallery-ambience from version 1.139
+- [l10n] Commit from Jolla localisation:  39 of 39 strings translated (0 need review).
+- [tpl] translation templates update for 0.2.37
+- [l10n] Commit from Jolla localisation:  38 of 38 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  38 of 38 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+### jolla-gallery-extensions-l10n
+- Updated : 1.43.3-1.5.2.jolla -- 1.45.1-1.6.1.jolla
+- Binaries added : jolla-gallery-extensions-l10n-uk - 1.45.1-1.6.1.jolla
+- [l10n] Branched jolla-gallery-extensions from version 1.45
+- [l10n] Commit from Jolla localisation:  13 of 13 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  13 of 13 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+### jolla-gallery-facebook
+- Updated : 0.1.13-1.4.2.jolla -- 0.1.14-1.5.1.jolla
+- [gallery-facebook] Migrate to new formatter enum name. 
+### jolla-gallery-facebook-l10n
+- Updated : 1.74.4-1.6.2.jolla -- 1.77.1-1.6.1.jolla
+- Binaries added : jolla-gallery-facebook-l10n-uk - 1.77.1-1.6.1.jolla
+- [l10n] Branched jolla-gallery-facebook from version 1.77
+- [l10n] Commit from Jolla localisation:  14 of 14 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  14 of 14 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+### jolla-gallery-l10n
+- Updated : 1.172.3-1.9.2.jolla -- 1.176.1-1.9.1.jolla
+- Binaries added : jolla-gallery-l10n-uk - 1.176.1-1.9.1.jolla
+- [l10n] Branched jolla-gallery from version 1.176
+- [l10n] Commit from Jolla localisation:  17 of 17 strings translated (0 need review).
+- [tpl] translation templates update for 1.1.5
+- [l10n] Commit from Jolla localisation:  17 of 17 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  17 of 17 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+### jolla-handwriting
+- Updated : 0.1.5-1.3.2.jolla -- 0.1.7-1.4.1.jolla
+- [jolla-handwriting] Don't abort process on aarch64 if remote methods fail. 
+- [jolla-handwriting] Fix socket path. 
+### jolla-keyboard
+- Updated : 0.8.28.3-1.7.2.jolla -- 0.9.5-1.9.1.jolla
+- [keyboard] Allow app to disable paste usage. 
+- [keyboard] Migrate to Nemo import. 
+- [keyboard] Add Ukrainian currency symbol to ? accents also. 
+- [keyboard] Show split landscape paste button when changing text field. 
+- [keyboard] Add Ukrainian layout. 
+- [jolla-keyboard] Decrease the width of symbol and enter keys. 
+- [keyboard] Fix capital letter handling on shift multitouch. 
+- [keyboard] Decrease spacebar row punctionation keys. 
+- [keyboard] Add Latvian layout. 
+- [jolla-keyboard] Add license file for BSD. 
+- [jolla-keyboard] Restart the keyboard when installing input handlers. 
+- [keyboard] Fix number layout getting stuck. 
+- [keyboard] Add dependency to QtQml.Models. 
+- [keyboard] Fix keyboard start position calculations for the mouse input. 
+### jolla-keyboard-l10n
+- Updated : 1.101.2-1.6.2.jolla -- 1.103.1-1.7.1.jolla
+- Binaries added : jolla-keyboard-l10n-uk - 1.103.1-1.7.1.jolla
+- [l10n] Branched jolla-keyboard from version 1.103
+- [l10n] Commit from Jolla localisation:  21 of 21 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  21 of 21 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+### jolla-mediaplayer
+- Updated : 1.3.1.1-1.6.2.jolla -- 1.3.5-1.6.1.jolla
+- [mediaplayer] Use tracker:available from content specific graphs. 
+- [mediaplayer] Adapt to adjusted mpris loop enum naming. 
+- [mediaplayer] Extend MPRIS support. 
+- [mediaplayer] Change org.nemomobile.thumbnailer import to Nemo.Thumbnailer. 
+### jolla-mediaplayer-l10n
+- Updated : 1.143.2-1.7.2.jolla -- 1.146.1-1.8.1.jolla
+- Binaries added : jolla-mediaplayer-l10n-uk - 1.146.1-1.8.1.jolla
+- [l10n] Branched jolla-mediaplayer from version 1.146
+- [l10n] Commit from Jolla localisation:  65 of 65 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  65 of 65 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [tpl] translation templates update for 1.3.3
+- [l10n] Commit from Jolla localisation:  65 of 65 strings translated (0 need review).
+### jolla-mediaplayer-radio-l10n
+- Updated : 1.67.2-1.6.2.jolla -- 1.69.1-1.7.1.jolla
+- Binaries added : jolla-mediaplayer-radio-l10n-uk - 1.69.1-1.7.1.jolla
+- [l10n] Branched jolla-mediaplayer-radio from version 1.69
+- [l10n] Commit from Jolla localisation:  11 of 11 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  11 of 11 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+### jolla-messages
+- Updated : 1.1.60-1.6.2.jolla -- 1.1.68-1.9.1.jolla
+- [messages] Fix conversation page not showing section name for current day. 
+- [messages] Avoid horizontal strikethrough on XA2. 
+- [messages] Remove obsolete libjollasignonuiservice dependency. 
+- [messages] Avoid deprecated formatter enum. 
+- [messages] Avoid symlinked icon name. 
+- [messages] Add dependency to presence settings. 
+- [messages] Remove direct contactsd dependency. 
+- [messages] Migrate org.nemomobile.thumbnailer import to Nemo.Thumbnailer. 
+### jolla-messages-l10n
+- Updated : 1.199.3-1.9.2.jolla -- 1.207.3-1.13.1.jolla
+- Binaries added : jolla-messages-l10n-uk - 1.207.3-1.13.1.jolla
+- [l10n] Commit from Jolla localisation:  89 of 89 strings translated (0 need review).
+- [l10n] Branched jolla-messages from version 1.207
+- [l10n] Commit from Jolla localisation:  89 of 89 strings translated (0 need review).
+- [tpl] translation templates update for 1.1.68
+- [l10n] Commit from Jolla localisation:  88 of 88 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  88 of 88 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  88 of 88 strings translated (0 need review).
+### jolla-notes
+- Updated : 1.0.20-1.5.2.jolla -- 1.0.23-1.6.1.jolla
+- [notes] Fix tests. 
+- [notes] Fix notes getting confused opening a note during remorse. 
+- [notes] Test fixes. 
+### jolla-notes-l10n
+- Updated : 1.121.2-1.7.2.jolla -- 1.123.1-1.8.1.jolla
+- Binaries added : jolla-notes-l10n-uk - 1.123.1-1.8.1.jolla
+- [l10n] Branched jolla-notes from version 1.123
+- [l10n] Commit from Jolla localisation:  22 of 22 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  22 of 22 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+### jolla-sessions-qt5
+- Updated : 1.4.21-1.3.2.jolla -- 1.4.22-1.3.2.jolla
+- [jolla-sessions] Remove /run/activeuser link. 
+### jolla-settings
+- Updated : 1.1.15.1-1.5.2.jolla -- 1.1.21-1.6.1.jolla
+- [jolla-settings] Drop jolla_signon_ui_service from root context. 
+- [jolla-settings] Add signaling of ApplicationItem changes. 
+- [jolla-settings] Set icon directories in ApplicationModel. 
+- [settings] Hide Compatibility permission. 
+- [jolla-settings] Get application sandboxing status from sailjail. 
+- [alien] Use Android app settings page without configuration. 
+- [jolla-settings] Add translation option for no ethernet device. 
+### jolla-settings-accounts
+- Updated : 0.4.57.2-1.7.1.jolla -- 0.4.71-1.11.1.jolla
+- [accounts] Allow services to skip sync schedule at creation. 
+- [accounts] Require libjollasignonuiservice-qt5-plugin. 
+- [settings-accounts] Oneshot to update google redirect uri. 
+- [settings-accounts] Remove unnecessary buteo build dependency. 
+- [settings-accounts] Create SignonUiService rather than using context property. 
+- [settings-accounts] Use NetworkCheckDialog from Sailfish.Settings.Networking. 
+- [1] https://developers.google.com/identity/protocols/oauth2/resources/oob-migration#desktop-client
+- [settings-accounts] Migrate Google accounts from OOB to localhost. 
+- [1]
+- [settings-accounts] Add disabled 3-legged OAuth 1.0a flow for Twitter. 
+- [settings-accounts] Support 3-legged OAuth 1.0a flow with external browser. 
+- [settings-accounts] Add password reset link to the forget password. 
+- [settings-accounts] Show 'Update sign-in credentials' always for Google account. 
+- [tests] Run test cases individually. 
+- [settings-accounts] Switch ToS views to use Gecko WebView. 
+- [settings-accounts] Use externel browser for Google account. 
+- [settings-accounts] Add missing linking with ssu. 
+- [settings-accounts] Remove qt5-qtsysteminfo usage. 
+### jolla-settings-accounts-l10n
+- Updated : 1.317.2-1.7.2.jolla -- 1.332.3-1.10.1.jolla
+- Binaries added : jolla-settings-accounts-l10n-uk - 1.332.3-1.10.1.jolla
+- [l10n] Commit from Jolla localisation:  379 of 379 strings translated (0 need review).
+- [l10n] Branched jolla-settings-accounts from version 1.332
+- [l10n] Commit from Jolla localisation:  378 of 378 strings translated (0 need review).
+- [tpl] translation templates update for 0.4.66
+- [tpl] translation templates update for 0.4.67
+- [l10n] Commit from Jolla localisation:  380 of 382 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  380 of 381 strings translated (0 need review).
+- [tpl] translation templates update for 0.4.61
+- [tpl] translation templates update for 0.4.62
+- [tpl] translation templates update for 0.4.63
+- [tpl] translation templates update for 0.4.64
+- [l10n] Commit from Jolla localisation:  381 of 382 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [tpl] translation templates update for 0.4.58
+- [l10n] Commit from Jolla localisation:  381 of 381 strings translated (0 need review).
+### jolla-settings-bluetooth-l10n
+- Updated : 1.123.2-1.5.2.jolla -- 1.127.1-1.6.1.jolla
+- Binaries added : jolla-settings-bluetooth-l10n-uk - 1.127.1-1.6.1.jolla
+- [l10n] Branched jolla-settings-bluetooth from version 1.127
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  16 of 16 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] Commit from Jolla localisation:  16 of 16 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  16 of 16 strings translated (0 need review).
+### jolla-settings-l10n
+- Updated : 1.145.3-1.8.2.jolla -- 1.152.3-1.10.1.jolla
+- Binaries added : jolla-settings-l10n-uk - 1.152.3-1.10.1.jolla
+- [l10n] Commit from Jolla localisation:  23 of 23 strings translated (0 need review).
+- [l10n] Branched jolla-settings from version 1.152
+- [l10n] Commit from Jolla localisation:  23 of 23 strings translated (0 need review).
+- [tpl] translation templates update for 1.1.21
+- [l10n] Commit from Jolla localisation:  23 of 23 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  23 of 23 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [tpl] translation templates update for 1.1.17
+- [tpl] translation templates update for 1.1.20
+- [l10n] Commit from Jolla localisation:  23 of 23 strings translated (0 need review).
+- [tpl] translation templates update for 1.1.16
+### jolla-settings-networking
+- Updated : 1.0.1.1-1.5.2.jolla -- 1.0.20-1.10.1.jolla
+- Binaries added : jolla-settings-networking-ethernet - 1.0.20-1.10.1.jolla, jolla-settings-networking-cellular - 1.0.20-1.10.1.jolla, jolla-settings-networking-vpn - 1.0.20-1.10.1.jolla, sailfish-settings-networking-vpn - 1.0.20-1.10.1.jolla
+- [vpn] Support VPN Association state. 
+- [jolla-settings-networking] Add Prefer 5G setting. 
+- [rpm] Drop jolla-settings version dep from cellular. 
+- [settings-networking] Adapt translation loading for pin entries. 
+- [settings-networking] Add jolla-settings-networking-cellular subpackage. 
+- [rpm] Add period for each description. 
+- [settings-networking] Own Sailfish.Settings.Networking import. 
+- [settings-networking-vpn] Separate vpn packages out of settings-networking. 
+- [settings-networkin] Adapt NetworkCheckDialog translation ids. 
+- [settings-networking] Copy NetworkCheckDialog from jolla-settings-accounts. 
+- [settings-networking] Drop accounts deps from NetworkCheckDialog. 
+- [settings-networking] Prepare NetworkCheckDialog to work without accounts. 
+- [settings-networking] Better api for network status icon highlighting. 
+- [settings-networking] Refine proxy configuration UI. 
+- [settings-networking] Split auto proxy option into auto-detect and auto-config
+- [settings-networking] Make it possible to save empty gateway. 
+- [settings-network] Add VoLTE registration switch for the 'Mobile network'. 
+- [settings-networking] Remove Details option from network edit view. 
+- [settings-networking] Remove Detais option from network edit view. 
+- [settings-networking] Move interface edit behind details view. 
+- [details] Add IPv4 to netmask and gateway info. 
+- [details] Dont hide empty fields. 
+- [details] Show hardware address even when no ip's are availble. 
+- [network] Add section header for nameservers. 
+- [settings-networking] Save initial IPv4 form state after populated. 
+- [settings-networking] Network details as first pulley item instead of delete. 
+- [settings-networking] Use consistent section coloring on network details. 
+- [settings-networking] Add 'Details' to both WlanItem and EthernetItem context menus'. 
+- [settings-networking] Split primary and secondary DNS server to own lines. 
+- [settings-networking] Add 'Save' label to Edit header. 
+- [ethernet] Add hardware address, netmask and gateway to status. 
+- [wlan] Add hardware address, netmask and gateway. 
+- [settings-networking] Allow top menu toggling for ethernet. 
+- [settings-networking] Add ethernet settings as separate plugin. 
+- [settings-networking] Move IP, proxy and adv. (column) settings to plugin. 
+- [settings-networking] Rename ethernet and wlan components for clarity. 
+### jolla-settings-networking-l10n
+- Updated : 1.387.2-1.7.2.jolla -- 1.414.3-1.11.1.jolla
+- Binaries added : jolla-settings-networking-l10n-uk - 1.414.3-1.11.1.jolla
+- [l10n] Commit from Jolla localisation:  610 of 610 strings translated (0 need review).
+- [l10n] Branched jolla-settings-networking from version 1.414
+- [l10n] Commit from Jolla localisation:  610 of 610 strings translated (0 need review).
+- [tpl] translation templates update for 1.0.20
+- [l10n] Commit from Jolla localisation:  609 of 609 strings translated (0 need review).
+- [tpl] translation templates update for 1.0.15
+- [tpl] translation templates update for 1.0.17
+- [tpl] translation templates update for 1.0.19
+- [l10n] Commit from Jolla localisation:  600 of 600 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [tpl] translation templates update for 1.0.10
+- [tpl] translation templates update for 1.0.11
+- [tpl] translation templates update for 1.0.12
+- [tpl] translation templates update for 1.0.13
+- [tpl] translation templates update for 1.0.4
+- [tpl] translation templates update for 1.0.5
+- [tpl] translation templates update for 1.0.7
+- [tpl] translation templates update for 1.0.8
+- [tpl] translation templates update for 1.0.9
+- [l10n] Commit from Jolla localisation:  573 of 581 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  581 of 581 strings translated (0 need review).
+- [tpl] translation templates update for 1.0.2
+### jolla-settings-sailfishos
+- Updated : 0.2.25-1.3.24.jolla -- 0.2.27-1.5.1.jolla
+- [settings-sailfishos] Add offline status notification. 
+- [settings-sailfishos] Move downloading status to C++. 
+- [settings-sailfishos] Migrate to new formatter enum name. 
+### jolla-settings-sailfishos-l10n
+- Updated : 1.139.3-1.9.2.jolla -- 1.153.3-1.11.1.jolla
+- Binaries added : jolla-settings-sailfishos-l10n-uk - 1.153.3-1.11.1.jolla
+- [l10n] Commit from Jolla localisation:  56 of 56 strings translated (0 need review).
+- [l10n] Branched jolla-settings-sailfishos from version 1.153
+- [l10n] Commit from Jolla localisation:  56 of 56 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  53 of 56 strings translated (0 need review).
+- [tpl] translation templates update for 0.2.27
+- [l10n] Commit from Jolla localisation:  53 of 53 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  53 of 53 strings translated (0 need review).
+### jolla-settings-sync-l10n
+- Updated : 1.65.5-1.4.2.jolla -- 1.68.1-1.5.1.jolla
+- Binaries added : jolla-settings-sync-l10n-uk - 1.68.1-1.5.1.jolla
+- [l10n] Branched jolla-settings-sync from version 1.68
+- [l10n] Commit from Jolla localisation:  23 of 23 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  23 of 23 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  23 of 23 strings translated (0 need review).
+### jolla-settings-system
+- Updated : 1.1.51.2-1.9.5.jolla -- 1.2.5.3-1.15.1.jolla
+- Binaries added : jolla-settings-system-about-font-licenses - 1.2.5.3-1.15.1.jolla, jolla-settings-system-location - 1.2.5.3-1.15.1.jolla, jolla-settings-homescreen - 1.2.5.3-1.15.1.jolla, jolla-settings-system-orientation - 1.2.5.3-1.15.1.jolla, jolla-settings-system-presence - 1.2.5.3-1.15.1.jolla
+- [settings-system] Allow to disable paste on PinInput. 
+- [settings-system] Avoid devicelock input field jump on mode switch. 
+- [settings-system] Fix hw keyboard handling for device lock. 
+- [settings-system] Fix PinInput having overlapping input and warning. 
+- [settings-system] Add configuration for ringtones under do not disturb. 
+- [battery] Hide threshold items when they have no effect. 
+- [gestures] Hide flip to silence if it is not supported by hw. 
+- [settings-system] Calculate two column pin input from keypad height. 
+- [settings-system] Hide pin input emergency button when no voice call caps. 
+- [jolla-settings-system] Split orientation settings to sub-package. 
+- [rpm] Clean up and bump version. 
+- [settings-system] Write sw volume slider status to dconf. 
+- [settings-system] Add location sub package. 
+- [settings-system] Move pin entry to jolla-settings-networking. 
+- [jolla-settings-system] Limit Volume slider to safety limits. 
+- [jolla-settings-system] Introduce Volume slider for Top menu. 
+- [jolla-settings-system] Introduce volume slider to the Settings -> Sounds. 
+- [battery] Add controls for charging settings
+- [battery] Allow to control charge hysteresis. 
+- [battery] Separate charging override from charging mode. 
+- [settings-system] Extract parts as sailfish-locale. 
+- [system-settings] Add Ukrainian language. 
+- [jolla-settings-system] Separate auto-time from auto-timezone. 
+- [settings-system] Add packageName and whatProvides properties. 
+- [settings-system] Use 'Automatic' instead 'Dynamic' for orientation lock. 
+- [system-settings] Add RPM info class. 
+- [settings-system] Fix Android storage usage reporting. 
+- [settings-system] Implement alphanumeric lock code UI. 
+- [system-settings] Add Latvian language. 
+- [jolla-settings-system] Add rpm linking to the libsystemsettingsplugin.so. 
+- [settings-system] Create AccountManager during runtime. 
+- [settings-system] settings-accounts is required by application pattern. 
+- [settings] voicecall-ui-jolla is required by patterns. 
+- [settings-system] Introduce an about page snippet for fonts. 
+- [settings] Split system settings into sub-packages. 
+- [settings-system] Remove tohd related functionality. 
+- [settings-about] Hide bluetooth and WLAN address if no adapters. 
+### jolla-settings-system-l10n
+- Updated : 1.556.6-1.13.2.jolla -- 1.608.3-1.13.1.jolla
+- Binaries added : jolla-settings-system-l10n-uk - 1.608.3-1.13.1.jolla
+- [l10n] Commit from Jolla localisation:  646 of 646 strings translated (0 need review).
+- [l10n] Branched jolla-settings-system from version 1.608
+- [l10n] Commit from Jolla localisation:  646 of 646 strings translated (0 need review).
+- [tpl] translation templates update for 1.2.5
+- [tpl] translation templates update for 1.2.5.1
+- [l10n] Commit from Jolla localisation:  646 of 646 strings translated (0 need review).
+- [tpl] translation templates update for 1.1.69
+- [tpl] translation templates update for 1.1.70
+- [tpl] translation templates update for 1.2.0
+- [tpl] translation templates update for 1.2.2
+- [tpl] translation templates update for 1.2.3
+- [tpl] translation templates update for 1.2.4
+- [l10n] Commit from Jolla localisation:  646 of 646 strings translated (0 need review).
+- [tpl] translation templates update for 1.1.68
+- [l10n] Commit from Jolla localisation:  644 of 644 strings translated (0 need review).
+- [tpl] translation templates update for 1.1.67
+- [l10n] Commit from Jolla localisation:  629 of 629 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [tpl] translation templates update for 1.1.61
+- [tpl] translation templates update for 1.1.62
+- [tpl] translation templates update for 1.1.63
+- [tpl] translation templates update for 1.1.64
+- [l10n] Commit from Jolla localisation:  632 of 632 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [tpl] translation templates update for 1.1.58
+- [l10n] Commit from Jolla localisation:  632 of 632 strings translated (0 need review).
+- [tpl] translation templates update for 1.1.54
+- [tpl] translation templates update for 1.1.55
+- [tpl] translation templates update for 1.1.52
+- [l10n] Commit from Jolla localisation:  631 of 631 strings translated (0 need review).
+### jolla-signon-ui
+- Updated : 0.2.12-1.3.2.jolla -- 0.2.13-1.4.1.jolla
+- [jolla-signon-ui] Add %license file. 
+### jolla-signon-ui-l10n
+- Updated : 1.59.3-1.6.2.jolla -- 1.61.1-1.7.1.jolla
+- Binaries added : jolla-signon-ui-l10n-uk - 1.61.1-1.7.1.jolla
+- [l10n] Branched jolla-signon-ui from version 1.61
+- [l10n] Commit from Jolla localisation:  3 of 3 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  3 of 3 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+### jolla-startupwizard
+- Updated : 0.4.40-1.3.2.jolla -- 0.5.1-1.5.1.jolla
+- [startupwizard] Add missing Sailfish.Silica imports. 
+- [rpm] Drop sailfish-components-accounts-qt5 requirements. 
+- [startupwizard] Make Accounts dependencies optional. 
+- [startupwizard] Use NetworkCheckDialog from Sailfish.Settings.Networking. 
+- [jolla-startupwizard] Exit on tutorial step if tutorial is not installed. 
+- [jolla-startupwizard] Remove use of non-existent property. 
+- [startupwizard] Avoid symlinked image name. 
+- [jolla-startupwizard] Drop unused contacts requirement. 
+- [startupwizard] Follow screen primary orientation in pre-user session Startup Wizard window. 
+### jolla-startupwizard-l10n
+- Updated : 1.217.4-1.7.2.jolla -- 1.223.2-1.8.1.jolla
+- Binaries added : jolla-startupwizard-l10n-uk - 1.223.2-1.8.1.jolla
+- [l10n] Commit from Jolla localisation:  46 of 46 strings translated (0 need review).
+- [l10n] Branched jolla-startupwizard from version 1.223
+- [l10n] Commit from Jolla localisation:  46 of 46 strings translated (0 need review).
+- [tpl] translation templates update for 0.4.45
+- [tpl] translation templates update for 0.5.0
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  46 of 46 strings translated (0 need review).
+- [tpl] translation templates update for 0.4.44
+- [l10n] Commit from Jolla localisation:  47 of 47 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  47 of 47 strings translated (0 need review).
+- [tpl] translation templates update for 0.4.41
+### jolla-vault-l10n
+- Updated : 1.182.2-1.7.2.jolla -- 1.186.2-1.10.1.jolla
+- Binaries added : jolla-vault-l10n-uk - 1.186.2-1.10.1.jolla
+- [l10n] Commit from Jolla localisation:  84 of 84 strings translated (0 need review).
+- [l10n] Branched jolla-vault from version 1.186
+- [l10n] Commit from Jolla localisation:  84 of 84 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  84 of 84 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  84 of 84 strings translated (0 need review).
+### jolla-xt9
+- Updated : 0.5.19-1.5.2.jolla -- 0.5.22-1.7.1.jolla
+- [xt9-server] Ensure build reproducibility. 
+- [xt9] Fix French punctuation space handling. 
+- [xt9] Don't abort process on aarch64 if remote methods fail. 
+- [xt9] Try starting xt9-server after installation. 
+### jolla-xt9-cp
+- Updated : 0.2.12-1.3.2.jolla -- 0.2.14-1.4.1.jolla
+- [xt9-cp] Don't abort process on aarch64 if remote methods fail. 
+- [jolla-xt9-cp] Fix socket path. 
+### jolla-xt9-server
+- Updated : 0.5.19-1.4.61.jolla -- 0.5.22-1.5.4.jolla
+- [xt9-server] Ensure build reproducibility. 
+- [xt9] Fix French punctuation space handling. 
+- [xt9] Don't abort process on aarch64 if remote methods fail. 
+- [xt9] Try starting xt9-server after installation. 
+### kf5-calendarcore
+- Updated : 5.86+git3-1.9.2.jolla -- 5.94+git1-1.9.3.jolla
+- [kf5-calendarcore] Update to 5.94. 
+- [kf5-calendarcore] Update to upstream5.94
+- [kf5-calendarcore] Update to 5.93. 
+- [kf5-calendarcore] Update upstream
+- [kf5-calendarcore] Update to 5.92.0. 
+- [kf5-calendarcore] Update to upstream 5.92.
+- [kf5-calendarcore] Update to latest upstream. 
+- [kf5-calendarcore] Update upstream to include cancelled status patch.?
+- [kf5-calendarcore] Update upstream to include cancelled status patch. 
+- [kf5-calendarcore] Update to 5.90. 
+- [kf5-calendarcore] Update to latest upstream 5.90.
+- [kf5-calendarcore] Add %license files. 
+### kf5bluezqt-bluez5
+- Updated : 5.24.0+git18-1.5.2.jolla -- 5.50.0+git4-1.8.1.jolla
+- Binaries added : kf5bluezqt-bluez5-doc - 5.50.0+git4-1.8.1.jolla
+- [kf5bluezqt] Do not try to remove non-existent file. 
+- [kf5bluezqt] Add documentation package. 
+- [kf5bluezqt] Add support for KeyboardDisplay type agents. 
+- [kf5bluezqt] Remove Bluez4 support. 
+- [kf5bluezqt] Update to 5.50. 
+- [kf5bluezqt] Replace the git subtree with patches
+- [kf5-bluezqt] Update to 5.34.0. 
+### kmod
+- Updated : 27+git1-1.7.2.jolla -- 29+git2-1.6.2.jolla
+- [packaging] Fix submodule URL. 
+- [kmod] Update to v29. 
+### libalienaudioservice
+- Updated : 0.18.0-1.4.3.jolla -- 1.12.0-1.4.1.jolla
+- [hook] Add macro for new reconnect type hook. 
+- [audio] Add macro for start corked property key. 
+- [hook] Add missing audio output hook macro. 
+- [hook] Add more generic hook for audio connect.
+- [hook] Add wrapper for hook call with four arguments. 
+- [hook] Update create stream hook argument description. 
+- [audio] Add PulseAudio specific property for device. 
+- [hook] Add hook for reconnecting streams by type. 
+- [hook] Add hooks for speaker state changes. 
+- [hook] Add hook for UI feedback effects. 
+- [hook] Add hooks for vibrator functionality. 
+- [hook] Remove obsolete content type hooks. 
+- [audio] Stream types are enums now. 
+- [hook] Add hooks for audio proplist operations. 
+- [hook] Change set parameters hook to use aaudio_proplist.
+- [proplist] Add convenience function for parsing key value pairs. 
+- [proplist] Add some common property names.
+- [audio] Add hooks for disabling specific audio types. 
+- [hook] Add some convenience macros for calling hooks.
+- [hook] Audio hook for querying stream corking state. 
+- [hook] Hook for audio content type changes. 
+- [hook] Hook for AudioControlService connection state. 
+- [hook] Hook for querying current audio content type. 
+- [hook] Hook for setting content types. 
+- [hook] Hook for setting default content type. 
+- [hook] Remove audio hook wrappers.
+- [hook] Use strings for hook names.
+- [lugins] Plugin can define static dependencies.
+- [proplist] Add some convenience functions.
+- [tests] Update hook unit tests.
+- [unit] Add copyrights to unit tests. 
+- [hook] Add hook for connected accessory. 
+- [plugin] Plugins can have properties. 
+- [hook] Add priority to hook slots. 
+- [hook] Add _t suffix to aaudio_hook_name for consistency.
+- [hook] Update hook documentation about using aaudio_proplist.
+- [hook] Update hook documentation. 
+- [plugin] Add priority plugin hook connect funtion.
+- [proplist] Simple property list. 
+- [libalienaudioservice] Common library for App Support audio handling. 
+### libarchive
+- Updated : 3.4.0+git1-1.6.2.jolla -- 3.5.2+git1-1.6.4.jolla
+- [git] Move submodule repos to github. 
+- [libarchive] Update to 3.5.2. 
+### libaudioresource
+- Updated : 1.0.5+git1-1.6.2.jolla -- 1.0.7-1.6.2.jolla
+- [libaudioresource] Silence some warnings. 
+- [libaudioresource] Declare license file as %license. 
+### libcap-ng
+- Updated : 0.7.9+git3-1.6.16.jolla -- 0.8.2+git1-1.6.7.jolla
+- [libcap-ng] Update to 0.8.2. 
+### libcommhistory-qt5
+- Updated : 1.11.11.1-1.12.2.jolla -- 1.11.14.2-1.14.1.jolla
+- [libcommhistory] Revert update of plugins.qmltypes. 
+- [libcommhistory] Update plugins.qmltypes. 
+- [libcommhistory] Rename unit test xml as tests.xml. 
+- [libcommhistory] Fix race when sending a temporary file with MMS. 
+- [libcommhistory] Add contactName role to eventmodel. 
+### libcontacts-qt5-l10n
+- Updated : 1.31.6-1.6.2.jolla -- 1.33.1-1.7.1.jolla
+- Binaries added : libcontacts-qt5-l10n-uk - 1.33.1-1.7.1.jolla
+- [l10n] Branched libcontacts-qt5 from version 1.33
+- [l10n] Commit from Jolla localisation:  3 of 3 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  3 of 3 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+### libcontentaction-qt5
+- Updated : 0.4.5-1.8.2.jolla -- 0.4.6-1.9.1.jolla
+- [libcontentaction] Fix desktop file confusion between urls and paths. 
+- [libcontentaction] Fix test-special-chars.py. 
+### libdbusaccess
+- Updated : 1.0.14-1.5.2.jolla -- 1.0.18-1.6.3.jolla
+- [libdbusaccess] Fix build dependencies. 
+- [license] Freshened up copyright
+- [debian] Bumped debhelper compat level to 7. 
+- [debian] Require bison and flex. 
+- [rpm] license macro requires rpm >= 4.11
+- [libdbusaccess] Freshened up license. 
+- [libdbusaccess] Housekeeping. 
+- [libdbusaccess] Include %license file. 
+### libdres
+- Updated : 1.1.17-1.5.2.jolla -- 1.1.18-1.5.3.jolla
+- [libdres] Include license file as %license. 
+### libdsme
+- Updated : 0.66.6-1.5.2.jolla -- 0.66.8-1.6.2.jolla
+- [protocol] Remove pointer aliasing. 
+- [protocol] Remove unnecessary casts
+- [ut_libdsme] Fix random test failures. 
+### libffi
+- Updated : 3.2.1+git1.1-1.7.2.jolla -- 3.4.4+git1-1.7.2.jolla
+- [libffi] Update to 3.4.4. 
+- [packaging] Fix submodule URL. 
+- [libffi] Clean up .spec and have license file as %license. 
+### libgbinder
+- Updated : 1.1.18-1.5.2.jolla -- 1.1.30-1.6.1.jolla
+- [gbinder] Fix return value from binder_ptr_cookie encoder. 
+- [gbinder] Added gbinder_writer_append_struct_vec(). 
+- [binder-call] Allow to pass negative number as a parameter. 
+- [binder-call] Removed unused app_options field
+- [packaging] Tweak the spec file. 
+- [test] Compile executables with -fPIE. 
+- [gbinder] Added gbinder_writer_append_struct(). 
+- [gbinder] All binder objects need stability field in Android 11. 
+- [gbinder] Use BINDER_TYPE_HANDLE for NULL binders
+- [gbinder] Handle changing the rpc protocol during execution
+- [gbinder] Housekeeping. 
+- [unit] Added unit test for device + protocol combo. 
+- [debian] Bumped debhelper compat level to 7. 
+- [debian] Fix build dependencies. 
+- [gbinder] Add "aidl4" variant of service manager
+- [gbinder] Add preset gbinder config to support Android API version 31
+- [gbinder] Support for Android 12 (API level 31). 
+- [test] make the binder device configurable for binder-dump test
+- [unit] Improved gbinder_config.c coverage. 
+- [gbinder] Don't finalize GObject twice. 
+- [gbinder] Housekeeping. 
+- [gbinder] Properly finalize GBinderServicePoll. 
+- [gbinder] Housekeeping. 
+- [gbinder] Make RPC protocol selectable at runtime. 
+- [unit] Tests should ignore system config
+- [gbinder] Added reader for parcelables
+- [gbinder] Added writer for parcelables
+- [gbinder] Better handle invalid parcelables. 
+- [gbinder] Fixed gbinder_servicemanager_remove_all_handlers macro. 
+- [gbinder] Housekeeping. 
+- [gbinder] Reader and writer for aidl parcelables. 
+- [unit] Added tests for invalid parcelables. 
+- [unit] Fixed a memory leak in unit_reader. 
+### libgbinder-radio
+- Updated : 1.4.10-1.5.2.jolla -- 1.5.4-1.6.1.jolla
+- [gbinder-radio] Add missing enums for NR. 
+- [gbinder-radio] Add RadioPhysicalChannelConfig structs. 
+- [gbinder-radio] Fix RadioCellIdentity_1_5 struct. 
+- [gbinder-radio] Added RADIO_ACCESS_NETWORKS enum. 
+- [gbinder-radio] Housekeeping. 
+- [gbinder-radio] Added network scan related types. 
+- [gbinder-radio] Fixed names of 1.4 and 1.5 responses. 
+- [gbinder-radio] Add support for IRadio@1.5. 
+- [gbinder-radio] Add support for RadioConfig@1.2. 
+- [gbinder-radio] Fixed getCellInfoList/getDataCallList response mapping
+- [gbinder-radio] Fix RadioDataRegStateResult struct for IRadio@1.4. 
+- [gbinder-radio] Added radio_request_user_data(). 
+### libgcrypt
+- Updated : 1.8.6+git2-1.6.2.jolla -- 1.9.4+git1-1.6.3.jolla
+- [git] Move submodule repos to github. 
+- [libgcrypt] Update to 1.9.4.
+- [libgcrypt] Update to 1.9.4. 
+### libgee
+- Updated : 0.20.3+git1-1.6.4.jolla -- 0.20.6+git1-1.6.1.jolla
+- [git] Move submodule repos to github. 
+- [libgee] Update to 0.20.6. 
+### libglibutil
+- Updated : 1.0.62-1.13.2.jolla -- 1.0.67-1.12.2.jolla
+- [glibutil] Added gutil_log_dump_bytes()
+- [glibutil] 
+- [test] Fixed memory leak in a unit test
+- [debian] Bumped debhelper compat level to 7. 
+- [test] Use __GLIBC__ as a marker for writeable stdout. 
+- [debian] Add --no-parallel to fix build mysterious build error. 
+- [debian] Add --no-parallel to overide dh_auto_clean and dh_auto_test
+- [debian] Another way to fix parallel build issue. 
+- [rpm] Remove _smp_mflags from the check section. 
+- [glibutil] Added gutil_bytes_has_prefix/suffix
+- [glibutil] 
+### libgofono
+- Updated : 2.1.1-1.6.2.jolla -- 2.1.6-1.8.1.jolla
+- [libgofono] Freshened up MCC -> country mapping. 
+- [libgofono] Add support for NR. 
+- [libgofono] Housekeeping
+- [libgofono] Enable link-time optimizer for release build. 
+- [rpm] Require rpm 4.11 for %license. 
+- [libgofono] Have license file as %license. 
+### libgofonoext
+- Updated : 1.0.12-1.5.2.jolla -- 1.0.14-1.6.1.jolla
+- [debian] Bumped debhelper compat level to 7. 
+- [license] Freshened up copyright
+- [gofonoext] Enable link-time optimization for release build
+- [gofonoext] Fixed parallel build
+- [gofonoext] Freshened up license. 
+- [gofonoext] Housekeeping
+- [gofonoext] Require rpm 4.11 for %license. 
+- [libgofonoext] Include license file as %license. 
+### libgpg-error
+- Updated : 1.27+git3.1-1.8.2.jolla -- 1.42+git2-1.7.3.jolla
+- [packaging] Fix submodule URL. 
+- [libgpg-error] Update to 1.42.
+### libgrilio
+- Updated : 1.0.41-1.6.2.jolla -- 1.0.44-1.6.3.jolla
+- [build] Added missing dependencies. 
+- [libgrilio] Freshened up copyright
+- [rpm] Require rpm 4.11 for %license. 
+- [libgrilio] Have license file as %license. 
+### libgsf
+- Updated : 1.14.47+git1-1.6.2.jolla -- 1.14.47+git2-1.6.3.jolla
+- [libgsf] Include license file as %license. 
+### libgsupplicant
+- Updated : 1.0.22-1.7.2.jolla -- 1.0.27-1.9.1.jolla
+- [debian] Bumped debhelper compat level to 7
+- [gsupplicant] Added missing KeyMgmt caps. 
+- [gsupplicant] Handle GroupMgmt interface capability
+- [gsupplicant] Use common GSUPPLICANT_CIPHER map. 
+- [license] Freshened up copyright
+- [rpm] Require rpm 4.11 for %license. 
+- [gsupplicant] Cancel D-Bus calls in a deadlock-free way. 
+- [gsupplicant] Enable link-time optimizer for release build. 
+- [gsupplicant] Housekeeping. 
+- [libgsupplicant] Include license file as %license. 
+### libgudev
+- Updated : 232+git2-1.6.2.jolla -- 237+git1-1.6.3.jolla
+- [libgudev] Update to 237. 
+### libhybris
+- Updated : 0.0.5.44.1-1.4.2.jolla -- 0.0.5.48-1.5.1.jolla
+- Binaries added : libhybris-libvulkan - 0.0.5.48-1.5.1.jolla
+- Binaries removed : libhybris-libOpenVG-devel, libhybris-libOpenVG
+- [packaging] Move libui to main package. 
+- [libhybris] hybris: common: q: Backport support for linkerconfig path from r linker. 
+- [libhybris] hybris: common: q: Fix loading namespaces for non-Android processes. 
+- [libhybris] server_wlegl: fix a crash when format = 0. 
+- [packaging] Fix submodule URLs. 
+- [packaging] Add vulkan packaging. 
+- [packaging] Obsolete removed libhybris-libOpenVG packages
+### libiodata-qt5
+- Updated : 0.19.11+git2-1.7.2.jolla -- 0.19.12-1.7.3.jolla
+- [libiodata] Adjust feature name in the unit test declaration. 
+### libjollasignonuiservice-qt5
+- Updated : 0.4.17-1.4.1.jolla -- 0.4.19-1.6.1.jolla
+- [libjollasignonuiservice] Avoid accessing deleted query. 
+- [libjollasignonuiservice] Cancel sign in if page is closed. 
+### libjollasignonuiservice-qt5-l10n
+- Updated : 1.47.2-1.6.2.jolla -- 1.58.2-1.8.1.jolla
+- Binaries added : libjollasignonuiservice-qt5-l10n-uk - 1.58.2-1.8.1.jolla
+- [l10n] Commit from Jolla localisation:  11 of 11 strings translated (0 need review).
+- [l10n] Branched libjollasignonuiservice-qt5 from version 1.58
+- [l10n] Commit from Jolla localisation:  11 of 11 strings translated (0 need review).
+- [tpl] translation templates update for 0.4.18
+- [l10n] Commit from Jolla localisation:  11 of 11 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  10 of 11 strings translated (0 need review).
+- [tpl] translation templates update for 0.4.15
+- [tpl] translation templates update for 0.4.16
+- [tpl] translation templates update for 0.4.17
+- [l10n] Commit from Jolla localisation:  10 of 10 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  10 of 10 strings translated (0 need review).
+### libjpeg-turbo
+- Updated : 2.1.0+git1-1.7.13.jolla -- 2.1.4+git1-1.7.3.jolla
+- [libjpeg-turbo] Update to 2.1.4. 
+- [libjpeg-turbo] Don't compile with backward compatibility ABI. 
+- [libjpeg-turbo] enable jpeg_mem_src/dest
+- [git] Move submodule repos to github. 
+- [packaging] Ensure build reproducibility. 
+### libkeepalive
+- Updated : 1.8.7-1.7.3.jolla -- 1.8.9-1.9.1.jolla
+- [nemo-keepalive] Update plugins.qmltypes. 
+- [nemo-keepalive] Import Nemo.KeepAlive in documentation. 
+### libksba
+- Updated : 1.3.5+git3-1.7.2.jolla -- 1.6.2+git1-1.7.3.jolla
+- [libksba] Update to 1.6.2. 
+### libmce-glib
+- Updated : 1.0.12-1.6.2.jolla -- 1.0.13-1.6.3.jolla
+- [libmce-glib] Shuffled includes a bit. 
+- [license] Install LICENSE file. 
+- [license] Unified and freshened up licenses. 
+### libmce-qt5
+- Updated : 1.4.2-1.6.2.jolla -- 1.5.0-1.7.1.jolla
+- [mce-qt] Add support for chargering control state tracking. 
+### libmediaart
+- Updated : 1.9.4+git4-1.6.2.jolla -- 1.9.5+git1-1.6.2.jolla
+- [libmediaart] Update to 1.9.5. 
+### libmlocale-qt5
+- Updated : 0.7.4-1.7.2.jolla -- 0.7.6-1.8.1.jolla
+- [mlocale] Avoid broken MLocale::localeScripts() code and adjust tests. 
+- [mlocale] Have license file as %license. 
+### libncicore
+- Updated : 1.1.18-1.2.2.jolla -- 1.1.20-1.3.1.jolla
+- [build] Fixed a problem with version parsing. 
+- [debian] Bumped debhelper compat level to 7. 
+- [debian] Updated dependencies. 
+- [debian] Freshened up license
+- [rpm] Install license file. 
+- [unit] Housekeeping
+### libnciplugin
+- Updated : 1.1.2-1.4.2.jolla -- 1.1.4-1.5.3.jolla
+- [debian] Bumped debhelper compat level to 7
+- [license] Freshened up copyright
+- [nciplugin] Relaxed Frame transmission success criteria. 
+- [debian] Freshened up license
+- [rpm] Install license file. 
+### libnice
+- Updated : 0.1.17+git4-1.5.16.jolla -- 0.1.17+git5-1.5.4.jolla
+- [git] Move submodule repos to github. 
+- [libnice] Fix unit test execution. 
+### libnl
+- Updated : 3.4.0+git3.1-1.7.2.jolla -- 3.5.0+git2-1.6.3.jolla
+- [packaging] Fix submodule URL. 
+- [libnl] Update to 3.5.0. 
+### libogg
+- Updated : 1.3.4-1.5.2.jolla -- 1.3.5-1.5.2.jolla
+- [git] Move submodule repos to github. 
+- [libogg] Update to 1.3.5. 
+### libphonenumber
+- Updated : 8.12.33+git1-1.7.18.jolla -- 8.12.33+git2-1.7.2.jolla
+- [libphonenumber] Ensure build reproducibility. 
+### libprolog
+- Updated : 1.2.1-1.5.2.jolla -- 1.2.2-1.5.3.jolla
+- [libprolog] Include licence file as %license. 
+### libpsl
+- Updated : 0.21.0+git2-1.6.2.jolla -- 0.21.0+git3-1.6.2.jolla
+- [libpsl] Mark license as %license. 
+### libqapk
+- Updated : 0.4.12-1.2.2.jolla -- 0.5.1-1.2.2.jolla
+- [libqapk] Add license file. 
+- [qapk] Adapt to quazip 1.0 naming changes. 
+### libqofono-qt5
+- Updated : 0.112-1.6.2.jolla -- 0.115.1-1.8.1.jolla
+- [libqofono] Update plugins.qmltypes. 
+- [libqofono] Enable symbol hiding. 
+- [libqofono] Freshened up MCC -> country mapping
+- [libqofono] Add no-module-prefix option. 
+- [libqofono] Qt6 compatibility. 
+- [libqofono] Updated MCC -> country mapping. 
+### libqofonoext
+- Updated : 1.0.27-1.5.2.jolla -- 1.0.29-1.6.1.jolla
+- [libqofonoext] Housekeeping
+- [libqofonoext] Qt6 compatibility. 
+- [libqofonoext] Allow to redefine QOFONOEXT_EXPORT
+- [libqofonoext] Package LICENSE file. 
+- [libqofonoext] Updated README
+### libqt5sparql
+- Updated : 0.3.0-1.5.12.jolla -- 0.3.5-1.6.2.jolla
+- [libsparql] Fix build reproducibility. 
+- [libqtsparql] Fix endpoint test on 64-bit. 
+- [libqtsparql] Disable building unit tests that need major overhaul. 
+- [libqtsparql] Disable the qml api for now. 
+- [libqtsparql] Fix test for broken connection. 
+- [libqtsparql] Remove threading test. 
+- [libqtsparql] Fix datetime binding test. 
+- [qtsparql] Remove reference to removed qsparql_tracker test. 
+### libquillmetadata-qt5
+- Updated : 1.111111.11-1.5.2.jolla -- 2.0.0-1.5.2.jolla
+- [quillmetadata] Move tests to /opt/. 
+### libresourceqt-qt5
+- Updated : 1.31.0-1.9.2.jolla -- 1.32.0-1.9.2.jolla
+- [libresourceqt] Fix unit tests. 
+### libsailfishkeyprovider
+- Updated : 1.0.7-1.5.2.jolla -- 1.0.9-1.5.2.jolla
+- [sailfishkeyprovider] Build subdirs as ordered. 
+- [sailfishkeyprovider] Have license file as %license. 
+### libsbc
+- Updated : 1.3.1-1.7.2.jolla -- 2.0+git1-1.7.2.jolla
+- [sbc] Update to 2.0. 
+- [packaging] Fix submodule URL. 
+- [sbc] Update to 1.4. 
+### libsndfile
+- Updated : 1.0.29+git1-1.5.2.jolla -- 1.1.0+git1-1.6.2.jolla
+- [libsndfile] Update to 1.1.0. 
+- [git] Move submodule repos to github. 
+- [libsndfile] Update to 1.0.31. 
+### libsocialcache-l10n
+- Updated : 1.12.5-1.6.2.jolla -- 1.14.1-1.7.1.jolla
+- Binaries added : libsocialcache-l10n-uk - 1.14.1-1.7.1.jolla
+- [l10n] Branched libsocialcache from version 1.14
+- [l10n] Commit from Jolla localisation:  8 of 8 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  8 of 8 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+### libsolv
+- Updated : 0.7.20+git1-1.6.8.jolla -- 0.7.20+git2-1.6.3.jolla
+- [packaging] Ensure build reproducibility. 
+### libtasn1
+- Updated : 4.13+git2-1.6.2.jolla -- 4.18.0+git1-1.6.5.jolla
+- [libtasn1] Update to version 4.18. 
+### libusb-moded-qt5
+- Updated : 1.9-1.6.2.jolla -- 1.10-1.6.2.jolla
+- [libusb-moded-qt] Add license file. 
+### libusb1
+- Updated : 1.0.20.1-1.7.2.jolla -- 1.0.24+git3-1.6.2.jolla
+- Binaries removed : libusb1-static
+- [packaging] Fix submodule URL. 
+- [libusb1] Fix up build. 
+- [libusb1] Update to 1.0.24. 
+### libvpx
+- Updated : 1.9.0-1.5.2.jolla -- 1.12.0-1.5.2.jolla
+- [git] Move submodule repos to github. 
+- [libvpx] Update to 1.12.0. 
+### libwebp
+- Updated : 1.2.0+git1-1.9.2.jolla -- 1.2.4+git1-1.9.2.jolla
+- [libwebp] Upgrade libwebp to v1.2.4. 
+### libxcrypt
+- Updated : 4.4.23+git1-1.2.2.jolla -- 4.4.23+git2-1.2.3.jolla
+- [libxcrypt] Add %license files. 
+### libxslt
+- Updated : 1.1.34+git1-1.7.2.jolla -- 1.1.37+git1-1.7.2.jolla
+- [libxslt] Update to 1.1.37. 
+### libzypp
+- Updated : 17.26.0+git1-1.6.3.jolla -- 17.26.0+git2-1.6.2.jolla
+- [git] Move submodule repos to github. 
+- [libzypp] Do not disable libproxy use. 
+### lipstick-jolla-home-qt5
+- Updated : 1.24.16.3-1.9.10.jolla -- 1.25.13.2-1.14.1.jolla
+- [lipstick-jolla] Disable lockscreen paste on virtual keyboard. 
+- [lipstick-jolla] Support alphanumeric input on polkit dialog. 
+- [lipstick-jolla] Optimise wifi connectivity UI. 
+- [compositor] Floating screenshot button. 
+- [lipstick-jolla] Don't show geo: uri when opening. 
+- [lipstick-jolla-home] Add 5G network type indicator. 
+- [lipstick-jolla] Remove obsolete ambience imports. 
+- [lipstick-jolla] Make explicit notification dismissal stop feedbacks. 
+- [lipstick-jolla-home] Active sw volume control warning only upon user action. 
+- [lipstick-jolla] Allow dash on organization name for cover actions. 
+- [lipstick-jolla-home] Ensure correct permissions dialog height. 
+- [lipstick-jolla] Remove notification preview minimumPriority. 
+- [lipstick-jolla-home] Suppress incoming call when cellular voice not available. 
+- [lipstick-jolla-home] Conditionally suppress volume bar upon audio volume warning. 
+- [lipstick-jolla] Switch away from old nemomobile qml imports where possible. 
+- [bluetooth] Use KeyboardDisplay agent since we can both input codes and show them. 
+- [lipstick-jolla-home] Use ssu-sysinfo instead of ssu. 
+- [lipstick-jolla] Fix sim indicator highlight with multisim. 
+- [statusarea] Unify status area icon locations. 
+- [dconf] Document experimental config defaults to lipstick-experimental-configs.txt. 
+- [lipstick-jolla-home] Make lockscreen notification count configurable. 
+- [lipstick-jolla] Allow device lock prompt to select its padding. 
+- [peekfilter] Update active touches also on Ignoring state. 
+- [peekfilter] Unregister QTouchDevice upon destruction. 
+- [lipstick-jolla-home] Make visibility of topmenu's shutdown & reboot configurable. 
+- [connection-selector] Don't call Connect twice when connecting hidden network. 
+- [lipstick-jolla-home] Get ambience if wallpaper exists. 
+- [lipstick-jolla-home] Cleanup AmbienceBackgroundLoader and SynchronizedWallpaperLoader. 
+- [lipstick-jolla-home] libsocialcache-qml-plugin is required by consumer-generic. 
+- [eventsview] Cleanup obsolete wrapper functions. 
+- [eventsview] Move EventFeedAccountManager and EventFeedSocialSubviewModel behind Loader. 
+- [eventsview] Move SocialImageCache inside EventFeedAccountManager. 
+- [eventsview] Remove obsolete imports. 
+- [lipstick-jolla] Migrate to new formatter enum name. 
+- [storage] Reset storage dialog state when shown. 
+- [lipstick-jolla] Adjust to bluezqt includes. 
+- [lipstick-jolla-home] Allow expanding partially open launcher during hinting. 
+- [lipstick-jolla-home] Fix glitches when using stick mode in launcher folder view. 
+- [windowprompt] Resolve icon paths correctly in PermissionPrompt. 
+- [lipstick-jolla-home] Avoid flickering launcher handle during peek. 
+- [lipstick-jolla-home] Hide pinned launcher if user opens top menu. 
+- [lipstick-jolla-home] Hide battery settings if the device has no battery. 
+- [lipstick-jolla-home] Fix remote action for sandboxed apps. 
+- [lipstick-jolla] Remove tohd related code. 
+- [lipstick-jolla-home] Remove contacts dependency. 
+- [lipstick] Fix battery indicator hiding during peeking. 
+- [oom] Align with Android OOM killer scores. 
+- [lipstick-jolla-home] Allow displaying App Grid at the center of the home. 
+- [lipstick-jolla-home] Close the parent storage device dialog after the notification is closed. 
+- [lipstick] Enable performing edge swipes using the mouse. 
+- [lipstick] Hide battery status indicator if the device has no battery. 
+- [lipstick-jolla-home] Move LaunchManager into components. 
+- [lipstick] Move cursor above unresponsive app dialog. 
+- [lipstick] Follow primary orientation in homescreen. 
+- [lipstick-jolla-home] Take screen primary orientation into account when painting dialog backgrounds. 
+### lipstick-jolla-home-qt5-l10n
+- Updated : 1.428.3-1.9.2.jolla -- 1.442.3-1.13.1.jolla
+- Binaries added : lipstick-jolla-home-qt5-l10n-uk - 1.442.3-1.13.1.jolla
+- [l10n] Commit from Jolla localisation:  266 of 266 strings translated (0 need review).
+- [tpl] translation templates update for 1.25.13.1
+- [l10n] Commit from Jolla localisation:  262 of 266 strings translated (0 need review).
+- [l10n] Branched lipstick-jolla-home-qt5 from version 1.442
+- [l10n] Commit from Jolla localisation:  266 of 266 strings translated (0 need review).
+- [tpl] translation templates update for 1.25.13
+- [l10n] Commit from Jolla localisation:  266 of 266 strings translated (0 need review).
+- [tpl] translation templates update for 1.25.11
+- [tpl] translation templates update for 1.25.12
+- [tpl] translation templates update for 1.25.2
+- [tpl] translation templates update for 1.25.5
+- [tpl] translation templates update for 1.25.7
+- [tpl] translation templates update for 1.25.9
+- [l10n] Commit from Jolla localisation:  263 of 264 strings translated (0 need review).
+- [tpl] translation templates update for 1.25.1
+- [l10n] Commit from Jolla localisation:  262 of 264 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  264 of 264 strings translated (0 need review).
+- [tpl] translation templates update for 1.24.41
+- [tpl] translation templates update for 1.24.42
+- [l10n] Commit from Jolla localisation:  264 of 264 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [tpl] translation templates update for 1.24.31
+- [tpl] translation templates update for 1.24.32
+- [tpl] translation templates update for 1.24.34
+- [tpl] translation templates update for 1.24.27
+- [l10n] Commit from Jolla localisation:  264 of 264 strings translated (0 need review).
+- [tpl] translation templates update for 1.24.18
+- [tpl] translation templates update for 1.24.22
+- [tpl] translation templates update for 1.24.23
+- [l10n] Commit from Jolla localisation:  262 of 262 strings translated (0 need review).
+### lipstick-qt5
+- Updated : 0.36.3.2-1.15.9.jolla -- 0.36.24-1.17.5.jolla
+- [lipstick] Add category for im.received, turning on communication led pattern. 
+- [lipstick] Allow to remove notification feedback on qml api. 
+- [lipstick] Always play custom notification sounds with default feedback. 
+- [lipstick] Emit show audio warning upon PulseAudio volume change. 
+- [lipstick] Make it possible to create VolumeControl from QML. 
+- [lipstick] Suppress charging warnings when charging is disabled. 
+- [lipstick] Support also X-DBusActivatable. 
+- [notifications] Add Discord to androidnotificationpriorities. 
+- [lipstick] Support notification sound-name for IM and email tones. 
+- [tests] Move nemo-test-tools dependency to tests package. 
+- [launchermodel] Allow not yet existing desktop files. 
+- [tests] Normalize device state during test run
+- [ut_screenlock] Update testUnlockScreenWhenLocked. 
+- [ut_touchscreen] Also mouse events disable event eater. 
+- [lipstick] Require nemo-qml-plugin-systemsettings >= 0.8.0. 
+- [tests] Remove AboutSettings::imei() stub. 
+- [notif] Restrict special handling to AlienDalvik 4.x. 
+- [lipstick] Fix ut_notificationmanager. 
+- [1] https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html#dbus
+- [lipstick] Improve org.freedesktop.Application use. 
+- [lipstick] Delete removed methods from AboutSettings stub. 
+- [lipstick] Don't load battery notifier if the device has no battery. 
+- [notificationmanager] Identify xdg-dbus-proxy clients
+- [notificationmanager] Identify xdg-dbus-proxy clients. 
+- [lipstick] Move license file to main package. 
+- [lipstick] Allow LauncherFolderModel config dir to be changed. 
+### lipstick-qt5-l10n
+- Updated : 1.103.3-1.6.2.jolla -- 1.107.1-1.7.1.jolla
+- Binaries added : lipstick-qt5-l10n-uk - 1.107.1-1.7.1.jolla
+- [l10n] Branched lipstick-qt5 from version 1.107
+- [l10n] Commit from Jolla localisation:  16 of 16 strings translated (0 need review).
+- [tpl] translation templates update for 0.36.19
+- [l10n] Commit from Jolla localisation:  16 of 16 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  16 of 16 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [tpl] translation templates update for 0.36.10
+- [tpl] translation templates update for 0.36.11
+- [tpl] translation templates update for 0.36.6
+- [l10n] Commit from Jolla localisation:  16 of 16 strings translated (0 need review).
+### lipstick2vnc
+- Updated : 0.9.14-1.4.106.jolla -- 0.10.0-1.5.1.jolla
+- [vnc] add cmdline options for orientation (including '-l' for landscape)
+- [vnc] Add experimental keyboard support, by Elliot Wolk. 
+- [vnc] add framework to support landscape orientation (and others)
+- [vnc] Add support for landscape orientation, by Elliot Wolk. 
+- [vnc] Allow connections from localhost, by Elliot Wolk. 
+- [vnc] allow connections from localhost (e.g.: over SSH tunnel)
+- [vnc] disable uinput kb by default, add -k cmdline arg to enable
+- [vnc] hardcode keysym->keycode mapping for US QWERTY keyboard layout
+- [vnc] implement rudimentary keyboard handling with uinput
+- [vnc] Merged community contributions from Elliot Wolk. 
+- [vnc] pull screen width/height to variables
+### lksctp-tools
+- Updated : 1.0.18+git1-1.6.2.jolla -- 1.0.19+git1-1.6.2.jolla
+- [lksctp-tools] Update to version 1.0.19. 
+### lsof
+- Updated : 4.91+git1-1.6.18.jolla -- 4.94.0+git2-1.6.8.jolla
+- Binaries removed : lsof-doc
+- [packaging] Fix submodule URL. 
+- [lsof] Use git submodule and update to 4.94.0. 
+### lzo
+- Updated : 2.09-1.6.2.jolla -- 2.10-1.6.2.jolla
+- Binaries removed : lzo-minilzo
+- Update to 2.10. 
+### lzop
+- Updated : 1.04+git1-1.4.16.jolla -- 1.04+git2-1.4.7.jolla
+- [lzop] Add license file as %license. 
+### maliit-framework-wayland
+- Updated : 0.99.1+git11-1.9.2.jolla -- 2.2.1+git2-1.10.1.jolla
+- Binaries removed : maliit-framework-wayland-doc, maliit-framework-wayland-examples
+- [packaging] Fix submodule URL. 
+- [maliit] Update to 2.2.1. 
+### mapplauncherd
+- Updated : 4.2.11-1.10.16.jolla -- 4.2.13-1.11.2.jolla
+- [invoker] Exit with success when --no-wait is used. 
+- [mapplauncherd] Include license file as %license. 
+### mapplauncherd-booster-silica-qt5
+- Updated : 0.5.2-1.4.24.jolla -- 0.5.4-1.5.1.jolla
+- [booster-silica] Update version and url. 
+- [mapplauncherd-booster-silica] Migrate org.nemomobile.thumbnailer import to Nemo.Thumbnailer. 
+- [packaging] BuildRequire systemd via pkgconfig. 
+### mapplauncherd-qt5
+- Updated : 1.1.21-1.8.20.jolla -- 1.1.22-1.9.1.jolla
+- [mapplauncherd-qt] Add license file. 
+### mce
+- Updated : 1.109.1-1.9.2.jolla -- 1.114.1-1.13.1.jolla
+- [charging] Use literal number for charging enable limit. 
+- [battery-udev] Optionally track also extcon devices. 
+- [charging] Expose charging suspendable on D-Bus. 
+- [battery-udev] Simulated battery differentiates between 100% and full
+- [charging] Add charge-once-to-full override
+- [charging] Add charge-once-to-full override. 
+- [charging] Align default charging hysteresis with settings. 
+- [charging] Refactor setting charging limits
+- [charging] Broadcast charging control state changes. 
+- [charging] Auto-detect charging hysteresis controls. 
+- [charging] Configurable charging hysteresis. 
+- [audiorouting] Add audio routing mapping for "bthfp" sink device
+- [audiorouting] Handle "foralien" audio sink suffixes. 
+### mce-headers
+- Updated : 1.29.0-1.6.2.jolla -- 1.32.0-1.8.2.jolla
+- [mce] Add charging suspendable dbus constant. 
+- [mce] Add forced charging D-Bus constants. 
+- [mce] Add charging hysteresis state D-Bus constants. 
+### meego-rpm-config
+- Updated : 0.18-1.7.2.jolla -- 0.18-1.8.2.jolla
+- [meego-rpm-config] Fix stripping of binaries for changed file output. 
+- [meego-rpm-config] Change rpm compression to zstd. 
+### meson
+- Updated : 0.59.1+git1-1.6.3.jolla -- 0.61.1+git1-1.6.2.jolla
+- [meson] Update to version 0.61.1. 
+- [packaging] Remove ccache Requires as the workaround is not needed anymore. 
+### mic
+- Updated : 1.0.11-1.4.13.jolla -- 1.0.13-1.6.1.jolla
+- [mic] Run fsck after using tunefs on ext format loop images. 
+- [packaging] Generate changelog when building with SDK. 
+### mkcal-qt5
+- Updated : 0.5.50-1.13.2.jolla -- 0.6.12-1.17.1.jolla
+- [mkcal] Fix Notebook default ctor not creating a valid notebook. 
+- [mkcal] Fix issue on recurring alarms.
+- [mkcal] Further fix alarms on recurring events. 
+- [mkcal] Bump version for read-only behaviour change.
+- [mkcal] Deprecate ExtendedStorage::createDefaultNotebook().
+- [mkcal] Modify write rules on database, 
+- [mkcal] Move notebook UID creation to notebook class.
+- [mkcal] Remove explicit keyword on Notebook constructors.
+- [mkcal] Remove non implemeted notebook from a list.
+- [mkcal] Correct mistake on starting time for alarm definition.
+- [mkcal] Correct mistake on starting time for alarm definition. 
+- [mkcal] Fix alarms for recurring events with exceptions.
+- [mkcal] Fix alarms for recurring events with exceptions. 
+- [mkcal] Fix custom calendar properties in copy constructor.
+- [mkcal] Guarantee at DB-level the unicity of the default notebook.
+- [mkcal] Raise CMake minimum required version to 3.16.
+- [mkcal] Remove Notebook::isDefault. 
+- [mkcal] Remove unused invitation-related methods.
+- [mkcal] Fix tst_load unit test failure. 
+- [mkcal] Load rdates-only components as recurring events.
+- [mkcal] Call directly calendar()->close() in the setModified.
+- [mkcal] Call directly createDefaultNotebook() on init.
+- [mkcal] Drop mOriginTime in favor of Qt from and since Epoch functions.
+- [mkcal] Move database location code to sqlitestorage.cpp.
+- [mkcal] Move SQLite related parts from storage header to format one.
+- [mkcal] Refactor sqlitestorage. 
+- [mkcal] Register calendar listener in base class.
+- [mkcal] Bump pkgconfig/Cmakelists version. 
+- [mkcal] Bump version in CMakeLists.txt.
+- [mkcal] Correct tst_load to work on existing DB.
+- [mkcal] Ensure deleted incidences are removed on notebook deletion
+- [mkcal] Ensure deleted incidences are removed on notebook deletion. 
+- [mkcal] Adjust date cache to take into account several ranges.
+- [mkcal] Cache the loaded range information better. 
+- [mkcal] Handle load of events without end time.
+- [mkcal] Use exclusive end load on end dates.
+- [mkcal] Bump pkgconfig version. 
+- [mkcal] Add a new storage observer signal on DB update
+- [mkcal] Clean up some leftovers.
+- [mkcal] Don't make ExtendedStorageObserver methods pure virtual
+- [mkcal] Enhance change notification api. 
+- [mkcal] Remove alarm handling from the public API
+- [mkcal] Remove mIsOpened from internal SqliteStorage
+- [mkcal] Remove unused storageProgress signal.
+- [mkcal] Adjust notebook addition and deletion api. 
+- [mkcal] clearNotebookAssociation not needed any more.
+- [mkcal] Remove ExtendedStorage::reloadNotebook()
+- [mkcal] Remove optional arguments from addNotebook() and deleteNotebook()
+- [mkcal] Don't trash organizer role and status.
+- [mkcal] Improve attendee unit testing. 
+- [mkcal] Overwrite plugin dir with env variable.
+- [mkcal] Fix corrupted attachment info saved to the database. 
+- [mkcal] Move list statements into SQliteFormat::Private.
+- [mkcal] Move sqlite statement parameters into member variables. 
+- [mkcal] Remove a left-over of QSparql storage.
+- [mkcal] Remove unused UidMapping from SqliteStorage.
+- [mkcal] Fix timezone on events saved with clock time. 
+- [mkcal] Restrict full day events to date only
+- [mkcal] Store local time without time zone information.
+- [mkcal] Add a test measuring saving and loading times.
+- [mkcal] Consider the existence of a notebook in calendar valid when adding a new one.
+- [mkcal] Handle storage close + reopen better. 
+- [mkcal] Make ExtendedStorage clears the notebook references on close.
+- [mkcal] Protect calls with closed database.
+- [mkcal] Avoid unnecessary one day incidence loading from the past. 
+- [mkcal] Correct loading of one day incidence.
+- [mkcal] Add license file. 
+### mlite-qt5
+- Updated : 0.3.8-1.8.2.jolla -- 0.4.0-1.9.1.jolla
+- [desktop] Add localizedValue method. 
+### mlsdb-data-l10n
+- Updated : 1.12.2-1.6.2.jolla -- 1.15.2-1.8.1.jolla
+- Binaries added : mlsdb-data-l10n-uk - 1.15.2-1.8.1.jolla
+- [l10n] Commit from Jolla localisation:  12 of 12 strings translated (0 need review).
+- [l10n] Branched mlsdb-data from version 1.15
+- [l10n] Commit from Jolla localisation:  12 of 12 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  12 of 12 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  12 of 12 strings translated (0 need review).
+### mms-engine
+- Updated : 1.0.78-1.6.2.jolla -- 1.0.81-1.6.3.jolla
+- [mms-engine] Fix build with glib 2.67.3 and newer. 
+- [mms-engine] Add license file. 
+- [mms-engine] Allow to choose GMime package. 
+- [mms-engine] Migrate to GMime 3.0. 
+### mobile-broadband-provider-info
+- Updated : 20131125+git78-1.6.2.jolla -- 20131125+git84-1.8.1.jolla
+- [mbpi] Update T-Mobile(Telekom) 
+- [mbpi] Fixed xml validation errors. 
+- [mbpi] Update Middle East providers. 
+- [mbpi] Added Gibraltar. 
+- [mbpi] Update Iceland providers. 
+- [mbpi] Update Marocco providers. 
+- [mbpi] Update Montenegro providers. 
+- [mbpi] Fixed xml validation errors. 
+- [mbpi] Remove cdma from Orange Poland. 
+- [mbpi] Update Azeri providers. 
+- [mbpi] Updated entry for Auchan Telecom. 
+- [mbpi] Update Georgian providers. 
+- [mbpi] Fix French "SFR" MMS APN. 
+- [mbpi] Fello added in Swedish providers section
+- [mbpi] 
+- [mbpi]Otvarta and UPS Polska added to Polish providers section
+### mpg123
+- Updated : 1.25.11+git1-1.7.2.jolla -- 1.30.2+git1-1.8.2.jolla
+- [mpg123] Update to 1.30.2. 
+- [mpg123] Update to 1.29.2. 
+### mtdev
+- Updated : 1.1.3-1.6.2.jolla -- 1.1.6+git1-1.6.2.jolla
+- [mtdev] Switch to git submodule and update to 1.1.6. 
+### nano
+- Updated : 2.8.5+git2-1.3.2.jolla -- 6.4+git1-1.3.5.jolla
+- [git] Move submodule repos to github. 
+- [nano] Update to 6.4. 
+### ncurses
+- Updated : 6.1+git3-1.7.2.jolla -- 6.3+git1-1.7.3.jolla
+- [ncurses] Update to 6.3. 
+### nemo-gst-interfaces
+- Updated : 0.20200911.0-1.5.1.jolla -- 0.20211122.0-1.5.2.jolla
+- [nemo-gst-interfaces] Have license file as %license. 
+### nemo-qml-plugin-alarms-qt5
+- Updated : 0.3.10-1.5.2.jolla -- 0.3.11-1.6.1.jolla
+- [nemo-qml-plugin-alarms] Add license file. 
+### nemo-qml-plugin-calendar-qt5
+- Updated : 0.6.26-1.10.22.jolla -- 0.6.51-1.13.1.jolla
+- [nemo-qml-plugin-calendar] Update plugins.qmltypes. 
+- [nemo-qml-plugin-calendar] Add an EXDATE to a recurring event when de?
+- [nemo-qml-plugin-calendar] Add an EXDATE to a recurring event when deleting an exception.
+- [nemo-qml-plugin-calendar] Avoid warnings on attendee update.
+- [nemo-qml-plugin-calendar] Emit occurrenceChanged when querying only a different start time.
+- [nemo-qml-plugin-calendar] Fix repeating event occurrence reappearing when deleting an exception. 
+- [nemo-qml-plugin-calendar] Add a mode to filter out all day events.
+- [nemo-qml-plugin-calendar] Add a mode to filter out all-day events. 
+- [nemo-qml-plugin-calendar] Allow to discard invitation on importation.
+- [neom-qml-plugin-calendar] Allow to filter attendees on imported events. 
+- [nemo-qml-plugin-calendar] Avoid Notebook::isDefault() API. 
+- [nemo-qml-plugin-calendar] Move away from Notebook::isDefault().
+- [nemo-qml-plugin-calendar] Fix empty organizer.
+- [nemo-qml-plugin-calendar] Fix empty organizer set on new events. 
+- [tests] Improve waiting. 
+- [nemo-qml-plugin-calendar] Cleanup a bit notebook email retrieval.
+- [nemo-qml-plugin-calendar] Use storage observer for additional event actions. 
+- [nemo-qml-plugin-calendar] Use storage updated signal to send attendee mails.
+- [nemo-qml-plugin-calendar] Use storage update signal to perform on-delete actions.
+- [nemo-qml-plugin-calendar] Add a test on CalendarEvent modification signals.
+- [nemo-qml-plugin-calendar] Add test and adjust sendResponse api. 
+- [nemo-qml-plugin-calendar] Use uid/recid for sendResponse manager API.
+- [nemo-qml-plugin-calendar] Let mKCal optimise loading.
+- [nemo-qml-plugin-calendar] Let mkcal optimize range loading. 
+- [nemo-qml-plugin-calendar] Adapt to adjusted change notification api. 
+- [nemo-qml-plugin-calendar] Don't reload from DB when not needed.
+- [nemo-qml-plugin-calendar] Adjust event exception modification api. 
+- [nemo-qml-plugin-calendar] Create exception on object creation.
+- [nemo-qml-plugin-calendar] Fixup minor regression after factorisation?
+- [nemo-qml-plugin-calendar] Fixup minor regression after factorisation commit
+- [nemo-qml-plugin-calendar] Factorise code between classes sharing eve?
+- [nemo-qml-plugin-calendar] Factorise code between classes sharing event characteristics.
+- [nemo-qml-plugin-calendar] Refactor event data handling. 
+- [nemo-qml-plugin-calendar] Add a test on attendee handling.
+- [nemo-qml-plugin-calendar] Add unit test for attendee handling. 
+- [nemo-qml-plugin-calendar] Expose sync failure resolution. 
+- [nemo-qml-plugin-calendar] Expose the sync failure resolution in even?
+- [nemo-qml-plugin-calendar] Expose the sync failure resolution in event and event modification.
+- [nemo-qml-plugin-calendar] Add missing tests to tests.xml. 
+- [nemo-qml-plugin-calendar] Fix calendarmanager test. 
+- [calendar] Save EXDATE in localtime only if the event is in localtime. 
+- [nemo-qml-plugin-calendar] Check proper time spec in tests.
+- [nemo-qml-plugin-calendar] Save EXDATE in localtime only if the event?
+- [nemo-qml-plugin-calendar] Save EXDATE in localtime only if the event is in localtime.
+- [nemo-qml-plugin-calendar] Update getNextOccurrence to take exceptions into account.
+- [nemo-qml-plugin-calendar] Use signals instead of qWait in event tests.
+- [nemo-qml-plugin-calendar] Compare also time spec when assigning star?
+- [nemo-qml-plugin-calendar] Compare also time spec when assigning start or end times.
+- [nemo-qml-plugin-calendar] Compare timezone changes better on event modifications. 
+- [nemo-qml-plugin-calendar] Add cancelled property in lightweight. Con?
+- [nemo-qml-plugin-calendar] Add cancelled property in lightweight. 
+- [nemo-qml-plugin-calendar] Update repo in spec file.
+- [nemo-qml-plugin-calendar] Expose the event status to QML.
+- [nemo-qml-plugin-calendar] Expose the event status to QML. 
+- [nemo-qml-plugin-calendar] Optimize occurrence loading.
+- [nemo-qml-plugin-calendar] Optimize occurrence loading. 
+- [nemo-qml-plugin-calendar] Add license file. 
+- [nemo-qml-plugin-calendar] Ensure unique keys in mEventOccurrences.
+- [nemo-qml-plugin-calendar] Fix missing events from different tz in agenda model. 
+- [nemo-qml-plugin-calendar] Expose identifier in event list model.
+- [nemo-qml-plugin-calendar] Expose identifier in event list model. 
+### nemo-qml-plugin-configuration-qt5
+- Updated : 0.2.5-1.7.3.jolla -- 0.2.6-1.8.1.jolla
+- [nemo-qml-plugin-configuration] Add license file. 
+### nemo-qml-plugin-connectivity
+- Updated : 0.2.10-1.6.2.jolla -- 0.2.12-1.8.1.jolla
+- [nemo-qml-plugin-connectivity] Monitor technology changes. 
+- [nemo-qml-plugin-connectivity] Add license file. 
+### nemo-qml-plugin-contacts-qt5
+- Updated : 0.3.21-1.12.2.jolla -- 0.3.25-1.14.1.jolla
+- Binaries added : nemo-qml-plugin-contacts-qt5-doc - 0.3.25-1.14.1.jolla
+- [nemo-qml-plugin-contacts] Use 0.3 as documentation version. 
+- [nemo-qml-plugin-contacts] Package documentation. 
+- [nemo-qml-plugin-contacts] Make test case lighter. 
+- [nemo-qml-plugin-contacts] Add license file. 
+### nemo-qml-plugin-contextkit-qt5
+- Updated : 1.1.12-1.5.2.jolla -- 2.0.0.1-1.7.1.jolla
+- [nemo-qml-plugin-contextkit] Add plugins.qmltypes. 
+- [nemo-qml-plugin-contextkit] Add license file. 
+### nemo-qml-plugin-dbus-qt5
+- Updated : 2.1.28-1.6.3.jolla -- 2.1.30-1.7.1.jolla
+- [nemo-qml-plugin-dbus] Avoid deprecated API and suspicious log usage. 
+- [nemo-qml-plugin-dbus] Allow other projects to link to documentation.?
+- [nemo-qml-plugin-dbus] Allow other projects to link to documentation. 
+### nemo-qml-plugin-devicelock
+- Updated : 0.3.7-1.7.2.jolla -- 0.3.8-1.8.1.jolla
+- [nemo-qml-plugin-devicelock] Remove unnecessary Qt5Network build requirement. 
+### nemo-qml-plugin-email-qt5-offline
+- Updated : 0.6.21-1.8.2.jolla -- 0.6.23-1.8.1.jolla
+- [nemo-qml-plugin-email] Don't set URL in attachment list model if the file does not exist.
+- [nemo-qml-plugin-email] Don't set URL in attachment list model if the file does not exist. 
+- [nemo-qml-plugin-email] Add license files and fix .spec license declarations. 
+### nemo-qml-plugin-filemanager
+- Updated : 0.1.37-1.11.2.jolla -- 0.1.40-1.12.1.jolla
+- [filemanager] replace euidaccess() with opendir()
+- [filemanager] replace euidaccess() with opendir(). 
+- [diskusage] Fix apkd size calls for AAS. 
+- [nemo-qml-plugin-filemanager] Add license file. 
+### nemo-qml-plugin-messages-internal-qt5
+- Updated : 0.1.30-1.7.2.jolla -- 0.1.31-1.8.1.jolla
+- [nemo-qml-plugin-messages] Add license file. 
+### nemo-qml-plugin-models-qt5
+- Updated : 0.2.3-1.7.2.jolla -- 0.2.4-1.8.1.jolla
+- [nemo-qml-plugin-models] Add license files 
+### nemo-qml-plugin-notifications-qt5
+- Updated : 1.2.16-1.8.3.jolla -- 1.2.18.1-1.10.2.jolla
+- [nemo-qml-plugin-notifications] Update plugins.qmltypes. 
+- [nemo-qml-plugin-notifications] Support sound-name property. 
+- [nemo-qml-plugin-notification] Make it possible to configure build without QML. 
+### nemo-qml-plugin-policy-qt5
+- Updated : 0.1.3-1.6.2.jolla -- 0.1.4-1.7.1.jolla
+- [nemo-qml-plugin-policy] Add license file. 
+### nemo-qml-plugin-social-qt5
+- Updated : 0.1.2-1.6.2.jolla -- 0.1.3-1.7.1.jolla
+- [nemo-qml-plugin-social] Add license file. 
+### nemo-qml-plugin-systemsettings
+- Updated : 0.5.90-1.10.12.jolla -- 0.10.2-1.14.1.jolla
+- [systemsettings] Update plugins.qmltypes. 
+- [vpn] Account for Association state. 
+- [battery] Add chargingSuspendable qml property. 
+- [battery] Allow to control charging hysteresis
+- [battery] Enablers for forced charging control. 
+- [nemo-qml-plugin-systemsettings] Detect non-hybris gpsd providers. 
+- [systemsettings] Remove qt5-qtsysteminfo usage. 
+- [deviceinfo] Add imeiNumbers property. 
+- [deviceinfo] Add os and firmware information properties. 
+### nemo-qml-plugin-systemsettings-l10n
+- Updated : 1.17.2-1.10.2.jolla -- 1.20.1-1.11.1.jolla
+- Binaries added : nemo-qml-plugin-systemsettings-l10n-uk - 1.20.1-1.11.1.jolla
+- [l10n] Branched nemo-qml-plugin-systemsettings from version 1.20
+- [l10n] Commit from Jolla localisation:  3 of 3 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  3 of 3 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  3 of 3 strings translated (0 need review).
+- [tpl] translation templates update for 0.5.83
+### nemo-qml-plugin-thumbnailer-qt5
+- Updated : 1.0.5-1.6.3.jolla -- 1.0.8-1.7.1.jolla
+- [nemo-qml-plugin-thumbnailer] Start thumbnailer thread only when needed. 
+- [nemo-qml-plugin-thumbnailer] Replace separate video thumbnailer package. 
+- [nemo-qml-plugin-thumbnailer] Add license file. 
+### nemo-qml-plugin-time-qt5
+- Updated : 0.1.3-1.6.2.jolla -- 0.1.5-1.7.1.jolla
+- [nemo-qml-plugin-time] Stabilize the unit test. 
+- [nemo-qml-plugin-time] Add license file. 
+### nemo-transferengine-qt5
+- Updated : 2.0.0-1.10.3.jolla -- 2.0.3-1.12.1.jolla
+- [transfer-engine] Add plugins.qmltypes. 
+- [transfer-engine] Fix naming of example transfer plugin class
+- [tests] Rename nemo-transferengine-qt5-tests. 
+- [transfer-engine] Have license file as %license. 
+### nemo-transferengine-qt5-l10n
+- Updated : 1.66.2-1.8.2.jolla -- 1.68.1-1.9.1.jolla
+- Binaries added : nemo-transferengine-qt5-l10n-uk - 1.68.1-1.9.1.jolla
+- [l10n] Branched nemo-transferengine-qt5 from version 1.68
+- [l10n] Commit from Jolla localisation:  10 of 10 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  10 of 10 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+### nfcd
+- Updated : 1.1.7-1.8.2.jolla -- 1.1.14-1.10.1.jolla
+- [core] Fixed version parsing
+- [nfcd] Fixed compilation warnings. 
+- [nfcd] Link nfcd as PIE. 
+- [tools] Link tools as PIE
+- [unit] Added org.sailfishos.nfc.NDEF test. 
+- [unit] Fixed compilation warning. 
+- [core] Improved handling of Type2 read/write failures. 
+- [core] Invoke destroy callbacks for Type2 tag operations. 
+- [dbus_service] Use dbus_service_dup_byte_array_as_variant()
+- [unit] Added org.sailfishos.nfc.IsoDep test
+- [unit] Added org.sailfishos.nfc.TagType2 test
+- [dbus] Updated org.sailfishos.nfc.Tag spec comments
+- [tools] Fixed linking with nfcd core. 
+- [tools] Housekeeping
+- [unit] Close D-Bus connections after the test is over
+- [unit] Slightly improved test coverage
+- [core] Handle configurable values without default. 
+- [core] Tweaked the configuration saving algorithm. 
+- [nfcd] Added README
+- [core] Added NfcConfigurable interface. 
+- [core] Added NfcPlugin::started method. 
+- [license] Freshened up copyright
+- [neard] Implement NfcConfigurableInterface. 
+- [settings] Configure plugins over D-Bus. 
+- [unit] Added plugins_settings test. 
+- [unit] Added TestIoStream
+- [unit] Simplified D-Bus test setup
+- [rpm] Require rpm 4.11 for %license. 
+- [nfcd] Have license file as %license. 
+### nfcd-mce-plugin
+- Updated : 1.0.1-1.4.2.jolla -- 1.0.2-1.4.4.jolla
+- [license] Install LICENSE file. 
+- [nfcd-mce-plugin] Added RequireUnlock option. 
+- [nfcd-mce-plugin] Updated dependencies. 
+### ngfd
+- Updated : 1.3.1-1.6.2.jolla -- 1.4.0-1.6.3.jolla
+- [ffmemless] Added constant and custom periodic effects. 
+- [ffmemless] Enable effect caching and upload cached effects before play. 
+- [ngfd] Fix unit tests not having proper plugin path. 
+### ngfd-plugin-droid-vibrator
+- Updated : 1.3.0-1.3.2.jolla -- 1.4.0-1.4.1.jolla
+- [vibrator] Allow setting custom effect sequences. 
+- [droid-vibrator] Have license file as %license. 
+### ngfd-plugin-native-vibrator
+- Updated : 1.3.0-1.6.2.jolla -- 1.4.0-1.6.2.jolla
+- [vibrator] Allow setting custom effect sequences. 
+- [droid-vibrator] Have license file as %license. 
+### nspr
+- Updated : 4.29.0+git1-1.5.17.jolla -- 4.29.0+git2-1.5.1.jolla
+- Set build time based on changelog. 
+### nss
+- Updated : 3.73.1+git1-1.8.12.jolla -- 3.73.1+git2-1.7.5.jolla
+- [nss] Avoid overlapping file ownership. 
+### obex-capability
+- Updated : 0.0.2-1.6.2.jolla -- 0.0.4-1.7.1.jolla
+- [obex] Remove qt5-qtsysteminfo usage. 
+- [obex-capability] Have license file as %license. 
+### ofono
+- Updated : 1.28+git3.2-1.13.2.jolla -- 1.29+git6-1.12.1.jolla
+- [ofono] Allow merging mask conf values. 
+- [cbs] Widen the range of allowed cell broadcast channels. 
+- [hfp_ag_bluez5] Remove event source after closing BT socket. 
+- [ims] Tweak the treatment of the default Registration value
+- [ims] D-Bus access control for org.ofono.IpMultimediaSystem. 
+- [ims] Extend org.ofono.IpMultimediaSystem D-Bus API. 
+- [watch] Added reg_tech watch. 
+- [gprs] Fixed ofono_gprs_context memory leak. 
+- [ofono] Upgrade ofono baseline to 1.29. 
+- [sim] OFONO_SIM_DRIVER_API_VERSION 2. 
+- [dbus-access] Added access control entry for SendDataMessage. 
+- [sms] Add support for sending SMS data messages. 
+- [sms] Support setting endianess for SMS data messages. 
+- [ofono] Added API for querying IMEI from the modem. 
+- [ofono] Add mechanism for extending ofono_sim_driver API
+- [voicecall] Allow filtering for emergency calls. 
+### ofono-alien-binder-plugin
+- Updated : 0.1.5.1-1.3.3.jolla -- 0.2.3-1.2.2.jolla
+- [ofono-alien] Set DNS in data call lists. 
+- [ofono-alien] Housekeeping
+- [ofono-alien] Set dns to 127.0.0.1 or ::1 based on network type. 
+- [ofono-alien] Handle ipv4, ipv6 and dual modes better. 
+- [build] Fixed a few Makefile issues
+- [ofono-alien] Always register alien services with hwpuddlejumper. 
+- [ofono-alien] Support more IRadio@1.2 calls. 
+- [ofono-alien] Open the default binder device earlier. 
+- [ofono-alien] Fetch plugindir from ofono config
+- [ofono-alien] Fix compilation warning. 
+- [ofono-alien] Fixed IRadio version calculation. 
+### ofono-binder-plugin
+- Updated : 1.1.5-1.4.2.jolla -- 1.1.11-1.4.1.jolla
+- [ofono-binder] Fix startup without IRadioConfig at all
+- [ofono-binder] Made LTE network mode configurable
+- [ofono-binder] Made UMTS network mode configurable. 
+- [ofono-binder] Use data registration state when available. 
+- [ofono-binder] Use gbinder_writer_append_struct() to encode DataProfile
+- [ofono-binder] Add support for network scan API. 
+- [ofono-binder] Document radioInterface config option. 
+- [ofono-binder] Add support for Radio@1.5 interface. 
+- [ofono-binder] Add support for RadioConfig@1.2 interface. 
+- [ofono-binder] Fix setting up data call for IRadio@1.4. 
+- [ofono-binder] Give extension a chance to send DTMF. 
+- [ofono-binder] Fix interactive USSD. 
+### ofono-ril-binder-plugin
+- Updated : 1.2.6-1.4.3.jolla -- 1.2.7-1.4.4.jolla
+- [rilbinder] Fixed compilation warnings with latest libgbinder-radio
+- [rilbinder] Install LICENSE file. 
+### ofono-ril-plugin
+- Updated : 1.0.2.1-1.3.2.jolla -- 1.0.6-1.2.3.jolla
+- [ofono-ril-plugin] Housekeeping
+- [ofono-ril-plugin] Use HANGUP_WAITING_OR_BACKGROUND for incoming calls. 
+- [ofono-ril] Use NetMon driver provided by ofono. 
+- [ofono-ril] ril_phonebook_driver is no more
+- [ofono-ril] Use generic phonebook plugin. 
+- [build] Query PLUGINDIR from pkg-config
+- [ofono-ril] Fixed compilation warning
+- [ofono-ril] Fix mobile data after RAT switching. 
+- [ofono-ril] Install LICENSE file. 
+### ohm
+- Updated : 1.3.0-1.5.2.jolla -- 1.3.1-1.5.3.jolla
+- [ohm] Have license file as %license. 
+### ohm-plugins-misc
+- Updated : 1.8.0-1.8.2.jolla -- 1.10.0-1.9.1.jolla
+- [accessories] Add quirk to swap headphone connect logic. 
+- [route] Update initial routing state during startup. 
+- [route] Implement preferred audio route feature. 
+### oneshot
+- Updated : 0.6.11-1.6.2.jolla -- 0.6.12-1.6.2.jolla
+- [oneshot] Have license file as %license. 
+### openconnect
+- Updated : 8.10+git2-1.5.18.jolla -- 8.10+git3-1.5.9.jolla
+- [git] Move submodule repos to github. 
+- [openconnect] Drop tncc-emulate.py from package. 
+- [spec] Cleanup unnecessary Obsoletes for docs package. 
+- [spec] Drop Groups. 
+- [spec] Mark tncc-wrapper.py with %exclude. 
+### openjpeg
+- Updated : 2.4.0+git1-1.7.2.jolla -- 2.5.0+git1-1.7.2.jolla
+- [git] Move submodule repos to github. 
+- [openjpeg] Update to 2.5.0. 
+### openssl
+- Updated : 1.1.1l+git1-1.10.28.jolla -- 1.1.1s+git1-1.10.2.jolla
+- [openssl] Update to 1.1.1s, pick performance backports. 
+### openvpn
+- Updated : 2.5.2+git3-1.9.13.jolla -- 2.5.5+git1-1.9.4.jolla
+- [openvpn] Update to 2.5.5. 
+### opus
+- Updated : 1.3.1-1.5.2.jolla -- 1.3.1+git1-1.5.1.jolla
+- [git] Move submodule repos to github. 
+- [opus] Disable unit tests. 
+### orc
+- Updated : 0.4.26+git1.1-1.7.2.jolla -- 0.4.33+git1-1.7.1.jolla
+- [orc] Update to 0.4.33. 
+- [packaging] Fix submodule URL. 
+- [orc] Update to 0.4.32. 
+### pacrunner
+- Updated : 0.15+git6-1.6.17.jolla -- 0.18+git2-1.7.1.jolla
+- [libproxy] Allow for pacrunner on a custom D-Bus bus. 
+- [pacrunner] Update to 0.18. 
+### pam
+- Updated : 1.3.1+git2-1.7.2.jolla -- 1.3.1+git3-1.7.3.jolla
+- [git] Move submodule repos to github. 
+- [pam] Disable pam_userdb module. 
+### pango
+- Updated : 1.42.3-1.6.2.jolla -- 1.48.10+git1-1.6.3.jolla
+- Binaries removed : pango-tests
+- [pango] Update to 1.48.10. 
+### patch
+- Updated : 2.7.6+git1-1.6.2.jolla -- 2.7.6+git2-1.6.3.jolla
+- [git] Move submodule repos to github. 
+- [patch] Update git checkout to newer. 
+### patterns-sailfish
+- Updated : 1.1.6+git2-1.8.1.jolla -- 1.1.27.1-1.13.1.jolla
+- Binaries added : patterns-sailfish-gnu-tools - 1.1.27.1-1.13.1.jolla
+- [patterns] Add missing Harbour-enabled QML modules. 
+- [patterns] Drop QtPublishSubscribe
+- [patterns] Align SDK targets with OBS more. 
+- [patterns] Align SDK toolings with OBS more. 
+- [patterns] Explicitly require dbus under build toolings. 
+- [patterns] Do not automatically pull in gnu-tools during update. 
+- [ssu] Require ssu-vendor-data from consumer-generic. 
+- [patterns] Require jolla-settings-system-orientation from consumer-generic. 
+- [patterns] Prefer GNU tools under build environment. 
+- [patterns] Remove python2 from sailfish-devel-full. 
+- [tools] Add gnu-tools meta-package. 
+- [patterns] Add requires jolla-settings-system-location. 
+- [configs] Requires: jolla-settings-networking-cellular. 
+- [patterns] Require jolla-settings-networking-vpn from applications. 
+- [patterns] Drop QtWebkit. 
+- [patterns] Update after extracting sailfish-locale. 
+- [patterns] Recommends Sailfish Utils instead of Requires. 
+- [patterns] Require Sailfish Utils from apps pattern. 
+- [patterns] Drop repomd-pattern-builder. 
+- [patterns] Require 'android-tools' from image-creation-tools. 
+- [patterns] Require 'atruncate' from image-creation-tools. 
+- [patterns] Remove jolla graphics packages without warnings shown. 
+- [patterns] Add sailfish-aml to cellular apps section. 
+- [patterns] Require libsocialcache-qml-plugin for consumer-generic. 
+- [patterns] Require jolla-settings-accounts for consumer-generic. 
+- [patterns] Pull in common mobile device settings split from the jolla-settings-system. 
+- [patterns] Pull in homescreen settings split from the jolla-settings-system. 
+- [patterns] Remove sailjail-plugin-devel from devel-full. 
+- [patterns] Replace qtconnectivity with kf5bluezqt. 
+### patterns-sailfish-api-3
+- Updated : 3.0.1-1.5.2.jolla -- 3.0.2-1.5.2.jolla
+- [patterns] Drop QtWebkit references. 
+### pcre
+- Updated : 8.45+git1-1.7.2.jolla -- 8.45+git2-1.7.3.jolla
+- Mark license files as %license. 
+perl
+Reverted : 0.76-1.7.29.jolla -- 0.76-1.7.2.jolla
+- [perl] Ensure build reproducibility. 
+### pj-oss-project-config
+- Updated : 0.0.22-1.9.2.jolla -- 0.0.24-1.9.1.jolla
+- [prjconf] Don't pull in rust cross compilers. 
+- [prjconf] Add ignore thumbnaild for nemo-qml-plugin-thumbnailer-qt5. 
+### policy-settings-common
+- Updated : 0.12.1-1.8.17.jolla -- 0.13.0-1.8.7.jolla
+- [common] Allow routing to earpiece.
+- [common] Do not use old privacy override.
+- [common] Don't route foralien source if sink is not routed to.
+- [common] Introduce preferred audio feature. 
+- [common] Play indicator tone with voip calls as well. 
+- [common] Remove privacy_override and speaker feature.
+- [policy-settings-common] Have license file as %license. 
+### policycoreutils
+- Updated : 3.1+git2-1.5.16.jolla -- 3.1+git3-1.5.6.jolla
+- [git] Move submodule repos to github. 
+- [policycoreutils] Remove unnecessary libcgroup dependency. 
+### poppler
+- Updated : 21.08.0+git1-1.6.2.jolla -- 22.09.0+git1-1.6.2.jolla
+- [poppler] Update to 22.09.0.
+- [poppler] Update to 22.09.0. 
+### pptp
+- Updated : 1.8.0+git4-1.6.2.jolla -- 1.10+git1-1.6.2.jolla
+- [pptp] Update to 1.10. 
+### profiled
+- Updated : 1.0.12-1.5.2.jolla -- 1.0.13-1.5.3.jolla
+- [profiled] Have license file as %license. 
+### protobuf
+- Updated : 3.18.0+git1-1.7.2.jolla -- 3.18.0+git2-1.7.4.jolla
+- [protobuf] Include %license also in protobuf-lite. 
+### provisioning-service
+- Updated : 0.1.7-1.7.2.jolla -- 0.1.8-1.7.3.jolla
+- [provisioning-service] Have license as %license. 
+### pulseaudio
+- Updated : 14.2+git6-1.8.2.jolla -- 14.2+git8-1.9.3.jolla
+- [sailfish] Adapt to meson build system. 
+- [sailfish] Fix bluez dependency. 
+### pulseaudio-module-keepalive
+- Updated : 1.0.1-1.6.2.jolla -- 1.1.0-1.6.2.jolla
+- [build] Add meson support. 
+### pulseaudio-modules-droid
+- Updated : 14.2.97-1.3.2.jolla -- 14.2.99-1.4.1.jolla
+- [parser] Better support for includes in xml. 
+- [parser] Generate default profile for device ports which have none.
+- [build] Add meson support. 
+### pulseaudio-modules-droid-glue
+- Updated : 12.2.6-1.3.2.jolla -- 14.2.8-1.5.1.jolla
+- [build] Add meson support. 
+- [module] Use new API from pulsecore shared. 
+- [packaging] Drop build requirement for libdroid-util.
+### pulseaudio-modules-droid-hidl
+- Updated : 1.4.0-1.3.2.jolla -- 1.5.0-1.4.1.jolla
+- [build] Add meson support. 
+### pulseaudio-modules-nemo
+- Updated : 14.2.30-1.5.1.jolla -- 14.2.31-1.5.1.jolla
+- [build] Add meson support. 
+### pulseaudio-policy-enforcement
+- Updated : 14.2.45-1.6.2.jolla -- 14.2.47-1.7.2.jolla
+- [build] Add meson support. 
+- [classify] Remove invalid error log. 
+### pyotherside-qml-plugin-python3-qt5
+- Updated : 1.5.9+git3-1.5.2.jolla -- 1.5.9+git4-1.6.1.jolla
+- [pyotherside] Have license file as %license. 
+### python3-attrs
+- Updated : 19.3.0+git3-1.6.3.jolla -- 19.3.0+git4-1.6.2.jolla
+- [python3-attrs] Have license file as %license. 
+### python3-base
+- Updated : 3.8.11+git3-1.7.30.jolla -- 3.8.11+git4-1.7.12.jolla
+- [python] Use timestamps for byte code invalidation. 
+### python3-docutils
+- Updated : 0.11+git1-1.3.86.jolla -- 0.18.1+git1-1.3.29.jolla
+- [python3-docutils] Update version to 0.18.1. 
+### python3-extra
+- Updated : 3.8.11+git3-1.7.1.jolla -- 3.8.11+git4-1.7.1.jolla
+- [python] Use timestamps for byte code invalidation. 
+### python3-gobject
+- Updated : 3.38.0+git1-1.6.3.jolla -- 3.38.0+git2-1.6.3.jolla
+- [python3-gobject] Have license file as %license. 
+### python3-idna
+- Updated : 2.9+git3-1.6.3.jolla -- 2.9+git4-1.6.2.jolla
+- [python3-idna] Include license file as %license. 
+### python3-magic
+- Updated : 5.37+git4-1.6.3.jolla -- 5.41+git1-1.6.2.jolla
+- [file] Update to 5.41. 
+- [git] Move submodule repos to github. 
+### python3-openssl
+- Updated : 19.1.0+git1-1.6.3.jolla -- 19.1.0+git2-1.6.2.jolla
+- [python3-openssl] Have license file as %license. 
+### python3-setuptools
+- Updated : 46.1.3+git5-1.6.29.jolla -- 46.1.3+git6-1.6.1.jolla
+- [git] Move submodule repos to github. 
+- [python-setuptools] Make build reproducible. 
+### python3-sphinx
+- Updated : 1.1.3+git2-1.3.62.jolla -- 1.3.5+git1-1.3.35.jolla
+- [python3-sphinx] Fix build under SDK. 
+- [python3-sphinx] Update to 1.3.5. 
+- [python3-sphinx] Use submodule. 
+### python3-yaml
+- Updated : 5.3+git2-1.6.3.jolla -- 5.4.1.1+git1-1.6.2.jolla
+- [git] Move submodule repos to github. 
+- [python3-yaml] update to 5.4.1.1. 
+- [python3-yaml] Update to 5.4.1.1. 
+- [python3-yaml] Use libyaml instead of internal implementation
+### qmf-eas-plugin
+- Updated : 0.4.1-1.5.1.jolla -- 0.4.5-1.7.3.jolla
+- [qmf-eas-plugin] Set servicetype in sailfisheas-email. 
+- [qmf-eas-plugin] Update default_credentials_username for existing accounts. 
+- [qmf-eas-plugin] Enable services by default. 
+- [qmf-eas-plugin] Set default_credentials_username. 
+- [1] https://github.com/MicrosoftDocs/azure-docs/issues/47021
+- [qmf-eas-plugin] Add login_hint to account update. 
+- [qmf-plugin-eas] Add prompt: select_account extra params. 
+### qmf-eas-plugin-l10n
+- Updated : 1.110.3-1.8.2.jolla -- 1.124.3-1.9.1.jolla
+- Binaries added : qmf-eas-plugin-l10n-uk - 1.124.3-1.9.1.jolla
+- [l10n] Commit from Jolla localisation:  108 of 108 strings translated (0 need review).
+- [l10n] Branched qmf-eas-plugin from version 1.124
+- [l10n] Commit from Jolla localisation:  108 of 108 strings translated (0 need review).
+
+- [l10n] Commit from Jolla localisation:  107 of 108 strings translated (0 need review).
+- [tpl] translation templates update for 0.4.2
+- [l10n] Commit from Jolla localisation:  108 of 108 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [tpl] translation templates update for 0.4.0
+- [l10n] Commit from Jolla localisation:  106 of 106 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  106 of 106 strings translated (0 need review).
+### qmf-notifications-plugin
+- Updated : 0.2.10-1.5.2.jolla -- 0.2.11-1.6.1.jolla
+- [qmf-notifications-plugin] Add license file and fix urls. 
+### qmf-notifications-plugin-l10n
+- Updated : 1.59.2-1.10.2.jolla -- 1.61.1-1.11.1.jolla
+- Binaries added : qmf-notifications-plugin-l10n-uk - 1.61.1-1.11.1.jolla
+- [l10n] Branched qmf-notifications-plugin from version 1.61
+- [l10n] Commit from Jolla localisation:  8 of 8 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  8 of 8 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+### qmllive
+- Updated : 1.0.0+git7-1.4.2.jolla -- 1.0.0+git8-1.5.1.jolla
+- [Build] Included license file as %license. 
+### qr-filter-qml-plugin
+- Updated : 1.0.4-1.5.2.jolla -- 1.0.5-1.6.1.jolla
+- [qr-filter-plugin] Add qmltypes file. 
+### qt5
+- Updated : 5.6.3+git46.2-1.17.1.jolla -- 5.6.3+git52-1.15.5.jolla
+- [qconnmanengine] Do not trigger scan if tech is not powered. 
+- [qconnmanengine] Suppress bearer type warning. 
+- [qtbase] Protect QNetworkAccessManager on duplicated state changes. 
+- [qtbase] Use system proxy configuration by default. 
+- [qtbase] Enable libproxy support. 
+- [qtbase] Split cmake files to corresponding -devel packages. 
+### qt5-plugin-position-geoclue
+- Updated : 5.4.2+git1-1.5.2.jolla -- 5.4.2+git2-1.6.1.jolla
+- [packaging] Add doc packages for qtlocation and qtpositioning
+- [packaging] Add doc packages for qtlocation and qtpositioning. 
+### qt5-qpa-hwcomposer-plugin
+- Updated : 5.6.2.20-1.3.2.jolla -- 5.6.2.22-1.4.1.jolla
+- [hwcomposer] Only allow forcing hwc2 if the headers are available. 
+- [hwcomposer] Add an environment variable to prevent loading the HWC2 module twice. 
+- [hwcomposer] Fix getting the primary display if it has an id different than 0. 
+### qt5-qtdeclarative
+- Updated : 5.6.3+git21.1-1.9.2.jolla -- 5.6.3+git25-1.10.1.jolla
+- [qmlplugindump] Allow output separation
+- [qmlplugindump] Allow to exclude composite types. 
+- [qtdeclarative] Commit preedit before toggling readOnly state. 
+- [tests] Remove unused submodule. 
+- [qtdeclarative] Enable JIT for all platforms. 
+### qt5-qtdocgallery
+- Updated : 5.3.0+git2-1.7.2.jolla -- 5.3.0+git5-1.9.1.jolla
+- [qtdocgallery] Adjust declarative document gallery life-cycle. 
+- [qtdocgallery] Use tracker:available on item's own graph. 
+- [qtdocgallery] Add license files. 
+### qt5-qtlocation-source
+- Updated : 5.4.2+git1-1.5.1.jolla -- 5.4.2+git2-1.6.1.jolla
+- Binaries added : qt5-qtpositioning-doc - 5.4.2+git2-1.6.1.jolla, qt5-qtlocation-doc - 5.4.2+git2-1.6.1.jolla
+- [packaging] Add doc packages for qtlocation and qtpositioning
+- [packaging] Add doc packages for qtlocation and qtpositioning. 
+### qt5-qtwebkit
+- Updated : 5.6.2+git16-1.7.4.jolla -- 5.6.2+git20-1.10.2.jolla
+- [qtwebkit] Silence no-class-memaccess warnings. 
+- [qtwebkit] Require sailfishsilica-qt5-webview. 
+- [qtwebkit] Fix build with bison 3.7 and newer. 
+- [qtwebkit] Fix build. 
+### qt5-qtwebsockets
+- Updated : 5.5.1-1.6.2.jolla -- 5.5.1+git1-1.7.1.jolla
+- [git] Move submodule repos to github. 
+- [qtwebsockets] Include %license files. 
+### qtcontacts-sqlite-qt5
+- Updated : 0.3.14-1.6.2.jolla -- 0.3.18-1.7.1.jolla
+- [qtcontacts-sqlite] Don't try loading sqlite icu extension by default. 
+- [qtcontacts-sqlite] Buildrequire sqlite3. 
+- [qtcontacts-sqlite] Always load sqlite ICU collation extension. 
+- [qtcontacts-sqlite] Add license file. 
+### qtmozembed-qt5
+- Updated : 1.53.23-1.33.1.jolla -- 1.53.25-1.23.1.jolla
+- [qtmozembed] Add proper ELF header to tt.bin. 
+- [qtmozembed] Add colorMode property for prefers-color-scheme support. 
+### qtscenegraph-adaptation
+- Updated : 0.7.7-1.4.2.jolla -- 0.8.0-1.4.1.jolla
+- [qtscenegraph-adaptation] Adapt to newer Qt5 versions. 
+### quazip
+- Updated : 0.9.1+git2-1.5.2.jolla -- 1.2+git2-1.5.2.jolla
+- [quazip] BuildRequire Qt5Network for now. 
+- [quazip] Update to 1.2. 
+### readline
+- Updated : 8.0+git1-1.6.2.jolla -- 8.1+git1-1.6.2.jolla
+- [readline] Update submodule URL. 
+- [readline] Update to version 8.1. 
+### rpm
+- Updated : 4.16.1.3+git9-1.11.2.jolla -- 4.16.1.3+git12-1.10.2.jolla
+- [brp-python-bytecompile] Be quiet when there is nothing to touch. 
+- [rpm-python] Add missing patch to spec. 
+- [brp-python-bytecompile] Ensure reproducibility of invalidation timestamp. 
+### rpm-python
+- Updated : 4.16.1.3+git9-1.11.4.jolla -- 4.16.1.3+git12-1.10.2.jolla
+- [brp-python-bytecompile] Be quiet when there is nothing to touch. 
+- [rpm-python] Add missing patch to spec. 
+- [brp-python-bytecompile] Ensure reproducibility of invalidation timestamp. 
+### rpmlint
+- Updated : 2.0.0+git2.1-1.7.3.jolla -- 2.0.0+git4-1.7.3.jolla
+- [rpmlint] Ignore dynamic parts of version/release number. 
+- [rpmlint] Enable zstd support for rpmlint. 
+### rpmlint-mini
+- Updated : 2.0.0+git1-1.5.18.jolla -- 2.0.0+git3-1.5.7.jolla
+- Enable zstd support for rpmlint. 
+- Correctly detect lib64 in rpmlint.wrapper. 
+ruby
+Reverted : 0.5.6-1.7.16.jolla -- 0.5.6-1.7.6.jolla
+- [ruby] Run boostrap with newer bison to allow update. 
+- [ruby] Update Ruby to 2.7.6
+- [ruby] Update Ruby to 2.7.6. 
+### rust
+- Updated : 1.52.1+git1-1.7.3.jolla -- 1.52.1+git4-1.9.1.jolla
+- [rust] Add cross compilers to ix86 BuildRequires. 
+- [rust] Allow prjconf to disable the building of the armv7/aarch64. 
+- [rust] Let Cargo obey the SB2_TARGET variable. 
+- [rust] Initial packaging of rust 1.52.1. 
+- [rust] Fix host-gcc use under SDK. 
+- [aarch64] Enable aarch64 build for rust cross. 
+- Do not require specific version of rust-std-static-i686-unknown-linux-gnu package. 
+- Remove cross package build requirements to avoid build loop. 
+- [build] Disable aarch64. 
+- Remove unused bootstrap binaries
+- [rust] Enable cross-building. 
+- Add support for default targets
+- Enable use of host-cc
+- Partial fix for fork/exec deadlocks in rust's std:: library.
+- [rust] Limit memory usage for aarch64 builds. 
+- [rust] Enable aarch64 build. 
+- [rust] Clean up packaging. 
+- [rust] Use default codegen units. 
+- [rust] Disable tests for arm. 
+- [rust] Disable aarch64 build. 
+- [rust] Disable statx for all builds. 
+- [rust] Packaging for 1.44.0 version. 
+### sailfish-access-control
+- Updated : 0.0.6-1.7.2.jolla -- 0.0.7-1.6.2.jolla
+- [sailfish-access-control] Use C prototypes in C sources. 
+### sailfish-access-control-qt5
+- Updated : 0.0.6-1.7.1.jolla -- 0.0.7-1.7.1.jolla
+- [sailfish-access-control] Use C prototypes in C sources. 
+### sailfish-account-nextcloud
+- Updated : 1.0.0-1.5.2.jolla -- 1.0.4-1.9.1.jolla
+- [account-nextcloud] Don't show user info in log output. 
+- [account-nextcloud] Remove backup and sharing from sync schedule. 
+- [packaging] Don't duplicate packaging for each icons size. 
+- [account-nextcloud] Migrate to new formatter enum name. 
+### sailfish-account-nextcloud-l10n
+- Updated : 1.22.2-1.7.2.jolla -- 1.24.1-1.8.1.jolla
+- Binaries added : sailfish-account-nextcloud-l10n-uk - 1.24.1-1.8.1.jolla
+- [l10n] Branched sailfish-account-nextcloud from version 1.24
+- [l10n] Commit from Jolla localisation:  5 of 5 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  5 of 5 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+### sailfish-aml
+- Updated : 1.0.2+git1-1.1.2.jolla -- 1.0.4-1.2.1.jolla
+- [unit] Fix clearing file monitors with new glib. 
+- [aml] Enable GPS when call is initiated. 
+- [file monitor] Split file monitor to its own file away from techs. 
+- [position] Skip method update with empty description. 
+- [service] Support sysconf and environment conf files. 
+- [technologies] Attempt to ignore notifications of own changes to files.
+- [unit] Add tests for technologies.c. 
+### sailfish-archive-l10n
+- Updated : 1.18.5-1.4.2.jolla -- 1.20.1-1.5.1.jolla
+- Binaries added : sailfish-archive-l10n-uk - 1.20.1-1.5.1.jolla
+- [l10n] Branched sailfish-archive from version 1.20
+- [l10n] Commit from Jolla localisation:  7 of 7 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  7 of 7 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+### sailfish-audiorecorder-l10n
+- Updated : 1.21.2-1.6.2.jolla -- 1.23.1-1.7.1.jolla
+- Binaries added : sailfish-audiorecorder-l10n-uk - 1.23.1-1.7.1.jolla
+- [l10n] Branched sailfish-audiorecorder from version 1.23
+- [l10n] Commit from Jolla localisation:  30 of 30 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  30 of 30 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+### sailfish-browser
+- Updated : 2.2.54.1-1.26.1.jolla -- 2.2.61-1.12.1.jolla
+- [browser] Add radio and checkbox tests for input. 
+- [browser] Do not show pad lock for about:-pages. 
+- [browser] Migrate nemo dbus import name. 
+- [sailfish-browser] Migrate to current qml import names. 
+- [browser] Add a "Preferred colour scheme" combobox to Settings. 
+- [browser] Delay external tab requests at startup. 
+- [browser] Remove D-Bus privilege checks
+- [sailfish-browser] Encode URL string before copying to clipboard. 
+- [browser] Improve readme. 
+### sailfish-browser-l10n
+- Updated : 1.262.9-1.16.2.jolla -- 1.289.3-1.13.1.jolla
+- Binaries added : sailfish-browser-l10n-uk - 1.289.3-1.13.1.jolla
+- [l10n] Commit from Jolla localisation:  169 of 169 strings translated (0 need review).
+- [tpl] translation templates update for 2.2.61
+- [l10n] Commit from Jolla localisation:  162 of 169 strings translated (0 need review).
+- [l10n] Branched sailfish-browser from version 1.289
+- [l10n] Commit from Jolla localisation:  169 of 169 strings translated (0 need review).
+- [tpl] translation templates update for 2.2.57
+- [l10n] Commit from Jolla localisation:  163 of 163 strings translated (0 need review).
+- [tpl] translation templates update for 2.2.56
+- [l10n] Commit from Jolla localisation:  163 of 163 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  162 of 163 strings translated (0 need review).
+- [tpl] translation templates update for 2.2.53
+- [tpl] translation templates update for 2.2.54
+- [l10n] Commit from Jolla localisation:  162 of 162 strings translated (0 need review).
+- [tpl] translation templates update for 2.2.46
+- [l10n] Commit from Jolla localisation:  162 of 162 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [tpl] translation templates update for 2.2.39
+- [tpl] translation templates update for 2.2.41
+- [tpl] translation templates update for 2.2.43
+- [l10n] Commit from Jolla localisation:  162 of 162 strings translated (0 need review).
+- [tpl] translation templates update for 2.2.35
+- [tpl] translation templates update for 2.2.36
+- [l10n] Commit from Jolla localisation:  161 of 161 strings translated (0 need review).
+- [tpl] translation templates update for 2.2.21
+- [tpl] translation templates update for 2.2.25
+- [l10n] Commit from Jolla localisation:  160 of 160 strings translated (0 need review).
+- [tpl] translation templates update for 2.2.16
+- [l10n] Commit from Jolla localisation:  148 of 148 strings translated (0 need review).
+- [tpl] translation templates update for 2.2.14
+### sailfish-btrfs-balancer-l10n
+- Updated : 1.24.6-1.4.2.jolla -- 1.26.1-1.5.1.jolla
+- Binaries added : sailfish-btrfs-balancer-l10n-uk - 1.26.1-1.5.1.jolla
+- [l10n] Branched sailfish-btrfs-balancer from version 1.26
+- [l10n] Commit from Jolla localisation:  5 of 5 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  5 of 5 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+### sailfish-components-accounts-qt5
+- Updated : 0.2.55-1.5.3.jolla -- 0.4.1-1.9.1.jolla
+- [components-accounts] Add plugins.qmltypes. 
+- [components-accounts] Migrate to Sync::syncConfigDir(). 
+- [components-accounts] Add support for map type parameters. 
+- [tests] Ensure properties change before testing in unit tests. 
+- [components-accounts] Avoid an infinite recursive loop. 
+- [components-accounts] Ensure account icon is within item area. 
+- [sailfish-components-accounts] Ensure icon within the container in account list delegate.
+### sailfish-components-accounts-qt5-l10n
+- Updated : 1.122.2-1.7.2.jolla -- 1.126.1-1.8.1.jolla
+- Binaries added : sailfish-components-accounts-qt5-l10n-uk - 1.126.1-1.8.1.jolla
+- [l10n] Branched sailfish-components-accounts-qt5 from version 1.126
+- [l10n] Commit from Jolla localisation:  55 of 55 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  55 of 55 strings translated (0 need review).
+- [tpl] translation templates update for 0.2.57
+- [l10n] Commit from Jolla localisation:  55 of 55 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  55 of 55 strings translated (0 need review).
+### sailfish-components-bluetooth-qt5
+- Updated : 0.2.19-1.4.2.jolla -- 0.2.23.1-1.7.1.jolla
+- Binaries added : sailfish-components-bluetooth-qt5-doc - 0.2.23.1-1.7.1.jolla
+- [components-bluetooth] Use 0.2 as documentation version. 
+- [components-bluetooth] Add documentation package. 
+- [components-bluetooth] Fix unit test execution. 
+- [components-bluetooth] Use bluezqt headers with updated .pc. 
+- [components-bluetooth] Use bluezqt headers with update .pc. 
+- [components-bluetooth] Minor build setup cleanups. 
+### sailfish-components-bluetooth-qt5-l10n
+- Updated : 1.92.3-1.6.2.jolla -- 1.96.1-1.7.1.jolla
+- Binaries added : sailfish-components-bluetooth-qt5-l10n-uk - 1.96.1-1.7.1.jolla
+- [l10n] Branched sailfish-components-bluetooth-qt5 from version 1.96
+- [l10n] Commit from Jolla localisation:  39 of 39 strings translated (0 need review).
+- [tpl] translation templates update for 0.2.23
+- [l10n] Commit from Jolla localisation:  39 of 39 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  39 of 39 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [tpl] translation templates update for 0.2.21
+- [l10n] Commit from Jolla localisation:  39 of 39 strings translated (0 need review).
+### sailfish-components-contacts-qt5
+- Updated : 0.4.37-1.5.2.jolla -- 0.4.43.3-1.10.1.jolla
+- Binaries added : sailfish-components-contacts-qt5-doc - 0.4.43.3-1.10.1.jolla
+- [components-contacts] Add plugins.qmltypes. 
+- [components-contacts] Use 0.4 as documentation version. 
+- [components-contacts] Delay switching contact selector readonly. 
+- [sailfish-contacts] Open contact address as geo: uri. 
+- [components-contacts] Add documentation package. 
+- [components-contacts] Bump version to 0.4.42
+- [components-contacts] Remove tst_components and run tst_localegrouper. 
+- [components-contacts] Remove declaration of non-existing method. 
+- [components-contacts] Use graphic-placeholder on favorite item. 
+- [contacts] Move contactsd dependency to the contacts module. 
+### sailfish-components-contacts-qt5-l10n
+- Updated : 1.198.3-1.8.2.jolla -- 1.203.2-1.9.1.jolla
+- Binaries added : sailfish-components-contacts-qt5-l10n-uk - 1.203.2-1.9.1.jolla
+- [l10n] Commit from Jolla localisation:  158 of 158 strings translated (0 need review).
+- [tpl] translation templates update for 0.4.43.1
+- [l10n] Branched sailfish-components-contacts-qt5 from version 1.203
+- [l10n] Commit from Jolla localisation:  161 of 161 strings translated (0 need review).
+- [l10n] Commit from Jolla localisation:  158 of 158 strings translated (0 need review).
+- [tpl] translation templates update for 0.4.43
+- [l10n] Commit from Jolla localisation:  158 of 161 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  158 of 158 strings translated (0 need review).
+- [tpl] translation templates update for 0.4.42
+- [l10n] Commit from Jolla localisation:  158 of 161 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+### sailfish-components-filemanager
+- Updated : 0.2.25-1.3.2.jolla -- 0.2.26-1.4.1.jolla
+- [sailfish-components-filemanager] Add plugins.qmltypes. 
+### sailfish-components-filemanager-l10n
+- Updated : 1.99.5-1.8.2.jolla -- 1.103.1-1.7.1.jolla
+- Binaries added : sailfish-components-filemanager-l10n-uk - 1.103.1-1.7.1.jolla
+- [l10n] Branched sailfish-components-filemanager from version 1.103
+- [l10n] Commit from Jolla localisation:  65 of 65 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  65 of 65 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+### sailfish-components-gallery-qt5
+- Updated : 1.2.3-1.7.2.jolla -- 1.2.13-1.12.1.jolla
+- Binaries added : sailfish-components-gallery-qt5-doc - 1.2.13-1.12.1.jolla
+- [components-gallery] Fix qmlplugindump failure. 
+- [components-gallery] Add plugins.qmltypes. 
+- [components-gallery] Use 1.2 as documentation version number. 
+- [components-gallery] Migrate policy plugin import name. 
+- [components-gallery] Avoid overlapping error messages. 
+- [components-gallery] Avoid overlapping error messages when edit doesn't exist. 
+- [components-gallery] Add documentation package. 
+- [components-gallery] Drop libjollasignonuiservice-qt5-plugin requirement. 
+- [components-gallery] Flip rotate image size info and fix metadata fallback. 
+- [components-gallery] Use better image placeholder graphic. 
+- [components-gallery] Fix running tests on 64-bit devices. 
+### sailfish-components-gallery-qt5-l10n
+- Updated : 1.158.2-1.7.2.jolla -- 1.163.2-1.10.1.jolla
+- Binaries added : sailfish-components-gallery-qt5-l10n-uk - 1.163.2-1.10.1.jolla
+- [l10n] Commit from Jolla localisation:  53 of 53 strings translated (0 need review).
+- [l10n] Branched sailfish-components-gallery-qt5 from version 1.163
+- [l10n] Commit from Jolla localisation:  53 of 53 strings translated (0 need review).
+- [tpl] translation templates update for 1.2.8
+- [tpl] translation templates update for 1.2.9
+- [l10n] Commit from Jolla localisation:  54 of 54 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  54 of 54 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+### sailfish-components-media-qt5
+- Updated : 0.9.6-1.3.2.jolla -- 0.9.15-1.8.1.jolla
+- Binaries added : sailfish-components-media-qt5-doc - 0.9.15-1.8.1.jolla
+- [components-media] Fix qmlplugindump failure. 
+- [components-media] Add plugins.qmltypes. 
+- [components-media] Use 0.9 as documentation version. 
+- [components-media] Migrate nemo policy import name. 
+- [components-media] Add documentation package. 
+- [components-media] Show mpris app name only if there is something else shown too. 
+- [components-media] Use sourceSize on album art image to restrict memory usage. 
+- [components-media] Add album art to external mpris controls. 
+- [media] Port to new MPRIS API. 
+### sailfish-components-pickers-qt5
+- Updated : 1.0.21-1.6.3.jolla -- 1.0.26-1.9.1.jolla
+- [components-pickers] Update plugins.qmltypes. 
+- [components-pickers] Use 1.0 as documentation version. 
+- [tests] Fix for tst_multivideopickerdialog. 
+- [tests] Fix tst_folderpickerdialog. 
+- [tests] Fix tst_musicpickerpage. 
+- [tests] Fix tst_multicontentpickerdialog to pass. 
+- [tests] Fix tst_multidocumentpickerdialog to pass. 
+- [tests] Fix tst_multimusicpickerdialog to pass. 
+- [tests] Split each test case to own step. 
+### sailfish-components-pickers-qt5-l10n
+- Updated : 1.103.2-1.8.2.jolla -- 1.106.1-1.9.1.jolla
+- Binaries added : sailfish-components-pickers-qt5-l10n-uk - 1.106.1-1.9.1.jolla
+- [l10n] Branched sailfish-components-pickers-qt5 from version 1.106
+- [l10n] Commit from Jolla localisation:  38 of 38 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  38 of 38 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  38 of 38 strings translated (0 need review).
+### sailfish-components-telephony-qt5
+- Updated : 0.2.0-1.2.2.jolla -- 0.2.1.1-1.4.1.jolla
+- Binaries added : sailfish-components-telephony-qt5-doc - 0.2.1.1-1.4.1.jolla
+- [components-telephony] Add plugins.qmltypes. 
+- [sailfish-components-telephony] Add documentation package. 
+### sailfish-components-telephony-qt5-l10n
+- Updated : 1.37.4-1.5.2.jolla -- 1.40.1-1.6.1.jolla
+- Binaries added : sailfish-components-telephony-qt5-l10n-uk - 1.40.1-1.6.1.jolla
+- [l10n] Branched sailfish-components-telephony-qt5 from version 1.40
+- [l10n] Commit from Jolla localisation:  14 of 14 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  14 of 14 strings translated (0 need review).
+- [tpl] translation templates update for 0.2.1
+- [l10n] Commit from Jolla localisation:  14 of 14 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+### sailfish-components-textlinking
+- Updated : 0.1.5-1.2.2.jolla -- 0.1.6-1.3.1.jolla
+- [textlinking] Create Person during runtime. 
+### sailfish-components-timezone-qt5
+- Updated : 0.2.1-1.3.27.jolla -- 0.2.3-1.5.1.jolla
+- [sailfish-components-timezone] Add plugins.qmltypes. 
+- [sailfish-components-timezone] Output stable order for areas. 
+### sailfish-components-timezone-qt5-l10n
+- Updated : 1.99.3-1.10.2.jolla -- 1.102.2-1.11.1.jolla
+- Binaries added : sailfish-components-timezone-qt5-l10n-uk - 1.102.2-1.11.1.jolla
+- [l10n] Commit from Jolla localisation:  693 of 693 strings translated (0 need review).
+- [l10n] Branched sailfish-components-timezone-qt5 from version 1.102
+- [l10n] Commit from Jolla localisation:  693 of 693 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  693 of 693 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [tpl] translation templates update for 0.2.1
+- [tpl] translation templates update for 0.2.2
+- [l10n] Commit from Jolla localisation:  693 of 693 strings translated (0 need review).
+- [tpl] translation templates update for 0.2.1
+### sailfish-components-weather-qt5
+- Updated : 1.1.11-1.3.6.jolla -- 1.1.16-1.7.3.jolla
+- [sailfish-weather] Ensure entries update correctly. 
+- [sailfish-weather] Ensure oberervation fetch updates the correct weather entry. 
+- [sailfish-weather] Reload WeatherForecastModel when location changes. 
+- [sailfish-weather] Allow a connection dialog on user-requested refresh. 
+- [sailfish-weather] Add admin area to Weather object and model. 
+- [sailfish-weather] Add country and admin area to city titles the main page. 
+- [sailfish-weather] Add weather station information. 
+- [sailfish-weather] Respect active property on WeatherRequests. 
+- [sailfish-weather] Save weather model upon update. 
+- [components-weather] Add back accidentally removed string. 
+- [components-weather] Fix 12h timestamps in the forecast. 
+### sailfish-components-weather-qt5-l10n
+- Updated : 1.64.3-1.5.2.jolla -- 1.69.2-1.7.1.jolla
+- Binaries added : sailfish-components-weather-qt5-l10n-uk - 1.69.2-1.7.1.jolla
+- [l10n] Commit from Jolla localisation:  72 of 72 strings translated (0 need review).
+- [l10n] Branched sailfish-components-weather-qt5 from version 1.69
+- [l10n] Commit from Jolla localisation:  71 of 72 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  72 of 72 strings translated (0 need review).
+- [tpl] translation templates update for 1.1.14
+- [l10n] Commit from Jolla localisation:  72 of 73 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  73 of 73 strings translated (0 need review).
+- [tpl] translation templates update for 1.1.13
+- [l10n] Commit from Jolla localisation:  66 of 66 strings translated (0 need review).
+- [tpl] translation templates update for 1.1.12
+### sailfish-components-webview-qt5
+- Updated : 1.5.9.2-1.20.2.jolla -- 1.5.17.1-1.13.1.jolla
+- [components-webview] Add plugins.qmltypes. 
+- [webview] Correctly update viewportHeight on orientation change. 
+- [webview-docs] Add docs for doNotTrack and colorScheme. 
+- [webview] Send notification on ambience colour scheme change. 
+- [webview] Guard programmatic preference change with marker file. 
+- [webview-docs] Add Jolla copyright to docs footer.
+- [webview-docs] Elaborate on using local content with CORS protection. 
+- [components-webview] Add image share option to context menu. 
+- [components-webview] Fix keyboard margin calculation. 
+- [components-webview] Adjust keyboard margin based on position. 
+- [components-webview] Respect component height. 
+### sailfish-components-webview-qt5-l10n
+- Updated : 1.83.5-1.12.2.jolla -- 1.97.3-1.12.1.jolla
+- Binaries added : sailfish-components-webview-qt5-l10n-uk - 1.97.3-1.12.1.jolla
+- [l10n] Commit from Jolla localisation:  124 of 124 strings translated (0 need review).
+- [l10n] Branched sailfish-components-webview-qt5 from version 1.97
+- [l10n] Commit from Jolla localisation:  124 of 124 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  124 of 124 strings translated (0 need review).
+- [tpl] translation templates update for 1.5.13
+- [l10n] Commit from Jolla localisation:  123 of 123 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [tpl] translation templates update for 1.5.9
+- [l10n] Commit from Jolla localisation:  123 of 123 strings translated (0 need review).
+- [tpl] translation templates update for 1.5.8
+- [l10n] Commit from Jolla localisation:  122 of 122 strings translated (0 need review).
+- [tpl] translation templates update for 1.4.9
+### sailfish-content-ambiences-default-l10n
+- Updated : 1.62.4-1.5.2.jolla -- 1.64.1-1.6.1.jolla
+- Binaries added : sailfish-content-ambiences-default-l10n-uk - 1.64.1-1.6.1.jolla
+- [l10n] Branched sailfish-content-ambiences-default from version 1.64
+- [l10n] Commit from Jolla localisation:  29 of 29 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  29 of 29 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+### sailfish-content-graphics-closed
+- Updated : 0.6.3-1.2.2.jolla -- 0.6.4-1.2.3.jolla
+- Binaries added : sailfish-content-graphics-closed-z2.5 - 0.6.4-1.2.3.jolla
+- [theme-ambient-icons-closed] Remove obsolete symlink and some icons. 
+### sailfish-content-graphics-default
+- Updated : 1.3.0.1-1.6.2.jolla -- 1.3.7-1.7.1.jolla
+- Binaries added : sailfish-content-graphics-default-z2.5-base - 1.3.7-1.7.1.jolla, sailfish-content-graphics-default-z2.5 - 1.3.7-1.7.1.jolla
+- [theme-jolla] Add calendar mode icons. 
+- [theme] Remove symlink files. 
+- [theme-jolla] Add placeholder item. 
+- [theme-jolla] Remove graphic-avatar-text-back.png. 
+- [theme] Add new icon-m-back-tab. 
+- [theme-jolla] Remove some obsolete .png icons. 
+- [theme-jolla] Add playback control icons without any background. 
+- [theme-jolla] Remove old shutdown logo content. 
+### sailfish-device-encryption
+- Updated : 0.10.3.1-1.5.4.jolla -- 0.11.0-1.5.2.jolla
+- Binaries added : sailfish-device-encryption-unlock-ui-resources-z2.5 - 0.11.0-1.5.2.jolla
+- [sailfish-unlock-ui] Implement alphanumeric mode for unlocking. 
+- [sailfish-device-encryption] Fix libresource aborting on uninitialized data. 
+- [sailfish-device-encryption] Make emergency button behavior consistent again. 
+- [ui-sailfish-device-encryption] Adapt to explicit minui password masking api. 
+### sailfish-device-encryption-l10n
+- Updated : 1.64.2-1.7.2.jolla -- 1.68.1-1.8.1.jolla
+- Binaries added : sailfish-device-encryption-l10n-uk - 1.68.1-1.8.1.jolla
+- [l10n] Branched sailfish-device-encryption from version 1.68
+- [l10n] Commit from Jolla localisation:  47 of 47 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  47 of 47 strings translated (0 need review).
+- [tpl] translation templates update for 0.11.0
+- [l10n] Commit from Jolla localisation:  47 of 47 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [tpl] translation templates update for 0.10.3
+- [l10n] Commit from Jolla localisation:  47 of 47 strings translated (0 need review).
+### sailfish-eas
+- Updated : 0.5.18.3-1.6.1.jolla -- 0.6.3-1.9.1.jolla
+- [sailfish-eas] Don't make calendars visible on initialisation. 
+- [sailfish-eas] Use correct calendar service name. 
+- [sailfish-eas] Fix calendar storage all-day unit tests. 
+- [sailfish-eas] Avoid unnecessary credential update notifications. 
+- [sailfish-eas] Add OAuth to login flow and protocol commands. 
+- [sailfish-eas] Ask to update credentials on failure. 
+- [sailfish-eas] Implement token refresh on authentication error. 
+- [sailfish-eas] Adapt to adjusted mkcal change notification api. 
+- [sailfish-eas] Use pkgconfig for ssu dependency. 
+- [sailfish-eas] Correctly interpret single part attachment downloads. 
+- [1]
+- [2]
+- [MS-ASCAL] 2.2.2.1 AllDayEvent
+- [sailfish-eas] Adjust end date for all day events. 
+- [sailfish-eas] Cascade all day status to exceptions. 
+- [sailfish-eas] Handle all day exceptions better. 
+- [sailfish-eas] Make timezone conversion more robust. 
+- [sailfish-eas] Reset sync key when Calendar is disabled. 
+- [sailfish-eas] Remove qt5-qtsysteminfo usage. 
+### sailfish-filemanager-l10n
+- Updated : 1.23.4-1.5.2.jolla -- 1.25.1-1.6.1.jolla
+- Binaries added : sailfish-filemanager-l10n-uk - 1.25.1-1.6.1.jolla
+- [l10n] Branched sailfish-filemanager from version 1.25
+- [l10n] Commit from Jolla localisation:  5 of 5 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  5 of 5 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+### sailfish-fonts
+- Updated : 0.2.0-1.3.2.jolla -- 0.3.0-1.4.1.jolla
+- [fonts] Add twemoji font for color emojis. 
+### sailfish-hciwait
+- Updated : 0.0.2-1.2.2.jolla -- 0.0.3-1.2.2.jolla
+- [packaging] Move to bluez5. 
+### sailfish-homescreen
+- Updated : 0.1.6-1.4.13.jolla -- 0.1.7-1.5.1.jolla
+- [sailfish-homescreen] Update nemo thumbnailer import. 
+### sailfish-homescreen-l10n
+- Updated : 1.9.4-1.7.2.jolla -- 1.12.2-1.8.1.jolla
+- Binaries added : sailfish-homescreen-l10n-uk - 1.12.2-1.8.1.jolla
+- [l10n] Commit from Jolla localisation:  2 of 2 strings translated (0 need review).
+- [l10n] Branched sailfish-homescreen from version 1.12
+- [l10n] Commit from Jolla localisation:  2 of 2 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  2 of 2 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+### sailfish-installationhandler
+- Updated : 1.0.5-1.3.3.jolla -- 1.0.9-1.6.1.jolla
+- [installationhandler] Fix incorrect message on disabled sideloading. 
+- [alien] Handle apk installation requests. 
+- [alien] Fall back to system bus for apkd calls for alien4. 
+- [alien] Support uninstallation of user Android apps. 
+### sailfish-installationhandler-l10n
+- Updated : 1.12.3-1.6.2.jolla -- 1.23.3-1.8.1.jolla
+- Binaries added : sailfish-installationhandler-l10n-uk - 1.23.3-1.8.1.jolla
+- [l10n] Commit from Jolla localisation:  10 of 10 strings translated (0 need review).
+- [l10n] Branched sailfish-installationhandler from version 1.23
+- [l10n] Commit from Jolla localisation:  10 of 10 strings translated (0 need review).
+- [tpl] translation templates update for 1.0.9
+- [l10n] Commit from Jolla localisation:  10 of 10 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [tpl] translation templates update for 1.0.8
+- [l10n] Commit from Jolla localisation:  7 of 7 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [tpl] translation templates update for 1.0.6
+- [l10n] Commit from Jolla localisation:  7 of 7 strings translated (0 need review).
+### sailfish-maps
+- Updated : 1.2.14-1.3.5.jolla -- 1.2.16-1.4.2.jolla
+- [*] https://doc.qt.io/qt-5/qml-qtlocation-mapcircle.html#example-usage
+- [maps] Ensure location estimation circle is transparent. 
+- [maps] Support extra query parameters on geo: handler. 
+- [maps] Remove obsolete voicecall dependency. 
+### sailfish-maps-l10n
+- Updated : 1.114.2-1.7.2.jolla -- 1.117.1-1.8.1.jolla
+- Binaries added : sailfish-maps-l10n-uk - 1.117.1-1.8.1.jolla
+- [l10n] Branched sailfish-maps from version 1.117
+- [l10n] Commit from Jolla localisation:  89 of 89 strings translated (0 need review).
+- [tpl] translation templates update for 1.2.16
+- [l10n] Commit from Jolla localisation:  89 of 89 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  89 of 89 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+### sailfish-mdm
+- Updated : 0.4.15-1.5.1.jolla -- 0.4.17-1.7.1.jolla
+- [sailfish-mdm] Add plugins.qmltypes. 
+- [sailfish-policy] Add plugins.qmltypes. 
+### sailfish-mdm-l10n
+- Updated : 1.33.4-1.5.2.jolla -- 1.36.1-1.6.1.jolla
+- Binaries added : sailfish-mdm-l10n-uk - 1.36.1-1.6.1.jolla
+- [l10n] Branched sailfish-mdm from version 1.36
+- [l10n] Commit from Jolla localisation:  4 of 4 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  4 of 4 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  4 of 4 strings translated (0 need review).
+### sailfish-minui
+- Updated : 0.0.32.1-1.4.1.jolla -- 0.1.4-1.6.1.jolla
+- Binaries added : sailfish-minui-gallery-resources-z2.5 - 0.1.4-1.6.1.jolla, sailfish-minui-resources-z2.5 - 0.1.4-1.6.1.jolla
+- [sailfish-minui] Fix creating infinite symlink loop. 
+- [sailfish-miniui] Add 2.5 output scale for labels. 
+- [mindbus] Fix nullptr unref. 
+- [sailfish-minui] Fix resource .prf on z1.0 svg-rgbs. 
+- [sailfish-minui] Create virtual keyboard component. 
+- [sailfish-minui] Cancel BusyIndicator update timer on deletion. 
+### sailfish-minui-l10n
+- Updated : 1.36.5-1.4.2.jolla -- 1.39.1-1.5.1.jolla
+- Binaries added : sailfish-minui-l10n-uk - 1.39.1-1.5.1.jolla
+- [l10n] Branched sailfish-minui from version 1.39
+- [l10n] Commit from Jolla localisation:  15 of 15 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  15 of 15 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [tpl] translation templates update for 0.1.0
+- [l10n] Commit from Jolla localisation:  15 of 15 strings translated (0 need review).
+### sailfish-office
+- Updated : 1.6.1-1.5.2.jolla -- 1.6.6-1.7.1.jolla
+- [sailfish-office] Fix tap handling on pdf password field. 
+- [sailfish-office] Add missing pdfannotation ctor implementation. 
+- [office] Use ExecDBus for D-Bus activation
+- [office] Use freedesktop.org API for window activation. 
+- [sailfish-office] Include license file as %license. 
+- [sailfish-office] Use tracker:available from tracker:Documents. 
+### sailfish-office-l10n
+- Updated : 1.156.3-1.8.2.jolla -- 1.161.1-1.8.1.jolla
+- Binaries added : sailfish-office-l10n-uk - 1.161.1-1.8.1.jolla
+- [l10n] Branched sailfish-office from version 1.161
+- [l10n] Commit from Jolla localisation:  86 of 86 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  86 of 86 strings translated (0 need review).
+- [tpl] translation templates update for 1.6.6
+- [l10n] Commit from Jolla localisation:  86 of 86 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [tpl] translation templates update for 1.6.4
+- [l10n] Commit from Jolla localisation:  86 of 86 strings translated (0 need review).
+### sailfish-policy
+- Updated : 0.4.14-1.4.16.jolla -- 0.4.17-1.7.1.jolla
+- [sailfish-policy] Import from sailfish-mdm. 
+### sailfish-rfkill-plugin
+- Updated : 0.0.3-1.2.6.jolla -- 0.0.4-1.3.2.jolla
+- [sailfish-rfkill-plugin] Move to bluez5. 
+### sailfish-secrets
+- Updated : 0.2.31-1.11.2.jolla -- 0.2.36-1.12.1.jolla
+- [sailfish-crypto] Add plugins.qmltypes. 
+- [sailfish-secrets] Add plugins.qmltypes. 
+- [sailfish-crypto] Use 0.2 as documentation version. 
+- [sailfish-secrets] Use 0.2 as documentation version. 
+- [sailfish-crypto] Add documentation for Sailfish.Crypto QML types. 
+- [sailfish-crypto] Add QML documentation. 
+- [sailfish-crypto] Fix VerifyRequest::verificationStatus() documentation
+- [sailfish-crypto] Properly set project and url in qdocconf. 
+- [sailfish-secrets] Add documentation for Sailfish.Secret QML types. 
+- [sailfish-secrets] Add QML documentation. 
+- [sailfish-secrets] Properly set project and url in qdocconf. 
+- [sailfish-secrets] Give INCLUDEPATH in example. 
+- [sailfish-secrets] Use correct include lines in documentation. 
+- [sailfish-secrets] Indicate sqlcipher db v3 compatibility. 
+- [sailfish-secrets] Indicate that SQLCipher db version is 3.
+### sailfish-secrets-l10n
+- Updated : 1.48.2-1.14.2.jolla -- 1.51.1-1.15.1.jolla
+- Binaries added : sailfish-secrets-l10n-uk - 1.51.1-1.15.1.jolla
+- [l10n] Branched sailfish-secrets from version 1.51
+- [l10n] Commit from Jolla localisation:  50 of 50 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  50 of 50 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  50 of 50 strings translated (0 need review).
+### sailfish-secrets-ui-l10n
+- Updated : 1.47.2-1.7.2.jolla -- 1.50.1-1.8.1.jolla
+- Binaries added : sailfish-secrets-ui-l10n-uk - 1.50.1-1.8.1.jolla
+- [l10n] Branched sailfish-secrets-ui from version 1.50
+- [l10n] Commit from Jolla localisation:  53 of 53 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  53 of 53 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  53 of 53 strings translated (0 need review).
+### sailfish-setup
+- Updated : 0.3.2-1.6.2.jolla -- 0.3.4-1.6.2.jolla
+- [sailfish-setup] Fix obs build. 
+- [sailfish-setup] Define appsupport-root user and add subuids/subgids for appsupport. 
+### sailfish-svg2png
+- Updated : 0.3.4-1.2.2.jolla -- 0.3.5-1.2.2.jolla
+- [svg2png] Add 2.5 graphics. 
+- [svg2png] Install macros to %{_rpmmacrodir}
+### sailfish-tutorial-l10n
+- Updated : 1.107.2-1.8.2.jolla -- 1.112.2-1.10.1.jolla
+- Binaries added : sailfish-tutorial-l10n-uk - 1.112.2-1.10.1.jolla
+- [l10n] Commit from Jolla localisation:  60 of 60 strings translated (0 need review).
+- [l10n] Branched sailfish-tutorial from version 1.112
+- [l10n] Commit from Jolla localisation:  60 of 60 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  60 of 61 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  60 of 60 strings translated (0 need review).
+### sailfish-upgrade-ui-l10n
+- Updated : 1.29.2-1.5.2.jolla -- 1.31.1-1.6.1.jolla
+- Binaries added : sailfish-upgrade-ui-l10n-uk - 1.31.1-1.6.1.jolla
+- [l10n] Branched sailfish-upgrade-ui from version 1.31
+- [l10n] Commit from Jolla localisation:  3 of 3 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  3 of 3 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+### sailfish-utilities
+- Updated : 0.1.16-1.6.3.jolla -- 0.1.17-1.6.2.jolla
+- [sailfish-utilities] Add a Restart Bluetooth button
+- [sailfish-utilities] Add a Restart Bluetooth button. 
+### sailfish-utilities-l10n
+- Updated : 1.74.3-1.6.2.jolla -- 1.86.3-1.8.1.jolla
+- Binaries added : sailfish-utilities-l10n-uk - 1.86.3-1.8.1.jolla
+- [l10n] Commit from Jolla localisation:  21 of 21 strings translated (0 need review).
+- [l10n] Branched sailfish-utilities from version 1.86
+- [l10n] Commit from Jolla localisation:  21 of 21 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [tpl] translation templates update for 0.1.16
+- [tpl] translation templates update for 0.1.17
+- [l10n] Commit from Jolla localisation:  16 of 16 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+### sailfish-version
+- Updated : 4.4.0-1.5.72.jolla -- 4.5.0-1.6.16.jolla
+- [version] Build version on aarch64 arch. 
+- [version] Change name for 4.5.0 (Struven ketju). 
+### sailfish-weather
+- Updated : 1.0.8-1.3.6.jolla -- 1.0.11-1.6.2.jolla
+- [sailfish-weather] Allow a connection dialog on user-requested refresh. 
+- [sailfish-weather] Position provider logo consistently. 
+- [sailfish-weather] Remove warnings. 
+- [sailfish-weather] Add admin areas and weather station to current weather. 
+- [sailfish-weather] Add country and admin area to city titles. 
+- [sailfish-weather] Include admin area to location search results. 
+- [weather] Drop unneeded system setting dependency.
+### sailfish-weather-l10n
+- Updated : 1.60.2-1.7.2.jolla -- 1.65.1-1.8.1.jolla
+- Binaries added : sailfish-weather-l10n-uk - 1.65.1-1.8.1.jolla
+- [l10n] Branched sailfish-weather from version 1.65
+- [l10n] Commit from Jolla localisation:  25 of 25 strings translated (0 need review).
+- [tpl] translation templates update for 1.0.11
+- [l10n] Commit from Jolla localisation:  25 of 25 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  25 of 25 strings translated (0 need review).
+- [tpl] translation templates update for 1.0.10
+- [l10n] Commit from Jolla localisation:  25 of 25 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  25 of 25 strings translated (0 need review).
+### sailfishsilica-qt5
+- Updated : 1.2.79.1-1.8.2.jolla -- 1.2.103-1.13.1.jolla
+- Binaries added : sailfishsilica-qt5-webview - 1.2.103-1.13.1.jolla
+- [silica] Update plugins.qmltypes. 
+- [silica] Migrate to Nemo.Ngf import. 
+- [silica] Maintain correct ColumnView content position. 
+- [silica] Add webkit dependencies to webkit subpackage. 
+- [silica] Pull in webview for the unit tests. 
+- [silica] Allow dash on organization for cover actions. 
+- [sailfishsilica] Package SilicaWebView separately. 
+- [sailfishsilica] Drop QtWebKit & SilicaWebView. 
+- [sailfish-silica] Export YearMonthMenu. 
+- [tests] Fix tst_pagestack test. 
+- [tests] Fix tst_pulldownmenu. 
+- [tests] Fix tst_textarea. 
+- [tests] More accurate click to password mode toggle. 
+- [tests] Reduce speed of PagedView transition in tests. 
+- [silica] Add deprecation warning to SilicaWebView. 
+- [silica] Fix tst_plugintest. 
+- [silica] Fix warnings from component building tests. 
+- [tests] Take hints_enabled into account in FirstTimeUseCounter case. 
+- [silica] Add missing getter implementation for GlassItem pattern. 
+- [silica] Adapt to changed secondary color opacity in test. 
+- [silica] Add ignoreSystemHints to firsttimeusecounter test. 
+- [silica] Avoid failing check on contextmenu test. 
+- [silica] Fix colorpickerdialog test. 
+- [silica] Fix combobox test. 
+- [silica] Fix tst_password and add to test set. 
+- [silica] Remove bad assumption on textfield test. 
+- [silica] Remove broken tst_formatter checks. 
+- [silica] Remove reference to deleted test. 
+- [silica] Introduce TimeElapsed enums to replace DurationElapsed. 
+- [silica] Move duration formatter options to separate enum. 
+- [silica] Regenerate qmltypes without dependencies between modules. 
+- [silica] Deprecate some Formatter Timepoint variants. 
+- [silica] Avoid flicker when tab container gets repositioned. 
+- [silica] Allow tuning launcher grid layout. 
+- [silica] Let window handle the back key window minimization. 
+- [silica] Fix Material fillMode PreserveAspectWidth on screens with primary orientation landscape. 
+### sailfishsilica-qt5-l10n
+- Updated : 1.156.6-1.7.2.jolla -- 1.162.1-1.7.1.jolla
+- Binaries added : sailfishsilica-qt5-l10n-uk - 1.162.1-1.7.1.jolla
+- [l10n] Branched sailfishsilica-qt5 from version 1.162
+- [l10n] Commit from Jolla localisation:  49 of 107 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  49 of 107 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [tpl] translation templates update for 1.2.84
+- [tpl] translation templates update for 1.2.86
+### sailjail
+- Updated : 1.1.18.2-1.18.8.jolla -- 1.1.23-1.15.4.jolla
+- [sailjail] Obsolete sailjail-homescreen-plugin. 
+- [sailjail] Revert allow D-Bus activation with X-Share-Methods. 
+- [tests] Fix tests depending on BINDIR. 
+- [sailjail] Allow D-Bus activation when there are share methods 
+- [dbus] Allow identification of clients behind xdg-dbus-proxy
+### sailjail-permissions
+- Updated : 1.1.1-1.32.4.jolla -- 1.1.6-1.31.3.jolla
+- [sailjail-permissions] Update msynd config directory. 
+- [permissions] Allow contacts to access browser ui. 
+- [permissions] Add missing MmsEngine permission to Messages. 
+- [permissions] Allow email to access browser ui. 
+- [permissions] Move Secrets permission to the allowed list.
+- [permissions] Move Secrets permission to the allowed list. 
+- [permissions] Update README to clarify which apps are sandboxed. 
+### sailjail-permissions-l10n
+- Updated : 1.55.2-1.24.2.jolla -- 1.61.2-1.25.1.jolla
+- Binaries added : sailjail-permissions-l10n-uk - 1.61.2-1.25.1.jolla
+- [l10n] Commit from Jolla localisation:  66 of 66 strings translated (0 need review).
+- [tpl] translation templates update for 1.1.6
+- [l10n] Branched sailjail-permissions from version 1.61
+- [l10n] Commit from Jolla localisation:  66 of 66 strings translated (0 need review).
+- [tpl] translation templates update for 1.1.6
+- [l10n] Commit from Jolla localisation:  66 of 66 strings translated (0 need review).
+- [tpl] translation templates update for 1.1.2
+- [tpl] translation templates update for 1.1.3
+- [tpl] translation templates update for 1.1.4
+- [tpl] translation templates update for 1.1.5
+- [l10n] Commit from Jolla localisation:  66 of 66 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [tpl] translation templates update for 1.1.2
+- [l10n] Commit from Jolla localisation:  66 of 66 strings translated (0 need review).
+- [tpl] translation templates update for 1.0.99
+- [tpl] translation templates update for 1.1.0
+- [tpl] translation templates update for 1.1.1
+- [tpl] translation templates update for 1.1.2
+- [l10n] Commit from Jolla localisation:  66 of 66 strings translated (0 need review).
+- [tpl] translation templates update for 1.0.99
+- [l10n] Commit from Jolla localisation:  66 of 66 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [tpl] translation templates update for 1.0.92
+- [tpl] translation templates update for 1.0.93
+- [tpl] translation templates update for 1.0.94
+- [tpl] translation templates update for 1.0.95
+- [tpl] translation templates update for 1.0.96
+- [tpl] translation templates update for 1.0.97
+- [tpl] translation templates update for 1.0.98
+- [tpl] translation templates update for 1.0.99
+- [l10n] Commit from Jolla localisation:  66 of 66 strings translated (0 need review).
+- [tpl] translation templates update for 1.0.91
+- [tpl] translation templates update for 1.0.92
+### scratchbox2
+- Updated : 2.3.90+git51-1.13.2.jolla -- 2.3.90+git58-1.12.2.jolla
+- [modes] Revert "Fix use with tools root explicitly set to host root." 
+- [modes] Revert "obs-rpm-build+pp: Fix tools prefix priority." 
+- [modes] Revert "obs-rpm-build+pp: Fix tools prefix priority more." 
+- [sb2] Add config.guess and config.sub automatically if needed. 
+- [modes] Fix use with tools root explicitly set to host root. 
+- [modes] obs-rpm-build+pp: Fix tools prefix priority more. 
+- [modes] obs-rpm-build+pp: Fix tools prefix priority. 
+- [sb2-config] Do not require default target to list targets. 
+- [sb2-config] Properly check for default target
+- [sb2] Fix missing colon in PATH. 
+- [preload] Avoid unnecessary const char to char conversion
+- [preload] Include sb2_stat.h to avoid implicit declaration
+- [preload] Match declartion of tmpnam with glibc >= 2.34. 
+### screen
+- Updated : 4.7.0+git3-1.8.3.jolla -- 4.9.0+git1-1.8.2.jolla
+- [screen] Update to 4.9.0. 
+### sdk-configs
+- Updated : 0.126-1.3.2.jolla -- 0.127-1.4.1.jolla
+- [sdk-configs] Increase nproc limit. 
+### sdk-deploy-rpm
+- Updated : 1.6-1.4.2.jolla -- 1.7-1.4.2.jolla
+- [sdk-deploy-rpm] Include %license file. 
+### sdk-harbour-rpmvalidator
+- Updated : 1.80-1.10.86.jolla -- 1.99-1.9.1.jolla
+- [harbour-validator] Update test-requires. 
+- [harbour-validator] Allow linking to libkeepalive-glib. 
+- [harbour-validator] Disallow QtWebKit. 
+- [harbour-validator] Allow Sailfish.Telephony. 
+- [harbour-validator] Allow Sailfish Bluetooth UI Components. 
+- [harbour-validator] Allow BluezQt. 
+- [harbour-validator] Allow pytz. 
+- [harbour-validator] Allow Sailfish Accounts. 
+- [harbour-validator] Mention backwards compatibility in documentation
+- [harbour-rpmvalidator] Combine Sailfish Components in a single section..
+- [harbour-validator] Allow Sailfish.Contacts. 
+- [harbour-validator] Allow org.nemomobile.contacts. 
+- [harbour-validator] Capital D in documentation. 
+- [harbour-validator] Allow Sailfish.Media. 
+- [harbour-validator] Allow QtLocation 5.4. 
+- [harbour-validator] Allow Sailfish Secrets QML API. 
+- [harbour-validator] Allow Sailfish Secrets. 
+- [harbour-validator] Allow X-Sailjail/ExecDBus key. 
+- [harbour-validator] Allow comments in generated documentation
+- [harbour-validator] Allow python3dist(pillow). 
+- [harbour-validator] Instruct usage via sfdk
+- [harbour-validator] Remove tjc links from README. 
+### sdk-pythonapp-rpm-generators
+- Updated : 0.4-1.2.2.jolla -- 0.6-1.3.2.jolla
+- [sdk-pythonapp-rpm-generators] Add pytz. 
+- [sdk-pythonapp-rpm-generators] Add Pillow. 
+### sdk-register
+- Updated : 0.5-1.2.2.jolla -- 0.6-1.3.1.jolla
+- [sdk-register] Move sdk-register to /usr/libexec/sdk-setup. 
+### sdk-setup
+- Updated : 1.4.61-1.26.1.jolla -- 1.4.79-1.15.1.jolla
+- [init.container] Detect host OS reliably. 
+- [sdk-manage] Fix configuring http proxy for targets. 
+- [mb2] Let scrape start numbering patches from 1. 
+- [mb2] Fix filename length for scraped patches. 
+- [sdk-setup] Allow http proxy use under toolings and targets. 
+- [mb2] Add '--stable' option to the 'scrape' command. 
+- [mb2] Do not check for a target if none is needed. 
+- [mb2] Do not switch to a snapshot if target is not needed. 
+- [mb2] Fix determining setup dir which is a sub-subdir. 
+- [mb2] Fix error invoking cmake without args
+- [git-change-log] Rename as sfdk-changelog. 
+- [mb2] Add the format-patch command. 
+- [mb2] Add the 'scrape' command. 
+- [mb2] Explicitly refuse doing %prep under shadow build
+- [mb2] Handle autopatch macro usage too
+- [mb2] Ignore %prep changes when setting version. 
+- [mb2] Store all %prep changes in VCS. 
+- [mb2] Apply patches with the help of VCS. 
+- [mb2] Unify references to RPM SPEC files. 
+- [mb2] Do not fail on multiple SPECs if SPEC is not needed. 
+- [mb2] Hint about offending state directory in build-init help. 
+- [mb2] Move details on treating snapshots to the general help
+- [sdk-assistant] Hide snapshots in the listing unless told otherwise. 
+- [mb2] Only inform about active snapshot when pool is used. 
+- [sdk-manage] Do not consider changed snapshot as outdated. 
+### setup
+- Updated : 2.13.6+git5-1.10.12.jolla -- 2.13.6+git6-1.10.3.jolla
+- [packaging] Convert to submodule based packaging
+- [setup] Ensure build reproducibility. 
+- [packaging] BuildRequire systemd via pkgconfig. 
+- [setup] Ensure that /etc/shells has proper contents. 
+- [setup] Change lang.sh so that grep is compatible with busybox. 
+- [setup] Don't use here strings. 
+- [setup] Update to 2.13.6 version. 
+- [packaging] Add setup-doc subpackage. 
+### shadow-utils
+- Updated : 4.8.1+git2-1.7.15.jolla -- 4.8.1+git4-1.7.4.jolla
+- [shadow-utils] Package newuidmap and newgidmap. 
+- [shadow-utils] Clarify licensing. 
+### signon-plugin-oauth2-qt5
+- Updated : 0.25+git1-1.6.1.jolla -- 0.25+git4-1.7.1.jolla
+- [signon-plugin-oauth2] Only send code_challenge when code is requested. 
+- [signon-plugin-oauth2] Add ExtraParams to plugin data. 
+- [signon-plugin-oauth2] Support PKCE. 
+- [signon-plugin-oauth2] Send scope with 'Microsoft flow'. 
+### simkit
+- Updated : 0.4.30-1.4.15.jolla -- 0.4.31-1.5.1.jolla
+- [simkit] Add license as %license. 
+### simkit-l10n
+- Updated : 1.59.4-1.6.2.jolla -- 1.62.1-1.6.1.jolla
+- Binaries added : simkit-l10n-uk - 1.62.1-1.6.1.jolla
+- [l10n] Branched simkit from version 1.62
+- [l10n] Commit from Jolla localisation:  14 of 14 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  14 of 14 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+### sp-rich-core
+- Updated : 1.74.26-1.7.2.jolla -- 1.74.28-1.8.1.jolla
+- [sp-rich-core] Wait longer for coredumper. 
+- [sp-rich-core] Have license file as %license. 
+### sp-stress
+- Updated : 0.2.2-1.3.56.jolla -- 0.2.3-1.3.2.jolla
+- [sp-stress] Ensure builds are reproducible. 
+### speex
+- Updated : 1.2.0+git2-1.6.14.jolla -- 1.2.1+git2-1.7.2.jolla
+- [speex] Remove unneeded patch. 
+- [speex] Remove date from version for reproducible builds. 
+- [speex] Update to 1.2.1. 
+- [speex] Declare COPYING as %license. 
+### speexdsp
+- Updated : 1.2.0+git3-1.5.2.jolla -- 1.2.1+git1-1.6.2.jolla
+- [speexdsp] Update to 1.2.1. 
+- [speexdsp] Update to 1.2.0 final. 
+### sqlcipher
+- Updated : 3.4.1+git2.1-1.6.2.jolla -- 4.5.0+git2-1.5.4.jolla
+- [packaging] Fix submodule URL. 
+- [sqlcipher] Compile ICU extensions in sqlite driver.
+- [sqlcipher] Update to 4.5.0. 
+- [sqlcipher] Update to upstream 4.5.0.
+### ssu
+- Updated : 1.0.19-1.8.2.jolla -- 1.0.24-1.9.1.jolla
+- Binaries removed : ssu-vendor-data-example, ssu-network-proxy-plugin
+- [ssu] Fix obsoleting ssu-network-proxy-plugin. 
+- [ssu] Use Qt's builtin network proxy configuration 
+- [spec] Require ssu-vendor-data from ssu-ks. 
+- [doc] Put html docs under a subdirectory
+- [examples] Move example vendor data under docs package. 
+- [packaging] Do not require ssu-vendor-data
+- [ssu] Print error message when no repositories are defined
+- [ssu] Protection for global repos. 
+### ssu-sysinfo
+- Updated : 1.3.0-1.5.2.jolla -- 1.4.0-1.5.2.jolla
+- [ssu-sysinfo] Provide os and hw release info. 
+- [ssu-sysinfo] Revert to more manual make usage. 
+- [ssu-sysinfo] Bump version to 1.3.2 everywhere. 
+- [ssu-sysinfo] Have license files as %license. 
+### store-client
+- Updated : 1.3.4.1-1.6.2.jolla -- 1.3.11-1.9.1.jolla
+- [store-client] Remove dependency resolution from install. 
+- [store-client] Release cover image for 4.5.0. 
+- [store-client] Allow to override store URL. 
+- [Rules]
+- [store-client] Introduce logging categories for store and osupdate service. 
+- [store-client] Release cover image for 4.4.0. 
+- [store-client] Migrate to new formatter enum name. 
+- [store-client] Remove Tohd related functionality. 
+### store-client-l10n
+- Updated : 1.207.2-1.7.2.jolla -- 1.212.1-1.8.1.jolla
+- Binaries added : store-client-l10n-uk - 1.212.1-1.8.1.jolla
+- [l10n] Branched store-client from version 1.212
+- [l10n] Commit from Jolla localisation:  135 of 135 strings translated (0 need review).
+- [tpl] translation templates update for 1.3.9
+- [l10n] Commit from Jolla localisation:  135 of 135 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  135 of 135 strings translated (0 need review).
+- [tpl] translation templates update for 1.3.8
+- [l10n] Commit from Jolla localisation:  135 of 135 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [tpl] translation templates update for 1.3.5
+- [l10n] Commit from Jolla localisation:  145 of 145 strings translated (0 need review).
+### sudo
+- Updated : 1.8.20p2+git4-1.2.47.jolla -- 1.9.9+git1-1.2.2.jolla
+- [sudo] Update to 1.9.9. 
+### swi-prolog
+- Updated : 7.6.4+git1-1.6.18.jolla -- 7.6.4+git3-1.7.2.jolla
+- [swi-prolog] Ensure build reproducibility. 
+- [swi-prolog] Fix date invocation at build time. 
+- [swi-prolog] Add license as %license. 
+### systemd
+- Updated : 238+git13.1-1.14.2.jolla -- 238+git18-1.13.3.jolla
+- [packaging] Fix submodule URL. 
+- [systemd] Drop unversioned obsoletes. 
+- [systemd-mini] Run precheckin.sh. 
+- [systemd] Adjust tests. 
+- [systemd] Fix test-execute. 
+- [systemd] Patch test-compress to avoid segfault. 
+- [systemd] Advertise SFOS Forum as support URL. 
+- [systemctl-user] Fix systemctl-user edit command. 
+- [systemctl-user] Make systemctl replace shell
+### systemd-mini
+- Updated : 238+git13.1-1.3.2.jolla -- 238+git18-1.2.2.jolla
+- [packaging] Fix submodule URL. 
+- [systemd] Drop unversioned obsoletes. 
+- [systemd-mini] Run precheckin.sh. 
+- [systemd] Adjust tests. 
+- [systemd] Fix test-execute. 
+- [systemd] Patch test-compress to avoid segfault. 
+- [systemd] Advertise SFOS Forum as support URL. 
+- [systemctl-user] Fix systemctl-user edit command. 
+- [systemctl-user] Make systemctl replace shell
+### telepathy-accounts-signon
+- Updated : 0.1.27.3-1.6.2.jolla -- 0.1.28-1.7.1.jolla
+- [telepathy-accounts-signon] Include %license files. 
+### telepathy-gabble
+- Updated : 0.18.4+git4-1.7.18.jolla -- 0.18.4+git6-1.8.1.jolla
+- [docs] Ensure build reproducibility. 
+- [git] Move submodule repos to github. 
+- [telepathy-gabble] Drop telepathy-gabble-xmpp-console. 
+- [telepathy-gabble] Own tests directory. 
+### telepathy-mission-control
+- Updated : 5.16.6+git6-1.7.2.jolla -- 5.16.6+git7-1.6.2.jolla
+- [telepathy-mission-control] Add missing build dependencies. 
+### telepathy-qt5
+- Updated : 0.9.8+git2.1-1.10.2.jolla -- 0.9.8+git5-1.9.3.jolla
+- [packaging] Fix submodule URL. 
+- [telepathy-qt] Fix build with glib 2.72.0 and newer. 
+- [telepathy-qt] Clarify the licensing. 
+### telepathy-ring
+- Updated : 2.5.12-1.7.8.jolla -- 2.5.13-1.7.1.jolla
+- [telepathy-ring] Add missing dependencies. 
+### texinfo
+- Updated : 4.13a-1.6.2.jolla -- 6.3+git1-1.6.2.jolla
+- [packaging] Add info-doc subpackage. 
+- [packaging] Add texinfo-doc subpackage. 
+- [texinfo] Remove old sources.
+- [texinfo] Update to version 6.3. 
+### thumbnaild
+- Updated : 0.0.10-1.7.2.jolla -- 0.1.2-1.9.1.jolla
+- [thumbnaild] Fix sending new data when codec runs out of input data. 
+- [thumbnaild] Adapt to ffmpeg 5.0. 
+- [thumbnaild] Avoid deprecated ffmpeg api. 
+- [thumbnaild] Add license file. 
+### timed-qt5
+- Updated : 3.6.13-1.8.2.jolla -- 3.6.15-1.9.2.jolla
+- [timedclient] allow setting maximalTimeoutSnoozeCounter with '-e'
+- [timedclient] allow setting maximalTimeoutSnoozeCounter with '-e'. 
+- [timedclient] implement MaximalTimeoutSnoozeCounter
+- [timed] Fix networktime tests. 
+### totem-pl-parser
+- Updated : 3.26.1+git1.1-1.7.2.jolla -- 3.26.6+git3-1.6.3.jolla
+- [packaging] Fix submodule URL. 
+- [totem-pl-parser] Fix meson flags. 
+- [totem-pl-parser] Update to 3.26.6. 
+### tracker
+- Updated : 3.2.1+git1-1.6.2.jolla -- 3.3.3+git1-1.6.2.jolla
+- [tracker] Update to 3.3.3. 
+### tracker-miners
+- Updated : 3.2.1+git1-1.6.3.jolla -- 3.3.1+git2-1.7.2.jolla
+- [tracker-miners] Add backported patch to fix crash. 
+- [tracker-miners] Check for all tags also from streams. 
+- [tracker-miners] Update to 3.3.1. 
+- [tracker-miners] Sync with upstream to get tracker:available on all graphs. 
+### transferengine-plugins
+- Updated : 0.3.0-1.6.2.jolla -- 0.4.0-1.8.1.jolla
+- Binaries added : transferengine-plugin-core - 0.4.0-1.8.1.jolla, transferengine-plugin-bluetooth - 0.4.0-1.8.1.jolla
+- [transferengine-plugins] Split bluetooth plugin to own package. 
+- [base-transferengine-plugins] Fix ut_facebookaccount. 
+- [transferengine-plugin] Add some basic checks to BluetoothObexClient. 
+- [transferengine-plugins] Execute tests in the test dir. 
+- [transferengine-plugins] Execute the tests as privileged. 
+- [transferengine-plugins] Remove test expectation on untranslated dislay names. 
+- [transfergengine-plugins] Delete unreliable email plugin info test. 
+- [transferengine-plugins] Adjust to bluezqt includes. 
+- [transferengine-plugins] Drop unnecessary commhistory dependency. 
+- [transferengine-plugins] Add missing system setting dependency. 
+### transferengine-plugins-l10n
+- Updated : 1.133.2-1.9.2.jolla -- 1.137.1-1.10.1.jolla
+- Binaries added : transferengine-plugins-l10n-uk - 1.137.1-1.10.1.jolla
+- [l10n] Branched transferengine-plugins from version 1.137
+- [l10n] Commit from Jolla localisation:  17 of 17 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  17 of 17 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  17 of 17 strings translated (0 need review).
+### tzdata
+- Updated : 2021a+git1-1.5.2.jolla -- 2021a+git2-1.5.3.jolla
+- [tzdata] Include license file as %license. 
+### tzdata-timed
+- Updated : 2021a+git1-1.6.2.jolla -- 2021a+git3-1.6.1.jolla
+- [tzdata-timed] Fixed some unsupported zones 
+- [tzdata-timed] Updated script to deal with split/reformatted wikipages. 
+### udisks2
+- Updated : 2.9.4+git2-1.10.2.jolla -- 2.9.4+git3-1.9.1.jolla
+- [packaging] Add build dependency for uuid devel package. 
+### usb-moded
+- Updated : 0.86.0+mer56-1.8.7.jolla -- 0.86.0+mer62-1.11.2.jolla
+- [udev] Optionally track extcon and android_usb devices too. 
+- [usb-moded] Fix memory leak
+- [usb-moded] Fix use after free
+- [usb-moded] Use cached network settings for mode activation
+- [usb-moded] Use cached network settings for mode activation. 
+- [usb-moded] Use separate macros section for macros
+- [udev] Add support for USB-PD power supplies. 
+- [usb-moded] Tolerate user sessions stuck to "online" state. 
+- [1] https://dbus.freedesktop.org/doc/api/html/group__DBusMessage.html#gad8953f53ceea7de81cde792e3edd0230
+- [systemd] fix adbd-prepare service type
+- [systemd] fix adbd-prepare service type. 
+- [systemd] fix use-after-free in control_service()
+- [systemd] fix use-after-free in control_service(). 
+- [usb_moded] Ensure mountpoint exists when mounting mtp device. 
+### usbutils
+- Updated : 008.1-1.7.2.jolla -- 014+git2-1.6.2.jolla
+- Binaries removed : usbutils-devel
+- [packaging] Fix submodule URL. 
+- [usbutils] Update to 014. 
+### util-linux
+- Updated : 2.33+git4-1.8.7.jolla -- 2.38.1+git1-1.8.4.jolla
+- Binaries added : cfdisk - 2.38.1+git1-1.8.4.jolla
+- Binaries removed : util-linux-doc
+- [util-linux] Split cfdisk into its own package. 
+- [util-linux] Update to 2.38.1. 
+### vala
+- Updated : 0.46.5+git2-1.6.2.jolla -- 0.56.1+git1-1.6.3.jolla
+- [git] Move submodule repos to github. 
+- [vala] Update to 0.56.1. 
+### valgrind
+- Updated : 3.18.1+git1-1.3.2.jolla -- 3.18.1+git2-1.3.3.jolla
+- [valgrind] Add automake as a build dependency. 
+### vault
+- Updated : 1.0.4-1.5.2.jolla -- 1.0.5-1.5.2.jolla
+- [vault] Have license file as %license. 
+### vim
+- Updated : 8.2.0000.1-1.6.4.jolla -- 8.2.4127+git3-1.5.5.jolla
+- Binaries added : vim-data - 8.2.4127+git3-1.5.5.jolla
+- [packaging] Fix submodule URL. 
+- [vim] Adjust patches and clean up .spec. 
+- [vim] Update to 8.2.4127. 
+- [vim] Include %license on -minimal too. 
+### vm-configs
+- Updated : 0.16-1.5.3.jolla -- 0.16.2-1.7.1.jolla
+- [connman] Add online status check URLs to main.conf. 
+- [vm-configs] Move to using bluez5. 
+### voicecall-qt5
+- Updated : 0.7.13-1.7.2.jolla -- 0.8.0-1.9.1.jolla
+- Binaries removed : voicecall-qt5-devel
+- [voicecall] Require ringtone playback to be explicitly requested. 
+- [voicecall] Clarify licensing and include %license files. 
+### voicecall-ui-jolla
+- Updated : 1.14.38.1-1.6.2.jolla -- 1.15.0.1-1.8.1.jolla
+- [voicecall-ui] Add MediaIndexing and UserDirs permissions. 
+- [voicecall-ui] Play ringtone on do not disturb mode based on settings. 
+- [voicecall-ui] Avoid creating and immediately deleting bt component. 
+- [tests] Add some of com.jolla.voicecall to tests. 
+- [tests] Split test cases. 
+- [tests] Update most of the tests. 
+- [voicecall-ui] Accept ',' as a diable digit. 
+- [voicecall-ui] Use mockable sim prompting check. 
+- [voicecall-ui] Migrate to new formatter enum name. 
+- [voicecall] Adjust formatter enums after Silica. 
+- [voicecall-ui] Combine desktop files. 
+- [voicecall-ui] Remove absolute path for qmltestrunner. 
+### voicecall-ui-jolla-l10n
+- Updated : 1.301.3-1.9.2.jolla -- 1.307.2-1.10.1.jolla
+- Binaries added : voicecall-ui-jolla-l10n-uk - 1.307.2-1.10.1.jolla
+- [l10n] Commit from Jolla localisation:  250 of 250 strings translated (0 need review).
+- [l10n] 4.5.0 Pootle branching first attempt. 
+- [l10n] Branched voicecall-ui-jolla from version 1.307
+- [l10n] Commit from Jolla localisation:  250 of 250 strings translated (0 need review).
+- [tpl] translation templates update for 1.15.0
+- [l10n] Commit from Jolla localisation:  250 of 250 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  250 of 250 strings translated (0 need review).
+- [tpl] translation templates update for 1.14.42
+- [l10n] Commit from Jolla localisation:  250 of 250 strings translated (0 need review).
+- [l10n] New files added from Jolla localisation based on templates
+- [l10n] spec file updated
+- [l10n] Commit from Jolla localisation:  250 of 250 strings translated (0 need review).
+### vpnc
+- Updated : 0.5.3-1.6.2.jolla -- 0.5.3.r526+git3-1.7.1.jolla
+- Binaries added : vpnc-pcf2vpnc - 0.5.3.r526+git3-1.7.1.jolla
+- Binaries removed : vpnc-consoleuser
+- [vpnc] Switch to new upstream and update to 0.5.3.r526
+- [vpnc] Switch to new upstream and update to 0.5.3.r526. 
+- [packaging] Add vpnc-doc subpackage. 
+- [vpnc] Use tmpfiles.d for /var/run dir. 
+### wireless-regdb
+- Updated : 2020.04.29+git4-1.6.5.jolla -- 2020.04.29+git5-1.6.2.jolla
+- [wireless-regdb] Use upstream binary. 
+### wpa_supplicant
+- Updated : 2.9+git5-1.8.2.jolla -- 2.10+git1-1.8.1.jolla
+- [wpa-supplicant] Update to 2.10 and refactor packaging
+- [wpa-supplicant] Update to 2.10 and refactor packaging. Resolves 
+### xdg-user-dirs
+- Updated : 0.16+git2.1-1.7.2.jolla -- 0.17+git2-1.6.2.jolla
+- [packaging] Fix submodule URL. 
+- [xdg-user-dirs] Update to 0.17. 
+### xdg-utils
+- Updated : 1.1.2+git2-1.8.2.jolla -- 1.1.3+git1-1.8.2.jolla
+- [xdg-utils] Update to 1.1.3. 
+### xkeyboard-config
+- Updated : 2.29+git1-1.6.2.jolla -- 2.34+git1-1.6.2.jolla
+- [xkeyboard-config] Update to 2.34. 
+### xl2tpd
+- Updated : 1.3.15+git1-1.6.2.jolla -- 1.3.16+git1-1.6.2.jolla
+- [xl2tpd] Update to 1.3.16. 
+### xulrunner-qt5
+- Updated : 78.15.1+git24.3-1.32.2.jolla -- 78.15.1+git33-1.19.1.jolla
+- [sailfishos][embedlite] Revert back white default background colors. 
+- [sailfishos][embedlite] Use grey default color for button background. 
+- [sailfishos][gecko] Add support for prefers-color-scheme. 
+- [sailfishos][embedlite] Clean background gradients from input elements. 
+- [sailfishos][build] Add support for aarch64 to elfhack. 
+- [sailfishos][build] Enable elf-hack. 
+- [sailfishos][embedlite] Drop radio and checkbox max size restriction. 
+- [sailfishos][embedlite] Add a content controller stack. 
+- [sailfishos][embedlite] Adapt partial build script to ESR78
+- [sailfishos][gecko] Initialise SVGGeometryProperty::ResolveAll parameters. 
+- [sailfishos][embedlite] Prefer profile directory for search engines. 
+- [sailfishos][gecko] Do not remove debugging symbols
+- [sailfishos][embedlite] Use the platform VPX decoder for WebRTC. 
+- [sailfishos][gecko] Add gecko-camera GraphicBuffer support. 
+- [sailfishos][gecko] Add support for gecko-camera GraphicBuffer, 
+### yasm
+- Updated : 1.3.0+git2.1-1.6.2.jolla -- 1.3.0+git5-1.5.4.jolla
+- [packaging] Fix submodule URL. 
+- [yasm] Set install dir properly using GNUInstallDirs. 
+- [spec] Use proper libdir for x86_64. 
+### zip
+- Updated : 3.0-1.6.13.jolla -- 3.0+git1-1.6.7.jolla
+- Cleanups and license file as %license. 
+### zlib
+- Updated : 1.2.11+git2-1.7.13.jolla -- 1.2.13+git1-1.7.9.jolla
+- [zlib] Update to 1.2.13. 
+### zstd
+- Updated : 1.5.0+git1-1.1.24.jolla -- 1.5.0+git2-1.2.3.jolla
+- [zstd] Ensure build reproducibility. 
+### zxing-cpp
+- Updated : 1.1.1+git2-1.7.2.jolla -- 1.4.0+git1-1.7.2.jolla
+- [zxing-cpp] Update to 1.4.0. 
+
+# PACKAGES ADDED
+
+### alienaudioservice-plugin-debug
+- Binaries added : alienaudioservice-plugin-debug - 1.3.0-1.2.1.jolla
+- [debug] Update to match latest libalienaudioservice. 
+- [debug] Log plugin properties. 
+- [debug] Log service manager connection state.
+- [debug] Example of plugin for alienaudioservice. 
+### alienaudioservice-plugin-pulseaudio
+- Binaries added : alienaudioservice-plugin-pulseaudio - 1.11.0-1.5.1.jolla
+- [pulseaudio] Don't clear data structures if PulseAudio disappears.
+- [pulseaudio] Convert input channel masks as well. 
+- [pulseaudio] Handle audio output close hook calls. 
+- [pulseaudio] Pass channel mask in create stream hook. 
+- [pulseaudio] Start streams corked if requested. 
+- [pulseaudio] Support multichannel streams. 
+- [pulseaudio] Use hook wrappers for all hook calls. 
+- [pulseaudio] Use new audio connect hook.
+- [pulseaudio] Don't change record stream types based on voip state. 
+- [pulseaudio] Standby only media streams when voip call is enabled.
+- [pulseaudio] Update logging to be a bit more verbose.
+- [pulseaudio] Update corking states to hooks correctly. 
+- [pulseaudio] Be more careful about connecting. 
+- [pulseaudio] Check for stream states more when connecting. 
+- [pulseaudio] Don't be so strict about audio during voip. 
+- [pulseaudio] Lift stopped state from streams stopped because of us. 
+- [pulseaudio] Use specific device to connect to if defined. 
+- [pulseaudio] Implement reconnecting stream by type. 
+- [pulseaudio] Input streams are always RECORD_VOICE during voip call.
+- [pulseaudio] Retain record stream disabled state correctly. 
+- [pulseaudio] Implement per-application stream handling. 
+- [pulseaudio] Implement stream proplist operations. 
+- [pulseaudio] STOPPED state should be retained with disconnected streams. 
+- [pulseaudio] Reset host side reconnected input stream state correctly. 
+- [pulseaudio] Don't write if data is already consumed. 
+- [pulseaudio] Implement hook for querying stream corking state.
+- [pulseaudio] Output streams can be disabled by type. 
+- [pulseaudio] use LIBGLIBUTIL_PATH for building if exist. 
+- [pulseaudio] Don't reset io_handle if PulseAudio connection dies. 
+- [pulseaudio] Bump version to 1.1.0.
+- [pulseaudio] Include stream type in stream event hooks. 
+- [pulseaudio] Use aaudio_proplist for create stream hook. 
+- [plugin-pulseaudio] PulseAudio plugin for alienaudioservice. 
+### apkd-plugin-geo-qtpositioning
+- Binaries added : apkd-plugin-geo-qtpositioning - 1.0.0-1.2.1.jolla
+- [qtpositioning] Initial implementation of plugin. 
+### apkd-plugin-geo-test
+- Binaries added : apkd-plugin-geo-test - 1.0.0-1.2.1.jolla
+- [plugin-geo-test] Initial implementation if test plugin. 
+### appsupport-overlay
+- Binaries added : appsupport-overlay - 1.4.1-1.3.1.jolla
+- [appsupport-overlay] Fix config location. 
+- [appsupport-overlay] Support tmpfs config. 
+- [appsupport-overlay] Fix overlay updating. 
+- [appsupport-overlay] Fix file ownership with unprivileged container. 
+- [appsupport-overlay] Fix copy locations. 
+- [appsupport-overlay] Support unprivileged container. 
+- [appsupport-overlay] Initial implementation. 
+### appsupport-system-privileged
+- Binaries added : appsupport-system-privileged - 11.0.0.60.28-1.11.1.jolla
+- [appsupport] do not create executable files in FileUtils::openSafely. 
+- [appsupport] Always set height for keyboard. 
+- [appsupport] Further protect against installation errors. 
+- [audio] Restore stream parameters on reconnect. 
+- [appsupport] Add crash logging. 
+- [appsupport] do not abort crash_dump if process disappeared. 
+- [appsupport] add window hidden for alienwaylandtextinput client. 
+- [appsupport] Correct logic in error message handling. 
+- [appsupport] Update default transport controls in error states. 
+- [appsupport] Force output flag DIRECT for multichannel streams. 
+- [appsupport] Set Message category when missing from Messaging notifications. 
+- [appsupport] add binderDied for alienwaylandtextinput client. 
+- [appsupport] Fix AlienStatusBar for Android 11. 
+- [appsupport] fix branding. 
+- [appsupport] Stop unregistering callbacks for media sessions that have gone. 
+- [appsupport] disable unsupported multiuser feature. 
+- [appsupport] Support seeking to a position. 
+- [appsupport] Update wayland-protocols submodule to 1.31. 
+- [appsupport] Don't render empty pixels and fix wayland debug. 
+- [appsupport] Avoid crashes in AlienMediaControlService. 
+- [appsupport] Handle metadata update for error cases. 
+- [appsupport] Ignore PackageInstaller interrupted IO errors. 
+- [appsupport] notify to surfaceflinger if app died, 
+- [appsupport] cherry-pick AOSP fix for preserveLegacyExternalStorage. 
+- [appsupport] fix getContentProvider() access for AlienFileObserverService. 
+- [appsupport] Avoid crashes in AlienMediaControlService. 
+- [appsupport] Check only focused layers. 
+- [appsupport] Add media id to media control meta data. 
+- [appsupport] Adjust device name changes. 
+- [appsupport] install minigbm gralloc to lib/hw. 
+- [appsupport]: adapt AlienVolume and reenable MediaProvider FUSE. 
+- [appsupport] add missing patches from 10. 
+- [appsupport] add set_minimized support for xdg-shell. 
+- [appsupport] Resize also if only height or width changes. 
+- [appsupport] Convert touch events to stylus events. 
+- [appsupport] Adapt power manager changes. 
+- [appsupport] Add software gatekeeper for appsupport core. 
+- [appsupport] Configure patch level. 
+- [appsupport] Do not start software gatekeeper by default. 
+- [appsupport]: disable MediaProvider FUSE. 
+- [appsupport] Fix generic and x86 target builds with Android 11. 
+- [appsupport] Refactor wayland text input to app level. 
+- [appsupport] Replace custom software gatekeeper with one from hardware/interfaces. 
+- [appsupport] Add new out of order fixes. 
+- [appsupport] Fix a mistake in ivi_application integration. 
+- [appsupport] load surface ids whenever one is missing. 
+- [appsupport] Add means to follow audio focus stack. 
+- [appsupport]: adjust PRODUCT_PACKAGES for Android 11. 
+- [appsupport]: bump sepolicy version in VINTF manifests. 
+- [appsupport] Disable notification rendering. 
+- [appsupport] do not clean out networkstack tests. 
+- [appsupport] Drop unneeded patches after switching to hwpuddlejumper on all devices. 
+- [appsupport] extra patches needed for Android 11. 
+- [appsupport] fix iamge signing script. 
+- [appsupport] fix mobile data on Android 11. 
+- [appsupport] fix security patch level to match sources. 
+- [appsupport] Forward platform audio focus state to audio focus listeners. 
+- [appsupport] import newer MicroG patches for Android 11/Sailfish. 
+- [appsupport]: include libhwbinder/libhidltransport in Sailfish images. 
+- [appsupport] move PackageInstaller patches to PermissionController. 
+- [appsupport] port latest alien-10.0.0_r65 to Android 11. 
+- [appsupport] rebase patches for Android 11. 
+- [appsupport]: remove extra adbd definition from init.alien.rc. 
+- [appsupport] remove missing components from SystemUI overlay. 
+- [appsupport]: remove product strategy patch/rerouting from audiopolicy. 
+- [appsupport] Remove unnecessary follower registration for audio focus. 
+- [appsupport] Report more (un)installation failures. 
+- [appsupport] rpm: switch to aidl3 in gbinder config. 
+- [appsupport] run check_vintf with system/vendor instead of vendor. 
+- [appsupport]: set gid of /mnt/media_rw back to media_rw. 
+- [appsupport] conflict privileged container with the user package. 
+- [appsupport] require user package. 
+- [appsupport] avoid a crash when the screen is resized. 
+- [appsupport] Alter the handling of the installer stream. 
+- [alien] Add Filter for unusable MediaSessions
+- [alien] Change seek implementation to seek by delta
+- [alien] Remove MediaBrowsing Logic from AlienMediaControlService
+- [appsupport] Refactor MediaBrowser integration and fix MPRIS service lifecycle and seek. 
+- [appsupport] add iface to get services on intent resolver. 
+- [appsupport] get ivi surface ids from a file. 
+- [appsupport] Do not abort if text-input is not found. 
+- [appsupport] add implementation of text-input-unstable-v3. 
+- [appsupport] Don't define common audio policy xml. 
+- [alien] Use file descriptors for MPRIS album art instead of base64. 
+- [appsupport] Allow ofono to register services again. 
+- [appsupport] only allow privileged host user id to register services. 
+- [appsupport] Start lmkd again. 
+- [appsupport] Add support for ivi-application. 
+- [appsupport] Add wayland-ivi-extension as git submodule. 
+- [appsupport] Resize exported icons according to supplied property. 
+- [appsupport] Move missing library to system. 
+- [appsupport] Include audio package to image. 
+- [appsupport] Reduce audio package content to minimum. 
+- [alien] Expose & support activation of MediaBrowsers. 
+- [alien] Expose & support activation of Mediabrowsing supported apps to host.
+- [appsupport] delegate implicit intent resolution to listener. 
+- [appsupport] Fix arm privileged container. 
+- [appsupport] Add architecture to spec file. 
+- [appsupport] Add obsoletes/provides to avoid conflicts with the old package name. 
+- [appsupport] Also change setup to appsupport. 
+- [appsupport] Clean out obsolete patches and device. 
+- [appsupport] Fix appsupport privileged filename. 
+- [appsupport] Fix issues with patches. 
+- [appsupport] Fix the package description and summary. 
+- [appsupport] Fix unprivileged package name. 
+- [appsupport] Rename aliendalvik-system -> appsupport-system. 
+- [appsupport] Rename appsupport->appsupport_privileged and appsupport_unprivileged->appsupport. 
+- [appsupport] Rename appsupport-system -> appsupport-system-unprivileged. 
+- [alien] add support for unprivileged containers. 
+- [appsupport] Disable unprivileged container by default (for now). 
+- [alien] Check consent from host OS while checking app permission. 
+- [appsupport] proxy startActivity and window check via alien services. 
+- [appsupport] Communicate user data clearing to listener. 
+- [appsupport] don't mess with cmdline/urandom. 
+- [appsupport] avoid an issue with the selinux mount. 
+- [appsupport] keep metaState from input as EventHub::mapKey output. 
+- [appsupport] Work around mobile data getting stuck. 
+- [appsupport] disallow access to /sys/fs/selinux. 
+- [alien] Fix handling of networks. 
+- [appsupport] Add possibility to check application ID. 
+- [appsupport] Determine input stream package name as well. 
+- [audio] Call set parameters for input streams as well. 
+- [appsupport] Revert broken mobile data patch. 
+- [alien] Add privileged data clearing proxies to AlienService. 
+- [appsupport] Follow and modify speakerphone state. 
+- [appsupport] don't mix wifi and mobile data network ids. 
+- [appsupport] Fail Android build on OBS if build command is failing. 
+- [appsupport] set proper protocol also on roamingProtocol variable. 
+- [appsupport] Pass UI effect playback to AlienAudioControlService. 
+- [appsupport] Improve per-application output selection. 
+- [appsupport] Re-adjust stream type counts. 
+- [appsupport] Implement per-application streams handling in audio policy. 
+- [audio] Changes to enable per-application streams. 
+- [alien] Add AlienService.setLocale. 
+- [alien] add camera dependecies from a11. 
+- [alien] add emptys to v4l2 camera libs. 
+- [alien] add support to disable soundtrigger. 
+- [alien] delegate intent resolution via binder. 
+- [appsupport] Disable telephony when not needed. 
+- [alien] Clear out /product. 
+- [appsupport] set ipv6 configurations properly. 
+- [appsupport] Update mobile data patch to better support different ipv4, ipv6 and dual configs. 
+- [appsupport] move remaining audio policy configuraiton to system. 
+- [appsupport] remove files which have moved to configs. 
+- [alien] Enable CarMedia app without Car service dependencies. 
+- [alien] Remove CarManger & Car dependencies completely
+- [appsupport] Add means to follow audio focus stack. 
+- [appsupport] Follow audio content and notify clients of content type. 
+- [appsupport] move alien.prop to system. 
+- [alien] add display configuration API. 
+- [alien] fix loading of media profiles from host_vendor. 
+- [alien] include android.hardware.drm@1.3 for compatibility. 
+- [appsupport] add 32 bit generic configurations. 
+- [appsupport] move audio policy configuration to system. 
+- [appsupport] Update patches for android-security-10.0.0_r65. 
+- [alien] fix patch. 
+- [alien] set up seccomp even when setenforce 0 is set. 
+- [audio] Cache set_parameters calls. 
+- [audio] Implement in_get_parameters. 
+- [audio] Send io_handle with output set_parameters call. 
+- [alien] Add setConnectedAccessory() to audio control service. 
+- [alien] Add wired headphone as available route. 
+- [alien] Add wired routing. 
+- [alien] Use dev/input type events for audio jack. 
+- [alien] Export available MediaSessions to host
+- [alien] Publish multiple MPRIS services. 
+- [alien] avoid incorrect suspend state if application is already active. 
+- [alien] Don't change the suspend state when we bail early. 
+- [appsupport] Fix wayland-protocols git submodule url. 
+- [alien] Move null buffer patch to regular patchset. 
+- [alien] Use 64 bit if possible. 
+- [alien] Don't delegate permissions if not supported. 
+- [alien] Show navigation bar when needed. 
+- [alien] Add a new target for aarch64. 
+- [alien] Don't attach null buffers if not supported. 
+- [alien] fix build of gbm_gralloc. 
+- [alien] fix mesa build for x86. 
+- [alien] install libdrm to the system image. 
+- [alien] Limit i915 driver to x86. 
+- [alien] make it possible to build mesa from android11-gsi. 
+- [appsupport] Disable mesa3d and libdrm build in generic patchset. 
+- [appsupport] Enable variable patch sets.
+- [appsupport] Move APK permissions patch to sailfish patch set.
+- [appsupport] Order variant patch sets last.
+- [appsupport] Use sailfish patches in build.
+- [alien] use fixed physical size if wayland resolution matches. 
+- [alien] Make it possible to mount lib in container and fix permissions. 
+- [alien] add iface argument to AlienConnectivityService's registerWifiNetwork. 
+- [alien] Use wifi.interface for interface name. 
+- [alien] don't create buffers if we decide not to use them later. 
+- [alien] Add more permission relaxing to StorageStats. 
+- [alien] Improved icon mask with sharper corners. 
+- [alien] Switch StorageStats check to allow null callingPackage. 
+- [alien] Add PlayPause command support for media control. 
+- [alien] binder implementation for consent requirement. 
+- [alien] Fix null albumarturi causing MPRIS failure. 
+- [alien] move packages to the correct location. 
+- [alien] fix a crash on startup. 
+- [alien] allow vintf manifest fragments to be specified. 
+- [alien] enable bluetooth bluetooth packages for compatibility (not actual bluetooth support). 
+- [alien] handle thumbnail generation entirely in post_buffer. 
+- [alien] don't forget the buffer listener. 
+- [alien] don't hide the native input view if it is zero size. 
+- [alien] Update patches for android-security-10.0.0_r62. 
+- [alien] Disable writing selinux context in container. 
+- [alien] Silence kernel wakelock stats. 
+- [alien] Silence wifi scanning errors. 
+- [alien] avoid showing an empty keyboard. 
+- [alien] fix some states related to keyboard handling. 
+- [alien] Move cas and rest of drm to system. 
+- [alien] Support for user apkdaemon. 
+- [alien] avoid black covers. 
+- [alien] disable app transition animations by default. 
+- [alien] make sure to show the native keyboard even if it is temp-hidden when a input view is created. 
+- [alien] Avoid concurrent modification exceptions. 
+- [alien] Store receiver instead of intent. 
+- [alien] Extract cover art from content: URLs. 
+- [alien] Pass packageName & AppName towards bridge whenever active
+- [alien] Set MPRIS player identity. 
+- [alien] Re-enable wallpaper service. 
+- [alien] reenable animations. 
+- [alien] Fix remote keyboard loading. 
+- [alien] Set user_setup_complete to true by default. 
+- [alien] account for native resolution in keyboard orientation. 
+- [alien] Set interface name for wifi LinkProperties. 
+- [alien] report initial orientation to keyboard service. 
+- [alien] fix calculation for hiding the virtual keyboard. 
+- [alien] Fix keyboard focus handling. 
+- [alien] Refine icon mask. 
+- [alien] Fix message notifications. 
+- [alien] Check Person and Message objects for large icon avatars. 
+- [alien] Resident and non-removable notifications. 
+- [alien] Use Sailfish style icon cutout for launcher icons. 
+- [alien] surfaceflinger: allow to disable dmabuf, 
+- [alien] makes sure compositor is set during initl. 
+- [alien] Add onModeChanged to IAlienAudioControlListener. 
+- [alien] Allow adding multiple alien audio control listeners. 
+- [alien] Filter Transport Category Media Notifications. 
+- [alien] Support notification action reply information. 
+- [alien] Update patches for android-security-10.0.0_r60. 
+- [alien] Further file and URL association fixes. 
+- [alien] Correct level for system call filter. 
+- [alien] Disable wifi and bluetooth battery stats. 
+- [alien] Don't complain about missing memtrack. 
+- [alien] Don't print Bad file descriptor errors. 
+- [alien] Remove error logging for non-error message. 
+- [init] Disable access to bpf stats. 
+- [alien] cherry pick missing android 11 dependency. 
+- [alien] add listener iface to app closed events from wl_manager. 
+- [alien] add some missing manifest entries. 
+- [alien] Add some missing symbols and cherry-picks from android 11. 
+- [alien] allow starting c2 vendor service if needed. 
+- [alien] allow starting graphics allocator vendor service if needed. 
+- [alien] reintroduce graphics patches, but prefer system graphics libraries over vendor implementations. 
+- [alien] Enable i915 minigbm driver by default, 
+- [alien] Disable SimSelectNotification. 
+- [alien] Add some missing libraries. 
+- [alien] use display sizes and dpi information from wayland. 
+- [alien] File and sharing optimizations. 
+- [alien] Make android.hardware.wifi feature common. 
+- [alien] Implement propagating cover URI & Bitmap to host from android. 
+- [alien] make sure Wi-Fi state is in sync with host/apkd. 
+- [alien] add service to store logcats. 
+- [alien] Update patches for android-security-10.0.0_r58. 
+- [alien] Reintroduce certain Go memory saving parameters. 
+- [alien] Add audio submix configuration and library. 
+- [alien] Add check for input text. 
+- [alien] Refactor build config. 
+- [alien] Remove Android Go build config. 
+- [alien] Support copying text also from other formats when possible. 
+- [alien] Fix mount points for odm. 
+- [alien] don't use tmpfs for odm. 
+- [alien] Add Shuffle,Repeat,Seek & PlayBackSpeed capabilities. 
+- [alien] Propogate Shuffle,Repeat & PlayBackSpeed status from android. 
+- [alien] Restore AppWidget service. 
+- [alien] Reduce SystemUI memory usage. 
+- [alien] Replace title with label/caption for supporting action names for Sharing. 
+- [alien] disable wallpaper entirely to save some memory. 
+- [alien] run com.jolla.home and com.android.systemui in the same process. 
+- [alien] make isHighEndGfx configurable and enable by default. 
+- [alien] Never play tone for disconnected call. 
+- [alien] Use memfd instead of ashmem for audio buffers. 
+- [alien] URL scheme association and sharing tuning. 
+- [alien] Migrate to MediaSession/MediaController APIs. 
+- [alien] Stub implementation for MediaBrowserClient implementation
+- [alien] Honor properties when loading hardware modules. 
+- [alien] Install audio.primary.default to system instead of vendor. 
+- [alien] use debug.sf.wayland property instead of the ifdef for WAYLAND_DEBUG, 
+- [alien] x86: Build dummy audio.primary.default. 
+- [alien] Fix loading seccomp files. 
+- [alien] Fix loading media codec and seccomp files from host vendor. 
+- [alien] Move remaining libeffects libraries into system partition. 
+- [alien] Update aarch64 cpu variants. 
+- [alien] Add multiple send and browsable booleans to handler info. 
+- [alien] drop now unneeded patch for package installation. 
+- [alien] rename patch according to export patches script. 
+- [alien] Sign Android build. 
+- [alien] move back to gfx mapper 2.0 on apex swcodec namespace. 
+- [alien] Create handlers for mimetypes, URI schemes and domains. 
+- [alien] add retry for wl_display_connect, remove extra roundtrips
+- [alien] add specfile to build x86 device image. 
+- [alien] explicitly check for android_wlegl Wayland extension support. 
+- [alien] give dmabuf an init value on WindowManager constructor. 
+- [alien] Style cleanup.
+- [alien] Suppress app death notifications if other activities exist. 
+- [alien] disable gsid service
+- [alien] Disable gsid service. 
+- [alien] Fix using uninitialized variable. 
+- [alien] support dmabuf wayland extension if available. 
+- [alien] Fix handling of dhcp results. 
+- [alien] Fix third-party license view. 
+- [audio] Be less verbose. 
+- [alien] Style cleanup.
+- [notif] Return null icon if either dimension is less than 1. 
+- [alien] check json root node before accessing it 
+- [alien] Update radio entries in manifest.xml. 
+- [alien] Fix navigation bar behavior. 
+- [alien] Fix package installation problems. 
+- [alien] Improve remote keyboard handling. 
+- [alien] Update patches for android-security-10.0.0_r54. 
+- [alien] add gfx allocator, mapper and libgralloctypes to build
+- [alien] add graphics allocator and mapper v4.0
+- [alien] add libgralloctypes that do not rely on .aidl iface
+- [alien] add new gfx to apex linker and api file
+- [alien] core: cherrypick missing functions from android 11
+- [alien] get_enabled_tags and is_tag_enabled are now functions
+- [alien] hild: cherrypick missing functions from android 11
+- [alien] libhidl: cherrypick missing functions from android 11
+- [alien] netd: cherrypick missing functions from android 11
+- [alien] patches: move patch to correct location after rebase.
+- [alien] Support Android 11. 
+- [alien] move drm to system. 
+- [alien] Add channel to notification data. 
+- [alien] fix segfault on netd due to OOB read. 
+- [alien] Revert: Require alien meta package. 
+- [alien] Require alien meta package. 
+- [alien] Add contacts data callback. 
+- [alien] avoid starting camera provider through hwservicemanager when not needed. 
+- [alien] drop camera patch after bridging support was added. 
+- [alien] drop libhwbinder camera patch after bridging support was added. 
+- [alien] Allow automatic app rotation by default. 
+- [alien] Allow hot swapping an UICC Card. 
+- [alien] disable expected present warnings. 
+- [alien] reduce verbosity of inputflinger warnings. 
+- [alien] do not log/send android notifications about native/host calls. 
+- [alien] move back button to the center on all devices. 
+- [alien] Fix apply-patches.sh to work if patches are in top dir.
+- [alien] Refactor audio focus handling a bit.
+- [alien] Use PhoneStateListener to follow telephony state. 
+- [alien] Disable Clang undefinied behaviour sanitizer for libhevc. 
+- [alien] detect the top app properly to avoid window switching issues. 
+- [alien] fix networking. 
+- [alien] Use a proper uuid for sailfishos_storage in vold. 
+- [alien] Use an uuid for external storage and sailfishos_storage in ordre to make AAS happy. 
+- [alien] Exit the container cleanly instead of aborting. 
+- [alien] Use empty proxy host for fake APN. 
+- [alien] Do not set ro.hardware.gralloc in alien_x86 device. 
+- [alien] Fix SurfaceFlinger and media services crashes in QEMU. 
+- [alien] Set debug.sf.nobootanimation=1 in alien_x86 device. 
+- [alien] set security patch level to the correct version (r52). 
+- [alien] Update patches for android-security-10.0.0_r52. 
+- [alien] Fix stream type flagging. 
+- [alien] Install system build.prop separately. 
+- [alien] install gralloc/software rendering EGL libs to system. 
+- [alien] Stop passing the battery level to BatterySaver. 
+- [alien] Disable charging notifications. 
+- [alien] Disable notifications in SystemBar. 
+- [alien] make sure the tracker integration works properly. 
+- [alien] make the apply-patches.sh script use git by default if available. 
+- [alien] fix app id. 
+- [alien] Build SwiftShader OpenGL implementation on x86. 
+- [alien] Install MESA libs to system instead of vendor. 
+- [alien] Use minigbm gralloc on x86 and build mesa3d virgl driver. 
+- [alien] make sure 1px statusbar doesn't contain remnants of the UI. 
+- [alien] make sure debuggerd_handler doesn't fail us and makes sdcard die. 
+- [alien] rebase notification patch. 
+- [alien] set security patch level to the correct version (r47). 
+- [alien] Use getSmallIcon for notification. 
+- [alien] make sure sd-cards with space in the name can still be mounted. 
+- [alien] remove contacts app again and fix contacts properly. 
+- [alien] do not update oom adj without lock. 
+- [alien] make contacts appear again. 
+- [alien] fix app id and listen to activated signal. 
+- [alien] update radio devices in manifest. 
+- [alien] bridge power service. 
+- [alien] allow codec2 codecs to work. 
+- [alien] fix fake apn types. 
+- [alien] avoid a deadlock due to oom adj score settings. 
+- [alien] use a different way to get the top app to avoid a deadlock. 
+- [alien] Fix audio policy configuration. 
+- [alien] Use custom flags as functional flags in selectOutput(). 
+- [alien] Use default input metrics if none defined. 
+- [alien] drop patches for gralloc since they break on some platforms. 
+- [alien] add aliendalvik-system specific gbinder configuration. 
+- [alien] add full-index and no-signature to export patches script. 
+- [alien] Add Legal Information activity to Settings app. 
+- [alien] Add needed symlink for adb. 
+- [alien] add source tag for common include file. 
+- [alien] add support for 64 bit device configurations. 
+- [alien] AlienAudioControlService: Interface to control audio focus from alienaudioservice. 
+- [alien] Allow enabling adb using a property. 
+- [alien] allow /home/nemo mount to be disabled. 
+- [alien] allow loading graphics drivers from host_vendor. 
+- [alien] Avoid a failure when selinux is not enabled in the kernel. 
+- [alien] Avoid failure due to sdcardfs. 
+- [alien] avoid failure in first stage init if device nodes already exist. 
+- [alien] avoid selinux failure in framework servicemanager. 
+- [alien] bump package version. 
+- [alien] don't load hwcomposer libraries from host_vendor. 
+- [alien] fix a potential crash during package installation. 
+- [alien] fix binder transaction. 
+- [alien] Fix build failures due to removed repo. 
+- [alien] fix build failures. 
+- [alien] fix device configurations 
+- [alien] Fix device manifests. 
+- [alien] fix environment variables. 
+- [alien] fix graphics allocator configurations. 
+- [alien] fix hidl services. 
+- [alien] fix manifest service versions. 
+- [alien] Fix out target directory. 
+- [alien] fix selinux disablement in fwks base. 
+- [alien] fix service definitions. 
+- [alien] fix source1 location. 
+- [alien] fix vendor symlink. 
+- [alien] make host_hwbinder usage configurable. 
+- [alien] make sure camera is properly used. 
+- [alien] make sure the currect supplicant iface version is used. 
+- [alien] move alien modules to system.img. 
+- [alien] Properly handle orientation. 
+- [alien] rebase patches and fix submodule location. 
+- [alien] rebase patches for android 10. 
+- [alien] remove android.hardware.boot from manifest. 
+- [alien] remove extra submodule. 
+- [alien] Update 64 bit configurations. 
+- [alien] update device configurations. 
+- [contacts] Allow contact insertion by accounts and sync adaptors. 
+- [alien] Fix a build error due to the last changes. 
+- [alien] add android.hardware.graphics.common@1.2 and android.hardware.graphics.mapper@3.0 for compatibility. 
+- [alien] add getOrCreateCachedBinder and registerAsServiceInternal for compatibility. 
+- [alien] Fix a crash when notifying about surface deletion. 
+- [alien] prevent whatsapp from creating multiple windows. 
+- [alien] notify of surface deletion when no activities are present anymore. 
+- [alien] suspend applications based on cover state, not keyboard focus. 
+- [alien] Fix keyboard rotation handling. 
+- [alien] don't give android layers it's own window. 
+- [alien] fix patch format. 
+- [alien] fix yet another issue with selinux in hwservicemanager. 
+- [alien] fix clipboard handling. 
+- [alien] don't give the permission dialog it's own window. 
+- [alien] don't crash if READ_EXTERNAL_STORAGE permission is granted. 
+- [alien] fix reading files from sailfishos_storage. 
+- [alien] avoid leaking file descriptors. 
+- [alien] disable notification display inside alien apps. 
+- [alien] fix an issue where instagram would create two windows. 
+- [alien] Rebase patches to reflect new infra. 
+- [alien] Use --zero-commit when exporting patches. 
+- [alien] fix an issue with window handling if multiple layers are present. 
+- [alien] Add extra projects as submodules. 
+- [alien] Add scripts to export patches. 
+- [alien] call setDisplaySize only when the size actually has changed. 
+- [alien] Disable filesystem trim. 
+- [alien] don't ask for which sms/data sim to use. 
+- [alien] Fix and issue with selinux. 
+- [alien] Fix another issue with selinux and make sure to use "on property" properly. 
+- [alien] Fix github submodule.
+- [alien] Fix git submodules to point new bitbucket group.
+- [alien] fix sdcard handling. 
+- [alien] Load alien implementations before vendor implementations. 
+- [alien] rebase patches for android 9. 
+- [alien] reconfigure input devices if display size changes, set display size only once
+- [alien] reconfigure the input devices if the display size changes. 
+- [alien] remove submodules which are now provided by android 9 itself. 
+- [alien] Update device and vendor trees for android 9. 
+- [alien] Use https for github submodule.
+- [notif] Add large icon, named actions and subtext to notifications. 
+- [alien] switch to memfd from ashmem. 
+- [alien] start services only after hwservicemanager is ready. 
+- [alien-aliendalvik-system] Fix submodule URLs for local checkouts. 
+- [alien-aliendalvik-system] Move AlienAudioService to vndbinder interface. 
+- [alien-aliendalvik-system] Shift audio stream types. 
+- [alien] switch to upstream libxkbcommon, wayland and libffi. 
+- [alien] Fix codec handling. 
+- [alien] Update device configurations. 
+- [alien] rebase patches part 3. 
+- [alien] rebase patches part 4. 
+- [alien] update copyright headers. 
+- [alien] rebase patches part 2. 
+- [audio] Playback timing tunings. 
+- [audio] Use shared memory for recording. 
+- [alien] Allow access to sailfishos_storage and sdcards properly. 
+- [alien] revert back to default ANDROID_DNS_MODE. 
+- [alien] update package filenames. 
+- [alien] rebase patches. 
+- [alien] update device configurations. 
+- [alien] add support for multiple users. 
+- [alien] Switch all instances of alien using USER_OWNER to USER_CURRENT. 
+- [alien] Fix an issue with packageinstaller creating a seperate window when it should be shown over an app. 
+- [alien] avoid SimDialogActivity to be shown for a split second. 
+- [alien] don't unecessarily store thumbnails for performance and memory improvements. 
+- [aliendalvik-system] Make sure vendor manifest is proper. 
+- [aliendalvik-system] update device configurations. 
+- [notif] Add notif category null check. 
+- [alien] split aliendalvik into two repos. 
+- [alien] mount sys ro. 
+- [notif] Don't drop group summary notifications from the 'call' category. Fixes JB
+- [notif] Don't drop group summary notifications from the 'call' category. 
+- [alien] hide keyboard if it loses focus in order to allow whatsapp showing it's attachment option. 
+- [alien] make sure the back button behaves properly when an app is launched from another. 
+- [alien] support spaces in AlienVolume names. 
+- [alien] fix empty window due to background surface. 
+- [alien] fix use after free. 
+- [alien] avoid empty window due to DimLayerController. 
+- [alien] avoid black frames when starting an app and don't render frames from one app in another. 
+- [alien] only delay window hiding if the keyboard is actually shown. 
+- [alien] do window handling based on package name instead of uid. 
+- [alien] add getRawServiceInternal, getBnConstructorMap and getBsConstructorMap for more compatibility. 
+- [alien] add some libion functions to be compatible with more HALs. 
+- [alien] Use cortex-a53 cpu variant in arm build. 
+- [alien] rebase patches for r73. 
+- [alien] wait for acquire fence to avoid out of order compositing. 
+- [alien] initialize metaState to make hw keyboards work. 
+- [alien] make sure apps start fast. 
+- [alien] fix an issue where telegram invite links would fail. 
+- [alien] fix an issue where whatsapp wouldn't be able to render after starting a call. 
+- [alien] fix a regression where apps would end up in the wrong orientation on the homescreen. 
+- [alien] fix performance issues when swiping out of an application and avoid producing black covers. 
+- [alien] add support for sdcards. 
+- [alien] add support for writing to sdcards. 
+- [alien] rename /home/nemo mount to sailfishos_storage. 
+- [alien] remove now unneeded bindfs dependency. 
+- [alien] mount nemo storage as an AlienVolume(PublicVolume). 
+- [alien] make sure we don't end up with windows which are active but not being rendered to. 
+- [alien] Add support for "Add to contacts". 
+- [alien] add support for editing contact after adding. 
+- [alien] don't mess with suspend states in a wrong way to fix whatsapp calls. 
+- [alien] make sure thumbnails are properly shown after whatsapp fixes. 
+- [alien] reenable some animations which broke whatsapp video playback. 
+- [alien] rebase patches to avoid build failure. 
+- [alien] improve sqlite performance. 
+- [alien] read host battery capacity from system property. 
+- [alien] add support for touch based focus handling. 
+- [alien] add support for xdg_shell. 
+- [alien] make sure patches are applied in the correct order. 
+- [alien] update device configs for codecs. 
+- [alien] avoid writing to system logs. 
+- [alien] fix a crash with getCallingContext. 
+- [alien] fix ALOGD format to solve compilation issues. 
+- [alien] generate client protocols in a more standard way. 
+- [alien] start camera provider only if camera is supported. 
+- [alien] allow starting android.hardware.media.omx inside alien. 
+- [graphics] add support for /vendor/lib. 
+- [alien_audio] Implement set_mode, set_parameters, and out_get_latency. 
+- [alien] Disable logging throttling for our streams. 
+- [device] Update audio policy configuration. 
+- [alien] Implement incremental initial contact sync. 
+- [alien] switch to decimal keyboard if TYPE_NUMBER_FLAG_DECIMAL is specified. 
+- [keyboard] Still send Enter in the case of IME_FLAG_NO_ENTER_ACTION. Regression 
+- [alien] flush display after requesting minimized/maximized state. 
+- [alien] wait for apps to have a window before allowing to start the next app. 
+- [alien] don't allow home window activity to interfere with app launching. 
+- [alien] don't ask for which data sim to use. 
+- [keyboard] Trigger Editor Action when Enter is pressed, rather than just send the keycode. 
+- [alien] scale too big app icons down to more reasonable sizes to avoid binder failures. 
+- [alien] Verify that string exists before using it. 
+- [alien] make surfacecomposer and mce transactions oneway to avoid deadlocks. 
+- [apps] Drop Contacts app again, as we cover what that was doing. 
+- [alien] new simplified mobile data patch v3. 
+- [alien] avoid going back and forward between apps in a loop. 
+- [alien] Revert: Exclude unwelcome default apps from the build. 
+- [alien] disable bootanimation. 
+- [alien] use sdcardfs for android_storage, move nemo mount out of sdcardfs due to permission problems. make sure files can still be accessed from android side. 
+- [alien] return dummy state in get_mic_mute. 
+- [alien] Start aliendalvik after home is mounted. 
+- [alien] Add USB permissions. 
+- [alien] Also make sure touch events are reset if a window is moved to the background, not only when closed. 
+- [alien] Enable OpenGLES AEP support. 
+- [alien] Enable vulkan support. 
+- [alien] support email attachments. 
+- [alien] Remove unnecessary bluetooth files. 
+- [alien] prepare for android-8.1.0_r65. 
+- [alien] Allow automatically starting adbd via a property. 
+- [alien] Prevent crash if screen brightness ramp animator does not exist. 
+- [alien] Avoid a lockup in SurfaceFlinger. 
+- [alien] Allow acquiring android.hardware.memtrack service. 
+- [alien] Don't allow registering android.hidl.allocator. 
+- [alien] Add adbd service. 
+- [alien] Add dummy usb permission. 
+- [alien] Allow development settings page to work in alien. 
+- [alien] Allow the development settings page to work. 
+- [alien] Load alien properties before anything else. 
+- [alien] Make adb run-as functional. 
+- [alien] add extra device configs. 
+- [alien] allow disabling EGL_EXT_pixel_format_float via a property. 
+- [alien] allow disabling sailfishos networking via a property. 
+- [alien] allow hwservicemanager to be started from inside alien when the host doesn't have a hwservicemanager. 
+- [alien] allow sfos networking to be enabled/disabled via a system property. 
+- [alien] allow surfaceflinger to work without the alien_manager wayland extension. 
+- [alien] fix wayland compilation on multiarch systems. 
+- [alien] set wake/suspend mode via keyboard focus handler. 
+- [alien] support mouse input better. 
+- [alien] use ANDROID_DNS_MODE local also for other zygote variants. 
+- [alien] allow using the android.hardware.power service. 
+- [alien] Requires alienaudioservice 0.4
+- [alien] Use shared buffer for audio data transfer. 
+- [oom] Override process OOM adjustment with values set by lipstick. 
+- [alien] hide virtual keyboard if keyboard focus is lost. 
+- [alien] reset touch input when a window is being minimized/a surface is being lost. 
+- [alien] Exclude unwelcome default apps from the build. 
+- [nativeapp] Add NativeContacts app to create vcards to add to Sailfish. 
+- [memory] Restrict background and startup execution. 
+- [oom] Disable lmkd Android Go configuration, so it can use the in-kernel interface. 
+- [alien] make graphics related device specific dev nodes optional. 
+- [alien] move libc configuration to the bsp_config file. 
+- [alien] wake up alien if an app is being made visible. 
+- [alien] build android.hardware.audio.effect@2.0-impl. 
+- [alien] move audio modules to system.img. 
+- [alien] Move audio modules to system.img. Use ANDROID_DNS_MODE=local. Read device properties from nemo user. Build android.hardware.audio.effect@2.0-impl. Support using libc from the host. 
+- [alien] read device properties from nemo user. 
+- [alien] support using libc from the host. 
+- [alien] use ANDROID_DNS_MODE=local. 
+- [alien] Fix a race condition in the alien wifi service. 
+- [alien] only change the surface state to fullscreen if the window has been raised. 
+- [alien] raise windows when they are being made visible not just when they are launched. 
+- [alien] More package replacement permission changes. 
+- [alien] Write all values from the /alien/ dconf context to the generated system properties on startup. 
+- [config] Avoid using su while fetching config properties. 
+- [perm] Add signature spoofing permission. 
+- [alien] also pass the notification category to the native side. 
+- [alien] copy vibrate, sound and led properties from the group notification if necessary, add a fallback for the appIcon. 
+- [alien] allow the wifi state machine to work with the injected wifi state from sfos. 
+- [alien] always launch apps into the FULLSCREEN_WORKSPACE_STACK_ID stack. 
+- [alien] avoid a deadlock in DcController. 
+- [alien] make media transactions oneway. 
+- [alien] make sure app start requests do not get lost due to window close functionality. 
+- [alien] make sure windows are always raised when requested, make sure windows which are being rendered to are always on top. 
+- [alien] do not return null pointers if there is no wifi network. 
+- [alien] remove clearUnusedTasks functionality, close apps via removeTask. 
+- [alien] remove clearUnusedTasks functionality, close apps via removeTask, raise windows properly, notify about dead surfaces properly, fix getAppIdAppLaunchedFrom. 
+- [alien] Switch to apkd8. 
+- [alien] allow the settings app to work properly (not create multiple windows or block others etc.). 
+- [alien] avoid a crash in the settings app. 
+- [alien] make sure suspend when home is being shown, fix suspend consistency checks. 
+- [alien] never discard frames that belong to apps, make sure we don't display black frames. 
+- [alien] do not limit binder threads in surfaceflinger. 
+- [alien] don't turn off the screen on shutdown. 
+- [alien] fine tune .gitignore to not ignore too much. 
+- [alien] implement display blank prevention support. 
+- [alien] Revert: avoid using modules from the host by packaging them into system.img. 
+- [alien] avoid using modules from the host by packaging them into system.img. 
+- [alien] call wl_display_flush to avoid the app not responding dialog. 
+- [alien] support clipboard from alien to the host. 
+- [alien] do not kill applications for now to allow background services to work. 
+- [alien] only show windows when they are explicitly being raised. 
+- [alien] add additional files/paths to .gitignore. 
+- [alien] support app rotation. 
+- [alien] drop some unnecessary debugging information from the logs. 
+- [alien] raise windows properly when launched from within android. 
+- [alien] send a signal to SurfaceFlinger if an app is launched from within android. 
+- [alien] if onStartInputView is called with restarting clear the old text. 
+- [notif] Don't forward group or media notifications, and add extra passed parameters. 
+- [alien] make sure we detect the old storage location properly. 
+- [alien] remove droid-src symlink workaround. 
+- [alien] add ofono-alien-binder-plugin dependency. 
+- [alien] new simplified mobile data patch. 
+- [alien] remove some unecessary logging in surfaceflinger/hwcomposer. 
+- [alien] add a fileobserver to alien for receiving notifications from tracker. 
+- [alien] make sure alien notifies systemd properly. 
+- [alien] add a function to figure out if this app is being launched as part of another one. 
+- [alien] Add alien.applications and alien.contacts to whitelist. 
+- [alien] add alien.connectivity to the package whitelist. 
+- [alien] add AlienFakeHome to alien build. 
+- [alien] add alien.native_call to package whitelist. 
+- [alien] add alien.notifications to package whitelist. 
+- [alien] add android.hardware.telephony.gsm.xml permission file.
+- [alien] add android makefiles for wayland. 
+- [alien] add and use AlienConnectivityService for reporting the wifi status. 
+- [alien] add a simple alien binder service which can be used to start apps and query some information about them. 
+- [alien] Add audio policy configuration.
+- [alien] add a WaylandPollThread to not need to wake up the VSyncThread every 10ms. 
+- [alien] add a whitelist for hwbinder services from sfos. 
+- [alien] Add basic binder output.
+- [alien] add binder call to surfaceflinger for suspend handling. 
+- [alien] add getPrettyName and getPackageName to alien service for app covers handling. 
+- [alien] Add GPS permissions. 
+- [alien] add missing media patches. 
+- [alien] Add missing permission files. 
+- [alien] add native_call interface. 
+- [alien] add native call packages to the build. 
+- [alien] add patches for obs build. 
+- [alien] add predefined config.h for android build. 
+- [alien] add repo build symlinks. 
+- [alien] Add sensor support. 
+- [alien] add some information to the wifi info and add support for getActiveNetworkInfo. 
+- [alien] add Source0 for obs builds. 
+- [alien] add wayland, libffi and libxkbcommon dependencies. 
+- [alien] allocate a seperate window for the settings app. 
+- [alien] Allow android.hardware.drm to be acquired and registered. 
+- [alien] Allow android.hardware.gnss to be registered on the alien slot. 
+- [alien] allow android.hardware.radio to be registered on the alien slot. 
+- [alien] Allow android.hardware.sensors to be registered on the alien slot. 
+- [alien] Allow android.hardware.vibrator to be registered on the alien slot. 
+- [alien] allow app to be moved to foreground even if another one is already active. 
+- [alien] allow dns requests to work. 
+- [alien] allow loading egl blobs from odm folder. 
+- [alien] allow loading extra properties from /vendor/alien.prop which can be autogenerated. 
+- [alien] apply patches in the correct order. 
+- [alien] avoid building userdata.img. 
+- [alien] build systemimage only. 
+- [alien] change libinput into .mk in order to fix dependencies. 
+- [alien] Change protocol versions to work with both current and new wayland. 
+- [alien] change the open-settings button into an allow button for allowing untrusted apps. 
+- [alien] close windows if not needed (e.g. home moved to front and app closed). 
+- [alien] convert Android.mk to Android.bp for android 8 based build. 
+- [alien] copy system.img and configs from the correct path. 
+- [alien] define target cpu for obs builds. 
+- [alien] disable access to some hwbinder services from java. 
+- [alien] disable access to some sfos hwbinder services. 
+- [alien] disable dhcp requests. 
+- [alien] Disable filesystem trim. 
+- [alien] Disable hardware keyboards. 
+- [alien] disable hwbinder service which is already started on the host. 
+- [alien] disable hwservicemanager for now (host version will be used until we need to have our own on android < 7 devices). 
+- [alien] disable jack properly. 
+- [alien] disable last restorecon in installd. 
+- [alien] disable lockscreen which would interfere with sfos/alien window handling. 
+- [alien] disable media.omx service. 
+- [alien] disable messing with iptables from android. 
+- [alien] disable messing with rndis. 
+- [alien] disable messing with the network from alien. 
+- [alien] Disable NetdHwService. 
+- [alien] Disable NetlinkManager. 
+- [alien] disable RescueParty factory reset. 
+- [alien] disable rild in alien. 
+- [alien] disable SELinux for now. 
+- [alien] disable SELinux in installd for now. 
+- [alien] disable SELinux in service_manager for now. 
+- [alien] disable selinux properly. 
+- [alien] disable some animations for app transitions. 
+- [alien] disable touch input to the status bar. 
+- [alien] disable uevent handling for power management in healthd. This is handled by the host. 
+- [alien] disable usage of hw modules from odm (only gpu blobs are allowed) and make sure we don't wait for hwservicemanager since it is already started on the host. 
+- [alien] display statusbar in black. 
+- [alien] do not allow changing the wifi interface state. 
+- [alien] do not enable SMALLER_FONT_FOOTPRINT/MINIMAL_FONT_FOOTPRINT for more font support.
+- [alien] do not override the mobile data information with the wifi information if there is no wifi network. 
+- [alien] do not pad the squashfs filesystem since that would increase the size unecessarily and causes build errors as well. 
+- [alien] do not read host fstab, because alien should not mount any host partitions itself. 
+- [alien] do not show crash or app not responding dialogs. 
+- [alien] don't allocate a window for the keyboard. 
+- [alien] don't fail if SELinux is disabled. 
+- [alien] don't open settings when requesting to install packages from an untrusted source. 
+- [alien] Enable ethernet for LXC networking. 
+- [alien] fix condition timeout for not using too much cpu when reading input. 
+- [alien] Fix default keyboard setting. 
+- [alien] fix fullscreening windows. 
+- [alien] fix memory leak in thumbnail handling. JB44656
+- [alien] fix sf binder calls. 
+- [alien] force audio volume to 1.f, it is controlled by the host. 
+- [alien] forward additional parameters for the mpris player. 
+- [alien] GRALLOC_USAGE_HW_FB would allocate buffers on the framebuffer and cause graphical glitches - make sure it is never used. 
+- [alien] handle app transitions better, to allow aptoide to install apks, and handle rendering on top of other apps better. 
+- [alien] hide the recents and home buttons. 
+- [alien] Hide virtual keyboard when suspending or changing app. 
+- [alien] if a frame doesn't have an associated window do not immediately minimize all windows since it might be a temporary animation frame. 
+- [alien] if an activity stack is moved to the background see if it needs to be removed. 
+- [alien] Implement AlienContacts service. 
+- [alien] implement app switching and (un)suspend handling. 
+- [alien] Implement basic input stream support.
+- [alien] implement getAllPackages and installPackage in IAlienService. 
+- [alien] Implement native contact support. 
+- [alien] Implement sync-on-start in AlienContacts. 
+- [alien] implement wayland support and input handling. 
+- [alien] import AlienFakeHome from old aliendalvik with obsolete things removed. 
+- [alien] import AlienMediaControlService from the old aliendalvik. 
+- [alien] import AlienNativeApp from old aliendalvik. 
+- [alien] import vendor and device repos. 
+- [alien] improve app handling a bit by removing the need for task id storing during suspend. 
+- [alien] Improve package name query when launching apps. 
+- [alien] Initial content - AlienRemoteKeyboard from myriad. 
+- [alien] Initial dhs packaging. 
+- [alien] initial dummy alien keymaster module (based on android
+- [alien] initial dummy audio module. 
+- [alien] initial hwcomposer module. 
+- [alien] in order to enable lxc.net.0.type = none we need to remove these unused features completely. 
+- [alien] install apps as owner user, system is reserved for privileged processes. 
+- [alien] load modules with alien in it's name first and do not load default modules at all. 
+- [alien] make init work in an lxc container (disable SELinux, fix mounts, ...). JB3032
+- [alien] make mobile data connections work by aligning the state machine. 
+- [alien] make statusbar 1px as in old alien. 
+- [alien] make sure apkd can call setListener. 
+- [alien] make sure app transitions don't cause a suspend in alien. 
+- [alien] make sure device and vendor are extracted properly on obs. 
+- [alien] make sure generated (from host) persist properties are loaded after we have read the local persist properties from /data. 
+- [alien] make sure hardware services are disabled, in case some get pulled in due to mandatory dependencies. 
+- [alien] make sure home is moved to foreground when an app is minimized, even if no other app is launched. 
+- [alien] make sure no module is defined twice. 
+- [alien] make sure system.img is installed properly. 
+- [alien] make sure that in this version of alien we do not render the 1px statusbar at all. 
+- [alien] make sure the language settings from the generated properties are not overridden. 
+- [alien] make sure the window map is not accessed from multiple threads at the same time. 
+- [alien] make sure windows stay minimized by moving the request to minimize after the thumbail render step. 
+- [alien] move back button to the middle. 
+- [alien] move keymaster to /system/lib/hw, because /vendor/lib/hw needs to be from the host. 
+- [alien] NetworkPolicyManagerService is not used, but it needs to notify system_server that it's not doing anything, otherwise it delays for 30s. 
+- [alien] prepare for fake home and remove PowerManagerService wakelocks. 
+- [alien] prepare for fake home and simplify/fix state handling. 
+- [alien] properly extract extra sources. 
+- [alien] pushed_while_minimized doesn't solve anything, only causes problems. 
+- [alien] query dhcp info from alien connectivity service. 
+- [alien] Re-enable Alien Keyboard Service. 
+- [alien] Relax default keyboard checks to make RemoteKeyboard default. 
+- [alien] Remove default vibrator implementation. 
+- [alien] remove homescreen and make sure apps start fullscreen, make sure apps can be maximized properly and make sure they don't pop up unexpectedly. 
+- [alien] remove most of the app specific code which has been obsoleted. 
+- [alien] remove Requires(pre) from audio, nativecall and keyboard services. 
+- [alien] remove some prebuilts which are unneeded. 
+- [alien] remove some uneeded binaries from the build and image. 
+- [alien] Remove some unneeded packages from Alien build. 
+- [alien] remove unused rendering on top of other app code, implement app closing, fix window hiding. 
+- [alien] remove unused tasks, and fix suspending rendering, implement app closing. 
+- [alien] remove WaylandPollThread and poll events on the main thread using the MessageQueue Looper. 
+- [alien] report failure on zygote restart. 
+- [alien] REVERTME: disable calls to IAlienService for now since that is not implemented yet. 
+- [alien] rework the mobile data connection patch. do not ask for pin/puk. 
+- [alien] set network available state before passing NetworkInfo to the apps. 
+- [alien] set PATH and other variables in mkshrc to get a shell faster. 
+- [alien] showing thumbnails here and hiding windows doesn't help, it just breaks app relaunching, it was useful in the beginning but now it isn't. 
+- [alien] start surfaceflinger service as part of system_server to be able to use input in inputflinger. 
+- [alien] support launching one app from another. 
+- [alien] support loading blobs from the odm directory. 
+- [alien] support odm and host_vendor dirs in aliendalvik. 
+- [alien] support reading media configuration files from host_vendor. 
+- [alien] SurfaceFlinger wayland support: use more consistent function names and variables. 
+- [alien] switch to alien.native_call.IAlienNativeCall package. 
+- [alien] update alien configs. 
+- [alien] update configs and scripts to the latest versions. 
+- [alien] update patches for android-8.1.0_r53. 
+- [alien] Use alien.applications.IAlienService in surfaceflinger. 
+- [alien] use alien connectivity service to get info about the wifi network. 
+- [alien] use a substitute uid for the settings app, otherwise it will appear as a system process. 
+- [alien] use get_package_name instead of get_class_name to get a better idea about whether this is a homescreen frame. 
+- [alien] use package name for the window name to make sure lipstick knows the correct cover. Use pretty name for the window title. 
+- [alien] with recent changes forcing fullscreen is not necessary and causes issues. 
+- [alien] write 1 to /data/alien_boot_completed when alien is ready for operation. 
+### appsupport-system-unprivileged
+- Binaries added : appsupport-system-unprivileged - 11.0.0.60.28-1.11.1.jolla
+- [appsupport] do not create executable files in FileUtils::openSafely. 
+- [appsupport] Always set height for keyboard. 
+- [appsupport] Further protect against installation errors. 
+- [audio] Restore stream parameters on reconnect. 
+- [appsupport] Add crash logging. 
+- [appsupport] do not abort crash_dump if process disappeared. 
+- [appsupport] add window hidden for alienwaylandtextinput client. 
+- [appsupport] Correct logic in error message handling. 
+- [appsupport] Update default transport controls in error states. 
+- [appsupport] Force output flag DIRECT for multichannel streams. 
+- [appsupport] Set Message category when missing from Messaging notifications. 
+- [appsupport] add binderDied for alienwaylandtextinput client. 
+- [appsupport] Fix AlienStatusBar for Android 11. 
+- [appsupport] fix branding. 
+- [appsupport] Stop unregistering callbacks for media sessions that have gone. 
+- [appsupport] disable unsupported multiuser feature. 
+- [appsupport] Support seeking to a position. 
+- [appsupport] Update wayland-protocols submodule to 1.31. 
+- [appsupport] Don't render empty pixels and fix wayland debug. 
+- [appsupport] Avoid crashes in AlienMediaControlService. 
+- [appsupport] Handle metadata update for error cases. 
+- [appsupport] Ignore PackageInstaller interrupted IO errors. 
+- [appsupport] notify to surfaceflinger if app died, 
+- [appsupport] cherry-pick AOSP fix for preserveLegacyExternalStorage. 
+- [appsupport] fix getContentProvider() access for AlienFileObserverService. 
+- [appsupport] Avoid crashes in AlienMediaControlService. 
+- [appsupport] Check only focused layers. 
+- [appsupport] Add media id to media control meta data. 
+- [appsupport] Adjust device name changes. 
+- [appsupport] install minigbm gralloc to lib/hw. 
+- [appsupport]: adapt AlienVolume and reenable MediaProvider FUSE. 
+- [appsupport] add missing patches from 10. 
+- [appsupport] add set_minimized support for xdg-shell. 
+- [appsupport] Resize also if only height or width changes. 
+- [appsupport] Convert touch events to stylus events. 
+- [appsupport] Adapt power manager changes. 
+- [appsupport] Add software gatekeeper for appsupport core. 
+- [appsupport] Configure patch level. 
+- [appsupport] Do not start software gatekeeper by default. 
+- [appsupport]: disable MediaProvider FUSE. 
+- [appsupport] Fix generic and x86 target builds with Android 11. 
+- [appsupport] Refactor wayland text input to app level. 
+- [appsupport] Replace custom software gatekeeper with one from hardware/interfaces. 
+- [appsupport] Add new out of order fixes. 
+- [appsupport] Fix a mistake in ivi_application integration. 
+- [appsupport] load surface ids whenever one is missing. 
+- [appsupport] Add means to follow audio focus stack. 
+- [appsupport]: adjust PRODUCT_PACKAGES for Android 11. 
+- [appsupport]: bump sepolicy version in VINTF manifests. 
+- [appsupport] Disable notification rendering. 
+- [appsupport] do not clean out networkstack tests. 
+- [appsupport] Drop unneeded patches after switching to hwpuddlejumper on all devices. 
+- [appsupport] extra patches needed for Android 11. 
+- [appsupport] fix iamge signing script. 
+- [appsupport] fix mobile data on Android 11. 
+- [appsupport] fix security patch level to match sources. 
+- [appsupport] Forward platform audio focus state to audio focus listeners. 
+- [appsupport] import newer MicroG patches for Android 11/Sailfish. 
+- [appsupport]: include libhwbinder/libhidltransport in Sailfish images. 
+- [appsupport] move PackageInstaller patches to PermissionController. 
+- [appsupport] port latest alien-10.0.0_r65 to Android 11. 
+- [appsupport] rebase patches for Android 11. 
+- [appsupport]: remove extra adbd definition from init.alien.rc. 
+- [appsupport] remove missing components from SystemUI overlay. 
+- [appsupport]: remove product strategy patch/rerouting from audiopolicy. 
+- [appsupport] Remove unnecessary follower registration for audio focus. 
+- [appsupport] Report more (un)installation failures. 
+- [appsupport] rpm: switch to aidl3 in gbinder config. 
+- [appsupport] run check_vintf with system/vendor instead of vendor. 
+- [appsupport]: set gid of /mnt/media_rw back to media_rw. 
+- [appsupport] conflict privileged container with the user package. 
+- [appsupport] require user package. 
+- [appsupport] avoid a crash when the screen is resized. 
+- [appsupport] Alter the handling of the installer stream. 
+- [alien] Add Filter for unusable MediaSessions
+- [alien] Change seek implementation to seek by delta
+- [alien] Remove MediaBrowsing Logic from AlienMediaControlService
+- [appsupport] Refactor MediaBrowser integration and fix MPRIS service lifecycle and seek. 
+- [appsupport] add iface to get services on intent resolver. 
+- [appsupport] get ivi surface ids from a file. 
+- [appsupport] Do not abort if text-input is not found. 
+- [appsupport] add implementation of text-input-unstable-v3. 
+- [appsupport] Don't define common audio policy xml. 
+- [alien] Use file descriptors for MPRIS album art instead of base64. 
+- [appsupport] Allow ofono to register services again. 
+- [appsupport] only allow privileged host user id to register services. 
+- [appsupport] Start lmkd again. 
+- [appsupport] Add support for ivi-application. 
+- [appsupport] Add wayland-ivi-extension as git submodule. 
+- [appsupport] Resize exported icons according to supplied property. 
+- [appsupport] Move missing library to system. 
+- [appsupport] Include audio package to image. 
+- [appsupport] Reduce audio package content to minimum. 
+- [alien] Expose & support activation of MediaBrowsers. 
+- [alien] Expose & support activation of Mediabrowsing supported apps to host.
+- [appsupport] delegate implicit intent resolution to listener. 
+- [appsupport] Fix arm privileged container. 
+- [appsupport] Add architecture to spec file. 
+- [appsupport] Add obsoletes/provides to avoid conflicts with the old package name. 
+- [appsupport] Also change setup to appsupport. 
+- [appsupport] Clean out obsolete patches and device. 
+- [appsupport] Fix appsupport privileged filename. 
+- [appsupport] Fix issues with patches. 
+- [appsupport] Fix the package description and summary. 
+- [appsupport] Fix unprivileged package name. 
+- [appsupport] Rename aliendalvik-system -> appsupport-system. 
+- [appsupport] Rename appsupport->appsupport_privileged and appsupport_unprivileged->appsupport. 
+- [appsupport] Rename appsupport-system -> appsupport-system-unprivileged. 
+- [alien] add support for unprivileged containers. 
+- [appsupport] Disable unprivileged container by default (for now). 
+- [alien] Check consent from host OS while checking app permission. 
+- [appsupport] proxy startActivity and window check via alien services. 
+- [appsupport] Communicate user data clearing to listener. 
+- [appsupport] don't mess with cmdline/urandom. 
+- [appsupport] avoid an issue with the selinux mount. 
+- [appsupport] keep metaState from input as EventHub::mapKey output. 
+- [appsupport] Work around mobile data getting stuck. 
+- [appsupport] disallow access to /sys/fs/selinux. 
+- [alien] Fix handling of networks. 
+- [appsupport] Add possibility to check application ID. 
+- [appsupport] Determine input stream package name as well. 
+- [audio] Call set parameters for input streams as well. 
+- [appsupport] Revert broken mobile data patch. 
+- [alien] Add privileged data clearing proxies to AlienService. 
+- [appsupport] Follow and modify speakerphone state. 
+- [appsupport] don't mix wifi and mobile data network ids. 
+- [appsupport] Fail Android build on OBS if build command is failing. 
+- [appsupport] set proper protocol also on roamingProtocol variable. 
+- [appsupport] Pass UI effect playback to AlienAudioControlService. 
+- [appsupport] Improve per-application output selection. 
+- [appsupport] Re-adjust stream type counts. 
+- [appsupport] Implement per-application streams handling in audio policy. 
+- [audio] Changes to enable per-application streams. 
+- [alien] Add AlienService.setLocale. 
+- [alien] add camera dependecies from a11. 
+- [alien] add emptys to v4l2 camera libs. 
+- [alien] add support to disable soundtrigger. 
+- [alien] delegate intent resolution via binder. 
+- [appsupport] Disable telephony when not needed. 
+- [alien] Clear out /product. 
+- [appsupport] set ipv6 configurations properly. 
+- [appsupport] Update mobile data patch to better support different ipv4, ipv6 and dual configs. 
+- [appsupport] move remaining audio policy configuraiton to system. 
+- [appsupport] remove files which have moved to configs. 
+- [alien] Enable CarMedia app without Car service dependencies. 
+- [alien] Remove CarManger & Car dependencies completely
+- [appsupport] Add means to follow audio focus stack. 
+- [appsupport] Follow audio content and notify clients of content type. 
+- [appsupport] move alien.prop to system. 
+- [alien] add display configuration API. 
+- [alien] fix loading of media profiles from host_vendor. 
+- [alien] include android.hardware.drm@1.3 for compatibility. 
+- [appsupport] add 32 bit generic configurations. 
+- [appsupport] move audio policy configuration to system. 
+- [appsupport] Update patches for android-security-10.0.0_r65. 
+- [alien] fix patch. 
+- [alien] set up seccomp even when setenforce 0 is set. 
+- [audio] Cache set_parameters calls. 
+- [audio] Implement in_get_parameters. 
+- [audio] Send io_handle with output set_parameters call. 
+- [alien] Add setConnectedAccessory() to audio control service. 
+- [alien] Add wired headphone as available route. 
+- [alien] Add wired routing. 
+- [alien] Use dev/input type events for audio jack. 
+- [alien] Export available MediaSessions to host
+- [alien] Publish multiple MPRIS services. 
+- [alien] avoid incorrect suspend state if application is already active. 
+- [alien] Don't change the suspend state when we bail early. 
+- [appsupport] Fix wayland-protocols git submodule url. 
+- [alien] Move null buffer patch to regular patchset. 
+- [alien] Use 64 bit if possible. 
+- [alien] Don't delegate permissions if not supported. 
+- [alien] Show navigation bar when needed. 
+- [alien] Add a new target for aarch64. 
+- [alien] Don't attach null buffers if not supported. 
+- [alien] fix build of gbm_gralloc. 
+- [alien] fix mesa build for x86. 
+- [alien] install libdrm to the system image. 
+- [alien] Limit i915 driver to x86. 
+- [alien] make it possible to build mesa from android11-gsi. 
+- [appsupport] Disable mesa3d and libdrm build in generic patchset. 
+- [appsupport] Enable variable patch sets.
+- [appsupport] Move APK permissions patch to sailfish patch set.
+- [appsupport] Order variant patch sets last.
+- [appsupport] Use sailfish patches in build.
+- [alien] use fixed physical size if wayland resolution matches. 
+- [alien] Make it possible to mount lib in container and fix permissions. 
+- [alien] add iface argument to AlienConnectivityService's registerWifiNetwork. 
+- [alien] Use wifi.interface for interface name. 
+- [alien] don't create buffers if we decide not to use them later. 
+- [alien] Add more permission relaxing to StorageStats. 
+- [alien] Improved icon mask with sharper corners. 
+- [alien] Switch StorageStats check to allow null callingPackage. 
+- [alien] Add PlayPause command support for media control. 
+- [alien] binder implementation for consent requirement. 
+- [alien] Fix null albumarturi causing MPRIS failure. 
+- [alien] move packages to the correct location. 
+- [alien] fix a crash on startup. 
+- [alien] allow vintf manifest fragments to be specified. 
+- [alien] enable bluetooth bluetooth packages for compatibility (not actual bluetooth support). 
+- [alien] handle thumbnail generation entirely in post_buffer. 
+- [alien] don't forget the buffer listener. 
+- [alien] don't hide the native input view if it is zero size. 
+- [alien] Update patches for android-security-10.0.0_r62. 
+- [alien] Disable writing selinux context in container. 
+- [alien] Silence kernel wakelock stats. 
+- [alien] Silence wifi scanning errors. 
+- [alien] avoid showing an empty keyboard. 
+- [alien] fix some states related to keyboard handling. 
+- [alien] Move cas and rest of drm to system. 
+- [alien] Support for user apkdaemon. 
+- [alien] avoid black covers. 
+- [alien] disable app transition animations by default. 
+- [alien] make sure to show the native keyboard even if it is temp-hidden when a input view is created. 
+- [alien] Avoid concurrent modification exceptions. 
+- [alien] Store receiver instead of intent. 
+- [alien] Extract cover art from content: URLs. 
+- [alien] Pass packageName & AppName towards bridge whenever active
+- [alien] Set MPRIS player identity. 
+- [alien] Re-enable wallpaper service. 
+- [alien] reenable animations. 
+- [alien] Fix remote keyboard loading. 
+- [alien] Set user_setup_complete to true by default. 
+- [alien] account for native resolution in keyboard orientation. 
+- [alien] Set interface name for wifi LinkProperties. 
+- [alien] report initial orientation to keyboard service. 
+- [alien] fix calculation for hiding the virtual keyboard. 
+- [alien] Fix keyboard focus handling. 
+- [alien] Refine icon mask. 
+- [alien] Fix message notifications. 
+- [alien] Check Person and Message objects for large icon avatars. 
+- [alien] Resident and non-removable notifications. 
+- [alien] Use Sailfish style icon cutout for launcher icons. 
+- [alien] surfaceflinger: allow to disable dmabuf, 
+- [alien] makes sure compositor is set during initl. 
+- [alien] Add onModeChanged to IAlienAudioControlListener. 
+- [alien] Allow adding multiple alien audio control listeners. 
+- [alien] Filter Transport Category Media Notifications. 
+- [alien] Support notification action reply information. 
+- [alien] Update patches for android-security-10.0.0_r60. 
+- [alien] Further file and URL association fixes. 
+- [alien] Correct level for system call filter. 
+- [alien] Disable wifi and bluetooth battery stats. 
+- [alien] Don't complain about missing memtrack. 
+- [alien] Don't print Bad file descriptor errors. 
+- [alien] Remove error logging for non-error message. 
+- [init] Disable access to bpf stats. 
+- [alien] cherry pick missing android 11 dependency. 
+- [alien] add listener iface to app closed events from wl_manager. 
+- [alien] add some missing manifest entries. 
+- [alien] Add some missing symbols and cherry-picks from android 11. 
+- [alien] allow starting c2 vendor service if needed. 
+- [alien] allow starting graphics allocator vendor service if needed. 
+- [alien] reintroduce graphics patches, but prefer system graphics libraries over vendor implementations. 
+- [alien] Enable i915 minigbm driver by default, 
+- [alien] Disable SimSelectNotification. 
+- [alien] Add some missing libraries. 
+- [alien] use display sizes and dpi information from wayland. 
+- [alien] File and sharing optimizations. 
+- [alien] Make android.hardware.wifi feature common. 
+- [alien] Implement propagating cover URI & Bitmap to host from android. 
+- [alien] make sure Wi-Fi state is in sync with host/apkd. 
+- [alien] add service to store logcats. 
+- [alien] Update patches for android-security-10.0.0_r58. 
+- [alien] Reintroduce certain Go memory saving parameters. 
+- [alien] Add audio submix configuration and library. 
+- [alien] Add check for input text. 
+- [alien] Refactor build config. 
+- [alien] Remove Android Go build config. 
+- [alien] Support copying text also from other formats when possible. 
+- [alien] Fix mount points for odm. 
+- [alien] don't use tmpfs for odm. 
+- [alien] Add Shuffle,Repeat,Seek & PlayBackSpeed capabilities. 
+- [alien] Propogate Shuffle,Repeat & PlayBackSpeed status from android. 
+- [alien] Restore AppWidget service. 
+- [alien] Use proper PRODUCT_*# defines.
+- [alien] Reduce SystemUI memory usage. 
+- [alien] Replace title with label/caption for supporting action names for Sharing. 
+- [alien] disable wallpaper entirely to save some memory. 
+- [alien] run com.jolla.home and com.android.systemui in the same process. 
+- [alien] make isHighEndGfx configurable and enable by default. 
+- [alien] Never play tone for disconnected call. 
+- [alien] Use memfd instead of ashmem for audio buffers. 
+- [alien] URL scheme association and sharing tuning. 
+- [alien] Migrate to MediaSession/MediaController APIs. 
+- [alien] Stub implementation for MediaBrowserClient implementation
+- [alien] Honor properties when loading hardware modules. 
+- [alien] Install audio.primary.default to system instead of vendor. 
+- [alien] use debug.sf.wayland property instead of the ifdef for WAYLAND_DEBUG, 
+- [alien] x86: Build dummy audio.primary.default. 
+- [alien] Fix loading seccomp files. 
+- [alien] Fix loading media codec and seccomp files from host vendor. 
+- [alien] Move remaining libeffects libraries into system partition. 
+- [alien] Update aarch64 cpu variants. 
+- [alien] Add multiple send and browsable booleans to handler info. 
+- [alien] drop now unneeded patch for package installation. 
+- [alien] rename patch according to export patches script. 
+- [alien] Sign Android build. 
+- [alien] move back to gfx mapper 2.0 on apex swcodec namespace. 
+- [alien] Create handlers for mimetypes, URI schemes and domains. 
+- [alien] add retry for wl_display_connect, remove extra roundtrips
+- [alien] add specfile to build x86 device image. 
+- [alien] explicitly check for android_wlegl Wayland extension support. 
+- [alien] give dmabuf an init value on WindowManager constructor. 
+- [alien] Style cleanup.
+- [alien] Suppress app death notifications if other activities exist. 
+- [alien] disable gsid service
+- [alien] Disable gsid service. 
+- [alien] Fix using uninitialized variable. 
+- [alien] support dmabuf wayland extension if available. 
+- [alien] Fix handling of dhcp results. 
+- [alien] Fix third-party license view. 
+- [audio] Be less verbose. 
+- [alien] Style cleanup.
+- [notif] Return null icon if either dimension is less than 1. 
+- [alien] check json root node before accessing it 
+- [alien] Update radio entries in manifest.xml. 
+- [alien] Fix navigation bar behavior. 
+- [alien] Fix package installation problems. 
+- [alien] Improve remote keyboard handling. 
+- [alien] Update patches for android-security-10.0.0_r54. 
+- [alien] add gfx allocator, mapper and libgralloctypes to build
+- [alien] add graphics allocator and mapper v4.0
+- [alien] add libgralloctypes that do not rely on .aidl iface
+- [alien] add new gfx to apex linker and api file
+- [alien] core: cherrypick missing functions from android 11
+- [alien] get_enabled_tags and is_tag_enabled are now functions
+- [alien] hild: cherrypick missing functions from android 11
+- [alien] libhidl: cherrypick missing functions from android 11
+- [alien] netd: cherrypick missing functions from android 11
+- [alien] patches: move patch to correct location after rebase.
+- [alien] Support Android 11. 
+- [alien] move drm to system. 
+- [alien] Add channel to notification data. 
+- [alien] fix segfault on netd due to OOB read. 
+- [alien] Revert: Require alien meta package. 
+- [alien] Require alien meta package. 
+- [alien] Add contacts data callback. 
+- [alien] avoid starting camera provider through hwservicemanager when not needed. 
+- [alien] drop camera patch after bridging support was added. 
+- [alien] drop libhwbinder camera patch after bridging support was added. 
+- [alien] Allow automatic app rotation by default. 
+- [alien] Allow hot swapping an UICC Card. 
+- [alien] disable expected present warnings. 
+- [alien] reduce verbosity of inputflinger warnings. 
+- [alien] do not log/send android notifications about native/host calls. 
+- [alien] move back button to the center on all devices. 
+- [alien] Fix apply-patches.sh to work if patches are in top dir.
+- [alien] Refactor audio focus handling a bit.
+- [alien] Use PhoneStateListener to follow telephony state. 
+- [alien] Disable Clang undefinied behaviour sanitizer for libhevc. 
+- [alien] detect the top app properly to avoid window switching issues. 
+- [alien] fix networking. 
+- [alien] Use a proper uuid for sailfishos_storage in vold. 
+- [alien] Use an uuid for external storage and sailfishos_storage in ordre to make AAS happy. 
+- [alien] Exit the container cleanly instead of aborting. 
+- [alien] Use empty proxy host for fake APN. 
+- [alien] Do not set ro.hardware.gralloc in alien_x86 device. 
+- [alien] Fix SurfaceFlinger and media services crashes in QEMU. 
+- [alien] Set debug.sf.nobootanimation=1 in alien_x86 device. 
+- [alien] set security patch level to the correct version (r52). 
+- [alien] Update patches for android-security-10.0.0_r52. 
+- [alien] Fix stream type flagging. 
+- [alien] Install system build.prop separately. 
+- [alien] install gralloc/software rendering EGL libs to system. 
+- [alien] Stop passing the battery level to BatterySaver. 
+- [alien] Disable charging notifications. 
+- [alien] Disable notifications in SystemBar. 
+- [alien] make sure the tracker integration works properly. 
+- [alien] make the apply-patches.sh script use git by default if available. 
+- [alien] fix app id. 
+- [alien] Build SwiftShader OpenGL implementation on x86. 
+- [alien] Install MESA libs to system instead of vendor. 
+- [alien] Use minigbm gralloc on x86 and build mesa3d virgl driver. 
+- [alien] make sure 1px statusbar doesn't contain remnants of the UI. 
+- [alien] make sure debuggerd_handler doesn't fail us and makes sdcard die. 
+- [alien] rebase notification patch. 
+- [alien] set security patch level to the correct version (r47). 
+- [alien] Use getSmallIcon for notification. 
+- [alien] make sure sd-cards with space in the name can still be mounted. 
+- [alien] remove contacts app again and fix contacts properly. 
+- [alien] do not update oom adj without lock. 
+- [alien] make contacts appear again. 
+- [alien] fix app id and listen to activated signal. 
+- [alien] update radio devices in manifest. 
+- [alien] bridge power service. 
+- [alien] allow codec2 codecs to work. 
+- [alien] fix fake apn types. 
+- [alien] avoid a deadlock due to oom adj score settings. 
+- [alien] use a different way to get the top app to avoid a deadlock. 
+- [alien] Fix audio policy configuration. 
+- [alien] Use custom flags as functional flags in selectOutput(). 
+- [alien] Use default input metrics if none defined. 
+- [alien] drop patches for gralloc since they break on some platforms. 
+- [alien] add aliendalvik-system specific gbinder configuration. 
+- [alien] add full-index and no-signature to export patches script. 
+- [alien] Add Legal Information activity to Settings app. 
+- [alien] Add needed symlink for adb. 
+- [alien] add source tag for common include file. 
+- [alien] add support for 64 bit device configurations. 
+- [alien] AlienAudioControlService: Interface to control audio focus from alienaudioservice. 
+- [alien] Allow enabling adb using a property. 
+- [alien] allow /home/nemo mount to be disabled. 
+- [alien] allow loading graphics drivers from host_vendor. 
+- [alien] Avoid a failure when selinux is not enabled in the kernel. 
+- [alien] Avoid failure due to sdcardfs. 
+- [alien] avoid failure in first stage init if device nodes already exist. 
+- [alien] avoid selinux failure in framework servicemanager. 
+- [alien] bump package version. 
+- [alien] don't load hwcomposer libraries from host_vendor. 
+- [alien] fix a potential crash during package installation. 
+- [alien] fix binder transaction. 
+- [alien] Fix build failures due to removed repo. 
+- [alien] fix build failures. 
+- [alien] fix device configurations 
+- [alien] Fix device manifests. 
+- [alien] fix environment variables. 
+- [alien] fix graphics allocator configurations. 
+- [alien] fix hidl services. 
+- [alien] fix manifest service versions. 
+- [alien] Fix out target directory. 
+- [alien] fix selinux disablement in fwks base. 
+- [alien] fix service definitions. 
+- [alien] fix source1 location. 
+- [alien] fix vendor symlink. 
+- [alien] make host_hwbinder usage configurable. 
+- [alien] make sure camera is properly used. 
+- [alien] make sure the currect supplicant iface version is used. 
+- [alien] move alien modules to system.img. 
+- [alien] Properly handle orientation. 
+- [alien] rebase patches and fix submodule location. 
+- [alien] rebase patches for android 10. 
+- [alien] remove android.hardware.boot from manifest. 
+- [alien] remove extra submodule. 
+- [alien] Update 64 bit configurations. 
+- [alien] update device configurations. 
+- [contacts] Allow contact insertion by accounts and sync adaptors. 
+- [alien] Fix a build error due to the last changes. 
+- [alien] add android.hardware.graphics.common@1.2 and android.hardware.graphics.mapper@3.0 for compatibility. 
+- [alien] add getOrCreateCachedBinder and registerAsServiceInternal for compatibility. 
+- [alien] Fix a crash when notifying about surface deletion. 
+- [alien] prevent whatsapp from creating multiple windows. 
+- [alien] notify of surface deletion when no activities are present anymore. 
+- [alien] suspend applications based on cover state, not keyboard focus. 
+- [alien] Fix keyboard rotation handling. 
+- [alien] don't give android layers it's own window. 
+- [alien] fix patch format. 
+- [alien] fix yet another issue with selinux in hwservicemanager. 
+- [alien] fix clipboard handling. 
+- [alien] don't give the permission dialog it's own window. 
+- [alien] don't crash if READ_EXTERNAL_STORAGE permission is granted. 
+- [alien] fix reading files from sailfishos_storage. 
+- [alien] avoid leaking file descriptors. 
+- [alien] disable notification display inside alien apps. 
+- [alien] fix an issue where instagram would create two windows. 
+- [alien] Rebase patches to reflect new infra. 
+- [alien] Use --zero-commit when exporting patches. 
+- [alien] fix an issue with window handling if multiple layers are present. 
+- [alien] Add extra projects as submodules. 
+- [alien] Add scripts to export patches. 
+- [alien] call setDisplaySize only when the size actually has changed. 
+- [alien] Disable filesystem trim. 
+- [alien] don't ask for which sms/data sim to use. 
+- [alien] Fix and issue with selinux. 
+- [alien] Fix another issue with selinux and make sure to use "on property" properly. 
+- [alien] Fix github submodule.
+- [alien] Fix git submodules to point new bitbucket group.
+- [alien] fix sdcard handling. 
+- [alien] Load alien implementations before vendor implementations. 
+- [alien] rebase patches for android 9. 
+- [alien] reconfigure input devices if display size changes, set display size only once
+- [alien] reconfigure the input devices if the display size changes. 
+- [alien] remove submodules which are now provided by android 9 itself. 
+- [alien] Update device and vendor trees for android 9. 
+- [alien] Use https for github submodule.
+- [notif] Add large icon, named actions and subtext to notifications. 
+- [alien] switch to memfd from ashmem. 
+- [alien] start services only after hwservicemanager is ready. 
+- [alien-aliendalvik-system] Fix submodule URLs for local checkouts. 
+- [alien-aliendalvik-system] Move AlienAudioService to vndbinder interface. 
+- [alien-aliendalvik-system] Shift audio stream types. 
+- [alien] switch to upstream libxkbcommon, wayland and libffi. 
+- [alien] Fix codec handling. 
+- [alien] Update device configurations. 
+- [alien] rebase patches part 3. 
+- [alien] rebase patches part 4. 
+- [alien] update copyright headers. 
+- [alien] rebase patches part 2. 
+- [audio] Playback timing tunings. 
+- [audio] Use shared memory for recording. 
+- [alien] Allow access to sailfishos_storage and sdcards properly. 
+- [alien] revert back to default ANDROID_DNS_MODE. 
+- [alien] update package filenames. 
+- [alien] rebase patches. 
+- [alien] update device configurations. 
+- [alien] add support for multiple users. 
+- [alien] Switch all instances of alien using USER_OWNER to USER_CURRENT. 
+- [alien] Fix an issue with packageinstaller creating a seperate window when it should be shown over an app. 
+- [alien] avoid SimDialogActivity to be shown for a split second. 
+- [alien] don't unecessarily store thumbnails for performance and memory improvements. 
+- [aliendalvik-system] Make sure vendor manifest is proper. 
+- [aliendalvik-system] update device configurations. 
+- [notif] Add notif category null check. 
+- [alien] split aliendalvik into two repos. 
+- [alien] mount sys ro. 
+- [notif] Don't drop group summary notifications from the 'call' category. Fixes JB
+- [notif] Don't drop group summary notifications from the 'call' category. 
+- [alien] hide keyboard if it loses focus in order to allow whatsapp showing it's attachment option. 
+- [alien] make sure the back button behaves properly when an app is launched from another. 
+- [alien] support spaces in AlienVolume names. 
+- [alien] fix empty window due to background surface. 
+- [alien] fix use after free. 
+- [alien] avoid empty window due to DimLayerController. 
+- [alien] avoid black frames when starting an app and don't render frames from one app in another. 
+- [alien] only delay window hiding if the keyboard is actually shown. 
+- [alien] do window handling based on package name instead of uid. 
+- [alien] add getRawServiceInternal, getBnConstructorMap and getBsConstructorMap for more compatibility. 
+- [alien] add some libion functions to be compatible with more HALs. 
+- [alien] Use cortex-a53 cpu variant in arm build. 
+- [alien] rebase patches for r73. 
+- [alien] wait for acquire fence to avoid out of order compositing. 
+- [alien] initialize metaState to make hw keyboards work. 
+- [alien] make sure apps start fast. 
+- [alien] fix an issue where telegram invite links would fail. 
+- [alien] fix an issue where whatsapp wouldn't be able to render after starting a call. 
+- [alien] fix a regression where apps would end up in the wrong orientation on the homescreen. 
+- [alien] fix performance issues when swiping out of an application and avoid producing black covers. 
+- [alien] add support for sdcards. 
+- [alien] add support for writing to sdcards. 
+- [alien] rename /home/nemo mount to sailfishos_storage. 
+- [alien] remove now unneeded bindfs dependency. 
+- [alien] mount nemo storage as an AlienVolume(PublicVolume). 
+- [alien] make sure we don't end up with windows which are active but not being rendered to. 
+- [alien] Add support for "Add to contacts". 
+- [alien] add support for editing contact after adding. 
+- [alien] don't mess with suspend states in a wrong way to fix whatsapp calls. 
+- [alien] make sure thumbnails are properly shown after whatsapp fixes. 
+- [alien] reenable some animations which broke whatsapp video playback. 
+- [alien] rebase patches to avoid build failure. 
+- [alien] improve sqlite performance. 
+- [alien] read host battery capacity from system property. 
+- [alien] add support for touch based focus handling. 
+- [alien] add support for xdg_shell. 
+- [alien] make sure patches are applied in the correct order. 
+- [alien] update device configs for codecs. 
+- [alien] avoid writing to system logs. 
+- [alien] fix a crash with getCallingContext. 
+- [alien] fix ALOGD format to solve compilation issues. 
+- [alien] generate client protocols in a more standard way. 
+- [alien] start camera provider only if camera is supported. 
+- [alien] allow starting android.hardware.media.omx inside alien. 
+- [graphics] add support for /vendor/lib. 
+- [alien_audio] Implement set_mode, set_parameters, and out_get_latency. 
+- [alien] Disable logging throttling for our streams. 
+- [device] Update audio policy configuration. 
+- [alien] Implement incremental initial contact sync. 
+- [alien] switch to decimal keyboard if TYPE_NUMBER_FLAG_DECIMAL is specified. 
+- [keyboard] Still send Enter in the case of IME_FLAG_NO_ENTER_ACTION. Regression 
+- [alien] flush display after requesting minimized/maximized state. 
+- [alien] wait for apps to have a window before allowing to start the next app. 
+- [alien] don't allow home window activity to interfere with app launching. 
+- [alien] don't ask for which data sim to use. 
+- [keyboard] Trigger Editor Action when Enter is pressed, rather than just send the keycode. 
+- [alien] scale too big app icons down to more reasonable sizes to avoid binder failures. 
+- [alien] Verify that string exists before using it. 
+- [alien] make surfacecomposer and mce transactions oneway to avoid deadlocks. 
+- [apps] Drop Contacts app again, as we cover what that was doing. 
+- [alien] new simplified mobile data patch v3. 
+- [alien] avoid going back and forward between apps in a loop. 
+- [alien] Revert: Exclude unwelcome default apps from the build. 
+- [alien] disable bootanimation. 
+- [alien] use sdcardfs for android_storage, move nemo mount out of sdcardfs due to permission problems. make sure files can still be accessed from android side. 
+- [alien] return dummy state in get_mic_mute. 
+- [alien] Start aliendalvik after home is mounted. 
+- [alien] Add USB permissions. 
+- [alien] Also make sure touch events are reset if a window is moved to the background, not only when closed. 
+- [alien] Enable OpenGLES AEP support. 
+- [alien] Enable vulkan support. 
+- [alien] support email attachments. 
+- [alien] Remove unnecessary bluetooth files. 
+- [alien] prepare for android-8.1.0_r65. 
+- [alien] Allow automatically starting adbd via a property. 
+- [alien] Prevent crash if screen brightness ramp animator does not exist. 
+- [alien] Avoid a lockup in SurfaceFlinger. 
+- [alien] Allow acquiring android.hardware.memtrack service. 
+- [alien] Don't allow registering android.hidl.allocator. 
+- [alien] Add adbd service. 
+- [alien] Add dummy usb permission. 
+- [alien] Allow development settings page to work in alien. 
+- [alien] Allow the development settings page to work. 
+- [alien] Load alien properties before anything else. 
+- [alien] Make adb run-as functional. 
+- [alien] add extra device configs. 
+- [alien] allow disabling EGL_EXT_pixel_format_float via a property. 
+- [alien] allow disabling sailfishos networking via a property. 
+- [alien] allow hwservicemanager to be started from inside alien when the host doesn't have a hwservicemanager. 
+- [alien] allow sfos networking to be enabled/disabled via a system property. 
+- [alien] allow surfaceflinger to work without the alien_manager wayland extension. 
+- [alien] fix wayland compilation on multiarch systems. 
+- [alien] set wake/suspend mode via keyboard focus handler. 
+- [alien] support mouse input better. 
+- [alien] use ANDROID_DNS_MODE local also for other zygote variants. 
+- [alien] allow using the android.hardware.power service. 
+- [alien] Requires alienaudioservice 0.4
+- [alien] Use shared buffer for audio data transfer. 
+- [oom] Override process OOM adjustment with values set by lipstick. 
+- [alien] hide virtual keyboard if keyboard focus is lost. 
+- [alien] reset touch input when a window is being minimized/a surface is being lost. 
+- [alien] Exclude unwelcome default apps from the build. 
+- [nativeapp] Add NativeContacts app to create vcards to add to Sailfish. 
+- [memory] Restrict background and startup execution. 
+- [oom] Disable lmkd Android Go configuration, so it can use the in-kernel interface. 
+- [alien] make graphics related device specific dev nodes optional. 
+- [alien] move libc configuration to the bsp_config file. 
+- [alien] wake up alien if an app is being made visible. 
+- [alien] build android.hardware.audio.effect@2.0-impl. 
+- [alien] move audio modules to system.img. 
+- [alien] Move audio modules to system.img. Use ANDROID_DNS_MODE=local. Read device properties from nemo user. Build android.hardware.audio.effect@2.0-impl. Support using libc from the host. 
+- [alien] read device properties from nemo user. 
+- [alien] support using libc from the host. 
+- [alien] use ANDROID_DNS_MODE=local. 
+- [alien] Fix a race condition in the alien wifi service. 
+- [alien] only change the surface state to fullscreen if the window has been raised. 
+- [alien] raise windows when they are being made visible not just when they are launched. 
+- [alien] More package replacement permission changes. 
+- [alien] Write all values from the /alien/ dconf context to the generated system properties on startup. 
+- [config] Avoid using su while fetching config properties. 
+- [perm] Add signature spoofing permission. 
+- [alien] also pass the notification category to the native side. 
+- [alien] copy vibrate, sound and led properties from the group notification if necessary, add a fallback for the appIcon. 
+- [alien] allow the wifi state machine to work with the injected wifi state from sfos. 
+- [alien] always launch apps into the FULLSCREEN_WORKSPACE_STACK_ID stack. 
+- [alien] avoid a deadlock in DcController. 
+- [alien] make media transactions oneway. 
+- [alien] make sure app start requests do not get lost due to window close functionality. 
+- [alien] make sure windows are always raised when requested, make sure windows which are being rendered to are always on top. 
+- [alien] do not return null pointers if there is no wifi network. 
+- [alien] remove clearUnusedTasks functionality, close apps via removeTask. 
+- [alien] remove clearUnusedTasks functionality, close apps via removeTask, raise windows properly, notify about dead surfaces properly, fix getAppIdAppLaunchedFrom. 
+- [alien] Switch to apkd8. 
+- [alien] allow the settings app to work properly (not create multiple windows or block others etc.). 
+- [alien] avoid a crash in the settings app. 
+- [alien] make sure suspend when home is being shown, fix suspend consistency checks. 
+- [alien] never discard frames that belong to apps, make sure we don't display black frames. 
+- [alien] do not limit binder threads in surfaceflinger. 
+- [alien] don't turn off the screen on shutdown. 
+- [alien] fine tune .gitignore to not ignore too much. 
+- [alien] implement display blank prevention support. 
+- [alien] Revert: avoid using modules from the host by packaging them into system.img. 
+- [alien] avoid using modules from the host by packaging them into system.img. 
+- [alien] call wl_display_flush to avoid the app not responding dialog. 
+- [alien] support clipboard from alien to the host. 
+- [alien] do not kill applications for now to allow background services to work. 
+- [alien] only show windows when they are explicitly being raised. 
+- [alien] add additional files/paths to .gitignore. 
+- [alien] support app rotation. 
+- [alien] drop some unnecessary debugging information from the logs. 
+- [alien] raise windows properly when launched from within android. 
+- [alien] send a signal to SurfaceFlinger if an app is launched from within android. 
+- [alien] if onStartInputView is called with restarting clear the old text. 
+- [notif] Don't forward group or media notifications, and add extra passed parameters. 
+- [alien] make sure we detect the old storage location properly. 
+- [alien] remove droid-src symlink workaround. 
+- [alien] add ofono-alien-binder-plugin dependency. 
+- [alien] new simplified mobile data patch. 
+- [alien] remove some unecessary logging in surfaceflinger/hwcomposer. 
+- [alien] add a fileobserver to alien for receiving notifications from tracker. 
+- [alien] make sure alien notifies systemd properly. 
+- [alien] add a function to figure out if this app is being launched as part of another one. 
+- [alien] Add alien.applications and alien.contacts to whitelist. 
+- [alien] add alien.connectivity to the package whitelist. 
+- [alien] add AlienFakeHome to alien build. 
+- [alien] add alien.native_call to package whitelist. 
+- [alien] add alien.notifications to package whitelist. 
+- [alien] add android.hardware.telephony.gsm.xml permission file.
+- [alien] add android makefiles for wayland. 
+- [alien] add and use AlienConnectivityService for reporting the wifi status. 
+- [alien] add a simple alien binder service which can be used to start apps and query some information about them. 
+- [alien] Add audio policy configuration.
+- [alien] add a WaylandPollThread to not need to wake up the VSyncThread every 10ms. 
+- [alien] add a whitelist for hwbinder services from sfos. 
+- [alien] Add basic binder output.
+- [alien] add binder call to surfaceflinger for suspend handling. 
+- [alien] add getPrettyName and getPackageName to alien service for app covers handling. 
+- [alien] Add GPS permissions. 
+- [alien] add missing media patches. 
+- [alien] Add missing permission files. 
+- [alien] add native_call interface. 
+- [alien] add native call packages to the build. 
+- [alien] add patches for obs build. 
+- [alien] add predefined config.h for android build. 
+- [alien] add repo build symlinks. 
+- [alien] Add sensor support. 
+- [alien] add some information to the wifi info and add support for getActiveNetworkInfo. 
+- [alien] add Source0 for obs builds. 
+- [alien] add wayland, libffi and libxkbcommon dependencies. 
+- [alien] allocate a seperate window for the settings app. 
+- [alien] Allow android.hardware.drm to be acquired and registered. 
+- [alien] Allow android.hardware.gnss to be registered on the alien slot. 
+- [alien] allow android.hardware.radio to be registered on the alien slot. 
+- [alien] Allow android.hardware.sensors to be registered on the alien slot. 
+- [alien] Allow android.hardware.vibrator to be registered on the alien slot. 
+- [alien] allow app to be moved to foreground even if another one is already active. 
+- [alien] allow dns requests to work. 
+- [alien] allow loading egl blobs from odm folder. 
+- [alien] allow loading extra properties from /vendor/alien.prop which can be autogenerated. 
+- [alien] apply patches in the correct order. 
+- [alien] avoid building userdata.img. 
+- [alien] build systemimage only. 
+- [alien] change libinput into .mk in order to fix dependencies. 
+- [alien] Change protocol versions to work with both current and new wayland. 
+- [alien] change the open-settings button into an allow button for allowing untrusted apps. 
+- [alien] close windows if not needed (e.g. home moved to front and app closed). 
+- [alien] convert Android.mk to Android.bp for android 8 based build. 
+- [alien] copy system.img and configs from the correct path. 
+- [alien] define target cpu for obs builds. 
+- [alien] disable access to some hwbinder services from java. 
+- [alien] disable access to some sfos hwbinder services. 
+- [alien] disable dhcp requests. 
+- [alien] Disable filesystem trim. 
+- [alien] Disable hardware keyboards. 
+- [alien] disable hwbinder service which is already started on the host. 
+- [alien] disable hwservicemanager for now (host version will be used until we need to have our own on android < 7 devices). 
+- [alien] disable jack properly. 
+- [alien] disable last restorecon in installd. 
+- [alien] disable lockscreen which would interfere with sfos/alien window handling. 
+- [alien] disable media.omx service. 
+- [alien] disable messing with iptables from android. 
+- [alien] disable messing with rndis. 
+- [alien] disable messing with the network from alien. 
+- [alien] Disable NetdHwService. 
+- [alien] Disable NetlinkManager. 
+- [alien] disable RescueParty factory reset. 
+- [alien] disable rild in alien. 
+- [alien] disable SELinux for now. 
+- [alien] disable SELinux in installd for now. 
+- [alien] disable SELinux in service_manager for now. 
+- [alien] disable selinux properly. 
+- [alien] disable some animations for app transitions. 
+- [alien] disable touch input to the status bar. 
+- [alien] disable uevent handling for power management in healthd. This is handled by the host. 
+- [alien] disable usage of hw modules from odm (only gpu blobs are allowed) and make sure we don't wait for hwservicemanager since it is already started on the host. 
+- [alien] display statusbar in black. 
+- [alien] do not allow changing the wifi interface state. 
+- [alien] do not enable SMALLER_FONT_FOOTPRINT/MINIMAL_FONT_FOOTPRINT for more font support.
+- [alien] do not override the mobile data information with the wifi information if there is no wifi network. 
+- [alien] do not pad the squashfs filesystem since that would increase the size unecessarily and causes build errors as well. 
+- [alien] do not read host fstab, because alien should not mount any host partitions itself. 
+- [alien] do not show crash or app not responding dialogs. 
+- [alien] don't allocate a window for the keyboard. 
+- [alien] don't fail if SELinux is disabled. 
+- [alien] don't open settings when requesting to install packages from an untrusted source. 
+- [alien] Enable ethernet for LXC networking. 
+- [alien] fix condition timeout for not using too much cpu when reading input. 
+- [alien] Fix default keyboard setting. 
+- [alien] fix fullscreening windows. 
+- [alien] fix memory leak in thumbnail handling. JB44656
+- [alien] fix sf binder calls. 
+- [alien] force audio volume to 1.f, it is controlled by the host. 
+- [alien] forward additional parameters for the mpris player. 
+- [alien] GRALLOC_USAGE_HW_FB would allocate buffers on the framebuffer and cause graphical glitches - make sure it is never used. 
+- [alien] handle app transitions better, to allow aptoide to install apks, and handle rendering on top of other apps better. 
+- [alien] hide the recents and home buttons. 
+- [alien] Hide virtual keyboard when suspending or changing app. 
+- [alien] if a frame doesn't have an associated window do not immediately minimize all windows since it might be a temporary animation frame. 
+- [alien] if an activity stack is moved to the background see if it needs to be removed. 
+- [alien] Implement AlienContacts service. 
+- [alien] implement app switching and (un)suspend handling. 
+- [alien] Implement basic input stream support.
+- [alien] implement getAllPackages and installPackage in IAlienService. 
+- [alien] Implement native contact support. 
+- [alien] Implement sync-on-start in AlienContacts. 
+- [alien] implement wayland support and input handling. 
+- [alien] import AlienFakeHome from old aliendalvik with obsolete things removed. 
+- [alien] import AlienMediaControlService from the old aliendalvik. 
+- [alien] import AlienNativeApp from old aliendalvik. 
+- [alien] import vendor and device repos. 
+- [alien] improve app handling a bit by removing the need for task id storing during suspend. 
+- [alien] Improve package name query when launching apps. 
+- [alien] Initial content - AlienRemoteKeyboard from myriad. 
+- [alien] Initial dhs packaging. 
+- [alien] initial dummy alien keymaster module (based on android
+- [alien] initial dummy audio module. 
+- [alien] initial hwcomposer module. 
+- [alien] in order to enable lxc.net.0.type = none we need to remove these unused features completely. 
+- [alien] install apps as owner user, system is reserved for privileged processes. 
+- [alien] load modules with alien in it's name first and do not load default modules at all. 
+- [alien] make init work in an lxc container (disable SELinux, fix mounts, ...). JB3032
+- [alien] make mobile data connections work by aligning the state machine. 
+- [alien] make statusbar 1px as in old alien. 
+- [alien] make sure apkd can call setListener. 
+- [alien] make sure app transitions don't cause a suspend in alien. 
+- [alien] make sure device and vendor are extracted properly on obs. 
+- [alien] make sure generated (from host) persist properties are loaded after we have read the local persist properties from /data. 
+- [alien] make sure hardware services are disabled, in case some get pulled in due to mandatory dependencies. 
+- [alien] make sure home is moved to foreground when an app is minimized, even if no other app is launched. 
+- [alien] make sure no module is defined twice. 
+- [alien] make sure system.img is installed properly. 
+- [alien] make sure that in this version of alien we do not render the 1px statusbar at all. 
+- [alien] make sure the language settings from the generated properties are not overridden. 
+- [alien] make sure the window map is not accessed from multiple threads at the same time. 
+- [alien] make sure windows stay minimized by moving the request to minimize after the thumbail render step. 
+- [alien] move back button to the middle. 
+- [alien] move keymaster to /system/lib/hw, because /vendor/lib/hw needs to be from the host. 
+- [alien] NetworkPolicyManagerService is not used, but it needs to notify system_server that it's not doing anything, otherwise it delays for 30s. 
+- [alien] prepare for fake home and remove PowerManagerService wakelocks. 
+- [alien] prepare for fake home and simplify/fix state handling. 
+- [alien] properly extract extra sources. 
+- [alien] pushed_while_minimized doesn't solve anything, only causes problems. 
+- [alien] query dhcp info from alien connectivity service. 
+- [alien] Re-enable Alien Keyboard Service. 
+- [alien] Relax default keyboard checks to make RemoteKeyboard default. 
+- [alien] Remove default vibrator implementation. 
+- [alien] remove homescreen and make sure apps start fullscreen, make sure apps can be maximized properly and make sure they don't pop up unexpectedly. 
+- [alien] remove most of the app specific code which has been obsoleted. 
+- [alien] remove Requires(pre) from audio, nativecall and keyboard services. 
+- [alien] remove some prebuilts which are unneeded. 
+- [alien] remove some uneeded binaries from the build and image. 
+- [alien] Remove some unneeded packages from Alien build. 
+- [alien] remove unused rendering on top of other app code, implement app closing, fix window hiding. 
+- [alien] remove unused tasks, and fix suspending rendering, implement app closing. 
+- [alien] remove WaylandPollThread and poll events on the main thread using the MessageQueue Looper. 
+- [alien] report failure on zygote restart. 
+- [alien] REVERTME: disable calls to IAlienService for now since that is not implemented yet. 
+- [alien] rework the mobile data connection patch. do not ask for pin/puk. 
+- [alien] set network available state before passing NetworkInfo to the apps. 
+- [alien] set PATH and other variables in mkshrc to get a shell faster. 
+- [alien] showing thumbnails here and hiding windows doesn't help, it just breaks app relaunching, it was useful in the beginning but now it isn't. 
+- [alien] start surfaceflinger service as part of system_server to be able to use input in inputflinger. 
+- [alien] support launching one app from another. 
+- [alien] support loading blobs from the odm directory. 
+- [alien] support odm and host_vendor dirs in aliendalvik. 
+- [alien] support reading media configuration files from host_vendor. 
+- [alien] SurfaceFlinger wayland support: use more consistent function names and variables. 
+- [alien] switch to alien.native_call.IAlienNativeCall package. 
+- [alien] update alien configs. 
+- [alien] update configs and scripts to the latest versions. 
+- [alien] update patches for android-8.1.0_r53. 
+- [alien] Use alien.applications.IAlienService in surfaceflinger. 
+- [alien] use alien connectivity service to get info about the wifi network. 
+- [alien] use a substitute uid for the settings app, otherwise it will appear as a system process. 
+- [alien] use get_package_name instead of get_class_name to get a better idea about whether this is a homescreen frame. 
+- [alien] use package name for the window name to make sure lipstick knows the correct cover. Use pretty name for the window title. 
+- [alien] with recent changes forcing fullscreen is not necessary and causes issues. 
+- [alien] write 1 to /data/alien_boot_completed when alien is ready for operation. 
+### broadcom-bluetooth-bluez5
+- Binaries added : broadcom-bluetooth-bluez5 - 1.0.5-1.2.4.jolla
+- [bluez5] Add a package to build against bluez5. Fixes MER#2069
+- [broadcom-bluetooth] Fix bluez5 spec and remove bluez4 spec. 
+- [broadcom-bluetooth] Add latest upstream code. 
+- [broadcom-bluetooth] Repository has been archived so removing submodule. 
+- [broadcom-bluetooth] Apply Intel Edison --enable-fork patch
+- [broadcom-bluetooth] 
+- [packaging] Initial commit based on upstream
+### libapkd
+- Binaries added : libapkd-devel - 1.0.0-1.1.2.jolla, libapkd - 1.0.0-1.1.2.jolla
+- [libapkd] Initial implementation. 
+### patterns-app-support
+- Binaries added : patterns-app-support-devel - 1.0.0-1.1.1.jolla
+- [patterns] Initial content. 
+### pulseaudio-modules-droid-jb2q
+- Binaries added : pulseaudio-modules-droid-jb2q - 14.2.100-1.4.1.jolla, pulseaudio-modules-droid-jb2q-devel - 14.2.100-1.4.1.jolla, pulseaudio-modules-droid-jb2q-common - 14.2.100-1.4.1.jolla
+- [common] Add quirk for swapping headphone and router device. 
+- [sink] Add quirk for remixing stereo to mono. 
+- [parser] Better support for includes in xml. 
+- [build] Add meson support. 
+- [packaging] Replace old modules. 
+- [module] Add jb2q branding. 
+- [packaging] Rename to pulseaudio-modules-droid-jb2q. 
+- [common] Handle profiles with no supported channels
+- [common] New API for calling HAL functions. 
+- [common] Use more generic stream property for audio source. 
+- [common] Add generic converter for fancy audio sources.
+- [common] Allow custom audio source based on property. 
+- [common] Fix segfault with adaptations which assume empty adress is not NULL. 
+- [source] Use source-output proplist when reconfiguring input stream. 
+- [common] Add quirk speaker_before_voice. 
+- [common] Add quirk standby_set_route. 
+- [common] Set BT_SCO parameter for Bluetooth routes. 
+- [sink] Avoid segfault when voice call starts with deferred volume. 
+- [card] Parse quirks while loading hw module. 
+- [common] Add quirk audio_cal_wait. 
+- [common] Refactor quirks parsing. 
+- [sink] Add option to prewrite silence always. 
+- [sink] Apply channel average volume to stream. 
+- [sink] Enable deferred volume for hw volume control. 
+- [sink] Get hw module with new function in stand alone mode.
+- [source] Get hw module with new function in stand alone mode.
+- [modules] Add missing include. 
+- [packaging] Support new droid-devel header location. 
+- [parser-xml] Support module includes in configuration files. 
+- [packaging] Fix for 64bit. 
+- [card] Park profiles correctly when switching between virtual profiles. 
+- [common] Always set earpiece routing after enabling voice call mode. 
+- [common] Add quirks for FAST and DEEP_BUFFER sinks. 
+- [common] Revert to default values if input stream reconfigure fails.
+- [parser-xml] Store profiles correctly for mix and device ports.
+- [source] Add a workaround for fm-radio loopback. 
+- [source] Reconfigure stream instead of freeing and re-creating.
+- [common] Add missing configuration file search locations. 
+- [keepalive] Module relocated to its own package. 
+- [license] Fix license in spec. 
+- [modules] Fix compatibility with PulseAudio 13.0. 
+- [common] Always use only one input. 
+- [modules-droid] Source is reconfigured dynamically based on input. 
+- [card] Add voicemmode 1 and 2 virtual profiles. 
+- [source] Use format specific silence byte when needed.
+- [xml-parser] Behave better with badly formatted input.
+- [modules-droid] Update sink/source state correctly with PulseAudio 11.1. 
+- [modules-droid] Update to support PulseAudio 12.2. 
+- [sbj] Add missing define to fix voicecall recording. 
+- [xml-parser] Be less strict in parsing module attributes. 
+- [card] Free config after use.
+- [card] Use common pattern of getting hw module.
+- [common] Add function to duplicate configuration.
+- [common] Add quirk unload_call_exit. 
+- [common] Be less verbose about missing config.
+- [common] Duplicate config for hw module.
+- [keepalive] Update state properly.
+- [README] Add description for unload_call_exit quirk.
+- [sink] Free config after use.
+- [source] Free config after use.
+- [common] Make sure QCOM_HARDWARE is defined when needed. 
+- [build] Install common headers and pc file properly.
+- [common] Check for primary flag instead of string. 
+- [common] Check for SPEAKER_DRC_ENABLED_TAG directly. 
+- [common] Combine output and input configurations.
+- [common] Move public headers to include/droid
+- [common] Remove sllist implementation to own header.
+- [common] Remove unused config functions.
+- [common] Use global include with public headers.
+- [config] Refactor hw module creation.
+- [config] Reorder configuration file search locations. 
+- [modules] Update includes.
+- [packaging] Remove obsolete header and pc file installs.
+- [README] Add note about xml parsing.
+- [xml-parser] More generic channel mask direction workaround. 
+- [common] Use uint32_t for input flags. 
+- [parser-xml] No need to idfef input flags.
+- [sbj] Add empty input flag struct.
+- [build] Add workaround for SBJ HAL headers. 
+- [conversion] Disable input flags for API 1 and 2. 
+- [sbj] Add missing include.
+- [sbj] Disable xml explicitly.
+- [build] Add test for expat. 
+- [build] Use expat.
+- [common] Split configuration parsing to multiple files.
+- [config] Allocate config in parsing functions.
+- [conversion] Add workarounds for format and device parsing. 
+- [legacy-parser] Allocate config in parser.
+- [module-droid-sink] Include conversion header.
+- [modules] Update contact information.
+- [packaging] Build requires expat. 
+- [sink] Include conversion header.
+- [source] Include conversion header.
+- [xml-parser] Add workaround for certain config error. 
+- [xml-parser] Drop include parsing for now.
+- [xml-parser] New parser for xml style configuration. 
+- [xml-parser] Placeholder for xml parser implementation.
+- [build] Use portable module lib path. 
+- [card] Apply specific parameters when realcall quirk is enabled. MER#1908
+- [common] Add quirk realcall. MER#1908
+- [common] Make pa_droid_quirk inline function.
+- [README] Add description for realcall quirk.
+- [common] Add quirk output_make_writable. 
+- [README] Add description for output_make_writable quirk.
+- [sink] Implement output_make_writable quirk. 
+- [card] Update to PulseAudio 11.1. 
+- [common] Decrease verbosity of failing input resume.
+- [source] Post silence if resuming input stream fails.
+- [card] Update record profile correctly with merged input. 
+- [common] Get mapping based on device.
+- [packaging] Bump version.
+- [sink] Use pa_memblock_acquire_chunk.
+- [packaging] Bump version. 
+- [common] Add new quirk no_hw_volume. 
+- [common] Set input stream to standby before closing. 
+- [README] Add description for no_hw_volume quirk.
+- [sink] Allow disabling hw volume control with quirk. 
+- [build] Have micro version for pc version.
+- [build] Link libraries in right order.
+- [card] Add module argument for controlling input merging.
+- [card] Attach remaining moving sink-inputs to primary sink if one exists.
+- [card] Set off profile as available.
+- [card] Use default profile with primary module by default.
+- [common] Add function to get stream latency in PulseAudio default type.
+- [common] Add option to merge input streams in default profile.
+- [common] Add quirk unload_no_close.
+- [common] Enable input_atoi quirk by default with modern adaptations.
+- [common] Refactor stream data to separate structures.
+- [common] Replace combine profile with default profile.
+- [common] Use droid mapping for input stream creation.
+- [keepalive] Fix assert when closing module immediately after startup.
+- [keepalive] Use MCE given keepalive period.
+- [modules] Flag sinks and sources with type defining properties. 
+- [modules] Open multiple sinks and sources by default. 
+- [README] Add section explaining quirks.
+- [README] Update description of droid modules.
+- [sink] Apply routing changes always immediately. Fixes MER#1832
+- [sink] Default to not mixing output routes.
+- [sink] Set created sink as data for output stream.
+- [sink] Use pa_droid_stream_get_latency() from common.
+- [sink] Use updated stream structures.
+- [source] Mark source proplist with droid api string.
+- [source] Pass droid mapping when opening input stream.
+- [source] Set created source as data for input stream.
+- [source] Use input name from mapping when loaded from droid card.
+- [source] Use updated stream structures.
+- [build] Check for voice uplink and downlink enums. 
+- [common] Use correct input mapping with voicecall record. 
+- [sink] Set volume control callbacks properly with hw volume.
+- [sink] Use hooks for voice volume control. 
+- [common] Fix output channel conversion. 
+- [common] Have correct type for function.
+- [sink] Fix segfault when running standalone sink.
+- [card] Remove voicecall-record implementation. 
+- [common] Add AUDIO_SOURCE_FM_TUNER to input source table.
+- [common] Log active quirks only once.
+- [common] Refactor buffer round up.
+- [common] Refactor stream opening operations. 
+- [common] Refactor stream route set function.
+- [sink] Add inline function for writing.
+- [source] Add inline function for reading.
+- [source] Close input stream by default. 
+- [source] Move standby call to stream open.
+- [source] Remove extra routing control functions. 
+- [source] Remove voicecall source code. 
+- [card] Add module arg for setting quirks. 
+- [common] Use dynamic quirks in addition to compile time setup. 
+- [build] use android-config include during enum check
+- [README] Update readme about new header defines.
+- [util] Audio api major version bitwise operation fix
+- [util] define QCOM_HARDWARE earlier
+- [util] Fix last ifdefs to have_enum checks
+- [util] Various fixes to regressions. Fixes MER#1752
+- [util] Extend config parser. Fixes MER#1744
+- [build] Check for a couple more enums.
+- [modules] Fix some warnings.
+- [util] Allow dynamic module/output/input count. Fixes MER#1741
+- [util-audio] Conditional IN_ALL_USB.
+- [util] Don't use IN_VOICE_CALL_MONO if it's not defined.
+- [build] Check for surround channel enum.
+- [util] Fix warning.
+- [util] Relocate VSID define.
+- [util] Test for surround channel availability. 
+- [util] Check for all input flags separately. 
+- [build] Add macro for testing droid header contents.
+- [build] Check for various enums in droid headers.
+- [util] Lower logging level of unknown values.
+- [util] Replace version specific conversion headers. 
+- [util] Use API version from droid headers.
+- [util] Use mako set_parameters hack also on moto_msm8960_jbbl based devices.
+- [util] Add all profiles with combined profile as well.
+- [util] Correct naming of arguments.
+- [util] Implement combined profile properly. 
+- [util] Make sure audio_config struct is cleared before use.
+- [util] Set initial device to current active for new streams.
+- [source] Only refresh routing if forced. 
+- [util] Fix build with HAL v1 and v2 devices. 
+- [card] Create normal source even if voicecall source creation was unsuccessful.
+- [card] Create specific record source for qcom 5.1 devices. 
+- [util] Use mono channel mask with qcom 5.1 devices. 
+- [packaging] Bump minor version.
+- [sink] Updates for PulseAudio 8.0. MER#1507
+- [source] Updates for PulseAudio 8.0. MER#1507
+- [util] Updates for PulseAudio 8.0. MER#1507
+- [mako] Fixed non-voicecall inputs. Fixes NEMO#873.
+- [sink] Clear extra devices when doing voicecall routings. Fixes MER#1544
+- [util-42] Remove mako hacks as ATOI workaround works as well.
+- [card] Enable module argument for sink silence on resume. MER#1520
+- [sink] Add module argument to write silence on resume. Fixes MER#1520
+- [sink] Slave sink follows primary sink port changes. MER#1520
+- [source] Use suspend function from common.
+- [util-44] Added mako inputs. Fixes NEMO#873.
+- [util-44] Pulseaudio output fix for mako by sledges. Contributes to NEMO#873.
+- [util] Add function to suspend streams. MER#1520
+- [util] Function to check if sink is droid sink. MER#1520
+- [README] Add notion about common-devel.
+- [sink] Don't try to control voice volume with non-primary streams.
+- [util-44] Make microphone and other sources work in Xiaomi Redmi 1S (armani).
+- [util-51] Add define for secondary mic. Fixes MER#1445
+- [util] Add check for primary stream.
+- [build] Provide device name as string.
+- [build] Workaround for relinking phase.
+- [card] Add possibility to combine outputs to profile. MER#1419
+- [card] Use new util functions for module ops.
+- [sink] List output flags in sink proplist.
+- [sink] Name sink with output name instead of module name. MER#1419
+- [sink] Parse flags for stand-alone sink.
+- [sink] Use new util functions for stream ops. MER#1419
+- [source] Use new util functions for stream ops. MER#1419
+- [util-42] Correct default device for mako.
+- [util] Add functions for using combined profiles. MER#1419
+- [util] Add new functions for stream operations. MER#1419
+- [util,card] Store mappings in idxsets. MER#1419
+- [util] Log device name.
+- [util] Use mako set_parameters hack also on other 2011 Xperias.
+- [card] Better support for voicecall record. Fixes MER#1390
+- [sink] Try shared object before opening hw module.
+- [source] Allow forcing port change. MER#1390
+- [util] Add default input port to source mapping. MER#1390
+- [util] Update headers with default input device.
+- [build] Build libdroid-util in separate directory.
+- [build] Generate pc file for libdroid-util. MER#1377
+- [packaging] Split normal packaging to common and devel. MER#1377
+- [packaging] Split sbj packaging to common and devel.
+- [util] Move util code for separating as common.
+- [card] Add missing general module arguments.
+- [card] Fix typo in log message.
+- [card] Implement VSID setting when changing to voicecall.
+- [card] Remove unused define.
+- [sink] Add missing modargs to module.
+- [sink] Add overriding modargs for sink.
+- [sink] Fix typo in log message.
+- [source] Add missing modargs to module.
+- [source] Add overriding modargs for source.
+- [source] Fix typo in log message.
+- [source] Pass device as integer if needed. Fixes MER#1343
+- [util-51] Enable VSID for 5.1 with qcom bsp. Fixes MER#1356
+- [util] Include android-config.h.
+- [util-51] Add missing formats.
+- [util-51] Add qcom specific entries.
+- [util] Correct comparison for default audio source. Fixes MER#1286
+- [util] Use default audio source if nothing specific is defined.
+- [sink] Remove mention of buffer count.
+- [sink] Set initial latency correctly.
+- [sink] Sleep after stream writing blocks. Fixes MER#1212
+- [util] Make attached devices parsing more tolerant of unknown devices. Fixes MER#1265
+- [README] Update supported versions.
+- [util] Support parsing of dynamic formats.
+- [util] Support parsing of dynamic sample rate.
+- [sink] Preliminary 5.1 support. Contributes to MER#1188
+- [source] Preliminary 5.1 support. Contributes to MER#1188
+- [util-4x] Add or rename HAL version define.
+- [util-4x] Rename output flag conversion table.
+- [util-51] Add headers for 5.1. Contributes to MER#1188
+- [util] Audio HAL version 3.
+- [util] Parse input flags with Audio HAL v3.
+- [util] Update flag parsing to distinguish input and output flags.
+- [source] Fix recording on iyokan. Fixes MER#1080
+- [source] Set input stream to standby before starting the loop.
+- [source] Use mako set_parameters hack also on iyokan.
+- [util-44] Add additional string conversion table entries.
+- [build] Use dynamic versioning same way as PulseAudio.
+- [packaging] Build depends on PulseAudio major.minor version.
+- [packaging] Bump version and update build for dynamic versioning.
+- [packaging] Sbj build depends on PulseAudio major.minor version.
+- [sink,source] Use updated pa_rtpoll_run(). 
+- [util-41qc] Fix fancy audio source name typo.
+- [util-42] Fix fancy audio source name typo.
+- [util-44] Add missing device fancy names.
+- [util-44] Add missing fancy names. Fixes MER#921
+- [util-44] Fix fancy audio source name typo.
+- [build] Bump version.
+- [card] Return status from set_parameters_cb. 
+- [util] Have common_set_parameters_cb return int.
+- [build] Bump version.
+- [sink] Check for errors when changing routing.
+- [source] Check for errors when changing routing.
+- [source] Set active audio source to source proplist.
+- [util-41qc] Add fancy audio source names.
+- [util-41qc] Update fancy input communication name.
+- [util-42] Add fancy audio source names.
+- [util-44] Add fancy audio source names.
+- [util-44] Default audio routes for hammerhead input devices. 
+- [util] Add parser for fancy audio source names.
+- [sink,source] Suspend streams before closing. 
+- [sink] Suspend stream before closing.
+- [source] Suspend stream before closing.
+- [sink] Use correct argument name for devices.
+- [source] Apply input source during routing if source is defined. 
+- [source] Use correct argument name for devices.
+- [util] Add default audio source table to util headers.
+- [util] Add function to get default audio source for input device.
+- [changelog] Workaround promotions. 
+- [util] Allow unknown entries in some cases in config parser.
+- [card] Remove redundant includes to fix the order of #defines
+- [util] Add missing Qualcomm specific entries for support of msm7x30 based devices
+- [sink] Use default output device defined in config as default.
+- [util] Preliminary support for custom properties. 
+- [util] Refactor section parsing and recognize custom configs.
+- [util] use correct macro notation for ARM
+- [util] AUDIO_DEVICE_OUT_PROXY is only in Qualcomm devices
+- [util] tmp hack: treat ARM devices as QCOM with exceptions
+- [source] Set and keep IN_VOICE_CALL for voicecall source.
+- [git] Use single git tree for the pulseaudio-modules-droid work. 
+- [README] Add basic explanation of usage.
+- [sink] Do routing if sink is in SUSPENDED state.
+- [sink] Fix route muting calculations.
+- [util] Log HAL version used to build the modules.
+- [packaging] Add spec file for SBJ (Jolla).
+- [packaging] Fix SBJ spec.
+- [util-44] process DRC tags only for Android >=4.4 versions
+- [util-44] Fix header for Hammerhead.
+- [build] Autogenerate DROID_DEVICE_FOO for droid device.
+- [card] Add availability to virtual profile and deny activating unavailable profile.
+- [card] Add support for virtual profile extensions and voicecall record.
+- [card] Refactor virtual profiles.
+- [module-droid-source] Use updated droid-source.
+- [source] Add support for voicecall source.
+- [source] Allow usage of module argument input_devices.
+- [source] Use AUDIO_IN_VOICE_CALL_MONO only with QC hardware.
+- [util] Add hint when checking android version.
+- [util] Define QCOM_HARDWARE for Hammerhead (Nexus 5).
+- [util] Define QCOM_HARDWARE for Sbj (Jolla).
+- [util] Refactor HAL includes to per-droid-version headers.
+- [util] Remove couple unused variables.
+- [util] Remove static from headers.
+- [headers] Added droid-util headers for 4.4
+- [util] Add AUDIO_DEVICE_OUT_PROXY in output device conversion table
+- [util] Do not fail while parsing speaker_drc_enabled entry in audio_policy.conf
+- [util] Recognise AUDIO_CHANNEL_IN_FRONT_BACK
+- [util] Recognise AUDIO_DEVICE_OUT_PROXY
+- [util] Recognise AUDIO_OUTPUT_FLAG_COMPRESS_OFFLOAD, AUDIO_OUTPUT_FLAG_NON_BLOCKING
+- [util] speaker_drc_enabled is only from HAL v2
+- [sink] Track stream extra devices more carefully.
+- [build] Bump version.
+- [card] Add modargs for updated voice volume control in sink.
+- [droid-util] Keep shared object name in hw module struct.
+- [droid-util] Use new device port data.
+- [modules] Remove pa_bool_t and replace it with bool.
+- [modules] Update for new pa_hashmap_new_full etc.
+- [rpm] Update for PulseAudio 5.0.
+- [sink] Change voice call volume control implementation.
+- [sink] Fix droid parameter to handle multiple property changes properly.
+- [util] Set device port priority.
+- [sink] Log device hex when calling set_parameters.
+- [source] Log device hex when calling set_parameters.
+- [util] Don't add AUDIO_DEVICE_BIT_IN for mako.
+- [build] Detect i9305 build.
+- [droid-source] Use IN_BUILTIN_MIC as default input device.
+- [packaging] Add i9305 device to precheckin.sh
+- [packaging] Update all spec files.
+- [packaging] Update URL in spec.in
+- [sink] Use define when setting routing.
+- [source] On i9305 set input routing without AUDIO_DEVICE_BIT_IN.
+- [source] Use define when setting routing.
+- [util] Fix HALv2 input port generation.
+- [card] Add IN_COMMUNICATION virtual profile. 
+- [util-41qc] Add missing output port names. 
+- [util] Add asserts to port name lookups.
+- [droid-modules] Add possibility to set additional HAL parameters. 
+- [modules] Transfer config struct to hw_module instead of copying. 
+- [keepalive] Fix segfault on module load failure. 
+- [droid-modules] Allow different buffer lengths for sink or source.
+- [droid-modules] Set proper description for sink and source. 
+- [sink] Add possibility to mute during routing change. 
+- [card] Add ringtone virtual profile.
+- [keepalive] Fix segfault if failing to get D-Bus bus. 
+- [util] Add combo conversion field to 4.2 header.
+- [util] Generate combo port for ihf+headphone. 
+- [modules] Add parking profiles for mode changes.
+- [modules] Protect hw module access with mutex.
+- [modules] Use shared hw module struct.
+- [sink] Update routing based on sink-input properties. 
+- [keepalive] Keepalive module sends cpu keepalive requests while streams are active. 
+- [packaging] Update build requirements.
+- [util] Fix compiler warnings.
+- [build] Update PulseAudio version. 
+- [modules] Add possibility to disable source routing during voice call.
+- [modules] Changes for PulseAudio 4.0. 
+- [modules] Set routing always.
+- [packaging] Update packaging for PulseAudio 4.0. 
+- [modules] Implement mute control in droid-source. 
+- [packaging] Add packaging for sbj.
+- [build] Parameter to forward device type.
+- [modules] Add mako specific hack. 
+- [modules] Use voice volume control while in call. 
+- [packaging] Pass device type to configure.
+- [modules] Initial version of droid-{card,sink,source}.
+- [packaging] Add base packaging.
+- [packaging] Add packaging for mako and boston.
+- [packaging] Fix BuildRequires.
+### python-zstd
+- Binaries added : python3-zstd - 1.5.0.2+git1-1.1.1.jolla
+- [python-zstd] Initial packaging for python-ztd. 
+### python3-babel
+- Binaries added : python3-babel - 2.10.3+git1-1.1.2.jolla, babel - 2.10.3+git1-1.1.2.jolla
+- [python3-babel] Package babel. 
+### python3-pytz
+- Binaries added : python3-pytz - 2022.1+git1-1.1.3.jolla
+- [python3-pytz] Package pytz. 
+### sailfish-locale
+- Binaries added : sailfish-locale - 1.0-1.1.8.jolla
+- [sailfish-locale] Import from settings-system. 
+### sailfish-log-viewer
+- Binaries added : sailfish-log-viewer-ofono - 1.0.22-1.2.1.jolla
+- [logger] Fixed linking with libglibutil
+- [sailfish-log-viewer] Build ofono logger as sailfish-log-viewer-ofono
+- [sailfish-log-viewer] Build ofono logger as sailfish-log-viewer-ofono. 
+- [sailfish-log-viewer] Fixed translation issues. 
+- [sailfish-log-viewer] Link with libglibutil. 
+- [sailfish-log-viewer] Link with libqofonoext. 
+- [settings] Shorten app name pattern
+### sailfish-upgrade-ui
+- Binaries added : sailfish-upgrade-ui-resources-logo-z2.5 - 0.1.16-1.2.2.jolla, sailfish-upgrade-ui-resources-z2.5 - 0.1.16-1.2.2.jolla
+- [systemd] Move upgrade ui service to update-pre target. 
+- [systemd] Adapt to new systemd 238 version. 
+- [systemd] Fix journalctl path. 
+- [aarch64] Use macros for unitdir. 
+- [upgrade-ui] Use a macro to generate the per-scale resource packages. 
+- [upgrade-ui] Fix build with systemd v233. 
+- [upgrade-ui] Drop locale.conf environment file. 
+- [ssu] Switch repos.ini path to new location. 
+- [compositor] Remove unneeded include statements. 
+- [upgrade-ui] Implement real compositor D-Bus service. 
+- [upgrade-ui] Move logo into a separate package. 
+- [upgrade-ui] Attempt to terminate compositor D-Bus service. 
+- [upgrade-ui] Home partition should be mounted before starting upgrade-ui. 
+- [upgrade-ui] Use brand from ssu for distro id. 
+- [upgrade-ui] Fix license and url. 
+- [upgrade-ui] Fix license, url, and drop groups from subpackages. 
+- [upgrade-ui] Adapt to API changes in sailfish-minui. 
+- [sailfish-upgrade-ui] Use new update info file path. 
+- [upgradeui] Correctly resolve SBJ devices and don't disable feature repos. 
+- [sailfish-upgrade] Fix logging of the upgrade process. 
+- [sailfish-upgrade] Only show progress for the installing step. 
+- [os-upgrade] Add a minimal dependency OS upgrade UI. 
+---------------------------

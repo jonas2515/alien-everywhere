@@ -1,0 +1,65 @@
+From 962fedd7b3dc2abdb2c988c6aa040b187d001995 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Jonas=20Dre=C3=9Fler?= <verdre@v0yd.nl>
+Date: Wed, 20 Dec 2023 09:44:50 +0100
+Subject: [PATCH 2/5] window: force geometry scale for alien windows to 1
+
+---
+ src/core/window.c                 |  2 ++
+ src/wayland/meta-window-wayland.c | 11 +++++++++++
+ src/wayland/meta-window-wayland.h |  2 ++
+ 3 files changed, 15 insertions(+)
+
+diff --git a/src/core/window.c b/src/core/window.c
+index 15d35864f..3ee584e46 100644
+--- a/src/core/window.c
++++ b/src/core/window.c
+@@ -7333,6 +7333,8 @@ meta_window_set_wm_class (MetaWindow *window,
+   window->res_name = g_strdup (wm_instance);
+   window->res_class = g_strdup (wm_class);
+ 
++  meta_window_wayland_update_geometry_scale (window);
++
+   g_object_notify_by_pspec (G_OBJECT (window), obj_props[PROP_WM_CLASS]);
+ }
+ 
+diff --git a/src/wayland/meta-window-wayland.c b/src/wayland/meta-window-wayland.c
+index f022fcf8d..b8d686f7d 100644
+--- a/src/wayland/meta-window-wayland.c
++++ b/src/wayland/meta-window-wayland.c
+@@ -1088,9 +1088,20 @@ meta_window_wayland_get_geometry_scale (MetaWindow *window)
+   if (!window->monitor)
+     return 1;
+ 
++  if (g_str_has_prefix (window->res_class, "alien_"))
++    return 1;
++
+   return get_window_geometry_scale_for_logical_monitor (window->monitor);
+ }
+ 
++void
++meta_window_wayland_update_geometry_scale (MetaWindow *window)
++{
++  MetaWindowWayland *wl_window = META_WINDOW_WAYLAND (window);
++
++  set_geometry_scale_for_window (wl_window, meta_window_wayland_get_geometry_scale (window));
++}
++
+ static void
+ calculate_position (MetaWaylandWindowConfiguration *configuration,
+                     MtkRectangle                   *geometry,
+diff --git a/src/wayland/meta-window-wayland.h b/src/wayland/meta-window-wayland.h
+index a02224e55..d23d9ea90 100644
+--- a/src/wayland/meta-window-wayland.h
++++ b/src/wayland/meta-window-wayland.h
+@@ -43,6 +43,8 @@ void meta_window_wayland_finish_move_resize (MetaWindow              *window,
+ 
+ int meta_window_wayland_get_geometry_scale (MetaWindow *window);
+ 
++void meta_window_wayland_update_geometry_scale (MetaWindow *window);
++
+ void meta_window_place_with_placement_rule (MetaWindow        *window,
+                                             MetaPlacementRule *placement_rule);
+ 
+-- 
+2.43.0
+

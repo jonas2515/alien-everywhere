@@ -1,0 +1,13 @@
+[Unit]
+Description=Aliendalvik container
+Requires=systemd-user-sessions.service network.target lxc-net.service aliendalvik-config.service
+BindsTo=aliendalvik-user-dependencies.service
+After=systemd-user-sessions.service network.target lxc-net.service aliendalvik-config.service
+
+[Service]
+Type=notify
+ExecStart=/usr/bin/aliendalvik
+ExecStop=/usr/bin/lxc-attach --name=aliendalvik --lxcpath=/tmp/appsupport -- /system/bin/reboot -p
+
+[Install]
+WantedBy=graphical.target

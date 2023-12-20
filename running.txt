@@ -1,0 +1,110 @@
+- create overlayfs for system img (as root)
+    mkdir /tmp/from
+    mkdir /tmp/to
+    mkdir /tmp/work
+    mount /opt/alien/system.img /tmp/from
+    # if for some reason mount didn't work, go with this (and skip the mount -t overlay)
+      unsquashfs /opt/alien/system.img
+      mv squashfs-root/ /opt/alien/rootfs
+
+    mount -t overlay -o lowerdir=/tmp/from,upperdir=/tmp/to,workdir=/tmp/work overlay /opt/alien/rootfs
+
+- edit init file in rootfs to comment out memfd override
+    nano /opt/alien/rootfs/system/etc/init/hw/init.rc
+    # comment out this line
+      setprop sys.use_memfd false
+
+- chmod device files (as root)
+    # TODO: if there's no binder devices, either create using binder_linux
+      modprobe binder_linux devices=
+    # or binderfs module (and link whatever devices are available)
+      mkdir /dev/binderfs
+      mount -t binder binder /dev/binderfs
+      ln -s /dev/binderfs/anbox-binder /dev/binder
+      ln -s /dev/binderfs/anbox-hwbinder /dev/hwbinder
+      ln -s /dev/binderfs/anbox-vndbinder /dev/vndbinder
+    chmod 777 /dev/binder
+    chmod 777 /dev/hwbinder
+    chmod 777 /dev/vndbinder
+    chmod 777 /dev/dri/card0
+
+- chmod wayland socket
+    chown YOUR_USER:appsupport-wayland /run/user/YOUR_UID/wayland-0
+    chmod 775 /run/user/YOUR_UID/wayland-0
+
+- setup the waydroid vendor blob with another overlayfs (as root)
+    mkdir /tmp/from2
+    mkdir /tmp/to2
+    mkdir /tmp/work2
+    mkdir /tmp/waydroid-vendor
+    mount waydroid/vendor.img /tmp/from2
+    mount -t overlay -o lowerdir=/tmp/from2,upperdir=/tmp/to2,workdir=/tmp/work2 overlay /tmp/waydroid-vendor
+    # remove gatekeeper, that seems to be the only HAL that's loaded (and it also crashes)
+    rm /tmp/waydroid-vendor/lib64/hw/android.hardware.gatekeeper@1.0-impl.so
+    rm /tmp/waydroid-vendor/lib/hw/android.hardware.gatekeeper@1.0-impl.so
+
+- replace webview with waydroid one
+    mkdir /tmp/waydroid-system
+    mount waydroid/system.img /tmp/waydroid-system
+    cp /tmp/waydroid-system/system/product/app/webview/webview.apk /opt/alien/rootfs/system/app/webview/webview.apk
+
+- optional: copy overlay for gesture navigation from waydroid into alien (as root)
+    cp -r /tmp/waydroid-system/system/product/overlay /opt/alien/rootfs/product/
+
+- set data dir in LXC config
+    nano /tmp/appsupport/aliendalvik/10-bsp_config
+    # set __DATA_DIR__ to /opt/alien/data
+
+- set UID in LXC config
+    nano /tmp/appsupport/aliendalvik/10-bsp_config
+    # set __UID__ to your UID in this line
+    lxc.mount.entry = /run/user/__UID__/wayland-0 run/display/wayland-0 none bind,nodev,nosuid,create=file 0 0
+
+    nano /tmp/appsupport/aliendalvik/20-privilege_config
+    # set __UID__ to your UID (this maps your UID to UID 100000 inside the container)
+    lxc.idmap = u 100000 __UID__ 1
+    lxc.idmap = g 100000 __UID__ 1
+
+- setup networking for container
+    /usr/lib/lxc/lxc-net start
+
+- now check if lxc wants to startup
+    /usr/bin/lxc-start --rcfile=/tmp/appsupport/aliendalvik/config --lxcpath=/tmp/appsupport/aliendalvik -n aliendalvik -F
+    # shouldn't error out immediately, but should crash after like 30 seconds
+    # there should be stuff in /opt/alien/data now, and logs in /opt/alien/data/logcats/log
+    # if you got to this point, you're very close :)
+
+- setup at least 7 ssh sessions on the device to run all the daemons
+
+- get connman shim up and running (as root)
+    gjs shimming/connman/mock.js
+
+- get maliit shim up and running (as user)
+    WAYLAND_DEBUG=1 python shimming/maliit/maliit-shim.py
+
+- start the systemd service that runs the container (as root)
+    systemctl start aliendalvik
+
+- right after that start integration daemons (as user) 
+    alienaudioservice  -d /dev/binder -n /dev/vndbinder -w /dev/hwbinder -p pulseaudio --verbose
+    QT_DEBUG_PLUGINS=1 QTCONTACTS_MANAGER_OVERRIDE=folks QT_LOGGING_RULES="*.debug=true" apkd-bridge
+    QT_LOGGING_RULES="*.debug=true" apkd-bridge-user
+    QDBUS_DEBUG=1 alienkeyboardservice
+
+- things are running now, android settings app should appear on your app grid
+    if it doesn't, but you can see it in .local/share/applications/, relogin for shell to pick it up
+
+- can now install fdroid via (as user)
+    wget https://f-droid.org/F-Droid.apk
+    apkd-install F-Droid.apk
+
+- optional: run commands inside the android container from alien-post-startup.sh script
+
+- optional: use gesture navigation in android to have swipe-back gesture
+    # go into container and disable -> enable the overlay
+    lxc-attach --name=aliendalvik --lxcpath=/tmp/appsupport -- /system/bin/sh
+    cmd overlay disable com.android.internal.systemui.navbar.gestural
+    cmd overlay enable com.android.internal.systemui.navbar.gestural
+
+notes:
+ - when apps don't draw after startup, touch the screen to trigger the app to start drawing

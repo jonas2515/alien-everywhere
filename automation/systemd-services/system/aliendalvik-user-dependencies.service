@@ -1,0 +1,12 @@
+[Unit]
+Description=Aliendalvik user dependencies starter
+Requires=systemd-user-sessions.service aliendalvik-config.service
+BindsTo=aliendalvik.service
+After=systemd-user-sessions.service aliendalvik-config.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/bin/aliendalvik-user-dependencies start
+# ExecStopPost because we also want to run on failure of aliendalvik.service
+ExecStopPost=/usr/bin/aliendalvik-user-dependencies stop

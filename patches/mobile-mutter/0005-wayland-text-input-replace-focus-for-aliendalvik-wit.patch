@@ -1,0 +1,200 @@
+From 02767d9d81bb167f7621189bcf3044910ab4daee Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Jonas=20Dre=C3=9Fler?= <verdre@v0yd.nl>
+Date: Wed, 20 Dec 2023 09:50:57 +0100
+Subject: [PATCH 5/5] wayland/text-input: replace focus for aliendalvik with
+ another client
+
+While there is wl_text_input v3 support in Aliendalvik, the implementation
+is so broken it's impossible to use, even with workarounds in the
+compositor.
+
+Instead we don't use wl_text_input for Aliendalvik clients at all (we force
+disable the protocol in libwayland) and trick aliendalvik into using the
+dbus based protocol that's used on Sailfish OS. We shim this dbus
+based protocol in the alienkeyboard-maliit-shim. This process also acts as
+a wayland client for wl_text_input, and acts as a drop-in for wl_text_input
+of the aliendalvik surface.
+
+This patch implements a really crude "magic string"-based solution for
+wayland clients to take over wl_text_input handling for the current surface.
+
+This is a really bad hack, and it's quite insecure (every client knowing the
+magic string can take over handling, not just the shimming script).
+---
+ src/wayland/meta-wayland-text-input.c | 93 +++++++++++++++++++++++----
+ 1 file changed, 81 insertions(+), 12 deletions(-)
+
+diff --git a/src/wayland/meta-wayland-text-input.c b/src/wayland/meta-wayland-text-input.c
+index 8d67e29be..0b55e2c25 100644
+--- a/src/wayland/meta-wayland-text-input.c
++++ b/src/wayland/meta-wayland-text-input.c
+@@ -81,6 +81,9 @@ struct _MetaWaylandTextInput
+   } preedit;
+ 
+   guint done_idle_id;
++
++ struct wl_resource *magic_resource;
++
+ };
+ 
+ struct _MetaWaylandTextInputFocus
+@@ -306,6 +309,12 @@ meta_wayland_text_input_focus_new (MetaWaylandTextInput *text_input)
+ 
+   return CLUTTER_INPUT_FOCUS (focus);
+ }
++static void
++move_resources (struct wl_list *destination, struct wl_list *source)
++{
++  wl_list_insert_list (destination, source);
++  wl_list_init (source);
++}
+ 
+ static void
+ text_input_handle_focus_surface_destroy (struct wl_listener *listener,
+@@ -313,17 +322,54 @@ text_input_handle_focus_surface_destroy (struct wl_listener *listener,
+ {
+   MetaWaylandTextInput *text_input = wl_container_of (listener, text_input,
+ 						      surface_listener);
++g_warning("MUTTER: text input on focus surface destroy");
+ 
+-  meta_wayland_text_input_set_focus (text_input, NULL);
+-}
++  text_input->pending_state = META_WAYLAND_PENDING_STATE_NONE;
++
++  if (text_input->surface)
++    {
++      if (!wl_list_empty (&text_input->focus_resource_list))
++        {
++          ClutterInputFocus *focus = text_input->input_focus;
++          ClutterInputMethod *input_method;
++          struct wl_resource *resource;
++
++          if (clutter_input_focus_is_focused (focus))
++            {
++              input_method = clutter_backend_get_input_method (clutter_get_default_backend ());
++              clutter_input_focus_reset (focus);
++              meta_wayland_text_input_focus_flush_done (focus);
++              clutter_input_method_focus_out (input_method);
++            }
++
++          wl_resource_for_each (resource, &text_input->focus_resource_list)
++            {
++              if (resource != text_input->magic_resource)
++                {
++                  zwp_text_input_v3_send_leave (resource,
++                                                text_input->surface->resource);
++                }
++            }
++
++          move_resources (&text_input->resource_list,
++                          &text_input->focus_resource_list);
++
++          if (text_input->magic_resource)
++            {
++              g_warning("INPUT: tehre's a magic resource though,readding");
++              wl_list_remove (wl_resource_get_link (text_input->magic_resource));
++              wl_list_insert (&text_input->focus_resource_list, wl_resource_get_link (text_input->magic_resource));
++            }
++
++        }
++
++      wl_list_remove (&text_input->surface_listener.link);
++      text_input->surface = NULL;
++    }
+ 
+-static void
+-move_resources (struct wl_list *destination, struct wl_list *source)
+-{
+-  wl_list_insert_list (destination, source);
+-  wl_list_init (source);
+ }
+ 
++
+ static void
+ move_resources_for_client (struct wl_list *destination,
+ 			   struct wl_list *source,
+@@ -367,10 +413,12 @@ meta_wayland_text_input_set_focus (MetaWaylandTextInput *text_input,
+ 
+           wl_resource_for_each (resource, &text_input->focus_resource_list)
+             {
+-g_warning("MUTTER sending text input leave to surface %p res %p", text_input->surface, text_input->surface->resource);
+-if (text_input->surface->resource)
+-              zwp_text_input_v3_send_leave (resource,
+-                                            text_input->surface->resource);
++              g_warning("MUTTER sending text input leave to surface %p res %p", text_input->surface, text_input->surface->resource);
++              if (text_input->surface->resource && resource != text_input->magic_resource)
++                {
++                  zwp_text_input_v3_send_leave (resource,
++                                                text_input->surface->resource);
++                }
+             }
+ 
+           move_resources (&text_input->resource_list,
+@@ -400,6 +448,7 @@ if (text_input->surface->resource)
+ 
+           wl_resource_for_each (resource, &text_input->focus_resource_list)
+             {
++if (resource != text_input->magic_resource)
+               zwp_text_input_v3_send_enter (resource, surface->resource);
+             }
+         }
+@@ -413,6 +462,12 @@ text_input_destructor (struct wl_resource *resource)
+ 
+   g_hash_table_remove (text_input->resource_serials, resource);
+   wl_list_remove (wl_resource_get_link (resource));
++
++  if (text_input->magic_resource == resource)
++    {
++      g_warning("INPUT: The magic resource got destroyed, unsettng");
++      text_input->magic_resource = NULL;
++    }
+ }
+ 
+ static void
+@@ -429,6 +484,11 @@ client_matches_focus (MetaWaylandTextInput *text_input,
+   if (!text_input->surface)
+     return FALSE;
+ 
++  if (text_input->magic_resource &&
++      client == wl_resource_get_client (text_input->magic_resource))
++    return TRUE;
++
++
+   return client == wl_resource_get_client (text_input->surface->resource);
+ }
+ 
+@@ -467,6 +527,14 @@ text_input_set_surrounding_text (struct wl_client   *client,
+ {
+   MetaWaylandTextInput *text_input = wl_resource_get_user_data (resource);
+ 
++  if (g_strcmp0 (text, "magictext") == 0)
++    {
++      g_warning("INPUT GOT THE MAGIC TEXT, inserting us into focus list");
++      text_input->magic_resource = resource;
++      wl_list_remove (wl_resource_get_link (text_input->magic_resource));
++      wl_list_insert (&text_input->focus_resource_list, wl_resource_get_link (text_input->magic_resource));
++    }
++
+   if (!client_matches_focus (text_input, client))
+     return;
+ 
+@@ -717,6 +785,7 @@ meta_wayland_text_input_new (MetaWaylandSeat *seat)
+ void
+ meta_wayland_text_input_destroy (MetaWaylandTextInput *text_input)
+ {
++g_warning("MUTTER text input itself destroy, setting to NULL");
+   meta_wayland_text_input_set_focus (text_input, NULL);
+   g_object_unref (text_input->input_focus);
+   g_hash_table_destroy (text_input->resource_serials);
+@@ -746,7 +815,7 @@ meta_wayland_text_input_create_new_resource (MetaWaylandTextInput *text_input,
+     {
+       wl_list_insert (&text_input->focus_resource_list,
+                       wl_resource_get_link (text_input_resource));
+-
++if (text_input_resource != text_input->magic_resource)
+       zwp_text_input_v3_send_enter (text_input_resource,
+                                     text_input->surface->resource);
+     }
+-- 
+2.43.0
+

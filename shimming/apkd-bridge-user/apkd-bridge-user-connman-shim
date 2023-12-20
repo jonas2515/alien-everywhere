@@ -1,0 +1,352 @@
+#!/usr/bin/gjs
+
+const { GLib, Gio } = imports.gi;
+
+const managerInterfaceXml = `
+<node>
+    <interface name="net.connman.Manager">
+        <method name="GetProperties">
+            <arg name="properties" type="a{sv}" direction="out"/>
+        </method>
+        <method name="GetTechnologies">
+            <arg name="technologies" type="a(oa{sv})" direction="out"/>
+        </method>
+        <method name="GetServices">
+            <arg name="services" type="a(oa{sv})" direction="out"/>
+        </method>
+        <method name="RegisterAgent">
+            <arg name="path" type="o" direction="in"/>
+        </method>
+        <method name="UnregisterAgent">
+            <arg name="path" type="o" direction="in"/>
+        </method>
+        <signal name="PropertyChanged">
+            <arg name="name" type="s"/>
+            <arg name="value" type="v"/>
+        </signal>
+        <signal name="TechnologyAdded">
+            <arg name="path" type="o"/>
+            <arg name="properties" type="a{sv}"/>
+        </signal>
+        <signal name="TechnologyRemoved">
+            <arg name="path" type="o"/>
+        </signal>
+        <signal name="ServicesChanged">
+            <arg name="changed" type="a(oa{sv})"/>
+            <arg name="removed" type="ao"/>
+        </signal>
+        <signal name="PeersChanged">
+            <arg name="changed" type="a(oa{sv})"/>
+            <arg name="removed" type="ao"/>
+        </signal>
+    </interface>
+</node>`;
+
+const technologyInterfaceXml = `
+<node>
+    <interface name="net.connman.Technology">
+        <method name="GetProperties">
+            <arg name="properties" type="a{sv}" direction="out"/>
+            <annotation name="org.freedesktop.DBus.Deprecated" value="true"/>
+        </method>
+        <method name="SetProperty">
+            <arg name="name" type="s" direction="in"/>
+            <arg name="value" type="v" direction="in"/>
+        </method>
+        <method name="Scan"></method>
+        <signal name="PropertyChanged">
+            <arg name="name" type="s"/>
+            <arg name="value" type="v"/>
+        </signal>
+    </interface>
+</node>`;
+
+//        <method name="CheckAccess">
+//            <arg name="access" type="u" direction="out"/>
+//            <arg name="access2" type="u" direction="out"/>
+//            <arg name="access3" type="u" direction="out"/>
+//        </method>
+
+const serviceInterfaceXml = `
+<node>
+    <interface name="net.connman.Service">
+        <method name="GetProperties">
+            <arg name="properties" type="a{sv}" direction="out"/>
+            <annotation name="org.freedesktop.DBus.Deprecated" value="true"/>
+        </method>
+
+        <method name="Remove"></method>
+        <method name="MoveBefore">
+            <arg name="service" type="o" direction="in"/>
+        </method>
+        <method name="MoveAfter">
+            <arg name="service" type="o" direction="in"/>
+        </method>
+        <method name="ResetCounters"></method>
+        <signal name="PropertyChanged">
+            <arg name="name" type="s"/>
+            <arg name="value" type="v"/>
+        </signal>
+    </interface>
+</node>`;
+
+class ManagerImpl {
+    GetProperties() {
+        return {
+            'State': GLib.Variant.new_string('online'),
+            'OfflineMode': GLib.Variant.new_boolean(false),
+            'SessionMode': GLib.Variant.new_boolean(false),
+            'InputRequestTimeout': GLib.Variant.new_uint32(300000),
+            'Ipv4StatusUrl': GLib.Variant.new_string('http://ipv4.jolla.com/return_204'),
+            'Ipv6StatusUrl': GLib.Variant.new_string('http://ipv6.jolla.com/return_204'),
+        };
+    }
+
+    GetTechnologies() {
+        return new GLib.Variant('(a(oa{sv}))', [[
+            [
+                '/net/connman/technology/wifi',
+                {
+                    'Name': GLib.Variant.new_string('WiFi'),
+                    'Type': GLib.Variant.new_string('wifi'),
+                    'Powered': GLib.Variant.new_boolean(true),
+                    'Connected': GLib.Variant.new_boolean(true),
+                    'Tethering': GLib.Variant.new_boolean(false),
+                },
+                '/net/connman/technology/cellular',
+                {
+                    'Name': GLib.Variant.new_string('Cellular'),
+                    'Type': GLib.Variant.new_string('cellular'),
+                    'Powered': GLib.Variant.new_boolean(true),
+                    'Connected': GLib.Variant.new_boolean(true),
+                    'Tethering': GLib.Variant.new_boolean(false),
+                },
+                /* no idea if bluetooth and gps are actually checked by alien */
+                '/net/connman/technology/bluetooth',
+                {
+                    'Name': GLib.Variant.new_string('Bluetooth'),
+                    'Type': GLib.Variant.new_string('bluetooth'),
+                    'Powered': GLib.Variant.new_boolean(false),
+                    'Connected': GLib.Variant.new_boolean(false),
+                    'Tethering': GLib.Variant.new_boolean(false),
+                },
+                '/net/connman/technology/gps',
+                {
+                    'Name': GLib.Variant.new_string('Gps'),
+                    'Type': GLib.Variant.new_string('gps'),
+                    'Powered': GLib.Variant.new_boolean(false),
+                    'Connected': GLib.Variant.new_boolean(false),
+                    'Tethering': GLib.Variant.new_boolean(false),
+                },
+            ]
+        ]]);
+    }
+
+    GetServices() {
+        return new GLib.Variant('(a(oa{sv}))', [[
+            [
+                '/net/connman/service/wifi_aba1351dc530_6948176f6e6521766f6e204a6f1e7313_managed_psk',
+                {
+                    'Type': GLib.Variant.new_string('wifi'),
+                    'Security': new GLib.Variant('as', ['psk']),
+                    'State': GLib.Variant.new_string('online'),
+                    'Strength': GLib.Variant.new_byte(78),
+                    'Favorite': GLib.Variant.new_boolean(true),
+                    'Immutable': GLib.Variant.new_boolean(false),
+                    'AutoConnect': GLib.Variant.new_boolean(true),
+                    'Name': GLib.Variant.new_string('My wifi'),
+                    'Ethernet': new GLib.Variant('a{sv}', {
+                        'Method': GLib.Variant.new_string('auto'),
+                        'Interface': GLib.Variant.new_string('wlan0'),
+                        'Address': GLib.Variant.new_string('AB:CD:EF:6A:F3:00'),
+                        'MTU': GLib.Variant.new_uint16(1500),
+                    }),
+                    /* This is very necessary for android to pick up the wifi */
+                    'IPv4': new GLib.Variant('a{sv}', {
+                        'Method': GLib.Variant.new_string('dhcp'),
+                        'Address': GLib.Variant.new_string('172.20.10.4'),
+                        'Netmask': GLib.Variant.new_string('255.255.255.240'),
+                        'Gateway': GLib.Variant.new_string('172.20.10.1'),
+                    }),
+                    'IPv4.Configuration': new GLib.Variant('a{sv}', {
+                        'Method': GLib.Variant.new_string('dhcp'),
+                    }),
+                    'IPv6': new GLib.Variant('a{sv}', {
+                        'Method': GLib.Variant.new_string('auto'),
+                        'Address': GLib.Variant.new_string('2a01:598:abcd:abcd:abcd:abcd:abcd:abcd'),
+                        'PrefixLength': GLib.Variant.new_byte(64),
+                        'Privacy': GLib.Variant.new_string('disabled'),
+                    }),
+                    'IPv6.Configuration': new GLib.Variant('a{sv}', {
+                        'Method': GLib.Variant.new_string('auto'),
+                        'Privacy': GLib.Variant.new_string('disabled'),
+                    }),
+                    'Nameservers': new GLib.Variant('as', ['172.20.10.1', 'fe80::886b:6eff:fe60:2764', 'fe80::886b:6eff:fe60:2764']),
+                    'Nameservers.Configuration': new GLib.Variant('a{sv}', {}),
+                    'BSSID': GLib.Variant.new_string('96:aa:31:ff:bb:10'),
+                    'MaxRate': GLib.Variant.new_uint32(54000000),
+                    'Frequency': GLib.Variant.new_uint16(2412),
+                    'EncryptionMode': GLib.Variant.new_string("aes"),
+                    'Hidden': GLib.Variant.new_boolean(false),
+                    'Proxy': new GLib.Variant('a{sv}', {
+                        'Method': GLib.Variant.new_string('direct'),
+                    }),
+                    'Proxy.Configuration': new GLib.Variant('a{sv}', {}),
+                    'Available': GLib.Variant.new_boolean(true),
+                    'Saved': GLib.Variant.new_boolean(true),
+                    'Access': GLib.Variant.new_string(''),
+                    'mDNS': GLib.Variant.new_boolean(false),
+                    'mDNS.Configuration': GLib.Variant.new_boolean(false),
+                },
+            ]
+        ]]);
+    }
+}
+
+class WifiTechnologyImpl {
+    GetProperties() {
+        return {
+            'Name': GLib.Variant.new_string('WiFi'),
+            'Type': GLib.Variant.new_string('wifi'),
+            'Powered': GLib.Variant.new_boolean(true),
+            'Connected': GLib.Variant.new_boolean(true),
+            'Tethering': GLib.Variant.new_boolean(false),
+        }
+    }
+}
+
+class BluetoothTechnologyImpl {
+    GetProperties() {
+        return {
+            'Name': GLib.Variant.new_string('Bluetooth'),
+            'Type': GLib.Variant.new_string('bluetooth'),
+            'Powered': GLib.Variant.new_boolean(false),
+            'Connected': GLib.Variant.new_boolean(false),
+            'Tethering': GLib.Variant.new_boolean(false),
+        }
+    }
+}
+
+class CellularTechnologyImpl {
+    GetProperties() {
+        return {
+            'Name': GLib.Variant.new_string('Cellular'),
+            'Type': GLib.Variant.new_string('cellular'),
+            'Powered': GLib.Variant.new_boolean(true),
+            'Connected': GLib.Variant.new_boolean(true),
+            'Tethering': GLib.Variant.new_boolean(false),
+        }
+    }
+}
+
+class GpsTechnologyImpl {
+    GetProperties() {
+        return {
+            'Name': GLib.Variant.new_string('Gps'),
+            'Type': GLib.Variant.new_string('gps'),
+            'Powered': GLib.Variant.new_boolean(false),
+            'Connected': GLib.Variant.new_boolean(false),
+            'Tethering': GLib.Variant.new_boolean(false),
+        }
+    }
+}
+
+class WifiServiceImpl {
+    GetProperties() {
+        return {
+            'Type': GLib.Variant.new_string('wifi'),
+            'Security': new GLib.Variant('as', ['psk']),
+            'State': GLib.Variant.new_string('online'),
+            'Strength': GLib.Variant.new_byte(78),
+            'Favorite': GLib.Variant.new_boolean(true),
+            'Immutable': GLib.Variant.new_boolean(false),
+            'AutoConnect': GLib.Variant.new_boolean(true),
+            'Name': GLib.Variant.new_string('My wifi'),
+            'Ethernet': new GLib.Variant('a{sv}', {
+                'Method': GLib.Variant.new_string('auto'),
+                'Interface': GLib.Variant.new_string('wlan0'),
+                'Address': GLib.Variant.new_string('AB:CD:EF:6A:F3:00'),
+                'MTU': GLib.Variant.new_uint16(1500),
+            }),
+            /* This is very necessary for android to pick up the wifi */
+            'IPv4': new GLib.Variant('a{sv}', {
+                'Method': GLib.Variant.new_string('dhcp'),
+                'Address': GLib.Variant.new_string('172.20.10.4'),
+                'Netmask': GLib.Variant.new_string('255.255.255.240'),
+                'Gateway': GLib.Variant.new_string('172.20.10.1'),
+            }),
+            'IPv4.Configuration': new GLib.Variant('a{sv}', {
+                'Method': GLib.Variant.new_string('dhcp'),
+            }),
+            'IPv6': new GLib.Variant('a{sv}', {
+                'Method': GLib.Variant.new_string('auto'),
+                'Address': GLib.Variant.new_string('2a01:598:abcd:abcd:abcd:abcd:abcd:abcd'),
+                'PrefixLength': GLib.Variant.new_byte(64),
+                'Privacy': GLib.Variant.new_string('disabled'),
+            }),
+            'IPv6.Configuration': new GLib.Variant('a{sv}', {
+                'Method': GLib.Variant.new_string('auto'),
+                'Privacy': GLib.Variant.new_string('disabled'),
+            }),
+            'Nameservers': new GLib.Variant('as', ['172.20.10.1', 'fe80::886b:6eff:fe60:2764', 'fe80::886b:6eff:fe60:2764']),
+            'Nameservers.Configuration': new GLib.Variant('a{sv}', {}),
+            'BSSID': GLib.Variant.new_string('96:aa:31:ff:bb:10'),
+            'MaxRate': GLib.Variant.new_uint32(54000000),
+            'Frequency': GLib.Variant.new_uint16(2412),
+            'EncryptionMode': GLib.Variant.new_string("aes"),
+            'Hidden': GLib.Variant.new_boolean(false),
+            'Proxy': new GLib.Variant('a{sv}', {
+                'Method': GLib.Variant.new_string('direct'),
+            }),
+            'Proxy.Configuration': new GLib.Variant('a{sv}', {}),
+            'Available': GLib.Variant.new_boolean(true),
+            'Saved': GLib.Variant.new_boolean(true),
+            'Access': GLib.Variant.new_string(''),
+            'mDNS': GLib.Variant.new_boolean(false),
+            'mDNS.Configuration': GLib.Variant.new_boolean(false),
+        }
+    }
+
+    /* Sailfish specific method, this appears to be about restricted access
+     * to dbus method, see
+     * https://github.com/sailfishos/connman/commit/0f362428f2d5194d02ed3216a895c449f1092e68
+     */
+/*    CheckAccess() {
+log("Service: CheckAccess called");
+        return new GLib.Variant('(uuu)', [32767, 32767, 255]);
+    }
+*/
+
+}
+
+const dbusImpl1 = Gio.DBusExportedObject.wrapJSObject(managerInterfaceXml, new ManagerImpl());
+dbusImpl1.export(Gio.DBus.system, '/');
+
+const dbusImpl2 = Gio.DBusExportedObject.wrapJSObject(technologyInterfaceXml, new WifiTechnologyImpl());
+dbusImpl2.export(Gio.DBus.system, '/net/connman/technology/wifi');
+
+const dbusImpl3 = Gio.DBusExportedObject.wrapJSObject(technologyInterfaceXml, new BluetoothTechnologyImpl());
+dbusImpl3.export(Gio.DBus.system, '/net/connman/technology/bluetooth');
+
+const dbusImpl4 = Gio.DBusExportedObject.wrapJSObject(technologyInterfaceXml, new CellularTechnologyImpl());
+dbusImpl4.export(Gio.DBus.system, '/net/connman/technology/cellular');
+
+const dbusImpl5 = Gio.DBusExportedObject.wrapJSObject(technologyInterfaceXml, new GpsTechnologyImpl());
+dbusImpl5.export(Gio.DBus.system, '/net/connman/technology/gps');
+
+const dbusImpl6 = Gio.DBusExportedObject.wrapJSObject(serviceInterfaceXml, new WifiServiceImpl());
+dbusImpl6.export(Gio.DBus.system, '/net/connman/service/wifi_aba1351dc530_6948176f6e6521766f6e204a6f1e7313_managed_psk');
+
+const ownerId = Gio.DBus.system.own_name('net.connman', Gio.BusNameOwnerFlags.NONE, null, null);
+
+log("started");
+
+const loop = GLib.MainLoop.new(null, false);
+loop.run();
+
+// make sure GC doesn't try to be smart and pick these up for collection
+test = dbusImpl1 = dbusImpl2 = dbusImpl3 = dbusImpl4 = dbusImpl5 = dbusImpl6;
+
+log("stopping: " + test);
+
+Gio.DBus.system.unown_name(ownerId);

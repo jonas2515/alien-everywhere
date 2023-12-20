@@ -1,0 +1,10 @@
+[Unit]
+Description=Aliendalvik audio DBus shim provider
+After=dbus.socket graphical-session.target
+Requires=dbus.socket graphical-session.target
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=5
+ExecStart=/usr/bin/alienaudio-shim

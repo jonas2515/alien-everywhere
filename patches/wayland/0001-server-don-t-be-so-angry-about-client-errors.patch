@@ -1,0 +1,73 @@
+From 94b98f0e8e05e0fcd6398eefd15397f61b9acc85 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Jonas=20Dre=C3=9Fler?= <verdre@v0yd.nl>
+Date: Wed, 20 Dec 2023 09:30:02 +0100
+Subject: [PATCH 1/2] server: don't be so angry about client errors
+
+It seems the aliendalvik sometimes doesn't comply to the protocols
+and cause protocol errors in libwayland. Things work fine if we just
+ignore them instead of terminating the connection to the compositor,
+so be a bit more gentle about those errors.
+---
+ src/wayland-server.c | 31 +++++++++++++++++++------------
+ 1 file changed, 19 insertions(+), 12 deletions(-)
+
+diff --git a/src/wayland-server.c b/src/wayland-server.c
+index e784ef6..b3a29eb 100644
+--- a/src/wayland-server.c
++++ b/src/wayland-server.c
+@@ -381,10 +381,12 @@ wl_client_connection_data(int fd, uint32_t mask, void *data)
+ 		resource = wl_map_lookup(&client->objects, p[0]);
+ 		resource_flags = wl_map_lookup_flags(&client->objects, p[0]);
+ 		if (resource == NULL) {
+-			wl_resource_post_error(client->display_resource,
+-					       WL_DISPLAY_ERROR_INVALID_OBJECT,
+-					       "invalid object %u", p[0]);
+-			break;
++//			wl_resource_post_error(client->display_resource,
++//					       WL_DISPLAY_ERROR_INVALID_OBJECT,
++//					       "invalid object %u", p[0]);
++                        wl_log("DISCARDING request from buggy client: invalid object %u\n", p[0]);
++                        wl_connection_consume(connection, size);
++			goto next;
+ 		}
+ 
+ 		object = &resource->object;
+@@ -421,14 +423,19 @@ wl_client_connection_data(int fd, uint32_t mask, void *data)
+ 			break;
+ 		} else if (closure == NULL ||
+ 			   wl_closure_lookup_objects(closure, &client->objects) < 0) {
+-			wl_resource_post_error(client->display_resource,
+-					       WL_DISPLAY_ERROR_INVALID_METHOD,
+-					       "invalid arguments for %s#%u.%s",
+-					       object->interface->name,
+-					       object->id,
+-					       message->name);
++//			wl_resource_post_error(client->display_resource,
++//					       WL_DISPLAY_ERROR_INVALID_METHOD,
++//					       "invalid arguments for %s#%u.%s",
++//					       object->interface->name,
++//					       object->id,
++//					       message->name);
++                        wl_log("DISCARDING: invalid arguments for %s#%u.%s\n",
++                                             object->interface->name,
++                                             object->id,
++                                             message->name);
++
+ 			wl_closure_destroy(closure);
+-			break;
++			goto next;
+ 		}
+ 
+ 		log_closure(resource, closure, false);
+@@ -446,7 +453,7 @@ wl_client_connection_data(int fd, uint32_t mask, void *data)
+ 
+ 		if (client->error)
+ 			break;
+-
++next:
+ 		len = wl_connection_pending_input(connection);
+ 	}
+ 
+-- 
+2.43.0
+

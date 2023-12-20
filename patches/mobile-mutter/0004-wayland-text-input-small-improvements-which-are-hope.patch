@@ -1,0 +1,36 @@
+From 32a1f557572f79b7cd0d4f24c38852282ec938c5 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Jonas=20Dre=C3=9Fler?= <verdre@v0yd.nl>
+Date: Wed, 20 Dec 2023 09:48:36 +0100
+Subject: [PATCH 4/5] wayland/text-input: small improvements which are
+ hopefully correct
+
+---
+ src/wayland/meta-wayland-text-input.c | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+diff --git a/src/wayland/meta-wayland-text-input.c b/src/wayland/meta-wayland-text-input.c
+index 7befbcdb0..8d67e29be 100644
+--- a/src/wayland/meta-wayland-text-input.c
++++ b/src/wayland/meta-wayland-text-input.c
+@@ -367,6 +367,8 @@ meta_wayland_text_input_set_focus (MetaWaylandTextInput *text_input,
+ 
+           wl_resource_for_each (resource, &text_input->focus_resource_list)
+             {
++g_warning("MUTTER sending text input leave to surface %p res %p", text_input->surface, text_input->surface->resource);
++if (text_input->surface->resource)
+               zwp_text_input_v3_send_leave (resource,
+                                             text_input->surface->resource);
+             }
+@@ -740,8 +742,7 @@ meta_wayland_text_input_create_new_resource (MetaWaylandTextInput *text_input,
+                                   &meta_text_input_interface,
+                                   text_input, text_input_destructor);
+ 
+-  if (text_input->surface &&
+-      wl_resource_get_client (text_input->surface->resource) == client)
++  if (client_matches_focus (text_input, client))
+     {
+       wl_list_insert (&text_input->focus_resource_list,
+                       wl_resource_get_link (text_input_resource));
+-- 
+2.43.0
+

@@ -1,0 +1,37 @@
+From 3d6b0e30abb2c5629a503c5ef1e9b3bc36717361 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Jonas=20Dre=C3=9Fler?= <verdre@v0yd.nl>
+Date: Wed, 20 Dec 2023 09:43:26 +0100
+Subject: [PATCH 1/5] xdg-shell: disable pinging of windows
+
+Pings are buggy in aliendalvik and cause surfaceflinger (which acts as the
+wayland client) to crash, let's disable pinging windows.
+---
+ src/wayland/meta-wayland-xdg-shell.c | 11 ++++++++++-
+ 1 file changed, 10 insertions(+), 1 deletion(-)
+
+diff --git a/src/wayland/meta-wayland-xdg-shell.c b/src/wayland/meta-wayland-xdg-shell.c
+index 268a5e7c7..d47fedbdd 100644
+--- a/src/wayland/meta-wayland-xdg-shell.c
++++ b/src/wayland/meta-wayland-xdg-shell.c
+@@ -1856,8 +1856,17 @@ meta_wayland_xdg_surface_ping (MetaWaylandShellSurface *shell_surface,
+   MetaWaylandXdgSurface *xdg_surface = META_WAYLAND_XDG_SURFACE (shell_surface);
+   MetaWaylandXdgSurfacePrivate *priv =
+     meta_wayland_xdg_surface_get_instance_private (xdg_surface);
++MetaWaylandSurface *surface = meta_wayland_surface_role_get_surface (shell_surface);
++
++  MetaContext *context =
++    meta_wayland_compositor_get_context (surface->compositor);
++
++  MetaDisplay *display = meta_context_get_display (context);
++
++
++//  xdg_wm_base_send_ping (priv->shell_client->resource, serial);
++  meta_display_pong_for_serial (display, serial);
+ 
+-  xdg_wm_base_send_ping (priv->shell_client->resource, serial);
+ }
+ 
+ static void
+-- 
+2.43.0
+

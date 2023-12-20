@@ -1,0 +1,53 @@
+From a76eb21146fe9c24373eacd0bce41eaac73e4d19 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Jonas=20Dre=C3=9Fler?= <verdre@v0yd.nl>
+Date: Wed, 20 Dec 2023 09:28:15 +0100
+Subject: [PATCH 2/2] don't offer zwp_text_input_v3 to alien clients
+
+their implementation is extremely buggy, we want the thing to connect to
+maliit via dbus instead for text input, and it will only do that if it
+doesn't get offered zwp_text_input.
+
+So (very very crudely) detect that the client is aliendalvik and then
+remove the zwp_text_input protocol from the ones the server offers.
+---
+ src/wayland-server.c | 17 +++++++++++++++++
+ 1 file changed, 17 insertions(+)
+
+diff --git a/src/wayland-server.c b/src/wayland-server.c
+index b3a29eb..f61cf5f 100644
+--- a/src/wayland-server.c
++++ b/src/wayland-server.c
+@@ -212,6 +212,7 @@ handle_array(struct wl_resource *resource, uint32_t opcode,
+ {
+ 	struct wl_closure *closure;
+ 	struct wl_object *object = &resource->object;
++        static const char *disable_protocol = NULL;
+ 
+ 	if (resource->client->error)
+ 		return;
+@@ -229,6 +230,22 @@ handle_array(struct wl_resource *resource, uint32_t opcode,
+ 		return;
+ 	}
+ 
++
++        if (resource->client->uid >= 500000) {
++                fprintf(stderr, "client has high UID %d, assuming it's aliendalvik", resource->client->uid);
++                disable_protocol = "zwp_text_input_manager_v3";
++        } else {
++                disable_protocol = "";
++        }
++
++        if (strcmp (object->interface->name, "wl_registry") == 0 &&
++            strcmp (closure->message->name, "global") == 0 &&
++            strcmp (closure->args[1].s, disable_protocol) == 0) {
++                fprintf(stderr, "found disabled proto queu %s\n", closure->args[1].s);
++		wl_closure_destroy(closure);
++		return;
++        }
++
+ 	log_closure(resource, closure, true);
+ 
+ 	if (send_func(closure, resource->client->connection))
+-- 
+2.43.0
+

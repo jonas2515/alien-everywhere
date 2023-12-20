@@ -1,0 +1,29 @@
+From be9b9c35a5a5fb8476da760f097fcf24053661d2 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Jonas=20Dre=C3=9Fler?= <verdre@v0yd.nl>
+Date: Wed, 20 Dec 2023 09:40:16 +0100
+Subject: [PATCH 3/5] window-wayland: disable xdg_toplevel_minimize
+
+Looks like the xdg toplevel implementation of aliendalvik uses this
+request quite extensively to hide windows when they go out of focus.
+That is not on user request and quite confusing, so force-disable the
+whole minimization behavior, we don't really need it anyway.
+---
+ src/wayland/meta-wayland-xdg-shell.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/wayland/meta-wayland-xdg-shell.c b/src/wayland/meta-wayland-xdg-shell.c
+index d47fedbdd..6a5044bbc 100644
+--- a/src/wayland/meta-wayland-xdg-shell.c
++++ b/src/wayland/meta-wayland-xdg-shell.c
+@@ -538,7 +538,7 @@ xdg_toplevel_set_minimized (struct wl_client   *client,
+   if (!window)
+     return;
+ 
+-  meta_window_minimize (window);
++//  meta_window_minimize (window);
+ }
+ 
+ static const struct xdg_toplevel_interface meta_wayland_xdg_toplevel_interface = {
+-- 
+2.43.0
+
