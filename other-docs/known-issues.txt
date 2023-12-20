@@ -1,0 +1,22 @@
+known issues (which are working on sailfish phone):
+
+- sometimes windows open into empty workspaces / don't get mapped
+  - probably compositor bugs
+
+- videos in telegram don't play, only sound
+  - in theory all the sw deconding codecs are here
+  - not an issue on pine it seems
+
+- h264/h265 videos don't play sometimes
+  - in theory all the sw deconding codecs are here
+
+- android isn't aware of cellular network
+  - works via custom ofono plugin on sailfish, no chance 
+
+- signal and whatsapp calls take long to establish / don't work sometimes
+  - there's an error about focus for a surface, maybe compositor problem?
+
+- accelerometer and rotation sensors aren't forwarded to android
+- custom vibration patterns from android apps don't work
+
+- android apps in fullscreen don't actually fullscreen
