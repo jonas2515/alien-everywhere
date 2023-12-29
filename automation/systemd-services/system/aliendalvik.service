@@ -6,6 +6,11 @@ After=systemd-user-sessions.service network.target lxc-net.service aliendalvik-c
 
 [Service]
 Type=notify
+NotifyAccess=all
+TimeoutSec=180
+Restart=never
+RestartSec=3
+RestartPreventExitStatus=32
 ExecStart=/usr/bin/aliendalvik
 ExecStop=/usr/bin/lxc-attach --name=aliendalvik --lxcpath=/tmp/appsupport -- /system/bin/reboot -p
 
