@@ -29,7 +29,7 @@
     chmod 777 /dev/dri/card0
 
 - chmod wayland socket
-    chown YOUR_USER:appsupport-wayland /run/user/YOUR_UID/wayland-0
+    chown YOUR_USER:aliendalvik-wayland /run/user/YOUR_UID/wayland-0
     chmod 775 /run/user/YOUR_UID/wayland-0
 
 - setup the waydroid vendor blob with another overlayfs (as root)
@@ -51,16 +51,20 @@
 - optional: copy overlay for gesture navigation from waydroid into alien (as root)
     cp -r /tmp/waydroid-system/system/product/overlay /opt/alien/rootfs/product/
 
+- copy lxc-config into /tmp/aliendalvik/config
+    mkdir -p /tmp/aliendalvik/config/
+    cp /opt/alien/lxc-config/* /tmp/aliendalvik/config/
+
 - set data dir in LXC config
-    nano /tmp/appsupport/aliendalvik/10-bsp_config
+    nano /tmp/aliendalvik/config/10-bsp_config
     # set __DATA_DIR__ to /opt/alien/data
 
 - set UID in LXC config
-    nano /tmp/appsupport/aliendalvik/10-bsp_config
+    nano /tmp/aliendalvik/config/10-bsp_config
     # set __UID__ to your UID in this line
     lxc.mount.entry = /run/user/__UID__/wayland-0 run/display/wayland-0 none bind,nodev,nosuid,create=file 0 0
 
-    nano /tmp/appsupport/aliendalvik/20-privilege_config
+    nano /tmp/aliendalvik/config/20-privilege_config
     # set __UID__ to your UID (this maps your UID to UID 100000 inside the container)
     lxc.idmap = u 100000 __UID__ 1
     lxc.idmap = g 100000 __UID__ 1
@@ -69,7 +73,7 @@
     /usr/lib/lxc/lxc-net start
 
 - now check if lxc wants to startup
-    /usr/bin/lxc-start --rcfile=/tmp/appsupport/aliendalvik/config --lxcpath=/tmp/appsupport/aliendalvik -n aliendalvik -F
+    /usr/bin/lxc-start --rcfile=/tmp/aliendalvik/config/config --lxcpath=/tmp/aliendalvik -n aliendalvik -F
     # shouldn't error out immediately, but should crash after like 30 seconds
     # there should be stuff in /opt/alien/data now, and logs in /opt/alien/data/logcats/log
     # if you got to this point, you're very close :)
@@ -102,7 +106,7 @@
 
 - optional: use gesture navigation in android to have swipe-back gesture
     # go into container and disable -> enable the overlay
-    lxc-attach --name=aliendalvik --lxcpath=/tmp/appsupport -- /system/bin/sh
+    lxc-attach --name=aliendalvik --lxcpath=/tmp/aliendalvik -- /system/bin/sh
     cmd overlay disable com.android.internal.systemui.navbar.gestural
     cmd overlay enable com.android.internal.systemui.navbar.gestural
 

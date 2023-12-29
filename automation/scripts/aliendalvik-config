@@ -43,20 +43,20 @@ while true; do
     break
 done
 
-chown ${active_wayland_user}:appsupport-wayland /run/user/${active_wayland_uid}/wayland-0
+chown ${active_wayland_user}:aliendalvik-wayland /run/user/${active_wayland_uid}/wayland-0
 chmod 775 /run/user/${active_wayland_uid}/wayland-0
 
-rm -f /tmp/appsupport/aliendalvik/*
-mkdir -p /tmp/appsupport/aliendalvik/
-cp -r /opt/alien/config/* /tmp/appsupport/aliendalvik/
+rm -f /tmp/aliendalvik/config/*
+mkdir -p /tmp/aliendalvik/config/
+cp -r /opt/alien/lxc-config/* /tmp/aliendalvik/config/
 
-sed -i "s/__UID__/${active_wayland_uid}/g" /tmp/appsupport/aliendalvik/10-bsp_config
-sed -i "s/__UID__/${active_wayland_uid}/g" /tmp/appsupport/aliendalvik/20-privilege_config
+sed -i "s/__UID__/${active_wayland_uid}/g" /tmp/aliendalvik/config/10-bsp_config
+sed -i "s/__UID__/${active_wayland_uid}/g" /tmp/aliendalvik/config/20-privilege_config
 
-mkdir -p /home/${active_wayland_user}/.local/share/appsupport/data/
-chown ${active_wayland_user}:${active_wayland_user} /home/${active_wayland_user}/.local/share/appsupport/
+mkdir -p /home/${active_wayland_user}/.local/share/aliendalvik/data/
+chown ${active_wayland_user}:${active_wayland_user} /home/${active_wayland_user}/.local/share/aliendalvik/
 
-data_dir="/home/${active_wayland_user}/.local/share/appsupport/data/"
-chown appsupport-root:appsupport-root ${data_dir}
+data_dir="/home/${active_wayland_user}/.local/share/aliendalvik/data/"
+chown aliendalvik-root:aliendalvik-root ${data_dir}
 
-sed -i "s|__DATA_DIR__|${data_dir}|g" /tmp/appsupport/aliendalvik/10-bsp_config
+sed -i "s|__DATA_DIR__|${data_dir}|g" /tmp/aliendalvik/config/10-bsp_config

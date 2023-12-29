@@ -19,7 +19,10 @@
     set "PackageBlacklistFiles=/etc/apkd/app-blacklist"
     set "NotifBlacklistFiles=/etc/apkd/notif-blacklist"
 
-- edit LXC configuration in /tmp/appsupport/aliendalvik/10-bsp_config
+- edit LXC configuration in /opt/alien/lxc-config/config
+    replace the paths with /tmp/aliendalvik/config/
+
+- edit LXC configuration in /opt/alien/lxc-config/10-bsp_config
     replace "/dev/puddlejumper" with "/dev/binder"
     replace "/dev/hwpuddlejumper" with "/dev/hwbinder"
     replace "/dev/vndpuddlejumper" with "/dev/vndbinder"
@@ -30,7 +33,7 @@
     comment out /odm/lib, /odm/lib64, /system/etc/apns-conf.xml, /dev/alien_video32, /dev/alien_video33 and /dev/video mounts
     comment out /home/defaultuser, /home/defaultuser/android_storage and /run/media/defaultuser mounts
 
-- edit LXC configuration in /tmp/appsupport/aliendalvik/20-privilege_config
+- edit LXC configuration in /opt/alien/lxc-config/20-privilege_config
     # add a line to start properly on apparmor devices
     lxc.apparmor.profile = unconfined
     
@@ -40,10 +43,10 @@
     # replace "lxc.idmap = g 100000 100000 1" line with
     lxc.idmap = g 100000 __UID__ 1
 
-- edit LXC configuration in /tmp/appsupport/aliendalvik/30-net_config
+- edit LXC configuration in /opt/alien/lxc-config/30-net_config
     comment out tmpfs mount to "sys/fs/selinux"
     
-- edit android props in /tmp/appsupport/aliendalvik/generated_props
+- edit android props in /opt/alien/lxc-config/generated_props
     comment out these props: ro.vendor.extension_library, ro.hardware.vulkan, ro.board.platform
     update these props "ro.alien.no_camera=1", "ro.alien.no_soundtrigger=1", "ro.com.android.mobiledata=false"
     when you're on a pinephone pro, set "ro.opengles.version=196609"

@@ -12,7 +12,7 @@ Restart=never
 RestartSec=3
 RestartPreventExitStatus=32
 ExecStart=/usr/bin/aliendalvik
-ExecStop=/usr/bin/lxc-attach --name=aliendalvik --lxcpath=/tmp/appsupport -- /system/bin/reboot -p
+ExecStop=/usr/bin/lxc-attach --name=aliendalvik --lxcpath=/tmp/aliendalvik -- /system/bin/reboot -p
 
 [Install]
 WantedBy=graphical.target

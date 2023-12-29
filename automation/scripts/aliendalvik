@@ -30,7 +30,7 @@ if [ "${active_wayland_user}" == "" ]; then
     exit 1
 fi
 
-data_dir="/home/${active_wayland_user}/.local/share/appsupport/data/"
+data_dir="/home/${active_wayland_user}/.local/share/aliendalvik/data/"
 
 rm -f ${data_dir}/alien_boot_completed
 
@@ -43,9 +43,9 @@ rm -f ${data_dir}/alien_boot_completed
         echo "alien bootup finished, running post startup"
 
 # use the commands from alien-post-startup.sh script here
-lxc-attach --name=aliendalvik --lxcpath=/tmp/appsupport -- /system/bin/sh -c ""
+lxc-attach --name=aliendalvik --lxcpath=/tmp/aliendalvik -- /system/bin/sh -c ""
 
-lxc-attach --name=aliendalvik --lxcpath=/tmp/appsupport -- /system/bin/sh -c "source /etc/mkshrc;
+lxc-attach --name=aliendalvik --lxcpath=/tmp/aliendalvik -- /system/bin/sh -c "source /etc/mkshrc;
 # enable gesture navigation
 cmd overlay disable com.android.internal.systemui.navbar.gestural
 cmd overlay enable com.android.internal.systemui.navbar.gestural"
@@ -54,7 +54,7 @@ cmd overlay enable com.android.internal.systemui.navbar.gestural"
     fi
 ) &
 
-lxc-start --rcfile=/tmp/appsupport/aliendalvik/config --lxcpath=/tmp/appsupport -n aliendalvik -F
+lxc-start --rcfile=/tmp/aliendalvik/config/config --lxcpath=/tmp/aliendalvik -n aliendalvik -F
 
 if [ "$(cat ${data_dir}/alien_boot_completed)" = "2" ]; then
     echo "alien crashed"

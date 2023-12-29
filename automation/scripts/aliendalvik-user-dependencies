@@ -39,7 +39,7 @@ if [ "$1" == "start" ]; then
     #
     # systemd should ensure that we're always started and stopped in sync with
     # aliendalvik.service (because of BindsTo= dependency)
-    while [ "$(lxc-attach --name=aliendalvik --lxcpath=/tmp/appsupport -- /system/bin/getprop hwservicemanager.ready)" != "true" ]; do
+    while [ "$(lxc-attach --name=aliendalvik --lxcpath=/tmp/aliendalvik -- /system/bin/getprop hwservicemanager.ready)" != "true" ]; do
         echo "User services startup waiting for hwservicemanager in container"
         sleep 1
     done

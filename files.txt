@@ -96,6 +96,7 @@ aliendalvik build props + system and vendor image:
 
 
 runtime generated LXC config:
+-> copy these files into /opt/alien/lxc-config/ on the new device
 
 /tmp/appsupport/aliendalvik/10-bsp_config
 /tmp/appsupport/aliendalvik/20-privilege_config

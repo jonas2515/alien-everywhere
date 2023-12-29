@@ -1,32 +1,34 @@
 - enable systemd-resolved to actually answer queries on port 53 so that android can ask dns queries
     # add this line to /etc/systemd/resolved.conf
-    DNSStubListenerExtra=127.0.0.1
+    DNSStubListenerExtra=127.0.0.1^
     # then restart systemd-resolved
     sudo systemctl restart systemd-resolved
 
 - setup users/groups needed for aliendalvik
     # create user+group that gets permissions for wayland-socket
-    useradd -u 501000 -U appsupport-wayland
-    groupmod -g 501000 appsupport-wayland
+    useradd -u 501000 -U aliendalvik-wayland
+    groupmod -g 501000 aliendalvik-wayland
 
-    # create appsupport-root user with UID and GID 500000
-    useradd -u 500000 -U appsupport-root
-    groupmod -g 500000 appsupport-root
+    # create aliendalvik-root user with UID and GID 500000
+    useradd -u 500000 -U aliendalvik-root
+    groupmod -g 500000 aliendalvik-root
 
     # own data directory
     mkdir -p /opt/alien/data/
-    chown -R appsupport-root:appsupport-root /opt/alien/data/
+    chown -R aliendalvik-root:aliendalvik-root /opt/alien/data/
 
     # set subuids (no clue how correct this actually is, but works)
     # might have to create those files
     touch /etc/subuid
     touch /etc/subgid
     usermod --add-subuids 100000-100000 --add-subgids 100000-100000 root
-    usermod --add-subuids 100000-100000 --add-subgids 100000-100000 appsupport-root
+    usermod --add-subuids 100000-100000 --add-subgids 100000-100000 aliendalvik-root
     usermod --add-subuids 500000-599999 --add-subgids 500000-599999 root
-    usermod --add-subuids 500000-599999 --add-subgids 500000-599999 appsupport-root
+    usermod --add-subuids 500000-599999 --add-subgids 500000-599999 aliendalvik-root
     usermod --add-subuids 600001-700000 --add-subgids 600001-700000 root
-    usermod --add-subuids 600001-700000 --add-subgids 600001-700000 appsupport-root
+    usermod --add-subuids 600001-700000 --add-subgids 600001-700000 aliendalvik-root
+
+    usermod --add-subuids YOUR_UID-YOUR_UID --add-subgids YOUR_UID-YOUR_UID root
 
 - symlink from /usr/lib to /usr/lib64 (alienaudioservice hardcodes some paths to lib64 :/)
     ln -s /usr/lib /usr/lib64

@@ -20,7 +20,7 @@ Aliendalvik is a complex piece of software and requires lots of setup to run. Th
   - Build and install patched mobile-mutter and libwayland, see patches/
   - Get the vanilla (not GApps) android system.img and vendor.img from Waydroid
 
-3. Copy all the aliendalvik config, binaries and libraries to the target device, see files.txt
+3. Copy all the aliendalvik config, binaries and libraries to the target device, see files.txt again
 
 4. Create necessary users, groups, and configure a few more things on the device, see setup-environment.txt
 
