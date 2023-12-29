@@ -158,7 +158,7 @@ class ManagerImpl {
                     'Ethernet': new GLib.Variant('a{sv}', {
                         'Method': GLib.Variant.new_string('auto'),
                         'Interface': GLib.Variant.new_string('wlan0'),
-                        'Address': GLib.Variant.new_string('AB:CD:EF:6A:F3:00'),
+                        'Address': GLib.Variant.new_string('CE:A8:35:6A:F3:AA'),
                         'MTU': GLib.Variant.new_uint16(1500),
                     }),
                     /* This is very necessary for android to pick up the wifi */
@@ -265,7 +265,7 @@ class WifiServiceImpl {
             'Ethernet': new GLib.Variant('a{sv}', {
                 'Method': GLib.Variant.new_string('auto'),
                 'Interface': GLib.Variant.new_string('wlan0'),
-                'Address': GLib.Variant.new_string('AB:CD:EF:6A:F3:00'),
+                'Address': GLib.Variant.new_string('CE:A8:35:6A:F3:AA'),
                 'MTU': GLib.Variant.new_uint16(1500),
             }),
             /* This is very necessary for android to pick up the wifi */
