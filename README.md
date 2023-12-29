@@ -13,7 +13,7 @@ Aliendalvik is a complex piece of software and requires lots of setup to run. Th
   - Get all the necessary files from the phone via SSH, see files.txt
 
 2. Set up dependencies on the target device
-  - Install dependencies from the Arch ARM repos: lxc packagekit-qt5 mlite qt5-sensors qt5-location python-pywayland
+  - Install dependencies from the Arch ARM repos: lxc packagekit-qt5 mlite qt5-sensors qt5-location python-pywayland dbus-glib
   - Build necessary libraries that aren't in the Arch ARM repos: libglibutil libgbinder
   - Build custom libraries from forks: [libQtContacts](https://github.com/jonas2515/qtpim/tree/alien-everwhere), [libqtcontacts_folks](https://github.com/jonas2515/qtfolks), [libqtposition_geoclue2](https://github.com/jonas2515/qtpositioning/tree/alien-everwhere), [libqtsensors_iio-sensor-proxy](https://github.com/jonas2515/qtsensors/tree/alien-everywhere)
   - Install shimming services on the target device, see shimming/
